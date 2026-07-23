@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     template: "%s",
   },
   description:
-    "Websitebeheer, Google Ads en social media beheer voor ondernemers die slimmer willen groeien.",
+    "Websitebeheer, advertenties en content creatie voor ondernemers die slimmer willen groeien.",
   icons: {
     icon: "/assets/logo.png",
     shortcut: "/assets/logo.png",
@@ -23,7 +23,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Slimmer dan Gisteren",
     description:
-      "Websitebeheer, Google Ads en social media beheer voor ondernemers die slimmer willen groeien.",
+      "Websitebeheer, advertenties en content creatie voor ondernemers die slimmer willen groeien.",
     url: "https://slimmerdangisteren.nl",
     siteName: "Slimmer dan Gisteren",
     locale: "nl_NL",
