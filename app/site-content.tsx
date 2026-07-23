@@ -199,25 +199,25 @@ const contentImages = [
 ];
 
 const travelVideos = [
-  { title: "Siargao", label: t("Island story", "Island story", "Historia de isla"), src: "/assets/travel/siargao-preview.mov", fullSrc: "/assets/travel/full/siargao-full.m4v" },
-  { title: "K'gari & Noosa", label: t("Coastal campaign", "Coastal campaign", "Campaña costera"), src: "/assets/travel/kgari-noosa-preview.mov", fullSrc: "/assets/travel/full/kgari-noosa-full.m4v" },
-  { title: "Whitsundays", label: t("Destination film", "Destination film", "Video de destino"), src: "/assets/travel/whitsundays-preview.mov", fullSrc: "/assets/travel/full/whitsundays-full.m4v" },
-  { title: "Great Barrier Reef", label: t("Experience content", "Experience content", "Contenido de experiencia"), src: "/assets/travel/dive-cairns-preview.mov", fullSrc: "/assets/travel/full/dive-cairns-full.m4v" },
-  { title: "Huacachina & Paracas", label: t("Travel reel", "Travel reel", "Reel de viaje"), src: "/assets/travel/huacacina-paracas-preview.mov", fullSrc: "/assets/travel/full/huacacina-paracas-full.m4v" },
+  { title: "Siargao", label: t("Island story", "Island story", "Historia de isla"), src: "/assets/travel/siargao-preview.mov", fullSrc: "/assets/travel/full/siargao-full.mov" },
+  { title: "K'gari & Noosa", label: t("Coastal campaign", "Coastal campaign", "Campaña costera"), src: "/assets/travel/kgari-noosa-preview.mov", fullSrc: "/assets/travel/full/kgari-noosa-full.mov" },
+  { title: "Whitsundays", label: t("Destination film", "Destination film", "Video de destino"), src: "/assets/travel/whitsundays-preview.mov", fullSrc: "/assets/travel/full/whitsundays-full.mov" },
+  { title: "Great Barrier Reef", label: t("Experience content", "Experience content", "Contenido de experiencia"), src: "/assets/travel/dive-cairns-preview.mov", fullSrc: "/assets/travel/full/dive-cairns-full.mov" },
+  { title: "Huacachina & Paracas", label: t("Travel reel", "Travel reel", "Reel de viaje"), src: "/assets/travel/huacacina-paracas-preview.mov", fullSrc: "/assets/travel/full/huacacina-paracas-full.mov" },
 ];
 
 const weddingCase = {
   title: "Nordin & Kyra",
   image: "/assets/wedding/airfoto.jpg",
   video: "/assets/wedding/nordin-kyra-preview.mov",
-  fullVideo: "/assets/wedding/full/nordin-kyra-full.m4v",
+  fullVideo: "/assets/wedding/full/nordin-kyra-full.mov",
 };
 
 const artistVideos = [
-  { title: "Dave Dekker", label: t("Artiest content", "Artist content", "Contenido para artista"), src: "/assets/dave-dekker/dave-1-preview.mov", fullSrc: "/assets/dave-dekker/full/dave-1-full.m4v" },
-  { title: "De Rode Loper", label: t("Event registratie", "Event recording", "Registro de evento"), src: "/assets/dave-dekker/dave-3-preview.mov", fullSrc: "/assets/dave-dekker/full/dave-3-full.m4v" },
-  { title: "Beurs van Berlage", label: t("Live moment", "Live moment", "Momento en vivo"), src: "/assets/dave-dekker/dave-4-preview.mov", fullSrc: "/assets/dave-dekker/full/dave-4-full.m4v" },
-  { title: "Performance cut", label: t("Social video", "Social video", "Video social"), src: "/assets/dave-dekker/dave-5-preview.mov", fullSrc: "/assets/dave-dekker/full/dave-5-full.m4v" },
+  { title: "Dave Dekker", label: t("Artiest content", "Artist content", "Contenido para artista"), src: "/assets/dave-dekker/dave-1-preview.mov", fullSrc: "/assets/dave-dekker/full/dave-1-full.mov" },
+  { title: "De Rode Loper", label: t("Event registratie", "Event recording", "Registro de evento"), src: "/assets/dave-dekker/dave-3-preview.mov", fullSrc: "/assets/dave-dekker/full/dave-3-full.mov" },
+  { title: "Beurs van Berlage", label: t("Live moment", "Live moment", "Momento en vivo"), src: "/assets/dave-dekker/dave-4-preview.mov", fullSrc: "/assets/dave-dekker/full/dave-4-full.mov" },
+  { title: "Performance cut", label: t("Social video", "Social video", "Video social"), src: "/assets/dave-dekker/dave-5-preview.mov", fullSrc: "/assets/dave-dekker/full/dave-5-full.mov" },
 ];
 
 const artistPhotos = [
