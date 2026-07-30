@@ -25,6 +25,7 @@ export function ArtistEventShowcase({ photos, videos }: { photos: ArtistPhoto[];
   const { language } = useLanguage();
   const activeVideo = videos[activeVideoIndex] ?? videos[0];
   const activePhoto = photos[activePhotoIndex] ?? photos[0];
+  const activeVideoDisplaySrc = activeVideo?.fullSrc ?? activeVideo?.src;
 
   useEffect(() => {
     if (videos.length < 2) return;
@@ -61,8 +62,8 @@ export function ArtistEventShowcase({ photos, videos }: { photos: ArtistPhoto[];
           title={activeVideo.title}
           type="video"
         >
-          <video autoPlay loop muted playsInline preload="metadata" key={activeVideo.src}>
-            <source src={activeVideo.src} />
+          <video autoPlay loop muted playsInline preload="metadata" key={activeVideoDisplaySrc}>
+            <source src={activeVideoDisplaySrc} />
           </video>
           <div>
             <span><Text value={activeVideo.label} /></span>

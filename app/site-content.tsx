@@ -835,7 +835,7 @@ export function TravelContentShowcase() {
             type="video"
           >
             <video autoPlay loop muted playsInline preload="metadata">
-              <source src={video.src} />
+              <source src={video.fullSrc ?? video.src} />
             </video>
             <div>
               <span><Text value={video.label} /></span>
@@ -888,7 +888,7 @@ export function HomeContentShowreel() {
             type="video"
           >
             <video autoPlay loop muted playsInline preload="metadata">
-              <source src={item.src} />
+              <source src={item.fullSrc ?? item.src} />
             </video>
             <div>
               <span><Text value={item.label} /></span>
@@ -928,7 +928,7 @@ export function WeddingContentShowcase() {
       </div>
       <MediaLightbox className="wedding-video" fullSrc={weddingCase.fullVideo} label={t("Videografie", "Videography", "Videografía")} src={weddingCase.video} title={weddingCase.title} type="video">
         <video autoPlay loop muted playsInline preload="metadata">
-          <source src={weddingCase.video} />
+          <source src={weddingCase.fullVideo} />
         </video>
         <div>
           <span><Text value={t("Videografie", "Videography", "Videografía")} /></span>
