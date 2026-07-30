@@ -1000,8 +1000,8 @@ function PageHeroVisual({ tone }: { tone: "default" | "website" | "ads" | "brand
           </div>
           <div className="preview-window preview-window-score">
             <span>SEO</span>
-            <strong>92</strong>
-            <p>Techniek, contentstructuur en meetbaarheid in beeld.</p>
+            <strong>Structuur</strong>
+            <p>Vindbaarheid begint bij structuur.</p>
           </div>
         </div>
       </div>
