@@ -104,9 +104,9 @@ export function ArtistEventShowcase({ photos, videos }: { photos: ArtistPhoto[];
         <h3><Text value={{ nl: "Beeld dat laat zien hoe het moment voelde.", en: "Images that show how the moment felt.", es: "Imágenes que muestran cómo se sintió el momento." }} /></h3>
         <p>
           <Text value={{
-            nl: "Naast video werkt fotografie goed voor aankondigingen, recap posts, persbeelden en social carrousels. Deze serie laat de sfeer, zaal, sprekers en publieksmomenten van De Rode Loper zien.",
-            en: "Besides video, photography works well for announcements, recap posts, press images and social carousels. This series shows the atmosphere, room, speakers and audience moments of De Rode Loper.",
-            es: "Además del video, la fotografía funciona muy bien para anuncios, recaps, prensa y carruseles sociales. Esta serie muestra el ambiente, la sala, los ponentes y el público de De Rode Loper.",
+            nl: "Deze fotoreeks hoort bij event photography: sfeer, zaal, sprekers en publieksmomenten. Bruikbaar voor aankondigingen, recap posts, persbeelden en social carrousels.",
+            en: "This photo series belongs to event photography: atmosphere, room, speakers and audience moments. Useful for announcements, recap posts, press images and social carousels.",
+            es: "Esta serie de fotos pertenece a fotografía de eventos: ambiente, sala, ponentes y momentos del público. Útil para anuncios, recaps, prensa y carruseles sociales.",
           }} />
         </p>
       </div>

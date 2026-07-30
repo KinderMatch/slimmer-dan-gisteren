@@ -214,24 +214,24 @@ const weddingCase = {
 };
 
 const artistVideos = [
-  { title: "Dave Dekker", label: t("Artiest content", "Artist content", "Contenido para artista"), src: "/assets/dave-dekker/dave-1-preview.mov", fullSrc: "/assets/dave-dekker/full/dave-1-full.mov" },
-  { title: "De Rode Loper", label: t("Event registratie", "Event recording", "Registro de evento"), src: "/assets/dave-dekker/dave-3-preview.mov", fullSrc: "/assets/dave-dekker/full/dave-3-full.mov" },
-  { title: "Beurs van Berlage", label: t("Live moment", "Live moment", "Momento en vivo"), src: "/assets/dave-dekker/dave-4-preview.mov", fullSrc: "/assets/dave-dekker/full/dave-4-full.mov" },
-  { title: "Performance cut", label: t("Social video", "Social video", "Video social"), src: "/assets/dave-dekker/dave-5-preview.mov", fullSrc: "/assets/dave-dekker/full/dave-5-full.mov" },
+  { title: "Dave Dekker", label: t("Artiest video", "Artist video", "Video de artista"), src: "/assets/dave-dekker/dave-1-preview.mov", fullSrc: "/assets/dave-dekker/full/dave-1-full.mov" },
+  { title: "Dave Dekker live", label: t("Event video", "Event video", "Video de evento"), src: "/assets/dave-dekker/dave-3-preview.mov", fullSrc: "/assets/dave-dekker/full/dave-3-full.mov" },
+  { title: "Dave Dekker optreden", label: t("Performance video", "Performance video", "Video de actuación"), src: "/assets/dave-dekker/dave-4-preview.mov", fullSrc: "/assets/dave-dekker/full/dave-4-full.mov" },
+  { title: "Dave Dekker social cut", label: t("Artiest content", "Artist content", "Contenido de artista"), src: "/assets/dave-dekker/dave-5-preview.mov", fullSrc: "/assets/dave-dekker/full/dave-5-full.mov" },
 ];
 
 const artistPhotos = [
   { src: "/assets/dave-dekker/photos/event-01.jpg", alt: t("Panelgesprek tijdens De Rode Loper bij de Beurs van Berlage", "Panel discussion during De Rode Loper at the Beurs van Berlage", "Panel durante De Rode Loper en la Beurs van Berlage") },
   { src: "/assets/dave-dekker/photos/event-02.jpg", alt: t("Publiek filmt het eventmoment tijdens De Rode Loper", "Audience filming the event moment during De Rode Loper", "Público grabando el momento durante De Rode Loper") },
   { src: "/assets/dave-dekker/photos/event-03.jpg", alt: t("Eventfotografie met publiek en sprekers in de zaal", "Event photography with audience and speakers in the room", "Fotografía de evento con público y ponentes en la sala") },
-  { src: "/assets/dave-dekker/photos/event-04.jpg", alt: t("Publiek in de zaal tijdens een artiesten- en eventmoment", "Audience in the room during an artist and event moment", "Público en la sala durante un momento artístico y de evento") },
+  { src: "/assets/dave-dekker/photos/event-04.jpg", alt: t("Publiek in de zaal tijdens het event", "Audience in the room during the event", "Público en la sala durante el evento") },
   { src: "/assets/dave-dekker/photos/event-05.jpg", alt: t("Muzikant achter de piano tijdens De Rode Loper", "Musician at the piano during De Rode Loper", "Músico al piano durante De Rode Loper") },
   { src: "/assets/dave-dekker/photos/event-06.jpg", alt: t("Panelleden tijdens het gesprek op het podium", "Panel members during the on-stage conversation", "Panelistas durante la conversación en el escenario") },
-  { src: "/assets/dave-dekker/photos/event-07.jpg", alt: t("Volle zaal bij Dave Dekker en De Rode Loper", "Full room at Dave Dekker and De Rode Loper", "Sala llena en Dave Dekker y De Rode Loper") },
+  { src: "/assets/dave-dekker/photos/event-07.jpg", alt: t("Volle zaal tijdens De Rode Loper", "Full room during De Rode Loper", "Sala llena durante De Rode Loper") },
   { src: "/assets/dave-dekker/photos/event-08.jpg", alt: t("Close-up van sprekers tijdens het event", "Close-up of speakers during the event", "Primer plano de ponentes durante el evento") },
   { src: "/assets/dave-dekker/photos/event-09.jpg", alt: t("Vraag uit het publiek tijdens De Rode Loper", "Question from the audience during De Rode Loper", "Pregunta del público durante De Rode Loper") },
   { src: "/assets/dave-dekker/photos/event-10.jpg", alt: t("Panelgesprek met microfoonmoment op het podium", "Panel discussion with a microphone moment on stage", "Panel con momento de micrófono en el escenario") },
-  { src: "/assets/dave-dekker/photos/event-11.jpg", alt: t("Overzicht van de zaal en het podium tijdens Dave Dekker", "Overview of the room and stage during Dave Dekker", "Vista general de la sala y el escenario durante Dave Dekker") },
+  { src: "/assets/dave-dekker/photos/event-11.jpg", alt: t("Overzicht van de zaal en het podium tijdens het event", "Overview of the room and stage during the event", "Vista general de la sala y el escenario durante el evento") },
   { src: "/assets/dave-dekker/photos/event-12.jpg", alt: t("Spreker met microfoon tijdens het panelgesprek", "Speaker with microphone during the panel discussion", "Ponente con micrófono durante el panel") },
   { src: "/assets/dave-dekker/photos/event-13.jpg", alt: t("Breed overzicht van publiek en podium in de Beurs van Berlage", "Wide view of audience and stage at the Beurs van Berlage", "Vista amplia del público y escenario en la Beurs van Berlage") },
   { src: "/assets/dave-dekker/photos/event-14.jpg", alt: t("Moderator met microfoon tijdens De Rode Loper", "Moderator with microphone during De Rode Loper", "Moderador con micrófono durante De Rode Loper") },
@@ -931,13 +931,13 @@ export function ArtistContentShowcase() {
   return (
     <div className="artist-showcase">
       <div className="artist-copy">
-        <p className="eyebrow"><Text value={t("Artiesten & evenementen", "Artists & events", "Artistas y eventos")} /></p>
-        <h2><Text value={t("Content voor optredens, releases en eventmomenten.", "Content for performances, releases and event moments.", "Contenido para actuaciones, lanzamientos y momentos de evento.")} /></h2>
+        <p className="eyebrow"><Text value={t("Dave Dekker / artiestenvideo's", "Dave Dekker / artist videos", "Dave Dekker / videos de artista")} /></p>
+        <h2><Text value={t("Videografie voor optredens, releases en artiestmomenten.", "Videography for performances, releases and artist moments.", "Videografía para actuaciones, lanzamientos y momentos de artista.")} /></h2>
         <p>
           <Text value={t(
-            "Voor artiesten en evenementen draait content om energie, herkenning en timing. Korte performance-cuts en registratiebeelden kunnen worden gebruikt voor social, aankondigingen, aftermovies en zichtbaarheid rondom een optreden of event.",
-            "For artists and events, content is about energy, recognition and timing. Short performance cuts and event recordings can be used for social, announcements, aftermovies and visibility around a performance or event.",
-            "Para artistas y eventos, el contenido gira en torno a energía, reconocimiento y timing. Cortes cortos de actuación y registros del evento sirven para redes, anuncios, aftermovies y visibilidad alrededor de una actuación o evento.",
+            "Deze video's horen bij Dave Dekker en artiestcontent: korte performance-cuts, registratiebeelden en social formats voor zichtbaarheid rondom een optreden of release.",
+            "These videos belong to Dave Dekker and artist content: short performance cuts, recordings and social formats for visibility around a performance or release.",
+            "Estos videos pertenecen a Dave Dekker y contenido para artista: cortes de actuación, registros y formatos sociales para visibilidad alrededor de una actuación o lanzamiento.",
           )} />
         </p>
         <a
