@@ -93,9 +93,9 @@ const archive = [
 const testimonials = [
   {
     quote: t(
-      "Onze online marketing is naar een hoger niveau getild. De kosten daalden, het aantal bezoekers steeg en elke keuze werd helder uitgelegd.",
-      "Our online marketing moved to a higher level. Costs dropped, traffic increased and every decision was explained clearly.",
-      "Nuestro marketing online subió de nivel. Bajaron los costes, aumentó el tráfico y cada decisión se explicó con claridad.",
+      "Niet alleen zijn onze marketingkosten aanzienlijk gedaald, we trekken ook duidelijk meer bezoekers naar onze website.",
+      "Our marketing costs have dropped significantly and we clearly attract more visitors to our website.",
+      "Nuestros costes de marketing han bajado considerablemente y atraemos claramente más visitantes a la web.",
     ),
     name: "Kozijnrubbers.nl",
     result: t("Lagere kosten. Meer bezoekers.", "Lower costs. More visitors.", "Menos costes. Más visitas."),
@@ -103,9 +103,9 @@ const testimonials = [
   },
   {
     quote: t(
-      "Met 50% minder advertentiekosten behalen we hetzelfde of betere resultaten dan bij onze vorige marketingpartij.",
-      "With 50% lower advertising costs, we achieve the same or better results than with our previous marketing agency.",
-      "Con un 50% menos de costes publicitarios conseguimos los mismos o mejores resultados que antes.",
+      "Met 50% minder advertentiekosten behalen we hetzelfde of betere resultaten per maand dan bij onze vorige marketingpartij.",
+      "With 50% lower advertising costs, we achieve the same or better monthly results than with our previous marketing agency.",
+      "Con un 50% menos de costes publicitarios conseguimos los mismos o mejores resultados mensuales que antes.",
     ),
     name: "Rob en Rene",
     result: t("-50% advertentiekosten", "-50% advertising costs", "-50% costes publicitarios"),
@@ -113,9 +113,9 @@ const testimonials = [
   },
   {
     quote: t(
-      "Ik ontvang nu meer leads en hoef niet alles meer uit mijn eigen netwerk te halen. Dat maakt mijn bedrijf duurzamer.",
-      "I now receive more leads and no longer have to rely only on my own network. That makes my business more sustainable.",
-      "Ahora recibo más leads y ya no dependo solo de mi propia red. Eso hace mi negocio más sostenible.",
+      "Ik ontvang nu meer leads en hoef niet alles meer uit mijn eigen netwerk te halen. Erg belangrijk voor de duurzaamheid van mijn bedrijfsvoering.",
+      "I now receive more leads and no longer have to get everything from my own network. That is important for the sustainability of my business.",
+      "Ahora recibo más leads y ya no tengo que depender solo de mi propia red. Eso es importante para la sostenibilidad de mi negocio.",
     ),
     name: "Joris",
     result: t("Meer leads", "More leads", "Más leads"),
