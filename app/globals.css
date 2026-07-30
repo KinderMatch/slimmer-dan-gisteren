@@ -536,6 +536,32 @@ h3 {
   margin-top: 2rem;
 }
 
+.proof-stack.media-system {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  align-items: stretch;
+}
+
+.proof-stack.media-system span,
+.proof-stack.media-system strong {
+  min-height: 92px;
+  display: grid;
+  align-items: end;
+  padding: 1rem;
+  border: 1px solid rgba(125, 183, 255, 0.22);
+  background:
+    linear-gradient(145deg, rgba(37, 99, 235, 0.16), transparent 58%),
+    rgba(255, 255, 255, 0.045);
+  color: white;
+}
+
+.proof-stack.media-system strong {
+  grid-column: 1 / -1;
+  min-height: 132px;
+  color: var(--highlight);
+  font-size: clamp(1.6rem, 3vw, 2.7rem);
+  line-height: 0.98;
+}
+
 .hero-bars {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
@@ -3837,6 +3863,14 @@ h3 {
   .proof-stack img:last-child {
     height: 180px;
     margin-top: 0;
+  }
+
+  .proof-stack.media-system {
+    grid-template-columns: 1fr;
+  }
+
+  .proof-stack.media-system strong {
+    grid-column: auto;
   }
 
   .home-command img,

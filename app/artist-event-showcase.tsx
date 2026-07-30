@@ -26,6 +26,12 @@ export function ArtistEventShowcase({ photos, videos }: { photos: ArtistPhoto[];
   const activeVideo = videos[activeVideoIndex] ?? videos[0];
   const activePhoto = photos[activePhotoIndex] ?? photos[0];
   const activeVideoDisplaySrc = activeVideo?.fullSrc ?? activeVideo?.src;
+  const otherVideos = videos
+    .map((video, index) => ({ video, index }))
+    .filter(({ index }) => index !== activeVideoIndex);
+  const otherPhotos = photos
+    .map((photo, index) => ({ photo, index }))
+    .filter(({ index }) => index !== activePhotoIndex);
 
   useEffect(() => {
     if (videos.length < 2) return;
@@ -73,9 +79,8 @@ export function ArtistEventShowcase({ photos, videos }: { photos: ArtistPhoto[];
         </MediaLightbox>
 
         <div className="artist-video-tabs" aria-label="Dave Dekker videocases">
-          {videos.map((video, index) => (
+          {otherVideos.map(({ video, index }) => (
             <button
-              aria-pressed={activeVideoIndex === index}
               key={video.src}
               onClick={() => {
                 lastVideoInteractionRef.current = Date.now();
@@ -123,16 +128,15 @@ export function ArtistEventShowcase({ photos, videos }: { photos: ArtistPhoto[];
         </MediaLightbox>
 
         <div className="artist-photo-strip" aria-label="Eventfoto slideshow">
-          {photos.map((photo, index) => (
+          {otherPhotos.map(({ photo, index }) => (
             <button
               aria-label={
                 language === "en"
                   ? `Show ${resolveText(photo.alt, language)}`
                   : language === "es"
                     ? `Mostrar ${resolveText(photo.alt, language)}`
-                    : `${resolveText(photo.alt, language)} tonen`
+                  : `${resolveText(photo.alt, language)} tonen`
               }
-              aria-pressed={activePhotoIndex === index}
               key={photo.src}
               onClick={() => {
                 lastPhotoInteractionRef.current = Date.now();

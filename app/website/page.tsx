@@ -55,7 +55,7 @@ export default function WebsitePage() {
               )} />
             </p>
           </div>
-          <WebsiteCaseWall />
+          <WebsiteCaseWall skipFirst />
         </section>
 
         <section className="section website-benefits-section premium-benefits-section">

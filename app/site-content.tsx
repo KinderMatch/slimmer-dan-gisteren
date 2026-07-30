@@ -756,7 +756,7 @@ export function AdsPerformanceLab() {
 }
 
 export function BrandingStudio() {
-  const socialVideos = [videos[0], videos[1], videos[2], videos[3], videos[4], videos[5]];
+  const socialVideos = videos.slice(0, 5);
 
   return (
     <div className="branding-studio">
@@ -788,20 +788,6 @@ export function BrandingStudio() {
               <span>{String(index + 1).padStart(2, "0")} / <Text value={t("Videoformat", "Video format", "Formato de video")} /></span>
               <strong>{video.title}</strong>
             </div>
-          </MediaLightbox>
-        ))}
-        {contentImages.slice(0, 4).map((image, index) => (
-          <MediaLightbox
-            alt={image.alt}
-            className="brand-image-tile"
-            key={image.src}
-            label={t("Social post", "Social post", "Post social")}
-            src={image.src}
-            title={image.alt}
-            type="image"
-          >
-            <img src={image.src} alt={image.alt} loading="lazy" />
-            <figcaption>{String(index + 1).padStart(2, "0")} / <Text value={t("Social post", "Social post", "Post social")} /></figcaption>
           </MediaLightbox>
         ))}
       </div>
@@ -1040,9 +1026,11 @@ export function HeroProof({ tone = "default" }: { tone?: "default" | "website" |
           <p><Text value={t("Updates, beheer, tracking en campagnegereed.", "Updates, management, tracking and campaign-ready.", "Actualizaciones, gestión, tracking y preparación para campañas.")} /></p>
         </div>
       ) : (
-        <div className="proof-stack">
-          <img src="/assets/content-zb.png" alt="Social content case" />
-          <img src="/assets/content-nxchange.png" alt="Content creatie case" />
+        <div className="proof-stack media-system" aria-hidden="true">
+          <span><Text value={t("Video", "Video", "Video")} /></span>
+          <span><Text value={t("Foto", "Photo", "Foto")} /></span>
+          <span><Text value={t("Social", "Social", "Social")} /></span>
+          <strong><Text value={t("Eén beeldbank", "One visual library", "Una biblioteca visual")} /></strong>
         </div>
       )}
     </aside>
@@ -1070,8 +1058,9 @@ export function WebsitePortfolio({ compact = false }: { compact?: boolean }) {
   );
 }
 
-export function WebsiteCaseWall({ compact = false }: { compact?: boolean }) {
-  const items = compact ? websites.slice(0, 3) : websites;
+export function WebsiteCaseWall({ compact = false, skipFirst = false }: { compact?: boolean; skipFirst?: boolean }) {
+  const baseItems = skipFirst ? websites.slice(1) : websites;
+  const items = compact ? baseItems.slice(0, 3) : baseItems;
 
   return (
     <div className={compact ? "website-wall compact" : "website-wall"}>

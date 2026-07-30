@@ -80,6 +80,9 @@ export function VideoShowcase({ compact = false }: { compact?: boolean }) {
   const featuredVideoRef = useRef<HTMLVideoElement>(null);
   const cases = compact ? videoCases.slice(0, 4) : videoCases;
   const featured = cases[selectedIndex] ?? cases[0];
+  const otherCases = cases
+    .map((video, index) => ({ video, index }))
+    .filter(({ index }) => index !== selectedIndex);
 
   useEffect(() => {
     const video = featuredVideoRef.current;
@@ -118,9 +121,8 @@ export function VideoShowcase({ compact = false }: { compact?: boolean }) {
       </article>
 
       <div className="video-stack" aria-label="Meer videocases">
-        {cases.map((video, index) => (
+        {otherCases.map(({ video, index }) => (
           <button
-            aria-pressed={selectedIndex === index}
             className="video-mini"
             key={video.src}
             onClick={() => {

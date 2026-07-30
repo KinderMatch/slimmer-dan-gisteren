@@ -48,7 +48,7 @@ const services = [
       "Visuals that instantly show why a brand matters.",
       "Imagen que muestra al instante por qué una marca importa.",
     ),
-    media: "/assets/wedding/airfoto.jpg",
+    media: "/assets/travel/full/kgari-noosa-full.m4v",
     type: "content",
   },
 ];
@@ -67,7 +67,7 @@ const cases = [
   {
     title: "Dave Dekker",
     discipline: t("Artiest & event content", "Artist & event content", "Contenido de artista y evento"),
-    image: "/assets/dave-dekker/photos/event-07.jpg",
+    image: "/assets/dave-dekker/photos/event-13.jpg",
   },
 ];
 
@@ -75,13 +75,16 @@ const archive = [
   { kind: "image", src: "/assets/content-nxchange.png", label: "Nxchange" },
   { kind: "image", src: "/assets/content-airbnb.png", label: "HealthyFest" },
   { kind: "video", src: "/assets/travel/full/siargao-full.m4v", label: "Siargao" },
-  { kind: "image", src: "/assets/dave-dekker/photos/event-05.jpg", label: "Dave Dekker" },
-  { kind: "video", src: "/assets/dave-dekker/full/dave-3-full.mov", label: "De Rode Loper" },
+  { kind: "image", src: "/assets/dave-dekker/photos/event-01.jpg", label: "Dave Dekker" },
+  { kind: "video", src: "/assets/dave-dekker/full/dave-5-full.mov", label: "De Rode Loper" },
   { kind: "image", src: "/assets/content-maasclaim.png", label: "ChickShack Valencia" },
   { kind: "video", src: "/assets/travel/full/whitsundays-full.m4v", label: "Whitsundays" },
-  { kind: "image", src: "/assets/wedding/airfoto.jpg", label: "Nordin & Kyra" },
+  { kind: "image", src: "/assets/dave-dekker/photos/event-12.jpg", label: "Event photography" },
   { kind: "image", src: "/assets/dave-dekker/photos/event-11.jpg", label: "Event photography" },
   { kind: "video", src: "https://videos.files.wordpress.com/E5ahlDJ7/trouwerij-nordin-kyra-v3-h264.mp4#t=0.001", label: "Wedding film" },
+  { kind: "image", src: "/assets/dave-dekker/photos/event-02.jpg", label: "Audience moment" },
+  { kind: "video", src: "/assets/dave-dekker/full/dave-1-full.mov", label: "Artiest video" },
+  { kind: "image", src: "/assets/dave-dekker/photos/event-14.jpg", label: "Live registratie" },
 ];
 
 const testimonials = [
@@ -135,13 +138,15 @@ function ServiceVisual({ service }: { service: (typeof services)[number] }) {
   if (service.type === "content") {
     return (
       <div className="premium-content-visual">
-        <img src="/assets/wedding/airfoto.jpg" alt="Dronefotografie voor content creatie" loading="lazy" />
         <video autoPlay loop muted playsInline preload="metadata">
-          <source src="/assets/travel/full/whitsundays-full.m4v" />
+          <source src="/assets/travel/full/kgari-noosa-full.m4v" />
         </video>
-        <img src="/assets/dave-dekker/photos/event-07.jpg" alt="Eventfotografie voor content creatie" loading="lazy" />
+        <img src="/assets/dave-dekker/photos/event-03.jpg" alt="Eventfotografie voor content creatie" loading="lazy" />
         <video autoPlay loop muted playsInline preload="metadata">
-          <source src="/assets/dave-dekker/full/dave-3-full.mov" />
+          <source src="/assets/travel/full/huacacina-paracas-full.m4v" />
+        </video>
+        <video autoPlay loop muted playsInline preload="metadata">
+          <source src="/assets/dave-dekker/full/dave-4-full.mov" />
         </video>
       </div>
     );
