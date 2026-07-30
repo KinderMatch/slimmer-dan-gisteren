@@ -2349,7 +2349,9 @@ h3 {
   gap: 0.3rem;
   min-width: 0;
   padding: clamp(0.8rem, 1.5vw, 1.1rem);
+  background: linear-gradient(180deg, rgba(0, 35, 52, 0), rgba(0, 20, 32, 0.72));
   color: white;
+  text-shadow: 0 2px 18px rgba(0, 0, 0, 0.7);
 }
 
 .travel-video-card span {
@@ -2548,7 +2550,9 @@ h3 {
   display: grid;
   gap: 0.32rem;
   padding: clamp(0.9rem, 1.6vw, 1.2rem);
+  background: linear-gradient(180deg, rgba(0, 35, 52, 0), rgba(0, 20, 32, 0.72));
   color: white;
+  text-shadow: 0 2px 18px rgba(0, 0, 0, 0.7);
 }
 
 .artist-feature-video span,
@@ -4221,30 +4225,28 @@ h3 {
   }
 
   .travel-video-grid {
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr;
     gap: 0.8rem;
-    margin-right: calc(var(--page-pad) * -1);
-    margin-left: calc(var(--page-pad) * -1);
-    padding: 0 var(--page-pad) 0.55rem;
-    overflow-x: auto;
-    scroll-padding: var(--page-pad);
-    scroll-snap-type: x mandatory;
+    margin-right: 0;
+    margin-left: 0;
+    padding: 0;
+    overflow: visible;
+    scroll-snap-type: none;
   }
 
   .travel-video-card,
   .travel-video-card.lead,
   .travel-video-card:nth-child(4),
   .travel-video-card:nth-child(5) {
-    flex: 0 0 min(82vw, 390px);
+    width: 100%;
     grid-column: auto;
     grid-row: auto;
     min-height: auto;
     aspect-ratio: 9 / 13;
-    scroll-snap-align: start;
   }
 
   .travel-video-card.lead {
-    flex-basis: min(88vw, 430px);
     aspect-ratio: 4 / 5;
   }
 
@@ -4274,21 +4276,20 @@ h3 {
   }
 
   .artist-video-tabs {
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr;
     gap: 0.75rem;
-    margin-right: calc(var(--page-pad) * -1);
-    margin-left: calc(var(--page-pad) * -1);
-    padding: 0 var(--page-pad) 0.5rem;
-    overflow-x: auto;
-    scroll-padding: var(--page-pad);
-    scroll-snap-type: x mandatory;
+    margin-right: 0;
+    margin-left: 0;
+    padding: 0;
+    overflow: visible;
+    scroll-snap-type: none;
   }
 
   .artist-video-tabs button {
-    flex: 0 0 min(78vw, 360px);
     grid-template-columns: 94px minmax(0, 1fr);
+    width: 100%;
     min-height: 104px;
-    scroll-snap-align: start;
   }
 
   .artist-video-tabs span {
@@ -4342,12 +4343,12 @@ h3 {
   .travel-video-card.lead,
   .travel-video-card:nth-child(4),
   .travel-video-card:nth-child(5) {
-    flex-basis: 86vw;
+    width: 100%;
   }
 
   .artist-video-tabs button {
-    flex-basis: 84vw;
     grid-template-columns: 86px minmax(0, 1fr);
+    width: 100%;
   }
 
   .artist-feature-video {
@@ -4496,6 +4497,8 @@ h3 {
   z-index: 2;
   display: grid;
   gap: clamp(1.35rem, 2vw, 1.8rem);
+  width: 100%;
+  min-width: 0;
   max-width: 1080px;
 }
 
@@ -5114,8 +5117,8 @@ h3 {
   position: relative;
   z-index: 1;
   color: var(--premium-light);
-  font-size: clamp(4rem, 8vw, 8.5rem);
-  line-height: 0.86;
+  font-size: clamp(3.5rem, 6vw, 6rem);
+  line-height: 0.96;
 }
 
 .premium-proof-meter small {
@@ -5273,7 +5276,14 @@ h3 {
   }
 
   .premium-hero h1 {
+    max-width: calc(100vw - 2.4rem);
     font-size: clamp(3.35rem, 16vw, 5.2rem);
+  }
+
+  .premium-hero-copy,
+  .premium-hero .premium-kicker,
+  .premium-hero h1 span {
+    max-width: calc(100vw - 2.4rem);
   }
 
   .premium-hero-meta {
@@ -5310,19 +5320,19 @@ h3 {
   }
 
   .premium-archive-grid {
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr;
     gap: 0.75rem;
-    margin-right: -1.2rem;
-    margin-left: -1.2rem;
-    padding: 0 1.2rem 0.6rem;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
+    margin-right: 0;
+    margin-left: 0;
+    padding: 0;
+    overflow: visible;
+    scroll-snap-type: none;
   }
 
   .premium-archive figure {
-    flex: 0 0 78vw;
+    width: 100%;
     aspect-ratio: 4 / 5;
-    scroll-snap-align: start;
   }
 
   .premium-stats div,
