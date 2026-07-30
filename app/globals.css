@@ -5415,6 +5415,17 @@ h3 {
   color: #f4f0ea;
 }
 
+.site-header .header-cta {
+  border-color: transparent;
+  background: #f4f0ea;
+  color: #111111;
+}
+
+.site-header .header-cta::after {
+  background: #2563eb;
+  color: #ffffff;
+}
+
 .site-header .brand span {
   letter-spacing: 0;
 }
