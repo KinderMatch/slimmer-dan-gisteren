@@ -7,7 +7,7 @@ import {
   TravelContentShowcase,
   WeddingContentShowcase,
 } from "../site-content";
-import { Text } from "../language";
+import { EmphasisText, Text } from "../language";
 
 const t = (nl: string, en: string, es: string) => ({ nl, en, es });
 
@@ -23,7 +23,7 @@ export default function ContentCreatiePage() {
       <div className="service-premium service-premium-content">
         <PageHero
           eyebrow={t("Content creatie", "Content creation", "Creación de contenido")}
-          title={t("Beeld dat laat voelen waarom een merk ertoe doet.", "Visuals that show why a brand matters.", "Imagen que muestra por qué una marca importa.")}
+          title={t("Beeld dat laat voelen waarom een [[merk]] ertoe doet.", "Visuals that show why a [[brand]] matters.", "Imagen que muestra por qué una [[marca]] importa.")}
           intro={t(
             "Video, fotografie, social posts, reiscontent, events en persoonlijke verhalen komen samen in één herkenbare beeldtaal.",
             "Video, photography, social posts, travel content, events and personal stories come together in one recognizable visual language.",
@@ -36,7 +36,7 @@ export default function ContentCreatiePage() {
         <section className="section brand-intro premium-editorial-section">
           <div>
             <p className="eyebrow"><Text value={t("Content creatie", "Content creation", "Creación de contenido")} /></p>
-            <h2><Text value={t("Merkwaarde bouwen waar klanten kijken.", "Build brand value where customers are watching.", "Construye valor de marca donde miran tus clientes.")} /></h2>
+            <h2><EmphasisText value={t("[[Merkwaarde]] bouwen waar klanten kijken.", "Build [[brand value]] where customers are watching.", "Construye [[valor de marca]] donde miran tus clientes.")} /></h2>
           </div>
           <blockquote className="intro-quote">
             <Text value={t(
@@ -46,10 +46,10 @@ export default function ContentCreatiePage() {
             )} />
           </blockquote>
           <p>
-            <Text value={t(
-              "Het is belangrijk om jouw doelgroep te bereiken en merkwaarde te creëren voor jouw product, dienst of onderneming. Een sterke digitale aanwezigheid zorgt dat je merk niet onopgemerkt blijft en dat content, advertenties en website elkaar versterken.",
-              "It is important to reach your target audience and create brand value for your product, service or company. A strong digital presence ensures your brand does not go unnoticed and that content, advertising and website reinforce each other.",
-              "Es importante llegar a tu público objetivo y crear valor de marca para tu producto, servicio o empresa. Una presencia digital sólida evita que tu marca pase desapercibida y hace que contenido, anuncios y web se refuercen entre sí.",
+            <EmphasisText value={t(
+              "Het is belangrijk om jouw doelgroep te bereiken en [[merkwaarde]] te creëren voor jouw product, dienst of onderneming. Een sterke digitale aanwezigheid zorgt dat je merk niet onopgemerkt blijft en dat content, advertenties en website elkaar versterken.",
+              "It is important to reach your target audience and create [[brand value]] for your product, service or company. A strong digital presence ensures your brand does not go unnoticed and that content, advertising and website reinforce each other.",
+              "Es importante llegar a tu público objetivo y crear [[valor de marca]] para tu producto, servicio o empresa. Una presencia digital sólida evita que tu marca pase desapercibida y hace que contenido, anuncios y web se refuercen entre sí.",
             )} />
           </p>
         </section>
@@ -61,7 +61,7 @@ export default function ContentCreatiePage() {
         <section className="section content-section premium-case-section">
           <div className="section-heading">
             <p className="eyebrow"><Text value={t("Contentkalender", "Content calendar", "Calendario de contenido")} /></p>
-            <h2><Text value={t("Social posts die campagnes visueel doortrekken.", "Social posts that visually extend campaigns.", "Posts sociales que prolongan visualmente las campañas.")} /></h2>
+            <h2><EmphasisText value={t("Social posts die campagnes [[visueel]] doortrekken.", "Social posts that [[visually]] extend campaigns.", "Posts sociales que prolongan [[visualmente]] las campañas.")} /></h2>
             <p>
               <Text value={t(
                 "Alle social contentbeelden blijven klikbaar en vergrootbaar, zodat bezoekers de voorbeelden echt kunnen bekijken.",

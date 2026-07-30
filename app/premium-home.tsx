@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { motion, useScroll, useTransform } from "framer-motion";
 
-import { LanguageProvider, LanguageToggle, Text, type LocalizedString } from "./language";
+import { EmphasisText, LanguageProvider, LanguageToggle, Text, type LocalizedString } from "./language";
 
 const t = (nl: string, en: string, es: string): LocalizedString => ({ nl, en, es });
 
@@ -210,8 +210,8 @@ export function PremiumHome() {
                 <Text value={t("Creative growth studio", "Creative growth studio", "Creative growth studio")} />
               </motion.p>
               <motion.h1 variants={reveal} transition={transition}>
-                <Text value={t("Marketing die helderheid brengt.", "Marketing that brings clarity.", "Marketing que aporta claridad.")} />
-                <span><Text value={t("Groei die zichtbaar wordt.", "Growth that becomes visible.", "Crecimiento que se vuelve visible.")} /></span>
+                <EmphasisText value={t("Marketing die [[helderheid]] brengt.", "Marketing that brings [[clarity]].", "Marketing que aporta [[claridad]].")} />
+                <span><EmphasisText value={t("[[Groei]] die zichtbaar wordt.", "[[Growth]] that becomes visible.", "[[Crecimiento]] que se vuelve visible.")} /></span>
               </motion.h1>
               <motion.div variants={reveal} transition={transition} className="premium-hero-meta">
                 <span>Websites</span>
@@ -226,10 +226,10 @@ export function PremiumHome() {
 
           <section className="premium-manifesto">
             <motion.p initial="hidden" whileInView="show" viewport={{ once: true, margin: "-20%" }} variants={reveal} transition={transition}>
-              <Text value={t(
-                "Slimmer dan Gisteren combineert websites, advertenties en content creatie tot één helder systeem. Rust in de basis. Scherpte in de uitvoering. Groei in beeld.",
-                "Slimmer dan Gisteren combines websites, advertising and content creation into one clear system. Calm in the foundation. Precision in the work. Growth in view.",
-                "Slimmer dan Gisteren combina webs, anuncios y creación de contenido en un sistema claro. Calma en la base. Precisión en la ejecución. Crecimiento visible.",
+              <EmphasisText value={t(
+                "Slimmer dan Gisteren combineert [[websites]], [[advertenties]] en [[content creatie]] tot één helder systeem. Rust in de basis. Scherpte in de uitvoering. Groei in beeld.",
+                "Slimmer dan Gisteren combines [[websites]], [[advertising]] and [[content creation]] into one clear system. Calm in the foundation. Precision in the work. Growth in view.",
+                "Slimmer dan Gisteren combina [[webs]], [[anuncios]] y [[creación de contenido]] en un sistema claro. Calma en la base. Precisión en la ejecución. Crecimiento visible.",
               )} />
             </motion.p>
           </section>
@@ -262,7 +262,7 @@ export function PremiumHome() {
           <section className="premium-cases">
             <div className="premium-section-title">
               <p className="premium-kicker"><Text value={t("Featured work", "Featured work", "Trabajo destacado")} /></p>
-              <h2><Text value={t("Werk dat niet uitlegt. Werk dat laat zien.", "Work that does not explain. Work that shows.", "Trabajo que no explica. Trabajo que muestra.")} /></h2>
+              <h2><EmphasisText value={t("Werk dat niet uitlegt. Werk dat [[laat zien]].", "Work that does not explain. Work that [[shows]].", "Trabajo que no explica. Trabajo que [[muestra]].")} /></h2>
             </div>
             <div className="premium-case-grid">
               {cases.map((item) => (
@@ -293,7 +293,7 @@ export function PremiumHome() {
           <section className="premium-archive">
             <div className="premium-section-title">
               <p className="premium-kicker"><Text value={t("In de keuken", "Inside the work", "Dentro del trabajo")} /></p>
-              <h2><Text value={t("Echte beelden. Echte momenten. Geen stock.", "Real visuals. Real moments. No stock.", "Imágenes reales. Momentos reales. Sin stock.")} /></h2>
+              <h2><EmphasisText value={t("[[Echte]] beelden. Echte momenten. Geen stock.", "[[Real]] visuals. Real moments. No stock.", "Imágenes [[reales]]. Momentos reales. Sin stock.")} /></h2>
             </div>
             <div className="premium-archive-grid">
               {archive.map((item, index) => (
@@ -315,7 +315,7 @@ export function PremiumHome() {
           <section className="premium-about">
             <div>
               <p className="premium-kicker"><Text value={t("Persoonlijk", "Personal", "Personal")} /></p>
-              <h2><Text value={t("Geen bureau op afstand. Een partner die meedenkt.", "Not a distant agency. A partner who thinks with you.", "No una agencia distante. Un partner que piensa contigo.")} /></h2>
+              <h2><EmphasisText value={t("Geen bureau op afstand. Een [[partner]] die meedenkt.", "Not a distant agency. A [[partner]] who thinks with you.", "No una agencia distante. Un [[partner]] que piensa contigo.")} /></h2>
             </div>
             <p>
               <Text value={t(
@@ -342,7 +342,7 @@ export function PremiumHome() {
             </video>
             <div>
               <p className="premium-kicker"><Text value={t("Klaar voor helderheid?", "Ready for clarity?", "¿Listo para claridad?")} /></p>
-              <h2><Text value={t("Laat marketing voelen als één systeem.", "Make marketing feel like one system.", "Haz que el marketing se sienta como un sistema.")} /></h2>
+              <h2><EmphasisText value={t("Laat marketing voelen als [[één systeem]].", "Make marketing feel like [[one system]].", "Haz que el marketing se sienta como [[un sistema]].")} /></h2>
               <a className="premium-cta light" href="https://calendly.com/buitenhuisj004/bmc-sessie">
                 <Text value={t("Plan een strategiesessie", "Plan a strategy session", "Planifica una sesión estratégica")} />
               </a>

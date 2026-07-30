@@ -1,6 +1,6 @@
 "use client";
 
-import { createContext, type ReactNode, useContext, useEffect, useMemo, useState } from "react";
+import { createContext, Fragment, type ReactNode, useContext, useEffect, useMemo, useState } from "react";
 
 export type Language = "nl" | "en" | "es";
 
@@ -66,6 +66,28 @@ export function Text({ value }: { value: LocalizedString | string }) {
   const { language } = useLanguage();
 
   return <>{resolveText(value, language)}</>;
+}
+
+export function EmphasisText({ value }: { value: LocalizedString | string }) {
+  const { language } = useLanguage();
+  const text = resolveText(value, language);
+  const parts = text.split(/(\[\[.*?\]\])/g).filter(Boolean);
+
+  return (
+    <>
+      {parts.map((part, index) => {
+        if (part.startsWith("[[") && part.endsWith("]]")) {
+          return (
+            <span className="text-accent" key={`${part}-${index}`}>
+              {part.slice(2, -2)}
+            </span>
+          );
+        }
+
+        return <Fragment key={`${part}-${index}`}>{part}</Fragment>;
+      })}
+    </>
+  );
 }
 
 export function LanguageToggle() {

@@ -6127,6 +6127,34 @@ h3 {
   color: rgba(31, 41, 55, 0.68);
 }
 
+.text-accent {
+  color: #7db7ff;
+  text-shadow: 0 0 32px rgba(125, 183, 255, 0.18);
+}
+
+.premium-manifesto .text-accent,
+.premium-cases .text-accent,
+.premium-about .text-accent,
+.service-premium .soft .text-accent,
+.service-premium .premium-case-section .text-accent,
+.service-premium .premium-benefits-section .text-accent,
+.service-premium .wedding-content-section .text-accent,
+.service-premium .content-section .text-accent {
+  color: #0f5e93;
+  text-shadow: none;
+}
+
+.premium-hero .text-accent,
+.premium-final .text-accent,
+.site-footer .text-accent {
+  color: #f4f0ea;
+  text-shadow: 0 0 38px rgba(125, 183, 255, 0.28);
+  background: linear-gradient(90deg, #f4f0ea 0%, #7db7ff 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
 @media (max-width: 1100px) {
   .service-premium-website .website-management-showcase,
   .service-premium-ads .ads-performance-lab,

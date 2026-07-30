@@ -3,7 +3,7 @@ import type { ReactNode } from "react";
 
 import { ArtistEventShowcase } from "./artist-event-showcase";
 import { ContentGallery as InteractiveContentGallery } from "./content-gallery";
-import { LanguageProvider, LanguageToggle, type LocalizedString, Text } from "./language";
+import { EmphasisText, LanguageProvider, LanguageToggle, type LocalizedString, Text } from "./language";
 import { MediaLightbox } from "./media-lightbox";
 
 export { VideoShowcase } from "./video-showcase";
@@ -278,7 +278,7 @@ export function SiteShell({ children }: { children: ReactNode }) {
           </video>
           <div>
             <p className="eyebrow"><Text value={t("Klaar om slimmer te groeien?", "Ready to grow smarter?", "¿Listo para crecer de forma más inteligente?")} /></p>
-            <h2><Text value={t("Laat website, advertenties en content samenwerken.", "Let your website, advertising and content work together.", "Haz que tu web, tus anuncios y tu contenido trabajen juntos.")} /></h2>
+            <h2><EmphasisText value={t("Laat website, advertenties en [[content samenwerken]].", "Let your website, advertising and [[content work together]].", "Haz que tu web, tus anuncios y tu [[contenido trabajen juntos]].")} /></h2>
             <a className="button primary" href="https://calendly.com/buitenhuisj004/bmc-sessie">
               <Text value={t("Plan kennismaking", "Book an introduction", "Agenda una llamada")} />
             </a>
@@ -525,7 +525,7 @@ export function WebsiteFeatureCase() {
     <div className="website-feature-case">
       <div className="website-feature-copy">
         <p className="eyebrow"><Text value={t("Uit de praktijk", "From practice", "Desde la práctica")} /></p>
-        <h2><Text value={t("Websitebeheer wordt sterker als marketing meteen mee kan kijken.", "Website management becomes stronger when marketing can look along from the start.", "La gestión web mejora cuando marketing puede participar desde el principio.")} /></h2>
+        <h2><EmphasisText value={t("Websitebeheer wordt sterker als [[marketing]] meteen mee kan kijken.", "Website management becomes stronger when [[marketing]] can look along from the start.", "La gestión web mejora cuando [[marketing]] puede participar desde el principio.")} /></h2>
         <p>
           <Text value={t(
             "De website is niet alleen een online visitekaartje. Hij moet bruikbaar blijven voor campagnes, tracking, aanpassingen en duidelijke samenwerking tussen ondernemer, bouwer en marketing.",
@@ -558,7 +558,7 @@ export function WebsiteManagementShowcase() {
     <div className="website-management-showcase">
       <div className="management-copy">
         <p className="eyebrow"><Text value={t("Websitebeheer in de praktijk", "Website management in practice", "Gestión web en la práctica")} /></p>
-        <h2><Text value={t("Beheer, SEO en campagnes moeten op dezelfde pagina samenkomen.", "Management, SEO and campaigns should come together on the same page.", "Gestión, SEO y campañas deben unirse en la misma página.")} /></h2>
+        <h2><EmphasisText value={t("[[Beheer]], SEO en campagnes moeten op dezelfde pagina samenkomen.", "[[Management]], SEO and campaigns should come together on the same page.", "[[Gestión]], SEO y campañas deben unirse en la misma página.")} /></h2>
         <p>
           <Text value={t(
             "Website uitbesteden betekent niet alleen iets laten bouwen. Het gaat om een omgeving die blijft werken: pagina's aanpassen, SEO verbeteren, tracking controleren, conversiepunten bewaken en snel kunnen schakelen wanneer campagnes of content veranderen.",
@@ -619,7 +619,7 @@ export function WebsiteOperationsBoard() {
     <div className="website-operations-board">
       <div className="operations-copy">
         <p className="eyebrow"><Text value={t("Websitewerk in beeld", "Website work in view", "Trabajo web en pantalla")} /></p>
-        <h2><Text value={t("Niet één voorbeeld, maar een beheeromgeving met meerdere live websites.", "Not one example, but a management environment with multiple live websites.", "No un solo ejemplo, sino un entorno de gestión con varias webs en vivo.")} /></h2>
+        <h2><EmphasisText value={t("Niet één voorbeeld, maar een [[beheeromgeving]] met meerdere live websites.", "Not one example, but a [[management environment]] with multiple live websites.", "No un solo ejemplo, sino un [[entorno de gestión]] con varias webs en vivo.")} /></h2>
         <p>
           <Text value={t(
             "De pagina laat nu beter zien wat websitebeheer betekent: meerdere klantomgevingen, snelle aanpassingen, campagneklaar houden en samenwerken met externe bouwers wanneer dat logisch is.",
@@ -655,7 +655,7 @@ export function AdsCaseStudio() {
     <div className="ads-case-studio">
       <div className="ads-case-copy">
         <p className="eyebrow"><Text value={t("Campagnekamer", "Campaign room", "Sala de campañas")} /></p>
-        <h2><Text value={t("Niet alleen advertenties aanzetten, maar begrijpen wat werkt.", "Not just turning ads on, but understanding what works.", "No solo activar anuncios, sino entender qué funciona.")} /></h2>
+        <h2><EmphasisText value={t("Niet alleen advertenties aanzetten, maar [[begrijpen wat werkt]].", "Not just turning ads on, but [[understanding what works]].", "No solo activar anuncios, sino [[entender qué funciona]].")} /></h2>
         <p>
           <Text value={t(
             "Van strategie en accountinrichting tot conversietracking en performance meeting. De pagina laat nu meer zien hoe de dienst voelt: meetbaar, overzichtelijk en concreet.",
@@ -701,7 +701,7 @@ export function AdsPerformanceLab() {
     <div className="ads-performance-lab">
       <div className="performance-lab-copy">
         <p className="eyebrow"><Text value={t("Advertentiebeheer", "Ad management", "Gestión de anuncios")} /></p>
-        <h2><Text value={t("Geen losse campagnes, maar een helder systeem voor groei.", "No loose campaigns, but a clear system for growth.", "No campañas sueltas, sino un sistema claro para crecer.")} /></h2>
+        <h2><EmphasisText value={t("Geen losse campagnes, maar een [[helder systeem]] voor groei.", "No loose campaigns, but a [[clear system]] for growth.", "No campañas sueltas, sino un [[sistema claro]] para crecer.")} /></h2>
         <p>
           <Text value={t(
             "De focus ligt op zoekvraag, conversie, tracking en maandelijkse bijsturing. Zo weet je waar budget naartoe gaat, wat resultaat oplevert en welke stappen nodig zijn om campagnes slimmer te maken.",
@@ -762,7 +762,7 @@ export function BrandingStudio() {
     <div className="branding-studio">
       <div className="branding-studio-copy">
         <p className="eyebrow"><Text value={t("Content studio", "Content studio", "Estudio de contenido")} /></p>
-        <h2><Text value={t("Content creatie moet voelen als een levende beeldbank.", "Content creation should feel like a living image library.", "La creación de contenido debe sentirse como una biblioteca visual viva.")} /></h2>
+        <h2><EmphasisText value={t("Content creatie moet voelen als een [[levende beeldbank]].", "Content creation should feel like a [[living image library]].", "La creación de contenido debe sentirse como una [[biblioteca visual viva]].")} /></h2>
         <p>
           <Text value={t(
             "Hier horen alle videocases en contentbeelden samen te komen: formats, campagnevarianten, herkenbare social posts en beeld dat snel duidelijk maakt wat een merk wil vertellen.",
@@ -800,7 +800,7 @@ export function TravelContentShowcase() {
     <div className="travel-showcase">
       <div className="travel-copy">
         <p className="eyebrow"><Text value={t("Voor reisorganisaties", "For travel organizations", "Para organizaciones de viaje")} /></p>
-        <h2><Text value={t("Destination content die direct zin geeft om te vertrekken.", "Destination content that instantly makes people want to leave.", "Contenido de destino que da ganas de viajar al instante.")} /></h2>
+        <h2><EmphasisText value={t("Destination content die direct [[zin geeft om te vertrekken]].", "Destination content that instantly makes people [[want to leave]].", "Contenido de destino que da [[ganas de viajar]] al instante.")} /></h2>
         <p>
           <Text value={t(
             "Voor reismerken, retreats, tours en accommodaties kan content veel sneller gevoel overbrengen dan tekst. Deze reisbeelden laten zien hoe sfeer, locatie en ervaring in korte formats gebruikt kunnen worden voor social, advertenties en website.",
@@ -850,7 +850,7 @@ export function HomeContentShowreel() {
     <div className="home-content-showreel">
       <div className="home-content-copy">
         <p className="eyebrow"><Text value={t("Content creatie breder ingezet", "Content creation used more broadly", "Creación de contenido aplicada de forma más amplia")} /></p>
-        <h2><Text value={t("Van reisorganisaties tot persoonlijke verhalen.", "From travel organizations to personal stories.", "Desde organizaciones de viaje hasta historias personales.")} /></h2>
+        <h2><EmphasisText value={t("Van reisorganisaties tot [[persoonlijke verhalen]].", "From travel organizations to [[personal stories]].", "Desde organizaciones de viaje hasta [[historias personales]].")} /></h2>
         <p>
           <Text value={t(
             "Content creatie draait om gevoel snel zichtbaar maken. Daarom tonen we ook destination content en B2C videografie naast de zakelijke cases.",
@@ -903,7 +903,7 @@ export function WeddingContentShowcase() {
       </MediaLightbox>
       <div className="wedding-copy">
         <p className="eyebrow"><Text value={t("B2C content creatie", "B2C content creation", "Creación de contenido B2C")} /></p>
-        <h2><Text value={t("Fotografie en videografie voor momenten die persoonlijk blijven.", "Photography and videography for moments that stay personal.", "Fotografía y videografía para momentos que siguen siendo personales.")} /></h2>
+        <h2><EmphasisText value={t("[[Fotografie]] en videografie voor momenten die persoonlijk blijven.", "[[Photography]] and videography for moments that stay personal.", "[[Fotografía]] y videografía para momentos que siguen siendo personales.")} /></h2>
         <p>
           <Text value={t(
             "Naast zakelijke content kan dezelfde beeldtaal ook worden ingezet voor particulieren. Denk aan bruiloften, events en persoonlijke verhalen waarbij sfeer, locatie en emotie de kern vormen.",
@@ -932,7 +932,7 @@ export function ArtistContentShowcase() {
     <div className="artist-showcase">
       <div className="artist-copy">
         <p className="eyebrow"><Text value={t("Dave Dekker / artiestenvideo's", "Dave Dekker / artist videos", "Dave Dekker / videos de artista")} /></p>
-        <h2><Text value={t("Videografie voor optredens, releases en artiestmomenten.", "Videography for performances, releases and artist moments.", "Videografía para actuaciones, lanzamientos y momentos de artista.")} /></h2>
+        <h2><EmphasisText value={t("[[Videografie]] voor optredens, releases en artiestmomenten.", "[[Videography]] for performances, releases and artist moments.", "[[Videografía]] para actuaciones, lanzamientos y momentos de artista.")} /></h2>
         <p>
           <Text value={t(
             "Deze video's horen bij Dave Dekker en artiestcontent: korte performance-cuts, registratiebeelden en social formats voor zichtbaarheid rondom een optreden of release.",
@@ -1019,7 +1019,7 @@ export function PageHero({
       <div className="page-hero-gradient" aria-hidden="true" />
       <div className="hero-copy">
         <p className="eyebrow"><Text value={eyebrow} /></p>
-        <h1><Text value={title} /></h1>
+        <h1><EmphasisText value={title} /></h1>
         <p><Text value={intro} /></p>
         <div className="actions">
           <a className="button primary" href="https://calendly.com/buitenhuisj004/bmc-sessie">

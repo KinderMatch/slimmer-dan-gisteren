@@ -6,7 +6,7 @@ import {
   Testimonials,
   VideoShowcase,
 } from "../site-content";
-import { Text } from "../language";
+import { EmphasisText, Text } from "../language";
 
 const t = (nl: string, en: string, es: string) => ({ nl, en, es });
 
@@ -22,7 +22,7 @@ export default function AdvertentiesPage() {
       <div className="service-premium service-premium-ads">
         <PageHero
           eyebrow={t("Advertenties", "Advertising", "Anuncios")}
-          title={t("Campagnes die helder worden voordat ze groeien.", "Campaigns that become clear before they grow.", "Campañas claras antes de crecer.")}
+          title={t("Campagnes die [[helder]] worden voordat ze groeien.", "Campaigns that become [[clear]] before they grow.", "Campañas [[claras]] antes de crecer.")}
           intro={t(
             "Advertenties werken pas als strategie, creatie, landingspagina, tracking en rapportage hetzelfde verhaal vertellen.",
             "Advertising works when strategy, creative, landing page, tracking and reporting tell the same story.",
@@ -35,7 +35,7 @@ export default function AdvertentiesPage() {
         <section className="section ads-video-section premium-first-panel">
           <div className="section-heading">
             <p className="eyebrow"><Text value={t("Zelfstandigen Bouw", "Zelfstandigen Bouw", "Zelfstandigen Bouw")} /></p>
-            <h2><Text value={t("Advertentiecreatie die direct bij de campagne hoort.", "Ad creative that belongs directly to the campaign.", "Creatividad publicitaria conectada directamente a la campaña.")} /></h2>
+            <h2><EmphasisText value={t("Advertentiecreatie die direct bij de [[campagne]] hoort.", "Ad creative that belongs directly to the [[campaign]].", "Creatividad publicitaria conectada directamente a la [[campaña]].")} /></h2>
             <p>
               <Text value={t(
                 "Deze pagina gebruikt bewust de Zelfstandigen Bouw-video's: herkenbare social-first advertenties die campagne en doelgroep zichtbaar maken.",
@@ -53,7 +53,7 @@ export default function AdvertentiesPage() {
 
         <section className="section narrow premium-editorial-section">
           <p className="eyebrow"><Text value={t("Aanpak", "Approach", "Enfoque")} /></p>
-          <h2><Text value={t("Van klikken naar inzicht. Van inzicht naar betere campagnes.", "From clicks to insight. From insight to better campaigns.", "De clics a insights. De insights a mejores campañas.")} /></h2>
+          <h2><EmphasisText value={t("Van klikken naar [[inzicht]]. Van inzicht naar betere campagnes.", "From clicks to [[insight]]. From insight to better campaigns.", "De clics a [[insights]]. De insights a mejores campañas.")} /></h2>
           <p>
             <Text value={t(
               "Slimmer dan Gisteren neemt strategie, campagne-opzet, conversietracking, optimalisatie en rapportage uit handen. Zo weet je niet alleen dat er advertenties draaien, maar ook wat ze opleveren en waar verbetering zit.",
@@ -70,7 +70,7 @@ export default function AdvertentiesPage() {
         <section className="section soft premium-reviews-section">
           <div className="section-heading">
             <p className="eyebrow"><Text value={t("Reviews", "Reviews", "Reseñas")} /></p>
-            <h2><Text value={t("Wat klanten zeggen over slimmer adverteren.", "What clients say about smarter advertising.", "Lo que dicen los clientes sobre anunciar mejor.")} /></h2>
+            <h2><EmphasisText value={t("Wat klanten zeggen over [[slimmer adverteren]].", "What clients say about [[smarter advertising]].", "Lo que dicen los clientes sobre [[anunciar mejor]].")} /></h2>
           </div>
           <Testimonials />
         </section>
