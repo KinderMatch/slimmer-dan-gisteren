@@ -93,19 +93,33 @@ const archive = [
 const testimonials = [
   {
     quote: t(
-      "Marketingkosten daalden en bezoekers namen zichtbaar toe. Alles werd helder uitgelegd.",
-      "Marketing costs dropped and traffic clearly increased. Everything was explained with clarity.",
-      "Los costes bajaron y el tráfico aumentó claramente. Todo se explicó con claridad.",
+      "Onze online marketing is naar een hoger niveau getild. De kosten daalden, het aantal bezoekers steeg en elke keuze werd helder uitgelegd.",
+      "Our online marketing moved to a higher level. Costs dropped, traffic increased and every decision was explained clearly.",
+      "Nuestro marketing online subió de nivel. Bajaron los costes, aumentó el tráfico y cada decisión se explicó con claridad.",
     ),
     name: "Kozijnrubbers.nl",
+    result: t("Lagere kosten. Meer bezoekers.", "Lower costs. More visitors.", "Menos costes. Más visitas."),
+    discipline: t("Advertenties + optimalisatie", "Advertising + optimisation", "Anuncios + optimización"),
   },
   {
     quote: t(
-      "Meer leads, minder afhankelijk van mijn eigen netwerk. Dat geeft ruimte.",
-      "More leads, less dependence on my own network. That creates room.",
-      "Más leads y menos dependencia de mi red. Eso crea espacio.",
+      "Met 50% minder advertentiekosten behalen we hetzelfde of betere resultaten dan bij onze vorige marketingpartij.",
+      "With 50% lower advertising costs, we achieve the same or better results than with our previous marketing agency.",
+      "Con un 50% menos de costes publicitarios conseguimos los mismos o mejores resultados que antes.",
     ),
-    name: "Klantcase",
+    name: "Rob en Rene",
+    result: t("-50% advertentiekosten", "-50% advertising costs", "-50% costes publicitarios"),
+    discipline: t("Advertenties", "Advertising", "Anuncios"),
+  },
+  {
+    quote: t(
+      "Ik ontvang nu meer leads en hoef niet alles meer uit mijn eigen netwerk te halen. Dat maakt mijn bedrijf duurzamer.",
+      "I now receive more leads and no longer have to rely only on my own network. That makes my business more sustainable.",
+      "Ahora recibo más leads y ya no dependo solo de mi propia red. Eso hace mi negocio más sostenible.",
+    ),
+    name: "Joris",
+    result: t("Meer leads", "More leads", "Más leads"),
+    discipline: t("Website + advertenties", "Website + advertising", "Web + anuncios"),
   },
 ];
 
@@ -244,22 +258,39 @@ function HomeScrollStory() {
 
         <div className="story-visual-stack" aria-hidden="true">
           <motion.div className="story-panel story-panel-website" data-active={activeChapter === 0} style={{ y: firstY, scale: firstScale }}>
-            <div className="story-browser">
-              <div><span /><span /><span /><strong>slimmerdangisteren.nl/website</strong></div>
-              <section>
-                <small>Website uitbesteden + SEO</small>
-                <h3>Van bezoek naar vertrouwen.</h3>
-                <p>Structuur, techniek en vindbaarheid als fundament.</p>
-                <figure className="story-site-preview">
-                  <div>
-                    <span>Website</span>
-                    <strong>Zelfstandigen Bouw</strong>
-                  </div>
-                  <div />
-                  <div />
-                  <div />
-                </figure>
-              </section>
+            <div className="story-website-stage">
+              <div className="story-site-chrome">
+                <span />
+                <span />
+                <span />
+                <strong>slimmerdangisteren.nl/website</strong>
+              </div>
+              <div className="story-site-hero">
+                <img src="/assets/content-zb.png" alt="" />
+                <div>
+                  <small>Website + SEO</small>
+                  <h3>Zelfstandigen Bouw</h3>
+                  <p>Een helder digitaal fundament voor vindbaarheid, vertrouwen en conversie.</p>
+                </div>
+              </div>
+              <div className="story-site-system">
+                <div>
+                  <span>Structuur</span>
+                  <strong>Rustige routes</strong>
+                </div>
+                <div>
+                  <span>Techniek</span>
+                  <strong>Snel gebouwd</strong>
+                </div>
+                <div>
+                  <span>SEO</span>
+                  <strong>Beter vindbaar</strong>
+                </div>
+              </div>
+              <div className="story-site-device">
+                <div />
+                <span />
+              </div>
             </div>
           </motion.div>
           <motion.div className="story-panel story-panel-ads" data-active={activeChapter === 1} style={{ y: secondY, scale: secondScale }}>
@@ -283,6 +314,19 @@ function HomeScrollStory() {
             </video>
           </motion.div>
         </div>
+
+        <ol className="story-chapters" aria-hidden="true">
+          {[
+            ["01", "Website"],
+            ["02", "Advertenties"],
+            ["03", "Content"],
+          ].map(([number, label], index) => (
+            <li key={number} data-active={activeChapter === index}>
+              <span>{number}</span>
+              <strong>{label}</strong>
+            </li>
+          ))}
+        </ol>
 
         <div className="story-progress" aria-hidden="true">
           <motion.span style={{ width: progressWidth }} />
@@ -445,12 +489,37 @@ export function PremiumHome() {
           </section>
 
           <section className="premium-testimonials">
-            {testimonials.map((item) => (
-              <blockquote key={item.name}>
-                <p><Text value={item.quote} /></p>
-                <cite>{item.name}</cite>
+            <div className="premium-testimonial-heading">
+              <p className="premium-kicker"><Text value={t("Bewijs", "Proof", "Prueba")} /></p>
+              <h2><EmphasisText value={t("Rust in marketing. [[Resultaat]] in beeld.", "Calm in marketing. [[Results]] in view.", "Calma en marketing. [[Resultados]] visibles.")} /></h2>
+            </div>
+            <div className="premium-testimonial-feature">
+              <blockquote>
+                <span><Text value={testimonials[0].discipline} /></span>
+                <p><Text value={testimonials[0].quote} /></p>
+                <footer>
+                  <cite>{testimonials[0].name}</cite>
+                  <strong><Text value={testimonials[0].result} /></strong>
+                </footer>
               </blockquote>
-            ))}
+              <div className="premium-proof-meter" aria-hidden="true">
+                <span />
+                <strong>100%</strong>
+                <small><Text value={t("persoonlijke samenwerking", "personal collaboration", "colaboración personal")} /></small>
+              </div>
+            </div>
+            <div className="premium-testimonial-list">
+              {testimonials.slice(1).map((item) => (
+                <blockquote key={item.name}>
+                  <span><Text value={item.discipline} /></span>
+                  <p><Text value={item.quote} /></p>
+                  <footer>
+                    <cite>{item.name}</cite>
+                    <strong><Text value={item.result} /></strong>
+                  </footer>
+                </blockquote>
+              ))}
+            </div>
           </section>
 
           <section className="premium-final">
