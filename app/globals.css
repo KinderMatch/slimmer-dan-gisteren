@@ -181,6 +181,16 @@ iframe {
   align-items: center;
 }
 
+.contact-action-group .button.primary {
+  background: #f4f0ea;
+  color: #111111;
+}
+
+.contact-action-group .button.primary::after {
+  background: #2563eb;
+  color: #ffffff;
+}
+
 .contact-action-group .button.ghost {
   border-color: rgba(244, 240, 234, 0.18);
   color: inherit;
@@ -2804,12 +2814,14 @@ h3 {
 }
 
 .ads-flow h3 {
+  color: #f4f0ea;
   font-size: clamp(1.2rem, 1.85vw, 1.65rem);
   line-height: 1.12;
 }
 
 .ads-flow p {
   margin: 0;
+  color: rgba(244, 240, 234, 0.72);
   font-size: 0.98rem;
   line-height: 1.62;
 }
@@ -6979,13 +6991,13 @@ h3 {
 
     @keyframes sdg-text-focus {
       from {
-        opacity: 0.34;
-        filter: blur(6px);
-        transform: translateY(26px);
+        opacity: 0.88;
+        filter: none;
+        transform: translateY(14px);
       }
       to {
         opacity: 1;
-        filter: blur(0);
+        filter: none;
         transform: translateY(0);
       }
     }
