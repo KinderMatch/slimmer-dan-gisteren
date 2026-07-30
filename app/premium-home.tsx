@@ -545,7 +545,7 @@ export function PremiumHome() {
             <Link href="/content-creatie/">Content</Link>
           </nav>
           <a href="https://wa.me/31610175027">WhatsApp</a>
-          <a href="mailto:info@slimmerdangisteren.nl">Mail</a>
+          <a href="mailto:jimmy@slimmerdangisteren.nl">Mail</a>
         </footer>
       </div>
     </LanguageProvider>

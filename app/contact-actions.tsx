@@ -16,7 +16,7 @@ const mailSubjects = {
 
 export function useMailUrl() {
   const { language } = useLanguage();
-  return `mailto:info@slimmerdangisteren.nl?subject=${encodeURIComponent(mailSubjects[language])}`;
+  return `mailto:jimmy@slimmerdangisteren.nl?subject=${encodeURIComponent(mailSubjects[language])}`;
 }
 
 export function ContactDock() {

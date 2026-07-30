@@ -298,7 +298,7 @@ export function SiteShell({ children }: { children: ReactNode }) {
           <Link href="/advertenties/"><Text value={t("Advertenties", "Advertising", "Anuncios")} /></Link>
           <Link href="/content-creatie/"><Text value={t("Content creatie", "Content creation", "Creación de contenido")} /></Link>
           <a href="https://calendly.com/buitenhuisj004/bmc-sessie"><Text value={t("Kennismaken", "Introduction", "Conocernos")} /></a>
-          <a href="mailto:info@slimmerdangisteren.nl">Mail</a>
+          <a href="mailto:jimmy@slimmerdangisteren.nl">Mail</a>
         </div>
       </footer>
     </LanguageProvider>

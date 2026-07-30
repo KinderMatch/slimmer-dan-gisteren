@@ -1,6 +1,6 @@
 export const siteUrl = "https://slimmerdangisteren.nl";
 export const siteName = "Slimmer dan Gisteren";
-export const contactEmail = "info@slimmerdangisteren.nl";
+export const contactEmail = "jimmy@slimmerdangisteren.nl";
 export const contactPhone = "+31610175027";
 export const calendlyUrl = "https://calendly.com/buitenhuisj004/bmc-sessie";
 

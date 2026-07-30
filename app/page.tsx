@@ -53,7 +53,7 @@ export default function Home() {
             {
               question: "Hoe kan ik kennismaken?",
               answer:
-                "Je kunt een strategiesessie plannen via Calendly, direct contact opnemen via WhatsApp of mailen naar info@slimmerdangisteren.nl.",
+                "Je kunt een strategiesessie plannen via Calendly, direct contact opnemen via WhatsApp of mailen naar jimmy@slimmerdangisteren.nl.",
             },
           ]),
           {
