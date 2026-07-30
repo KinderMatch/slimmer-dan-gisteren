@@ -1,7 +1,8 @@
 "use client";
 
 import Link from "next/link";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { useRef, useState } from "react";
+import { motion, useMotionValueEvent, useScroll, useTransform } from "framer-motion";
 
 import { ContactActionGroup, ContactDock } from "./contact-actions";
 import { EmphasisText, LanguageProvider, LanguageToggle, Text, type LocalizedString } from "./language";
@@ -181,6 +182,116 @@ function HeroVisual() {
   );
 }
 
+function HomeScrollStory() {
+  const ref = useRef<HTMLElement>(null);
+  const [activeChapter, setActiveChapter] = useState(0);
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["start start", "end end"],
+  });
+
+  const firstY = useTransform(scrollYProgress, [0, 0.38], [0, -54]);
+  const secondY = useTransform(scrollYProgress, [0.25, 0.52, 0.78], [54, 0, -42]);
+  const thirdY = useTransform(scrollYProgress, [0.58, 1], [54, 0]);
+  const firstScale = useTransform(scrollYProgress, [0, 0.38], [1, 0.95]);
+  const secondScale = useTransform(scrollYProgress, [0.28, 0.5, 0.74], [0.96, 1, 0.96]);
+  const thirdScale = useTransform(scrollYProgress, [0.62, 1], [0.96, 1]);
+  const progressWidth = useTransform(scrollYProgress, [0, 1], ["8%", "100%"]);
+
+  useMotionValueEvent(scrollYProgress, "change", (latest) => {
+    const next = latest < 0.34 ? 0 : latest < 0.68 ? 1 : 2;
+    setActiveChapter((current) => (current === next ? current : next));
+  });
+
+  return (
+    <section className="premium-scroll-story" ref={ref} aria-label="Growth system">
+      <div className="premium-scroll-sticky">
+        <div className="story-copy">
+          <motion.div className="story-copy-item" data-active={activeChapter === 0} style={{ y: firstY }}>
+            <p className="premium-kicker"><Text value={t("Stap 01", "Step 01", "Paso 01")} /></p>
+            <h2><EmphasisText value={t("Eerst wordt de [[basis]] scherp.", "First, the [[foundation]] becomes sharp.", "Primero, la [[base]] se vuelve clara.")} /></h2>
+            <p>
+              <Text value={t(
+                "Een website moet niet alleen mooi zijn. Hij moet rust geven, vertrouwen opbouwen en direct duidelijk maken waarom iemand moet blijven.",
+                "A website should not only look good. It should create calm, build trust and make it instantly clear why someone should stay.",
+                "Una web no solo debe verse bien. Debe aportar calma, crear confianza y dejar claro al instante por qué alguien debe quedarse.",
+              )} />
+            </p>
+          </motion.div>
+          <motion.div className="story-copy-item" data-active={activeChapter === 1} style={{ y: secondY }}>
+            <p className="premium-kicker"><Text value={t("Stap 02", "Step 02", "Paso 02")} /></p>
+            <h2><EmphasisText value={t("Daarna krijgt groei [[richting]].", "Then growth gets [[direction]].", "Después, el crecimiento toma [[dirección]].")} /></h2>
+            <p>
+              <Text value={t(
+                "Advertenties worden sterker wanneer creatie, tracking en aanbod exact op elkaar aansluiten.",
+                "Advertising becomes stronger when creative, tracking and offer work as one.",
+                "Los anuncios son más fuertes cuando creatividad, tracking y oferta trabajan como uno.",
+              )} />
+            </p>
+          </motion.div>
+          <motion.div className="story-copy-item" data-active={activeChapter === 2} style={{ y: thirdY }}>
+            <p className="premium-kicker"><Text value={t("Stap 03", "Step 03", "Paso 03")} /></p>
+            <h2><EmphasisText value={t("Content maakt het [[zichtbaar]].", "Content makes it [[visible]].", "El contenido lo hace [[visible]].")} /></h2>
+            <p>
+              <Text value={t(
+                "Foto, video, social en campagnes vormen samen een herkenbaar systeem. Niet los. Eén geheel.",
+                "Photo, video, social and campaigns become one recognisable system. Not separate. One whole.",
+                "Foto, video, social y campañas forman un sistema reconocible. No separado. Un conjunto.",
+              )} />
+            </p>
+          </motion.div>
+        </div>
+
+        <div className="story-visual-stack" aria-hidden="true">
+          <motion.div className="story-panel story-panel-website" data-active={activeChapter === 0} style={{ y: firstY, scale: firstScale }}>
+            <div className="story-browser">
+              <div><span /><span /><span /><strong>slimmerdangisteren.nl/website</strong></div>
+              <section>
+                <small>Website uitbesteden + SEO</small>
+                <h3>Van bezoek naar vertrouwen.</h3>
+                <p>Structuur, techniek en vindbaarheid als fundament.</p>
+                <figure className="story-site-preview">
+                  <div>
+                    <span>Website</span>
+                    <strong>Zelfstandigen Bouw</strong>
+                  </div>
+                  <div />
+                  <div />
+                  <div />
+                </figure>
+              </section>
+            </div>
+          </motion.div>
+          <motion.div className="story-panel story-panel-ads" data-active={activeChapter === 1} style={{ y: secondY, scale: secondScale }}>
+            <video autoPlay loop muted playsInline preload="metadata">
+              <source src="https://videos.files.wordpress.com/kQCILAhM/zelfstandigen-bouw_commercial_rbv_schilder_final_1x1_social.mp4#t=0.001" />
+            </video>
+            <div className="story-dashboard">
+              <span>Advertenties</span>
+              <strong>Heldere meting.</strong>
+              <small>Creatie + tracking + optimalisatie</small>
+            </div>
+          </motion.div>
+          <motion.div className="story-panel story-panel-content" data-active={activeChapter === 2} style={{ y: thirdY, scale: thirdScale }}>
+            <video autoPlay loop muted playsInline preload="metadata">
+              <source src="/assets/travel/full/siargao-full.m4v" />
+            </video>
+            <img src="/assets/dave-dekker/photos/event-09.jpg" alt="" />
+            <img src="/assets/wedding/airfoto.jpg" alt="" />
+            <video autoPlay loop muted playsInline preload="metadata">
+              <source src="/assets/dave-dekker/full/dave-3-full.mov" />
+            </video>
+          </motion.div>
+        </div>
+
+        <div className="story-progress" aria-hidden="true">
+          <motion.span style={{ width: progressWidth }} />
+        </div>
+      </div>
+    </section>
+  );
+}
+
 export function PremiumHome() {
   return (
     <LanguageProvider>
@@ -237,6 +348,8 @@ export function PremiumHome() {
               )} />
             </motion.p>
           </section>
+
+          <HomeScrollStory />
 
           <section className="premium-services" aria-label="Services">
             {services.map((service, index) => (
