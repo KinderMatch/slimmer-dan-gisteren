@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
-import { Sora } from "next/font/google";
+import { Inter } from "next/font/google";
 import "./globals.css";
 
-const sora = Sora({
-  variable: "--font-sora",
+const inter = Inter({
+  variable: "--font-inter",
   subsets: ["latin"],
 });
 
@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     template: "%s",
   },
   description:
-    "Websitebeheer, advertenties en content creatie voor ondernemers die slimmer willen groeien.",
+    "Premium creative growth studio voor websites, advertenties en content creatie die helderheid brengt en groei zichtbaar maakt.",
   icons: {
     icon: "/assets/logo.png",
     shortcut: "/assets/logo.png",
@@ -23,7 +23,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Slimmer dan Gisteren",
     description:
-      "Websitebeheer, advertenties en content creatie voor ondernemers die slimmer willen groeien.",
+      "Marketing that brings clarity. Growth that becomes visible.",
     url: "https://slimmerdangisteren.nl",
     siteName: "Slimmer dan Gisteren",
     locale: "nl_NL",
@@ -38,7 +38,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="nl">
-      <body className={`${sora.variable} antialiased`}>{children}</body>
+      <body className={`${inter.variable} antialiased`}>{children}</body>
     </html>
   );
 }
