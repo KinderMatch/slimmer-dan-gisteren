@@ -55,7 +55,7 @@ export default function WebsitePage() {
               )} />
             </p>
           </div>
-          <WebsiteCaseWall skipFirst />
+          <WebsiteCaseWall excludeTitles={["Paul Seuntjens"]} skipFirst />
         </section>
 
         <section className="section website-benefits-section premium-benefits-section">

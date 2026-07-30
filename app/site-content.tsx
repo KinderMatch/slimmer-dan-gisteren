@@ -926,6 +926,8 @@ export function WeddingContentShowcase() {
 }
 
 export function ArtistContentShowcase() {
+  const pageHeroPhotoSrc = "/assets/dave-dekker/photos/event-15.jpg";
+
   return (
     <div className="artist-showcase">
       <div className="artist-copy">
@@ -945,9 +947,57 @@ export function ArtistContentShowcase() {
           <Text value={t("Bekijk playlist", "View playlist", "Ver playlist")} />
         </a>
       </div>
-      <ArtistEventShowcase photos={artistPhotos} videos={artistVideos} />
+      <ArtistEventShowcase photos={artistPhotos.filter((photo) => photo.src !== pageHeroPhotoSrc)} videos={artistVideos} />
     </div>
   );
+}
+
+function PageHeroVisual({ tone }: { tone: "default" | "website" | "ads" | "branding" }) {
+  if (tone === "website") {
+    return (
+      <div className="page-hero-visual website-visual" aria-hidden="true">
+        <div className="page-browser-shell">
+          <div>
+            <span />
+            <span />
+            <span />
+            <strong>paulseuntjens.nl</strong>
+          </div>
+          <iframe title="Paul Seuntjens website preview" src={websites[6].url} loading="lazy" />
+        </div>
+      </div>
+    );
+  }
+
+  if (tone === "ads") {
+    return (
+      <div className="page-hero-visual ads-visual" aria-hidden="true">
+        <video autoPlay loop muted playsInline preload="metadata">
+          <source src={videoPreviewSrc(videos[0].src)} type="video/mp4" />
+        </video>
+        <div>
+          <span>CPA</span>
+          <strong>-50%</strong>
+          <small><Text value={t("helderder sturen", "clearer steering", "gestión más clara")} /></small>
+        </div>
+      </div>
+    );
+  }
+
+  if (tone === "branding") {
+    return (
+      <div className="page-hero-visual content-visual" aria-hidden="true">
+        <img src="/assets/dave-dekker/photos/event-15.jpg" alt="" loading="eager" />
+        <div>
+          <span><Text value={t("Video", "Video", "Video")} /></span>
+          <span><Text value={t("Fotografie", "Photography", "Fotografía")} /></span>
+          <span>Social</span>
+        </div>
+      </div>
+    );
+  }
+
+  return null;
 }
 
 export function PageHero({
@@ -965,6 +1015,8 @@ export function PageHero({
 }) {
   return (
     <section className={`hero page-hero ${tone}`}>
+      <PageHeroVisual tone={tone} />
+      <div className="page-hero-gradient" aria-hidden="true" />
       <div className="hero-copy">
         <p className="eyebrow"><Text value={eyebrow} /></p>
         <h1><Text value={title} /></h1>
@@ -1058,9 +1110,18 @@ export function WebsitePortfolio({ compact = false }: { compact?: boolean }) {
   );
 }
 
-export function WebsiteCaseWall({ compact = false, skipFirst = false }: { compact?: boolean; skipFirst?: boolean }) {
+export function WebsiteCaseWall({
+  compact = false,
+  excludeTitles = [],
+  skipFirst = false,
+}: {
+  compact?: boolean;
+  excludeTitles?: string[];
+  skipFirst?: boolean;
+}) {
   const baseItems = skipFirst ? websites.slice(1) : websites;
-  const items = compact ? baseItems.slice(0, 3) : baseItems;
+  const visibleItems = baseItems.filter((site) => !excludeTitles.includes(site.title));
+  const items = compact ? visibleItems.slice(0, 3) : visibleItems;
 
   return (
     <div className={compact ? "website-wall compact" : "website-wall"}>

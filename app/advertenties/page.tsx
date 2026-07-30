@@ -44,7 +44,7 @@ export default function AdvertentiesPage() {
               )} />
             </p>
           </div>
-          <VideoShowcase compact />
+          <VideoShowcase compact excludeSrcs={["https://videos.files.wordpress.com/SiM1cMuS/zelfstandigen-bouw_commercial_rbv_hondenhok_final-1x1_social.mp4"]} />
         </section>
 
         <section className="section ads-studio-section">

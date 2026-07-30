@@ -74,11 +74,12 @@ function videoPreviewSrc(src: string) {
   return `${src}#t=0.001`;
 }
 
-export function VideoShowcase({ compact = false }: { compact?: boolean }) {
+export function VideoShowcase({ compact = false, excludeSrcs = [] }: { compact?: boolean; excludeSrcs?: string[] }) {
   const [selectedIndex, setSelectedIndex] = useState(0);
   const [playAfterSelect, setPlayAfterSelect] = useState(false);
   const featuredVideoRef = useRef<HTMLVideoElement>(null);
-  const cases = compact ? videoCases.slice(0, 4) : videoCases;
+  const visibleCases = videoCases.filter((video) => !excludeSrcs.includes(video.src));
+  const cases = compact ? visibleCases.slice(0, 4) : visibleCases;
   const featured = cases[selectedIndex] ?? cases[0];
   const otherCases = cases
     .map((video, index) => ({ video, index }))
