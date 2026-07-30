@@ -193,9 +193,9 @@ const videos = [
 const contentImages = [
   { src: "/assets/content-zb.png", alt: t("Contentvoorbeeld Zelfstandigen Bouw", "Content example for Zelfstandigen Bouw", "Ejemplo de contenido para Zelfstandigen Bouw") },
   { src: "/assets/content-nxchange.png", alt: t("Contentvoorbeeld Nxchange", "Content example for Nxchange", "Ejemplo de contenido para Nxchange") },
-  { src: "/assets/content-color-run.png", alt: t("Content creatie voorbeeld", "Content creation example", "Ejemplo de creación de contenido") },
-  { src: "/assets/content-airbnb.png", alt: t("Airbnb content creatie voorbeeld", "Airbnb content creation example", "Ejemplo de contenido para Airbnb") },
-  { src: "/assets/content-maasclaim.png", alt: t("Massaclaim content creatie voorbeeld", "Massaclaim content creation example", "Ejemplo de contenido para Massaclaim") },
+  { src: "/assets/content-color-run.png", alt: t("The Color Run content creatie voorbeeld", "The Color Run content creation example", "Ejemplo de contenido para The Color Run") },
+  { src: "/assets/content-airbnb.png", alt: t("HealthyFest content creatie voorbeeld", "HealthyFest content creation example", "Ejemplo de contenido para HealthyFest") },
+  { src: "/assets/content-maasclaim.png", alt: t("ChickShack Valencia content creatie voorbeeld", "ChickShack Valencia content creation example", "Ejemplo de contenido para ChickShack Valencia") },
 ];
 
 const travelVideos = [
