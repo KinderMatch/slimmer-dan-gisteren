@@ -2451,6 +2451,8 @@ h3 {
   color: white;
   font-size: clamp(1.35rem, 2.8vw, 2.6rem);
   line-height: 0.98;
+  max-width: 100%;
+  overflow-wrap: anywhere;
 }
 
 .wedding-copy {
@@ -7000,9 +7002,9 @@ h3 {
 
     @keyframes sdg-image-reveal {
       from {
-        opacity: 0.2;
-        clip-path: inset(12% 0 12% 0);
-        transform: scale(0.965);
+        opacity: 0.72;
+        clip-path: inset(0 0 0 0);
+        transform: scale(0.985);
       }
       to {
         opacity: 1;
