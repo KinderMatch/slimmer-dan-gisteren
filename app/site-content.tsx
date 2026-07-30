@@ -199,18 +199,18 @@ const contentImages = [
 ];
 
 const travelVideos = [
-  { title: "Siargao", label: t("Island story", "Island story", "Historia de isla"), src: "/assets/travel/siargao-preview.mov", fullSrc: "/assets/travel/full/siargao-full.mov" },
-  { title: "K'gari & Noosa", label: t("Coastal campaign", "Coastal campaign", "Campaña costera"), src: "/assets/travel/kgari-noosa-preview.mov", fullSrc: "/assets/travel/full/kgari-noosa-full.mov" },
-  { title: "Whitsundays", label: t("Destination film", "Destination film", "Video de destino"), src: "/assets/travel/whitsundays-preview.mov", fullSrc: "/assets/travel/full/whitsundays-full.mov" },
-  { title: "Great Barrier Reef", label: t("Experience content", "Experience content", "Contenido de experiencia"), src: "/assets/travel/dive-cairns-preview.mov", fullSrc: "/assets/travel/full/dive-cairns-full.mov" },
-  { title: "Huacachina & Paracas", label: t("Travel reel", "Travel reel", "Reel de viaje"), src: "/assets/travel/huacacina-paracas-preview.mov", fullSrc: "/assets/travel/full/huacacina-paracas-full.mov" },
+  { title: "Siargao", label: t("Island story", "Island story", "Historia de isla"), src: "/assets/travel/siargao-preview.mov", fullSrc: "/assets/travel/full/siargao-full.m4v" },
+  { title: "K'gari & Noosa", label: t("Coastal campaign", "Coastal campaign", "Campaña costera"), src: "/assets/travel/kgari-noosa-preview.mov", fullSrc: "/assets/travel/full/kgari-noosa-full.m4v" },
+  { title: "Whitsundays", label: t("Destination film", "Destination film", "Video de destino"), src: "/assets/travel/whitsundays-preview.mov", fullSrc: "/assets/travel/full/whitsundays-full.m4v" },
+  { title: "Great Barrier Reef", label: t("Experience content", "Experience content", "Contenido de experiencia"), src: "/assets/travel/dive-cairns-preview.mov", fullSrc: "/assets/travel/full/dive-cairns-full.m4v" },
+  { title: "Huacachina & Paracas", label: t("Travel reel", "Travel reel", "Reel de viaje"), src: "/assets/travel/huacacina-paracas-preview.mov", fullSrc: "/assets/travel/full/huacacina-paracas-full.m4v" },
 ];
 
 const weddingCase = {
   title: "Nordin & Kyra",
   image: "/assets/wedding/airfoto.jpg",
   video: "/assets/wedding/nordin-kyra-preview.mov",
-  fullVideo: "/assets/wedding/full/nordin-kyra-full.mov",
+  fullVideo: "https://videos.files.wordpress.com/E5ahlDJ7/trouwerij-nordin-kyra-v3-h264.mp4",
 };
 
 const artistVideos = [
