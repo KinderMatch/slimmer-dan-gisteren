@@ -6155,6 +6155,239 @@ h3 {
   -webkit-text-fill-color: transparent;
 }
 
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 2000;
+  height: 3px;
+  transform-origin: 0 50%;
+  background: linear-gradient(90deg, #2563eb, #7db7ff 48%, #f4f0ea);
+  box-shadow: 0 0 26px rgba(125, 183, 255, 0.32);
+}
+
+.premium-service::before,
+.service-premium .section::before {
+  content: "";
+  position: absolute;
+  pointer-events: none;
+}
+
+.premium-service::before {
+  top: 0;
+  right: 0;
+  left: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(125, 183, 255, 0.34), transparent);
+}
+
+.premium-case,
+.premium-archive figure,
+.service-premium .media-trigger,
+.service-premium .management-browser,
+.service-premium .performance-dashboard,
+.service-premium .website-tile,
+.service-premium .video-feature,
+.service-premium .video-mini {
+  will-change: transform;
+}
+
+@media (min-width: 1000px) {
+  .premium-services {
+    gap: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+
+  .premium-service {
+    min-height: 112vh;
+    padding-block: clamp(5rem, 8vw, 8rem);
+    border-top: 1px solid rgba(244, 240, 234, 0.08);
+  }
+
+  .premium-service-media {
+    position: sticky;
+    top: 8vh;
+    height: 84vh;
+    min-height: 620px;
+  }
+
+  .premium-service > div {
+    position: sticky;
+    top: 22vh;
+    align-self: start;
+  }
+
+  .service-premium .management-copy,
+  .service-premium .performance-lab-copy,
+  .service-premium .branding-studio-copy,
+  .service-premium .travel-copy,
+  .service-premium .artist-copy,
+  .service-premium .wedding-copy {
+    position: sticky;
+    top: 8.5rem;
+    align-self: start;
+  }
+
+  .service-premium .premium-editorial-section,
+  .service-premium .premium-first-panel,
+  .service-premium .premium-case-section,
+  .service-premium .travel-content-section,
+  .service-premium .artist-content-section,
+  .service-premium .wedding-content-section {
+    position: relative;
+    overflow: clip;
+  }
+
+  .service-premium .premium-editorial-section::after,
+  .service-premium .premium-first-panel::after,
+  .service-premium .travel-content-section::after,
+  .service-premium .artist-content-section::after,
+  .service-premium .wedding-content-section::after {
+    content: "";
+    position: absolute;
+    inset: auto 5vw 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(125, 183, 255, 0.2), transparent);
+    pointer-events: none;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .premium-cta,
+  .button,
+  .media-trigger,
+  .premium-case,
+  .premium-archive figure,
+  .website-tile,
+  .video-mini,
+  .artist-video-tabs button {
+    transition:
+      transform 520ms cubic-bezier(0.16, 1, 0.3, 1),
+      filter 520ms ease,
+      border-color 320ms ease,
+      background 320ms ease,
+      color 320ms ease;
+  }
+
+  .premium-case:hover,
+  .premium-archive figure:hover,
+  .service-premium .media-trigger:hover,
+  .service-premium .website-tile:hover,
+  .service-premium .video-mini:hover {
+    transform: translateY(-8px);
+  }
+
+  .premium-service-media img,
+  .premium-service-media video,
+  .premium-service-media iframe,
+  .page-hero-visual img,
+  .page-hero-visual video,
+  .branding-studio-grid video,
+  .travel-video-card video,
+  .artist-feature-video video,
+  .wedding-showcase img,
+  .wedding-showcase video {
+    transition:
+      transform 1200ms cubic-bezier(0.16, 1, 0.3, 1),
+      filter 700ms ease;
+  }
+
+  .premium-service-media:hover img,
+  .premium-service-media:hover video,
+  .premium-service-media:hover iframe,
+  .service-premium .media-trigger:hover video,
+  .service-premium .media-trigger:hover img {
+    transform: scale(1.06);
+    filter: saturate(1.03) contrast(1.08) brightness(1.02);
+  }
+
+  @supports (animation-timeline: view()) {
+    @keyframes sdg-fade-up {
+      from {
+        opacity: 0.18;
+        transform: translateY(68px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes sdg-image-reveal {
+      from {
+        opacity: 0.2;
+        clip-path: inset(12% 0 12% 0);
+        transform: scale(0.965);
+      }
+      to {
+        opacity: 1;
+        clip-path: inset(0 0 0 0);
+        transform: scale(1);
+      }
+    }
+
+    @keyframes sdg-text-focus {
+      from {
+        opacity: 0.34;
+        filter: blur(6px);
+        transform: translateY(26px);
+      }
+      to {
+        opacity: 1;
+        filter: blur(0);
+        transform: translateY(0);
+      }
+    }
+
+    .premium-section-title,
+    .premium-about > div,
+    .premium-about > p,
+    .premium-testimonials blockquote,
+    .service-premium .section-heading,
+    .service-premium .management-copy,
+    .service-premium .performance-lab-copy,
+    .service-premium .branding-studio-copy,
+    .service-premium .travel-copy,
+    .service-premium .artist-copy,
+    .service-premium .wedding-copy,
+    .service-premium .brand-intro > div,
+    .service-premium .intro-quote {
+      animation: sdg-text-focus both;
+      animation-timeline: view();
+      animation-range: entry 8% cover 34%;
+    }
+
+    .premium-case,
+    .premium-archive figure,
+    .premium-about img,
+    .service-premium .management-suite,
+    .service-premium .performance-dashboard,
+    .service-premium .website-wall,
+    .service-premium .ads-overview,
+    .service-premium .reviews-showcase,
+    .service-premium .branding-studio-grid,
+    .service-premium .content-gallery,
+    .service-premium .travel-video-grid,
+    .service-premium .artist-event-video-layout,
+    .service-premium .artist-photo-strip,
+    .service-premium .wedding-photo,
+    .service-premium .wedding-video {
+      animation: sdg-image-reveal both;
+      animation-timeline: view();
+      animation-range: entry 6% cover 36%;
+    }
+
+    .premium-stats div,
+    .premium-service > div {
+      animation: sdg-fade-up both;
+      animation-timeline: view();
+      animation-range: entry 0% cover 30%;
+    }
+  }
+}
+
 @media (max-width: 1100px) {
   .service-premium-website .website-management-showcase,
   .service-premium-ads .ads-performance-lab,

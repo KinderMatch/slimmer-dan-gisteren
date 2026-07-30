@@ -5,6 +5,7 @@ import { ArtistEventShowcase } from "./artist-event-showcase";
 import { ContentGallery as InteractiveContentGallery } from "./content-gallery";
 import { EmphasisText, LanguageProvider, LanguageToggle, type LocalizedString, Text } from "./language";
 import { MediaLightbox } from "./media-lightbox";
+import { ScrollProgress } from "./scroll-experience";
 
 export { VideoShowcase } from "./video-showcase";
 
@@ -253,6 +254,7 @@ export const homeHeroVideoSrc = videoPreviewSrc(videos[3].src);
 export function SiteShell({ children }: { children: ReactNode }) {
   return (
     <LanguageProvider>
+      <ScrollProgress />
       <header className="site-header">
         <Link className="brand" href="/">
           <img src="/assets/logo.png" alt="Slimmer dan Gisteren" />

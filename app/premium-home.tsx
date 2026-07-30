@@ -4,6 +4,7 @@ import Link from "next/link";
 import { motion, useScroll, useTransform } from "framer-motion";
 
 import { EmphasisText, LanguageProvider, LanguageToggle, Text, type LocalizedString } from "./language";
+import { ScrollProgress } from "./scroll-experience";
 
 const t = (nl: string, en: string, es: string): LocalizedString => ({ nl, en, es });
 
@@ -183,6 +184,7 @@ export function PremiumHome() {
   return (
     <LanguageProvider>
       <div className="premium-home">
+        <ScrollProgress />
         <header className="premium-nav">
           <Link className="premium-brand" href="/">
             <img src="/assets/logo.png" alt="Slimmer dan Gisteren" />
