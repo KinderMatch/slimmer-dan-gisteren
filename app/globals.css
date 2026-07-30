@@ -5887,6 +5887,10 @@ h3 {
   border-radius: 0;
 }
 
+.site-header ~ .contact-dock {
+  display: none;
+}
+
 @media (max-width: 900px) {
   .contact-dock {
     display: none;
@@ -6541,6 +6545,61 @@ h3 {
   color: var(--service-ink);
 }
 
+.service-premium-content .artist-content-section,
+.service-premium-content .wedding-content-section {
+  background:
+    radial-gradient(circle at 12% 8%, rgba(125, 183, 255, 0.16), transparent 34%),
+    linear-gradient(180deg, #111111 0%, #161616 52%, #0f0f0f 100%);
+  color: var(--service-paper);
+}
+
+.service-premium-content .artist-showcase,
+.service-premium-content .wedding-showcase {
+  width: min(100%, 1660px);
+  max-width: none;
+}
+
+.service-premium-content .artist-copy,
+.service-premium-content .artist-photo-copy,
+.service-premium-content .wedding-copy {
+  max-width: none;
+  padding: clamp(1rem, 2vw, 1.6rem) 0;
+  border-top: 1px solid rgba(125, 183, 255, 0.18);
+}
+
+.service-premium-content .artist-copy h2,
+.service-premium-content .artist-photo-copy h3,
+.service-premium-content .wedding-copy h2 {
+  color: var(--service-paper);
+  text-shadow: 0 0 38px rgba(125, 183, 255, 0.14);
+}
+
+.service-premium-content .artist-copy p,
+.service-premium-content .artist-photo-copy p,
+.service-premium-content .wedding-copy p {
+  color: rgba(244, 240, 234, 0.74);
+}
+
+.service-premium-content .artist-copy .button.ghost {
+  border-color: rgba(244, 240, 234, 0.22);
+  color: var(--service-paper);
+}
+
+.service-premium-content .artist-event-video-layout,
+.service-premium-content .artist-photo-slideshow,
+.service-premium-content .wedding-showcase {
+  background: rgba(244, 240, 234, 0.08);
+}
+
+.service-premium-content .artist-feature-video,
+.service-premium-content .artist-video-tabs button,
+.service-premium-content .artist-slideshow-photo,
+.service-premium-content .artist-photo-strip button,
+.service-premium-content .wedding-photo,
+.service-premium-content .wedding-video {
+  background: #0b0b0b;
+}
+
 .service-premium-content .wedding-content-section .wedding-copy h2,
 .service-premium-content .content-section .section-heading h2 {
   color: var(--service-ink);
@@ -6549,6 +6608,14 @@ h3 {
 .service-premium-content .wedding-content-section .wedding-copy p,
 .service-premium-content .content-section .section-heading p {
   color: rgba(31, 41, 55, 0.68);
+}
+
+.service-premium-content .wedding-content-section .wedding-copy h2 {
+  color: var(--service-paper);
+}
+
+.service-premium-content .wedding-content-section .wedding-copy p {
+  color: rgba(244, 240, 234, 0.74);
 }
 
 .text-accent {
@@ -6566,6 +6633,12 @@ h3 {
 .service-premium .content-section .text-accent {
   color: #0f5e93;
   text-shadow: none;
+}
+
+.service-premium-content .artist-content-section .text-accent,
+.service-premium-content .wedding-content-section .text-accent {
+  color: #7db7ff;
+  text-shadow: 0 0 32px rgba(125, 183, 255, 0.2);
 }
 
 .premium-hero .text-accent,
@@ -6808,6 +6881,15 @@ h3 {
       animation: sdg-fade-up both;
       animation-timeline: view();
       animation-range: entry 0% cover 30%;
+    }
+
+    .service-premium-content .artist-copy,
+    .service-premium-content .artist-photo-copy,
+    .service-premium-content .wedding-copy {
+      animation: none;
+      opacity: 1;
+      filter: none;
+      transform: none;
     }
   }
 }
