@@ -5463,3 +5463,227 @@ h3 {
     padding-left: 1.2rem;
   }
 }
+
+.premium-nav,
+.site-header {
+  border-color: rgba(125, 183, 255, 0.22);
+}
+
+.premium-brand img,
+.site-header .brand img {
+  box-shadow: 0 0 0 2px rgba(125, 183, 255, 0.34), 0 0 34px rgba(37, 99, 235, 0.24);
+}
+
+.premium-nav nav a,
+.site-header nav a {
+  position: relative;
+}
+
+.premium-nav nav a::after,
+.site-header nav a::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: -0.42rem;
+  left: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #2563eb, #7db7ff);
+  opacity: 0;
+  transform: scaleX(0.45);
+  transform-origin: center;
+  transition: opacity 180ms ease, transform 180ms ease;
+}
+
+.premium-nav nav a:hover::after,
+.site-header nav a:hover::after {
+  opacity: 1;
+  transform: scaleX(1);
+}
+
+.premium-nav .language-toggle button[aria-pressed="true"],
+.site-header .language-toggle button[aria-pressed="true"] {
+  box-shadow: inset 0 0 0 1px rgba(37, 99, 235, 0.18), 0 10px 28px rgba(37, 99, 235, 0.2);
+}
+
+.premium-kicker,
+.service-premium .eyebrow,
+.service-premium .premium-first-panel .eyebrow {
+  color: #7db7ff;
+  text-shadow: 0 0 26px rgba(125, 183, 255, 0.22);
+}
+
+.premium-hero-copy::before,
+.service-premium .hero-copy::before,
+.premium-section-title::before,
+.service-premium .section-heading::before {
+  content: "";
+  display: block;
+  width: clamp(3rem, 7vw, 6rem);
+  height: 3px;
+  margin-bottom: 0.15rem;
+  background: linear-gradient(90deg, #2563eb, #7db7ff 72%, transparent);
+}
+
+.premium-hero-copy::before,
+.service-premium .hero-copy::before {
+  margin-bottom: 0.3rem;
+}
+
+.premium-hero h1 span,
+.service-premium .hero-copy h1 em {
+  color: rgba(244, 240, 234, 0.82);
+}
+
+.premium-cta,
+.service-premium .button.primary {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  box-shadow: 0 18px 54px rgba(37, 99, 235, 0.16);
+}
+
+.premium-cta::after,
+.service-premium .button.primary::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(120deg, rgba(37, 99, 235, 0.18), rgba(125, 183, 255, 0));
+  opacity: 0;
+  transition: opacity 180ms ease;
+}
+
+.premium-cta:hover::after,
+.service-premium .button.primary:hover::after {
+  opacity: 1;
+}
+
+.premium-hero-meta span,
+.case-tags span,
+.management-task-grid span,
+.ads-console-flow span,
+.performance-funnel div,
+.website-workflow article,
+.ads-flow article,
+.service-row,
+.process-grid article {
+  border-color: rgba(125, 183, 255, 0.16);
+}
+
+.premium-stats strong,
+.proof-metrics strong,
+.proof-strip strong,
+.ads-metrics strong,
+.performance-score strong,
+.ads-console-grid strong,
+.management-status-card strong {
+  background: linear-gradient(180deg, #f4f0ea 18%, #7db7ff 115%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.premium-service > div > span,
+.premium-service small,
+.premium-case span,
+.premium-archive figcaption,
+.premium-ads-dashboard span,
+.premium-ads-dashboard small,
+.video-caption span,
+.video-mini span,
+.brand-video-tile span,
+.brand-image-tile figcaption,
+.travel-video-card span,
+.artist-feature-video span,
+.artist-video-tabs button span,
+.artist-slideshow-photo figcaption span,
+.wedding-photo figcaption,
+.wedding-video span {
+  color: #7db7ff;
+}
+
+.premium-service-media,
+.premium-case,
+.premium-archive figure,
+.video-feature,
+.brand-video-tile,
+.brand-image-tile,
+.travel-video-card,
+.artist-feature-video,
+.artist-slideshow-photo,
+.wedding-photo,
+.wedding-video,
+.content-gallery-item {
+  outline: 1px solid rgba(125, 183, 255, 0.08);
+  outline-offset: -1px;
+}
+
+.premium-service-media:hover,
+.premium-case:hover,
+.premium-archive figure:hover,
+.video-mini:hover,
+.brand-video-tile:hover,
+.brand-image-tile:hover,
+.travel-video-card:hover,
+.artist-video-tabs button:hover,
+.content-gallery-item:hover {
+  outline-color: rgba(125, 183, 255, 0.34);
+}
+
+.premium-ads-dashboard div,
+.ads-chart span,
+.performance-bars i,
+.mini-bars i,
+.runway-dashboard i {
+  background: linear-gradient(180deg, #7db7ff, #2563eb);
+  box-shadow: 0 0 24px rgba(37, 99, 235, 0.28);
+}
+
+.performance-funnel div::before,
+.website-workflow article::before,
+.ads-flow article::before,
+.process-grid article::before {
+  background: linear-gradient(180deg, #7db7ff, #2563eb);
+}
+
+.service-premium .soft .eyebrow,
+.service-premium .premium-case-section .eyebrow,
+.service-premium .premium-benefits-section .eyebrow,
+.service-premium .premium-reviews-section .eyebrow {
+  color: #0f5e93;
+  text-shadow: none;
+}
+
+.service-premium .soft .section-heading .eyebrow,
+.service-premium .premium-case-section .section-heading .eyebrow,
+.service-premium .premium-benefits-section .section-heading .eyebrow,
+.service-premium .premium-reviews-section .section-heading .eyebrow,
+.service-premium .brand-intro .eyebrow,
+.service-premium .branding-studio-copy .eyebrow,
+.service-premium .travel-copy .eyebrow,
+.service-premium .artist-copy .eyebrow,
+.service-premium .wedding-copy .eyebrow,
+.service-premium .management-copy .eyebrow,
+.service-premium .performance-lab-copy .eyebrow {
+  color: #7db7ff;
+}
+
+.service-premium .soft .section-heading .eyebrow,
+.service-premium .premium-case-section .section-heading .eyebrow,
+.service-premium .premium-benefits-section .section-heading .eyebrow,
+.service-premium .premium-reviews-section .section-heading .eyebrow {
+  color: #0f5e93;
+}
+
+.service-premium .soft .section-heading::before,
+.service-premium .premium-case-section .section-heading::before,
+.service-premium .premium-benefits-section .section-heading::before,
+.service-premium .premium-reviews-section .section-heading::before {
+  background: linear-gradient(90deg, #0f5e93, #2563eb 72%, transparent);
+}
+
+.media-lightbox-frame figcaption span,
+.image-lightbox figcaption,
+.lightbox-close {
+  color: #7db7ff;
+}
