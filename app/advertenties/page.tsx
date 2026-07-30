@@ -1,3 +1,7 @@
+import type { Metadata } from "next";
+
+import { JsonLd } from "../json-ld";
+import { absoluteUrl, breadcrumbJsonLd, defaultOgImage, faqJsonLd, serviceJsonLd, siteName } from "../seo";
 import {
   AdsPerformanceLab,
   GoogleAdsOverview,
@@ -10,16 +14,60 @@ import { EmphasisText, Text } from "../language";
 
 const t = (nl: string, en: string, es: string) => ({ nl, en, es });
 
-export const metadata = {
-  title: "Advertenties - Slimmer dan Gisteren",
+export const metadata: Metadata = {
+  title: "Advertenties Uitbesteden en Campagnebeheer",
   description:
-    "Advertentiebeheer, strategie, tracking, optimalisatie en rapportage door Slimmer dan Gisteren.",
+    "Advertenties uitbesteden? Slimmer dan Gisteren helpt met strategie, campagnebeheer, tracking, landingspagina's, optimalisatie en rapportage.",
+  alternates: {
+    canonical: "/advertenties/",
+  },
+  keywords: [
+    "advertenties uitbesteden",
+    "advertentiebeheer",
+    "Google Ads uitbesteden",
+    "online adverteren",
+    "campagnebeheer",
+    "conversietracking",
+    "advertentie optimalisatie",
+  ],
+  openGraph: {
+    title: "Advertenties uitbesteden en campagnebeheer",
+    description:
+      "Campagnes waarin strategie, tracking, landingspagina en rapportage hetzelfde verhaal vertellen.",
+    url: absoluteUrl("/advertenties/"),
+    siteName,
+    images: [{ url: absoluteUrl(defaultOgImage), alt: "Advertentiecase Zelfstandigen Bouw" }],
+    locale: "nl_NL",
+    type: "website",
+  },
 };
 
 export default function AdvertentiesPage() {
   return (
-    <SiteShell>
-      <div className="service-premium service-premium-ads">
+    <>
+      <JsonLd
+        data={[
+          breadcrumbJsonLd([
+            { name: "Home", path: "/" },
+            { name: "Advertenties uitbesteden", path: "/advertenties/" },
+          ]),
+          serviceJsonLd("/advertenties/"),
+          faqJsonLd([
+            {
+              question: "Kan ik advertenties uitbesteden aan Slimmer dan Gisteren?",
+              answer:
+                "Ja. Slimmer dan Gisteren helpt met advertentiestrategie, campagne-opzet, conversietracking, optimalisatie en rapportage.",
+            },
+            {
+              question: "Worden campagnes meetbaar gemaakt?",
+              answer:
+                "Ja. Tracking, conversies en rapportage worden ingericht zodat duidelijk wordt wat campagnes opleveren en waar verbetering zit.",
+            },
+          ]),
+        ]}
+      />
+      <SiteShell>
+        <div className="service-premium service-premium-ads">
         <PageHero
           eyebrow={t("Advertenties", "Advertising", "Anuncios")}
           title={t("Campagnes die [[helder]] worden voordat ze groeien.", "Campaigns that become [[clear]] before they grow.", "Campañas [[claras]] antes de crecer.")}
@@ -74,7 +122,8 @@ export default function AdvertentiesPage() {
           </div>
           <Testimonials />
         </section>
-      </div>
-    </SiteShell>
+        </div>
+      </SiteShell>
+    </>
   );
 }

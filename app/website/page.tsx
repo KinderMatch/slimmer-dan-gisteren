@@ -1,3 +1,7 @@
+import type { Metadata } from "next";
+
+import { JsonLd } from "../json-ld";
+import { absoluteUrl, breadcrumbJsonLd, defaultOgImage, faqJsonLd, serviceJsonLd, siteName } from "../seo";
 import {
   PageHero,
   SiteShell,
@@ -9,16 +13,59 @@ import { EmphasisText, Text } from "../language";
 
 const t = (nl: string, en: string, es: string) => ({ nl, en, es });
 
-export const metadata = {
-  title: "Websitebeheer en SEO - Slimmer dan Gisteren",
+export const metadata: Metadata = {
+  title: "Website Laten Maken, Websitebeheer en SEO",
   description:
-    "Websitebeheer, websites maken, SEO en vindbaarheid verbeteren door Slimmer dan Gisteren.",
+    "Website laten maken of websitebeheer uitbesteden? Slimmer dan Gisteren helpt met beheer, SEO, tracking, conversie en betere vindbaarheid.",
+  alternates: {
+    canonical: "/website/",
+  },
+  keywords: [
+    "website laten maken",
+    "websitebeheer uitbesteden",
+    "SEO uitbesteden",
+    "vindbaarheid website verbeteren",
+    "website optimalisatie",
+    "website laten beheren",
+  ],
+  openGraph: {
+    title: "Website laten maken, websitebeheer en SEO",
+    description:
+      "Een beheerbare websitebasis voor SEO, campagnes, content en conversie.",
+    url: absoluteUrl("/website/"),
+    siteName,
+    images: [{ url: absoluteUrl(defaultOgImage), alt: "Websitecase Slimmer dan Gisteren" }],
+    locale: "nl_NL",
+    type: "website",
+  },
 };
 
 export default function WebsitePage() {
   return (
-    <SiteShell>
-      <div className="service-premium service-premium-website">
+    <>
+      <JsonLd
+        data={[
+          breadcrumbJsonLd([
+            { name: "Home", path: "/" },
+            { name: "Website laten maken en SEO", path: "/website/" },
+          ]),
+          serviceJsonLd("/website/"),
+          faqJsonLd([
+            {
+              question: "Kan ik mijn websitebeheer uitbesteden aan Slimmer dan Gisteren?",
+              answer:
+                "Ja. Slimmer dan Gisteren helpt met websitebeheer, pagina-aanpassingen, SEO, tracking, conversiepunten en samenwerking met externe websitebouwers.",
+            },
+            {
+              question: "Helpt Slimmer dan Gisteren ook met SEO?",
+              answer:
+                "Ja. De technische basis, contentstructuur, meetbaarheid en vindbaarheid van de website worden verbeterd zodat de website beter gevonden kan worden.",
+            },
+          ]),
+        ]}
+      />
+      <SiteShell>
+        <div className="service-premium service-premium-website">
         <PageHero
           eyebrow={t("Websites", "Websites", "Webs")}
           title={t("Een website die [[rust]] brengt. En beter gevonden wordt.", "A website that creates [[calm]]. And gets found.", "Una web que aporta [[calma]]. Y se encuentra mejor.")}
@@ -74,7 +121,8 @@ export default function WebsitePage() {
             </article>
           </div>
         </section>
-      </div>
-    </SiteShell>
+        </div>
+      </SiteShell>
+    </>
   );
 }

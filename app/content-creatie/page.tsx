@@ -1,3 +1,7 @@
+import type { Metadata } from "next";
+
+import { JsonLd } from "../json-ld";
+import { absoluteUrl, breadcrumbJsonLd, faqJsonLd, serviceJsonLd, siteName } from "../seo";
 import {
   ArtistContentShowcase,
   BrandingStudio,
@@ -11,16 +15,62 @@ import { EmphasisText, Text } from "../language";
 
 const t = (nl: string, en: string, es: string) => ({ nl, en, es });
 
-export const metadata = {
-  title: "Content creatie - Slimmer dan Gisteren",
+export const metadata: Metadata = {
+  title: "Content Creatie, Fotografie en Videografie",
   description:
-    "Content creatie, artiestencontent, eventvideo, reiscontent, fotografie, videografie en online zichtbaarheid door Slimmer dan Gisteren.",
+    "Content creatie uitbesteden? Slimmer dan Gisteren maakt fotografie, videografie, social content, reiscontent, eventvideo en artiestencontent.",
+  alternates: {
+    canonical: "/content-creatie/",
+  },
+  keywords: [
+    "content creatie",
+    "content creatie uitbesteden",
+    "videografie",
+    "fotografie",
+    "social content",
+    "event video",
+    "reiscontent",
+    "artiestencontent",
+    "merkwaarde creëren",
+  ],
+  openGraph: {
+    title: "Content creatie, fotografie en videografie",
+    description:
+      "Video, fotografie, social posts, reiscontent, events en persoonlijke verhalen in één herkenbare beeldtaal.",
+    url: absoluteUrl("/content-creatie/"),
+    siteName,
+    images: [{ url: absoluteUrl("/assets/dave-dekker/photos/event-13.jpg"), alt: "Content creatie en eventfotografie" }],
+    locale: "nl_NL",
+    type: "website",
+  },
 };
 
 export default function ContentCreatiePage() {
   return (
-    <SiteShell>
-      <div className="service-premium service-premium-content">
+    <>
+      <JsonLd
+        data={[
+          breadcrumbJsonLd([
+            { name: "Home", path: "/" },
+            { name: "Content creatie", path: "/content-creatie/" },
+          ]),
+          serviceJsonLd("/content-creatie/"),
+          faqJsonLd([
+            {
+              question: "Welke content maakt Slimmer dan Gisteren?",
+              answer:
+                "Slimmer dan Gisteren maakt video, fotografie, social posts, reiscontent, eventvideo, trouwvideo's en artiestencontent.",
+            },
+            {
+              question: "Is content creatie geschikt voor bedrijven en particulieren?",
+              answer:
+                "Ja. De focus ligt op B2B content voor merken en organisaties, maar B2C fotografie en videografie zoals bruiloften en persoonlijke verhalen kunnen ook worden opgepakt.",
+            },
+          ]),
+        ]}
+      />
+      <SiteShell>
+        <div className="service-premium service-premium-content">
         <PageHero
           eyebrow={t("Content creatie", "Content creation", "Creación de contenido")}
           title={t("Beeld dat laat voelen waarom een [[merk]] ertoe doet.", "Visuals that show why a [[brand]] matters.", "Imagen que muestra por qué una [[marca]] importa.")}
@@ -84,7 +134,8 @@ export default function ContentCreatiePage() {
         <section className="section wedding-content-section">
           <WeddingContentShowcase />
         </section>
-      </div>
-    </SiteShell>
+        </div>
+      </SiteShell>
+    </>
   );
 }
