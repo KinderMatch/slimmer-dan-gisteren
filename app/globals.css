@@ -1522,10 +1522,13 @@ h3 {
   display: grid;
   grid-template-rows: auto auto minmax(0, 1fr);
   gap: 1rem;
+  min-width: 0;
   min-height: 0;
 }
 
 .management-status-card {
+  min-width: 0;
+  overflow: hidden;
   padding: clamp(1rem, 2vw, 1.35rem);
   background:
     linear-gradient(90deg, rgba(0, 91, 130, 0.08) 1px, transparent 1px) 0 0 / 25% 100%,
@@ -1538,7 +1541,7 @@ h3 {
   color: var(--night);
   font-size: clamp(2rem, 3vw, 3.4rem);
   line-height: 1;
-  overflow-wrap: normal;
+  overflow-wrap: anywhere;
   word-break: normal;
 }
 
@@ -3913,6 +3916,25 @@ h3 {
     min-height: auto;
     padding-top: 2.8rem;
     padding-bottom: 3rem;
+  }
+
+  .management-suite,
+  .management-side,
+  .management-status-card,
+  .management-task-grid,
+  .management-case-list {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .management-status-card {
+    padding: 1rem;
+  }
+
+  .management-status-card strong {
+    font-size: clamp(1.85rem, 8.6vw, 2.15rem);
+    line-height: 1.02;
+    letter-spacing: 0;
   }
 
   .home-command {
