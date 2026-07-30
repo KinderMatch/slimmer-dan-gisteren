@@ -196,6 +196,10 @@ iframe {
   color: inherit;
 }
 
+.hero-contact-actions {
+  margin-top: clamp(1.25rem, 2.4vw, 2rem);
+}
+
 .contact-dock {
   position: fixed;
   right: clamp(1rem, 2vw, 1.5rem);
@@ -6132,6 +6136,10 @@ h3 {
 
   .contact-action-group {
     width: 100%;
+  }
+
+  .hero-contact-actions {
+    margin-top: 1.5rem;
   }
 
   .contact-action-group .button {
