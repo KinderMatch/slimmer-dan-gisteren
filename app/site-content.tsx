@@ -2,6 +2,7 @@ import Link from "next/link";
 import type { ReactNode } from "react";
 
 import { ArtistEventShowcase } from "./artist-event-showcase";
+import { ContactActionGroup, ContactDock } from "./contact-actions";
 import { ContentGallery as InteractiveContentGallery } from "./content-gallery";
 import { EmphasisText, LanguageProvider, LanguageToggle, type LocalizedString, Text } from "./language";
 import { MediaLightbox } from "./media-lightbox";
@@ -272,6 +273,7 @@ export function SiteShell({ children }: { children: ReactNode }) {
           <Text value={t("Contact", "Contact", "Contacto")} />
         </a>
       </header>
+      <ContactDock />
       <main>{children}</main>
       <footer className="site-footer">
         <div className="footer-video">
@@ -281,9 +283,7 @@ export function SiteShell({ children }: { children: ReactNode }) {
           <div>
             <p className="eyebrow"><Text value={t("Klaar om slimmer te groeien?", "Ready to grow smarter?", "¿Listo para crecer de forma más inteligente?")} /></p>
             <h2><EmphasisText value={t("Laat website, advertenties en [[content samenwerken]].", "Let your website, advertising and [[content work together]].", "Haz que tu web, tus anuncios y tu [[contenido trabajen juntos]].")} /></h2>
-            <a className="button primary" href="https://calendly.com/buitenhuisj004/bmc-sessie">
-              <Text value={t("Plan kennismaking", "Book an introduction", "Agenda una llamada")} />
-            </a>
+            <ContactActionGroup />
           </div>
         </div>
         <div className="footer-brand">
@@ -298,6 +298,7 @@ export function SiteShell({ children }: { children: ReactNode }) {
           <Link href="/advertenties/"><Text value={t("Advertenties", "Advertising", "Anuncios")} /></Link>
           <Link href="/content-creatie/"><Text value={t("Content creatie", "Content creation", "Creación de contenido")} /></Link>
           <a href="https://calendly.com/buitenhuisj004/bmc-sessie"><Text value={t("Kennismaken", "Introduction", "Conocernos")} /></a>
+          <a href="mailto:info@slimmerdangisteren.nl">Mail</a>
         </div>
       </footer>
     </LanguageProvider>
@@ -1023,14 +1024,7 @@ export function PageHero({
         <p className="eyebrow"><Text value={eyebrow} /></p>
         <h1><EmphasisText value={title} /></h1>
         <p><Text value={intro} /></p>
-        <div className="actions">
-          <a className="button primary" href="https://calendly.com/buitenhuisj004/bmc-sessie">
-            <Text value={cta} />
-          </a>
-          <a className="button ghost" href="https://wa.me/31610175027">
-            <Text value={t("Direct contact", "Direct contact", "Contacto directo")} />
-          </a>
-        </div>
+        <ContactActionGroup className="hero-contact-actions" primaryLabel={cta} />
       </div>
       <HeroProof tone={tone} />
     </section>

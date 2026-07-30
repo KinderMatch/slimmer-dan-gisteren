@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { motion, useScroll, useTransform } from "framer-motion";
 
+import { ContactActionGroup, ContactDock } from "./contact-actions";
 import { EmphasisText, LanguageProvider, LanguageToggle, Text, type LocalizedString } from "./language";
 import { ScrollProgress } from "./scroll-experience";
 
@@ -197,6 +198,7 @@ export function PremiumHome() {
           </nav>
           <LanguageToggle />
         </header>
+        <ContactDock />
 
         <main>
           <section className="premium-hero">
@@ -345,9 +347,10 @@ export function PremiumHome() {
             <div>
               <p className="premium-kicker"><Text value={t("Klaar voor helderheid?", "Ready for clarity?", "¿Listo para claridad?")} /></p>
               <h2><EmphasisText value={t("Laat marketing voelen als [[één systeem]].", "Make marketing feel like [[one system]].", "Haz que el marketing se sienta como [[un sistema]].")} /></h2>
-              <a className="premium-cta light" href="https://calendly.com/buitenhuisj004/bmc-sessie">
-                <Text value={t("Plan een strategiesessie", "Plan a strategy session", "Planifica una sesión estratégica")} />
-              </a>
+              <ContactActionGroup
+                className="premium-final-actions"
+                primaryLabel={t("Plan een strategiesessie", "Plan a strategy session", "Planifica una sesión estratégica")}
+              />
             </div>
           </section>
         </main>
@@ -360,6 +363,7 @@ export function PremiumHome() {
             <Link href="/content-creatie/">Content</Link>
           </nav>
           <a href="https://wa.me/31610175027">WhatsApp</a>
+          <a href="mailto:info@slimmerdangisteren.nl">Mail</a>
         </footer>
       </div>
     </LanguageProvider>
