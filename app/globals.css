@@ -5098,28 +5098,40 @@ h3 {
   gap: 0.75rem;
 }
 
-.premium-archive figure {
+.premium-archive-grid > div {
+  min-width: 0;
+}
+
+.premium-archive-item {
   position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
   min-width: 0;
   margin: 0;
   overflow: hidden;
+  border: 0;
+  padding: 0;
   background: var(--premium-surface);
+  color: inherit;
+  text-align: left;
+  cursor: zoom-in;
 }
 
-.premium-archive figure.tall {
+.premium-archive-grid > div.tall {
   grid-row: span 2;
   grid-column: span 2;
 }
 
-.premium-archive figure.wide {
+.premium-archive-grid > div.wide {
   grid-column: span 3;
 }
 
-.premium-archive figure:not(.tall):not(.wide) {
+.premium-archive-grid > div:not(.tall):not(.wide) {
   grid-column: span 2;
 }
 
-.premium-archive figcaption {
+.premium-archive-caption {
   position: absolute;
   right: 0.85rem;
   bottom: 0.85rem;
@@ -5396,9 +5408,9 @@ h3 {
     grid-auto-rows: 260px;
   }
 
-  .premium-archive figure.tall,
-  .premium-archive figure.wide,
-  .premium-archive figure:not(.tall):not(.wide) {
+  .premium-archive-grid > div.tall,
+  .premium-archive-grid > div.wide,
+  .premium-archive-grid > div:not(.tall):not(.wide) {
     grid-column: span 1;
     grid-row: span 1;
   }
@@ -5500,9 +5512,14 @@ h3 {
     scroll-snap-type: none;
   }
 
-  .premium-archive figure {
+  .premium-archive-grid > div {
     width: 100%;
     aspect-ratio: 4 / 5;
+  }
+
+  .premium-archive-item {
+    width: 100%;
+    height: 100%;
   }
 
   .premium-stats div,
@@ -6558,7 +6575,7 @@ h3 {
 .premium-service > div > span,
 .premium-service small,
 .premium-case span,
-.premium-archive figcaption,
+.premium-archive-caption,
 .premium-ads-dashboard span,
 .premium-ads-dashboard small,
 .video-caption span,
@@ -6576,7 +6593,7 @@ h3 {
 
 .premium-service-media,
 .premium-case,
-.premium-archive figure,
+.premium-archive-item,
 .video-feature,
 .brand-video-tile,
 .brand-image-tile,
@@ -6592,7 +6609,7 @@ h3 {
 
 .premium-service-media:hover,
 .premium-case:hover,
-.premium-archive figure:hover,
+.premium-archive-item:hover,
 .video-mini:hover,
 .brand-video-tile:hover,
 .brand-image-tile:hover,
@@ -7064,7 +7081,7 @@ h3 {
 }
 
 .premium-case,
-.premium-archive figure,
+.premium-archive-item,
 .service-premium .media-trigger,
 .service-premium .management-browser,
 .service-premium .performance-dashboard,
@@ -7140,7 +7157,7 @@ h3 {
   .button,
   .media-trigger,
   .premium-case,
-  .premium-archive figure,
+  .premium-archive-item,
   .website-tile,
   .video-mini,
   .artist-video-tabs button {
@@ -7153,7 +7170,7 @@ h3 {
   }
 
   .premium-case:hover,
-  .premium-archive figure:hover,
+  .premium-archive-item:hover,
   .service-premium .media-trigger:hover,
   .service-premium .website-tile:hover,
   .service-premium .video-mini:hover {
@@ -7241,7 +7258,7 @@ h3 {
     }
 
     .premium-case,
-    .premium-archive figure,
+    .premium-archive-item,
     .premium-about img,
     .service-premium .management-suite,
     .service-premium .performance-dashboard,

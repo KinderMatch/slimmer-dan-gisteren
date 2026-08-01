@@ -5,6 +5,7 @@ import { motion, useScroll, useTransform } from "framer-motion";
 
 import { ContactActionGroup, ContactDock } from "./contact-actions";
 import { EmphasisText, LanguageProvider, LanguageToggle, Text, type LocalizedString } from "./language";
+import { MediaLightbox } from "./media-lightbox";
 import { ScrollProgress } from "./scroll-experience";
 
 const t = (nl: string, en: string, es: string): LocalizedString => ({ nl, en, es });
@@ -76,16 +77,16 @@ const cases = [
 const archive = [
   { kind: "image", src: "/assets/content-nxchange.png", label: "Nxchange" },
   { kind: "image", src: "/assets/content-airbnb.png", label: "HealthyFest" },
-  { kind: "video", src: "/assets/travel/full/siargao-full.m4v", label: "Siargao" },
+  { kind: "video", src: "/assets/travel/siargao-preview.mov", fullSrc: "/assets/travel/full/siargao-full.m4v", label: "Siargao" },
   { kind: "image", src: "/assets/dave-dekker/photos/event-01.jpg", label: "Dave Dekker" },
-  { kind: "video", src: "/assets/dave-dekker/full/dave-5-full.mov", label: "De Rode Loper" },
+  { kind: "video", src: "/assets/dave-dekker/dave-5-preview.mov", fullSrc: "/assets/dave-dekker/full/dave-5-full.mov", label: "De Rode Loper" },
   { kind: "image", src: "/assets/content-maasclaim.png", label: "ChickShack Valencia" },
-  { kind: "video", src: "/assets/travel/full/whitsundays-full.m4v", label: "Whitsundays" },
+  { kind: "video", src: "/assets/travel/whitsundays-preview.mov", fullSrc: "/assets/travel/full/whitsundays-full.m4v", label: "Whitsundays" },
   { kind: "image", src: "/assets/dave-dekker/photos/event-12.jpg", label: "Event photography" },
   { kind: "image", src: "/assets/dave-dekker/photos/event-11.jpg", label: "Event photography" },
-  { kind: "video", src: "https://videos.files.wordpress.com/E5ahlDJ7/trouwerij-nordin-kyra-v3-h264.mp4#t=0.001", label: "Wedding film" },
+  { kind: "video", src: "/assets/wedding/nordin-kyra-preview.mov", fullSrc: "https://videos.files.wordpress.com/E5ahlDJ7/trouwerij-nordin-kyra-v3-h264.mp4", label: "Wedding film" },
   { kind: "image", src: "/assets/dave-dekker/photos/event-02.jpg", label: "Audience moment" },
-  { kind: "video", src: "/assets/dave-dekker/full/dave-1-full.mov", label: "Artiest video" },
+  { kind: "video", src: "/assets/dave-dekker/dave-1-preview.mov", fullSrc: "/assets/dave-dekker/full/dave-1-full.mov", label: "Artiest video" },
   { kind: "image", src: "/assets/dave-dekker/photos/event-14.jpg", label: "Live registratie" },
 ];
 
@@ -314,19 +315,32 @@ export function PremiumHome() {
               <h2><EmphasisText value={t("[[Echte]] beelden. Echte momenten. Geen stock.", "[[Real]] visuals. Real moments. No stock.", "Imágenes [[reales]]. Momentos reales. Sin stock.")} /></h2>
             </div>
             <div className="premium-archive-grid">
-              {archive.map((item, index) => (
-                <motion.figure
-                  className={index % 3 === 0 ? "tall" : index % 4 === 0 ? "wide" : ""}
+              {archive.map((item, index) => {
+                const archiveClass = index % 3 === 0 ? "tall" : index % 4 === 0 ? "wide" : "";
+
+                return (
+                <motion.div
+                  className={archiveClass}
                   key={`${item.label}-${index}`}
                   initial={{ opacity: 0, clipPath: "inset(12% 0 12% 0)" }}
                   whileInView={{ opacity: 1, clipPath: "inset(0% 0 0% 0)" }}
                   viewport={{ once: true, amount: 0.25 }}
                   transition={transition}
                 >
-                  <Media item={item} />
-                  <figcaption>{item.label}</figcaption>
-                </motion.figure>
-              ))}
+                  <MediaLightbox
+                    className="premium-archive-item"
+                    fullSrc={"fullSrc" in item ? item.fullSrc : undefined}
+                    label={t("Portfolio media", "Portfolio media", "Media de portfolio")}
+                    src={item.src}
+                    title={item.label}
+                    type={item.kind === "video" ? "video" : "image"}
+                  >
+                    <Media item={item} />
+                    <span className="premium-archive-caption">{item.label}</span>
+                  </MediaLightbox>
+                </motion.div>
+                );
+              })}
             </div>
           </section>
 
