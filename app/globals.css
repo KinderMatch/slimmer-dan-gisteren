@@ -5549,10 +5549,17 @@ h3 {
     overflow: hidden;
   }
 
+  .premium-service:nth-child(3) .premium-service-media {
+    height: auto;
+    min-height: 0;
+    aspect-ratio: auto;
+  }
+
   .premium-content-visual > *,
   .premium-content-visual > :first-child {
     grid-row: auto;
     aspect-ratio: 4 / 5;
+    min-height: 280px;
   }
 
   .premium-ads-dashboard {
@@ -5602,6 +5609,17 @@ h3 {
 
   .premium-archive-grid > div.contain-media .premium-archive-item img {
     padding: 0.7rem;
+  }
+
+  .premium-archive-grid > div.contain-media .premium-archive-item {
+    min-height: 340px;
+    aspect-ratio: 4 / 5;
+  }
+
+  .premium-archive-grid > div.contain-media .premium-archive-item img {
+    height: 100%;
+    max-height: none;
+    object-fit: contain;
   }
 
   .premium-archive-caption {
