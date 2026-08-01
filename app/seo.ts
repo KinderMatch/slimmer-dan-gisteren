@@ -144,7 +144,7 @@ export function serviceJsonLd(path: (typeof servicePages)[number]["path"]) {
       name: "Nederland",
     },
     serviceType: service.name,
-    termsOfService: absoluteUrl(service.path),
+    termsOfService: absoluteUrl("/algemene-voorwaarden/"),
     offers: {
       "@type": "Offer",
       availability: "https://schema.org/InStock",

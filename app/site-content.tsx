@@ -294,9 +294,11 @@ export function SiteShell({ children }: { children: ReactNode }) {
           </div>
         </div>
         <div className="footer-links">
+          <Link href="/"><Text value={t("Home", "Home", "Inicio")} /></Link>
           <Link href="/website/"><Text value={t("Website", "Website", "Web")} /></Link>
           <Link href="/advertenties/"><Text value={t("Advertenties", "Advertising", "Anuncios")} /></Link>
           <Link href="/content-creatie/"><Text value={t("Content creatie", "Content creation", "Creación de contenido")} /></Link>
+          <Link href="/algemene-voorwaarden/"><Text value={t("Algemene voorwaarden", "Terms", "Condiciones")} /></Link>
           <a href="https://calendly.com/buitenhuisj004/bmc-sessie"><Text value={t("Kennismaken", "Introduction", "Conocernos")} /></a>
           <a href="mailto:jimmy@slimmerdangisteren.nl">Mail</a>
         </div>

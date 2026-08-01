@@ -3651,6 +3651,76 @@ h3 {
   color: rgba(255, 255, 255, 0.78);
 }
 
+.legal-page {
+  min-height: 100vh;
+  padding: clamp(10rem, 15vw, 14rem) clamp(1.2rem, 6vw, 6rem) clamp(5rem, 10vw, 9rem);
+  background:
+    radial-gradient(circle at 78% 12%, rgba(37, 99, 235, 0.15), transparent 34%),
+    #111111;
+  color: #f4f0ea;
+}
+
+.legal-page header {
+  max-width: 980px;
+  margin-bottom: clamp(3rem, 7vw, 6rem);
+}
+
+.legal-page h1 {
+  max-width: 980px;
+  margin: 0;
+  color: #f4f0ea;
+  font-size: clamp(3.6rem, 9vw, 8rem);
+  font-weight: 850;
+  line-height: 0.94;
+  letter-spacing: 0;
+}
+
+.legal-page header > p:not(.eyebrow) {
+  max-width: 780px;
+  margin: 1.25rem 0 0;
+  color: rgba(244, 240, 234, 0.72);
+  font-size: clamp(1.12rem, 1.8vw, 1.4rem);
+  line-height: 1.55;
+}
+
+.legal-page header > span {
+  display: block;
+  margin-top: 1.4rem;
+  color: #7db7ff;
+  font-size: 0.82rem;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.legal-sections {
+  display: grid;
+  max-width: 1080px;
+  border-top: 1px solid rgba(244, 240, 234, 0.14);
+}
+
+.legal-sections section {
+  display: grid;
+  grid-template-columns: minmax(220px, 0.42fr) minmax(0, 1fr);
+  gap: clamp(1.2rem, 5vw, 4rem);
+  padding: clamp(1.5rem, 3vw, 2.4rem) 0;
+  border-bottom: 1px solid rgba(244, 240, 234, 0.14);
+}
+
+.legal-sections h2 {
+  margin: 0;
+  color: #f4f0ea;
+  font-size: clamp(1.15rem, 1.7vw, 1.7rem);
+  line-height: 1.15;
+}
+
+.legal-sections p {
+  max-width: 720px;
+  margin: 0;
+  color: rgba(244, 240, 234, 0.68);
+  font-size: clamp(1rem, 1.3vw, 1.16rem);
+  line-height: 1.75;
+}
+
 @media (max-width: 1160px) {
   .hero,
   .split,
@@ -6163,6 +6233,15 @@ h3 {
 
   .site-footer {
     padding-bottom: calc(4rem + env(safe-area-inset-bottom));
+  }
+
+  .legal-page {
+    padding-top: 11rem;
+  }
+
+  .legal-sections section {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
   }
 
   .contact-action-group {
