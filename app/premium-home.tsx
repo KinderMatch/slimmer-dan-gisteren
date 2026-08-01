@@ -317,10 +317,11 @@ export function PremiumHome() {
             <div className="premium-archive-grid">
               {archive.map((item, index) => {
                 const archiveClass = index % 3 === 0 ? "tall" : index % 4 === 0 ? "wide" : "";
+                const mediaClass = item.src.includes("/content-") ? "contain-media" : item.kind === "video" ? "video-media" : "photo-media";
 
                 return (
                 <motion.div
-                  className={archiveClass}
+                  className={[archiveClass, mediaClass].filter(Boolean).join(" ")}
                   key={`${item.label}-${index}`}
                   initial={{ opacity: 0, clipPath: "inset(12% 0 12% 0)" }}
                   whileInView={{ opacity: 1, clipPath: "inset(0% 0 0% 0)" }}

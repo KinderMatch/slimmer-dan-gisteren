@@ -4985,6 +4985,10 @@ h3 {
   padding: clamp(5.5rem, 10vw, 10rem) clamp(1.2rem, 5vw, 5rem);
 }
 
+.premium-archive {
+  scroll-margin-top: 8rem;
+}
+
 .premium-cases,
 .premium-about {
   background: var(--premium-light);
@@ -5118,6 +5122,38 @@ h3 {
   cursor: zoom-in;
 }
 
+.premium-archive-item img,
+.premium-archive-item video {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.premium-archive-grid > div.contain-media .premium-archive-item {
+  background:
+    radial-gradient(circle at 50% 0%, rgba(125, 183, 255, 0.16), transparent 42%),
+    #101010;
+}
+
+.premium-archive-grid > div.contain-media .premium-archive-item img {
+  padding: clamp(0.7rem, 1.4vw, 1.2rem);
+  object-fit: contain;
+}
+
+.premium-archive-grid > div.video-media .premium-archive-item video {
+  filter: saturate(1.04) contrast(1.04);
+}
+
+.premium-archive-item::after {
+  content: "";
+  position: absolute;
+  inset: 45% 0 0;
+  background: linear-gradient(180deg, transparent, rgba(0, 0, 0, 0.72));
+  pointer-events: none;
+}
+
 .premium-archive-grid > div.tall {
   grid-row: span 2;
   grid-column: span 2;
@@ -5136,6 +5172,7 @@ h3 {
   right: 0.85rem;
   bottom: 0.85rem;
   left: 0.85rem;
+  z-index: 1;
   color: white;
   font-size: 0.76rem;
   font-weight: 850;
@@ -5504,7 +5541,8 @@ h3 {
   .premium-archive-grid {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 0.75rem;
+    grid-auto-rows: auto;
+    gap: 1rem;
     margin-right: 0;
     margin-left: 0;
     padding: 0;
@@ -5512,14 +5550,44 @@ h3 {
     scroll-snap-type: none;
   }
 
+  .premium-archive {
+    scroll-margin-top: 12rem;
+  }
+
   .premium-archive-grid > div {
     width: 100%;
-    aspect-ratio: 4 / 5;
+    aspect-ratio: auto;
   }
 
   .premium-archive-item {
     width: 100%;
-    height: 100%;
+    height: auto;
+    min-height: 0;
+    aspect-ratio: auto;
+  }
+
+  .premium-archive-item img,
+  .premium-archive-item video {
+    height: auto;
+    max-height: min(78svh, 620px);
+    object-fit: contain;
+  }
+
+  .premium-archive-grid > div.photo-media .premium-archive-item img,
+  .premium-archive-grid > div.video-media .premium-archive-item video {
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+  }
+
+  .premium-archive-grid > div.contain-media .premium-archive-item img {
+    padding: 0.7rem;
+  }
+
+  .premium-archive-caption {
+    right: 0.75rem;
+    bottom: 0.75rem;
+    left: 0.75rem;
+    font-size: 0.7rem;
   }
 
   .premium-stats div,
