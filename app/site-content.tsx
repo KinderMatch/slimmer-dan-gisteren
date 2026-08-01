@@ -286,19 +286,20 @@ export function SiteShell({ children }: { children: ReactNode }) {
             <ContactActionGroup />
           </div>
         </div>
-        <div className="footer-brand">
+        <Link className="footer-brand" href="/">
           <img src="/assets/logo.png" alt="" />
           <div>
             <p>Slimmer dan Gisteren</p>
             <span><Text value={t("Groei begint met vandaag.", "Growth starts today.", "El crecimiento empieza hoy.")} /></span>
           </div>
-        </div>
+        </Link>
         <div className="footer-links">
           <Link href="/"><Text value={t("Home", "Home", "Inicio")} /></Link>
           <Link href="/website/"><Text value={t("Website", "Website", "Web")} /></Link>
           <Link href="/advertenties/"><Text value={t("Advertenties", "Advertising", "Anuncios")} /></Link>
           <Link href="/content-creatie/"><Text value={t("Content creatie", "Content creation", "Creación de contenido")} /></Link>
           <Link href="/algemene-voorwaarden/"><Text value={t("Algemene voorwaarden", "Terms", "Condiciones")} /></Link>
+          <Link href="/privacy/"><Text value={t("Privacy", "Privacy", "Privacidad")} /></Link>
           <a href="https://calendly.com/buitenhuisj004/bmc-sessie"><Text value={t("Kennismaken", "Introduction", "Conocernos")} /></a>
           <a href="mailto:jimmy@slimmerdangisteren.nl">Mail</a>
         </div>

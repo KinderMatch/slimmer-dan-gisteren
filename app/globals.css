@@ -3637,6 +3637,13 @@ h3 {
   display: flex;
   align-items: center;
   gap: 1rem;
+  color: inherit;
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+}
+
+.footer-brand:hover {
+  opacity: 0.78;
 }
 
 .site-footer img {
@@ -5395,7 +5402,21 @@ h3 {
   color: var(--premium-muted);
 }
 
-.premium-footer span {
+.premium-footer-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  color: var(--premium-light);
+  text-decoration: none;
+}
+
+.premium-footer-brand img {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+}
+
+.premium-footer-brand span {
   color: var(--premium-light);
   font-weight: 850;
 }

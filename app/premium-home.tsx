@@ -410,11 +410,17 @@ export function PremiumHome() {
         </main>
 
         <footer className="premium-footer">
-          <span>Slimmer dan Gisteren</span>
+          <Link className="premium-footer-brand" href="/">
+            <img src="/assets/logo.png" alt="" />
+            <span>Slimmer dan Gisteren</span>
+          </Link>
           <nav>
+            <Link href="/"><Text value={t("Home", "Home", "Inicio")} /></Link>
             <Link href="/website/">Websites</Link>
             <Link href="/advertenties/"><Text value={t("Advertenties", "Advertising", "Anuncios")} /></Link>
             <Link href="/content-creatie/">Content</Link>
+            <Link href="/algemene-voorwaarden/"><Text value={t("Algemene voorwaarden", "Terms", "Condiciones")} /></Link>
+            <Link href="/privacy/"><Text value={t("Privacy", "Privacy", "Privacidad")} /></Link>
           </nav>
           <a href="https://wa.me/31610175027">WhatsApp</a>
           <a href="mailto:jimmy@slimmerdangisteren.nl">Mail</a>
