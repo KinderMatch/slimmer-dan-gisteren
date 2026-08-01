@@ -233,7 +233,7 @@ export function PremiumHome() {
               </motion.h1>
               <motion.div variants={reveal} transition={transition} className="premium-hero-meta">
                 <span>Websites</span>
-                <span>Advertising</span>
+                <span><Text value={t("Advertenties", "Advertising", "Anuncios")} /></span>
                 <span>Content</span>
               </motion.div>
               <motion.a variants={reveal} transition={transition} className="premium-cta" href="https://calendly.com/buitenhuisj004/bmc-sessie">
@@ -398,7 +398,7 @@ export function PremiumHome() {
           <span>Slimmer dan Gisteren</span>
           <nav>
             <Link href="/website/">Websites</Link>
-            <Link href="/advertenties/">Advertising</Link>
+            <Link href="/advertenties/"><Text value={t("Advertenties", "Advertising", "Anuncios")} /></Link>
             <Link href="/content-creatie/">Content</Link>
           </nav>
           <a href="https://wa.me/31610175027">WhatsApp</a>

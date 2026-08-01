@@ -24,11 +24,11 @@ export function ContactDock() {
 
   return (
     <aside className="contact-dock" aria-label="Contactopties">
-      <a className="contact-dock-primary" href={calendlyUrl}>
+      <a className="contact-dock-primary" href={calendlyUrl} aria-label="Plan een strategiegesprek via Calendly">
         <Text value={t("Plan gesprek", "Plan call", "Agenda llamada")} />
       </a>
-      <a href={whatsappUrl}>WhatsApp</a>
-      <a href={mailUrl}>Mail</a>
+      <a href={whatsappUrl} aria-label="Stuur een WhatsApp bericht">WhatsApp</a>
+      <a href={mailUrl} aria-label="Stuur een e-mail naar Jimmy">Mail</a>
     </aside>
   );
 }
@@ -43,16 +43,25 @@ export function ContactActionGroup({
   const mailUrl = useMailUrl();
 
   return (
-    <div className={`contact-action-group ${className}`}>
-      <a className="button primary" href={calendlyUrl}>
-        <Text value={primaryLabel ?? t("Plan kennismaking", "Book an introduction", "Agenda una llamada")} />
-      </a>
-      <a className="button ghost" href={whatsappUrl}>
-        WhatsApp
-      </a>
-      <a className="button ghost" href={mailUrl}>
-        Mail
-      </a>
+    <div className={`contact-action-wrap ${className}`}>
+      <div className="contact-action-group">
+        <a className="button primary" href={calendlyUrl} aria-label="Plan een strategiegesprek via Calendly">
+          <Text value={primaryLabel ?? t("Plan kennismaking", "Book an introduction", "Agenda una llamada")} />
+        </a>
+        <a className="button ghost" href={whatsappUrl} aria-label="Stuur een WhatsApp bericht">
+          WhatsApp
+        </a>
+        <a className="button ghost" href={mailUrl} aria-label="Stuur een e-mail naar Jimmy">
+          Mail
+        </a>
+      </div>
+      <p className="contact-microcopy">
+        <Text value={t(
+          "Vrijblijvend. Reactie meestal binnen een werkdag.",
+          "No obligation. Usually a reply within one working day.",
+          "Sin compromiso. Normalmente respuesta en un dia laborable.",
+        )} />
+      </p>
     </div>
   );
 }
