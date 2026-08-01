@@ -7216,12 +7216,16 @@ h3 {
     top: 8vh;
     height: 84vh;
     min-height: 620px;
+    box-shadow: 0 36px 120px rgba(0, 0, 0, 0.32);
   }
 
   .premium-service > div {
     position: sticky;
     top: 22vh;
     align-self: start;
+    opacity: 1;
+    filter: none;
+    transform: none;
   }
 
   .service-premium .management-copy,
@@ -7256,6 +7260,51 @@ h3 {
     height: 1px;
     background: linear-gradient(90deg, transparent, rgba(125, 183, 255, 0.2), transparent);
     pointer-events: none;
+  }
+}
+
+@media (min-width: 981px) {
+  .premium-home .contact-dock {
+    right: clamp(1.5rem, 3vw, 2.2rem);
+    bottom: clamp(1.4rem, 3vw, 2.2rem);
+  }
+
+  .premium-service h2 {
+    color: rgba(244, 240, 234, 0.96);
+  }
+
+  .premium-service p,
+  .premium-service div a {
+    color: rgba(244, 240, 234, 0.78);
+  }
+
+  .premium-service div a:hover {
+    color: #ffffff;
+  }
+
+  .premium-ads-visual video {
+    filter: saturate(1.02) contrast(1.05) brightness(0.92);
+  }
+
+  .premium-ads-visual::after {
+    background:
+      radial-gradient(circle at 70% 24%, rgba(125, 183, 255, 0.14), transparent 30%),
+      linear-gradient(180deg, rgba(17, 17, 17, 0), rgba(17, 17, 17, 0.58));
+  }
+
+  .premium-content-visual {
+    gap: 0.9rem;
+    padding: 0.9rem;
+  }
+
+  .premium-archive-grid {
+    grid-auto-rows: clamp(190px, 15.5vw, 285px);
+    gap: 0.9rem;
+  }
+
+  .premium-archive {
+    padding-top: clamp(6rem, 9vw, 8rem);
+    padding-bottom: clamp(6rem, 9vw, 8rem);
   }
 }
 
@@ -7400,6 +7449,39 @@ h3 {
       transform: none;
     }
 
+  }
+}
+
+@media (min-width: 981px) {
+  .premium-home .premium-service > div {
+    animation: none;
+    opacity: 1;
+    filter: none;
+    transform: none;
+  }
+
+  .premium-home .premium-service {
+    min-height: auto;
+    padding-block: clamp(6rem, 8vw, 8.5rem);
+  }
+
+  .premium-home .premium-service-media {
+    position: relative;
+    top: auto;
+    height: clamp(620px, 52vw, 760px);
+    min-height: 620px;
+  }
+
+  .premium-home .premium-service > div {
+    position: relative;
+    top: auto;
+    align-self: center;
+  }
+
+  .premium-home .premium-service small {
+    top: clamp(6rem, 8vw, 8.5rem);
+    right: 0;
+    bottom: auto;
   }
 }
 
