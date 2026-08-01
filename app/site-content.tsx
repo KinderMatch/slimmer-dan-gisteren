@@ -957,55 +957,7 @@ export function ArtistContentShowcase() {
 
 function PageHeroVisual({ tone }: { tone: "default" | "website" | "ads" | "branding" }) {
   if (tone === "website") {
-    return (
-      <div className="page-hero-visual website-visual" aria-hidden="true">
-        <div className="website-preview-composition">
-          <div className="preview-window preview-window-main">
-            <div className="preview-window-top">
-              <span />
-              <span />
-              <span />
-              <strong>slimmerdangisteren.nl/website</strong>
-            </div>
-            <div className="preview-window-body">
-              <div className="preview-sidebar">
-                <span>SEO</span>
-                <span>Tracking</span>
-                <span>Conversie</span>
-              </div>
-              <div className="preview-page">
-                <p>Websitebeheer</p>
-                <h3>Rust in techniek. Scherpte in groei.</h3>
-                <div className="preview-search-bar" />
-                <div className="preview-metrics">
-                  <span>+ zichtbaarheid</span>
-                  <span>+ aanvragen</span>
-                  <span>- ruis</span>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="preview-window preview-window-site">
-            <div className="preview-window-top">
-              <span />
-              <span />
-              <span />
-              <strong>paulseuntjens.nl</strong>
-            </div>
-            <div className="preview-site-body">
-              <div />
-              <p>Live websitecase</p>
-              <strong>Beheerbare basis voor campagnes.</strong>
-            </div>
-          </div>
-          <div className="preview-window preview-window-score">
-            <span>SEO</span>
-            <strong>Structuur</strong>
-            <p>Vindbaarheid begint bij structuur.</p>
-          </div>
-        </div>
-      </div>
-    );
+    return null;
   }
 
   if (tone === "ads") {
@@ -1062,7 +1014,7 @@ export function PageHero({
         <p><Text value={intro} /></p>
         <ContactActionGroup className="hero-contact-actions" primaryLabel={cta} />
       </div>
-      <HeroProof tone={tone} />
+      {tone !== "website" ? <HeroProof tone={tone} /> : null}
     </section>
   );
 }
