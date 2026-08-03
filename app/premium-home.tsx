@@ -68,8 +68,8 @@ const cases = [
     image: "/assets/content-color-run.png",
   },
   {
-    title: "Dave Dekker",
-    discipline: t("Artiest & event content", "Artist & event content", "Contenido de artista y evento"),
+    title: "Rode Loper",
+    discipline: t("Eventfotografie & content", "Event photography & content", "Fotografia de eventos y contenido"),
     image: "/assets/dave-dekker/photos/event-13.jpg",
   },
 ];
@@ -78,7 +78,7 @@ const archive = [
   { kind: "image", src: "/assets/content-nxchange.png", label: "Nxchange" },
   { kind: "image", src: "/assets/content-airbnb.png", label: "HealthyFest" },
   { kind: "video", src: "/assets/travel/siargao-preview.mov", fullSrc: "/assets/travel/full/siargao-full.m4v", label: "Siargao" },
-  { kind: "image", src: "/assets/dave-dekker/photos/event-01.jpg", label: "Dave Dekker" },
+  { kind: "image", src: "/assets/dave-dekker/photos/event-01.jpg", label: "Rode Loper" },
   { kind: "video", src: "/assets/dave-dekker/dave-5-preview.mov", fullSrc: "/assets/dave-dekker/full/dave-5-full.mov", label: "De Rode Loper" },
   { kind: "image", src: "/assets/content-maasclaim.png", label: "ChickShack Valencia" },
   { kind: "video", src: "/assets/travel/whitsundays-preview.mov", fullSrc: "/assets/travel/full/whitsundays-full.m4v", label: "Whitsundays" },
