@@ -4682,6 +4682,24 @@ h3 {
   line-height: 0.92;
 }
 
+@media (min-width: 900px) {
+  .premium-hero {
+    padding-top: clamp(6.25rem, 8vw, 8rem);
+    padding-bottom: clamp(2.5rem, 4vw, 4rem);
+  }
+
+  .premium-hero-copy {
+    max-width: min(760px, 58vw);
+    gap: clamp(1rem, 1.45vw, 1.35rem);
+  }
+
+  .premium-hero h1 {
+    max-width: 760px;
+    font-size: clamp(4.5rem, 6.25vw, 6.9rem);
+    line-height: 0.94;
+  }
+}
+
 .premium-hero h1 span {
   display: block;
   margin-top: 0.18em;
