@@ -510,7 +510,7 @@ export function DisciplineRunway() {
               </div>
             ) : item.visual === "website" ? (
               <div className="runway-website-card">
-                <iframe title="Websitecase Zelfstandigen Bouw" src={websites[0].url} loading="lazy" />
+                <iframe title="Websitecase Limisan" src={websites[0].url} loading="lazy" />
                 <span><Text value={t("Live website", "Live website", "Web en vivo")} /></span>
               </div>
             ) : (
@@ -550,10 +550,10 @@ export function WebsiteFeatureCase() {
       <div className="website-live-frame">
         <div>
           <span><Text value={t("Live websitecase", "Live website case", "Caso web en vivo")} /></span>
-          <strong>Zelfstandigen Bouw</strong>
+          <strong>Limisan</strong>
           <small><Text value={t("Live preview", "Live preview", "Vista previa en vivo")} /></small>
         </div>
-        <iframe title="Zelfstandigen Bouw live preview" src={websites[0].url} loading="lazy" />
+        <iframe title="Limisan live preview" src={websites[0].url} loading="lazy" />
       </div>
     </div>
   );
@@ -561,7 +561,7 @@ export function WebsiteFeatureCase() {
 
 export function WebsiteManagementShowcase() {
   const caseCards = websites;
-  const managementSite = websites.find((site) => site.title === "Orchard Finance") ?? websites[0];
+  const managementSite = websites.find((site) => site.title === "Limisan") ?? websites[0];
 
   return (
     <div className="website-management-showcase">
