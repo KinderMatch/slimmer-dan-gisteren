@@ -7029,8 +7029,8 @@ h3 {
   }
 
   .service-premium-website .management-status-card strong {
-    font-size: clamp(2.35rem, 2.65vw, 3rem);
-    line-height: 1.04;
+    font-size: clamp(1.65rem, 1.8vw, 2.25rem);
+    line-height: 1.08;
     text-wrap: balance;
   }
 }
