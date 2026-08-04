@@ -56,13 +56,13 @@ const navItems = [
 
 const websites = [
   { title: "Limisan", url: "https://limisan.nl/" },
+  { title: "Paul Seuntjens (gemaakt door FEKA)", url: "https://paulseuntjens.nl/" },
   { title: "Orchard Finance", url: "https://www.orchardfinance.com/", embeddable: false },
   { title: "Trouwshots.nl", url: "https://trouwshots.nl/" },
   { title: "Nieuwbouw Makelaar Spanje", url: "https://www.nieuwbouwmakelaarspanje.com/" },
   { title: "Zelfstandigen Bouw", url: "https://www.zelfstandigenbouw.nl/" },
   { title: "Kozijnrubbers (Externe websitebouwer FEKA)", url: "https://kozijnrubbers.nl/" },
   { title: "Spanje Advies", url: "https://spanje-advies.nl/" },
-  { title: "Paul Seuntjens", url: "https://paulseuntjens.nl/" },
 ];
 
 const googleAdsItems = [

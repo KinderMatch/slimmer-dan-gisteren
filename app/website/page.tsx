@@ -102,7 +102,7 @@ export default function WebsitePage() {
               )} />
             </p>
           </div>
-          <WebsiteCaseWall excludeTitles={["Paul Seuntjens"]} />
+          <WebsiteCaseWall />
         </section>
 
         <section className="section website-benefits-section premium-benefits-section">
