@@ -55,15 +55,15 @@ const navItems = [
 ];
 
 const websites = [
-  { title: "Limisan", url: "https://limisan.nl/", role: t("Gemaakt en beheerd door Slimmer dan Gisteren", "Built and managed by Slimmer dan Gisteren", "Creada y gestionada por Slimmer dan Gisteren") },
-  { title: "Paul Seuntjens", url: "https://paulseuntjens.nl/", role: t("Gemaakt door FEKA, in beheer bij Slimmer dan Gisteren", "Built by FEKA, managed by Slimmer dan Gisteren", "Creada por FEKA, gestionada por Slimmer dan Gisteren") },
-  { title: "Orchard Finance", url: "https://www.orchardfinance.com/", embeddable: false, previewVideo: "/assets/websites/orchard-finance-preview.mp4", role: t("Gemaakt door De Toekomst, onderhouden door Slimmer dan Gisteren", "Built by De Toekomst, maintained by Slimmer dan Gisteren", "Creada por De Toekomst, mantenida por Slimmer dan Gisteren") },
-  { title: "Trouwshots.nl", url: "https://trouwshots.nl/", role: t("Gemaakt en beheerd door Slimmer dan Gisteren", "Built and managed by Slimmer dan Gisteren", "Creada y gestionada por Slimmer dan Gisteren") },
-  { title: "Nieuwbouw Makelaar Spanje", url: "https://www.nieuwbouwmakelaarspanje.com/", role: t("Gemaakt en beheerd door Slimmer dan Gisteren", "Built and managed by Slimmer dan Gisteren", "Creada y gestionada por Slimmer dan Gisteren") },
-  { title: "Zelfstandigen Bouw", url: "https://www.zelfstandigenbouw.nl/", role: t("Gemaakt door FEKA, in beheer bij Slimmer dan Gisteren", "Built by FEKA, managed by Slimmer dan Gisteren", "Creada por FEKA, gestionada por Slimmer dan Gisteren") },
-  { title: "Kozijnrubbers", url: "https://kozijnrubbers.nl/", role: t("Gemaakt door FEKA, in beheer bij Slimmer dan Gisteren", "Built by FEKA, managed by Slimmer dan Gisteren", "Creada por FEKA, gestionada por Slimmer dan Gisteren") },
-  { title: "Spanje Advies", url: "https://spanje-advies.nl/", role: t("Gemaakt en beheerd door Slimmer dan Gisteren", "Built and managed by Slimmer dan Gisteren", "Creada y gestionada por Slimmer dan Gisteren") },
-  { title: "CYB Training", url: "https://cybtraining.nl/", role: t("In beheer gehad, niet zelf gemaakt", "Previously managed, not built by Slimmer dan Gisteren", "Gestionada anteriormente, no creada por Slimmer dan Gisteren") },
+  { title: "Limisan", url: "https://limisan.nl/", role: t("Website gemaakt door Slimmer dan Gisteren. Beheer door Slimmer dan Gisteren.", "Website built by Slimmer dan Gisteren. Managed by Slimmer dan Gisteren.", "Web creada por Slimmer dan Gisteren. Gestión por Slimmer dan Gisteren.") },
+  { title: "Paul Seuntjens", url: "https://paulseuntjens.nl/", role: t("Website gemaakt door FEKA. Beheer door Slimmer dan Gisteren.", "Website built by FEKA. Managed by Slimmer dan Gisteren.", "Web creada por FEKA. Gestión por Slimmer dan Gisteren.") },
+  { title: "Orchard Finance", url: "https://www.orchardfinance.com/", embeddable: false, previewVideo: "/assets/websites/orchard-finance-preview.mp4", role: t("Website gemaakt door De Toekomst. Beheer door Slimmer dan Gisteren.", "Website built by De Toekomst. Managed by Slimmer dan Gisteren.", "Web creada por De Toekomst. Gestión por Slimmer dan Gisteren.") },
+  { title: "Trouwshots.nl", url: "https://trouwshots.nl/", role: t("Website gemaakt door Slimmer dan Gisteren. Beheer door Slimmer dan Gisteren.", "Website built by Slimmer dan Gisteren. Managed by Slimmer dan Gisteren.", "Web creada por Slimmer dan Gisteren. Gestión por Slimmer dan Gisteren.") },
+  { title: "Nieuwbouw Makelaar Spanje", url: "https://www.nieuwbouwmakelaarspanje.com/", role: t("Website gemaakt door Slimmer dan Gisteren. Beheer door Slimmer dan Gisteren.", "Website built by Slimmer dan Gisteren. Managed by Slimmer dan Gisteren.", "Web creada por Slimmer dan Gisteren. Gestión por Slimmer dan Gisteren.") },
+  { title: "Zelfstandigen Bouw", url: "https://www.zelfstandigenbouw.nl/", role: t("Website gemaakt door FEKA. Beheer door Slimmer dan Gisteren.", "Website built by FEKA. Managed by Slimmer dan Gisteren.", "Web creada por FEKA. Gestión por Slimmer dan Gisteren.") },
+  { title: "Kozijnrubbers", url: "https://kozijnrubbers.nl/", role: t("Website gemaakt door FEKA. Beheer door Slimmer dan Gisteren.", "Website built by FEKA. Managed by Slimmer dan Gisteren.", "Web creada por FEKA. Gestión por Slimmer dan Gisteren.") },
+  { title: "Spanje Advies", url: "https://spanje-advies.nl/", role: t("Website gemaakt door Slimmer dan Gisteren. Beheer door Slimmer dan Gisteren.", "Website built by Slimmer dan Gisteren. Managed by Slimmer dan Gisteren.", "Web creada por Slimmer dan Gisteren. Gestión por Slimmer dan Gisteren.") },
+  { title: "CYB Training", url: "https://cybtraining.nl/", role: t("Website niet gemaakt door Slimmer dan Gisteren. Eerder in beheer bij Slimmer dan Gisteren.", "Website not built by Slimmer dan Gisteren. Previously managed by Slimmer dan Gisteren.", "Web no creada por Slimmer dan Gisteren. Gestionada anteriormente por Slimmer dan Gisteren.") },
 ];
 
 const googleAdsItems = [
