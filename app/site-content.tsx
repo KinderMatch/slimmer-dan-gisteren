@@ -56,7 +56,7 @@ const navItems = [
 
 const websites = [
   { title: "Zelfstandigen Bouw", url: "https://www.zelfstandigenbouw.nl/" },
-  { title: "Orchard Finance", url: "https://www.orchardfinance.com/" },
+  { title: "Orchard Finance", url: "https://www.orchardfinance.com/", embeddable: false },
   { title: "Trouwshots.nl", url: "https://trouwshots.nl/" },
   { title: "Nieuwbouw Makelaar Spanje", url: "https://www.nieuwbouwmakelaarspanje.com/" },
   { title: "Limisan", url: "https://limisan.nl/" },
@@ -1091,11 +1091,26 @@ export function WebsitePortfolio({ compact = false }: { compact?: boolean }) {
             </div>
             <small><Text value={t("Live preview", "Live preview", "Vista previa en vivo")} /></small>
           </div>
-          <iframe title={site.title} src={site.url} loading="lazy" />
+          <WebsitePreview site={site} title={`${site.title} live preview`} />
         </article>
       ))}
     </div>
   );
+}
+
+function WebsitePreview({ site, title }: { site: (typeof websites)[number]; title: string }) {
+  if (site.embeddable === false) {
+    return (
+      <a className="website-preview-fallback" href={site.url} target="_blank" rel="noreferrer" aria-label={`${site.title} openen`}>
+        <span><Text value={t("Live website", "Live website", "Web en vivo")} /></span>
+        <strong>{site.title}</strong>
+        <small>{site.url.replace("https://", "").replace(/\/$/, "")}</small>
+        <em><Text value={t("Open live website", "Open live website", "Abrir web en vivo")} /></em>
+      </a>
+    );
+  }
+
+  return <iframe title={title} src={site.url} loading="lazy" />;
 }
 
 export function WebsiteCaseWall({
@@ -1120,7 +1135,7 @@ export function WebsiteCaseWall({
             <h3>{site.title}</h3>
             <small><Text value={t("Live preview", "Live preview", "Vista previa en vivo")} /></small>
           </div>
-          <iframe title={`${site.title} live preview`} src={site.url} loading="lazy" />
+          <WebsitePreview site={site} title={`${site.title} live preview`} />
         </article>
       ))}
     </div>
