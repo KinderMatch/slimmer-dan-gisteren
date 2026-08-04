@@ -55,14 +55,15 @@ const navItems = [
 ];
 
 const websites = [
-  { title: "Limisan", url: "https://limisan.nl/" },
-  { title: "Paul Seuntjens (gemaakt door FEKA)", url: "https://paulseuntjens.nl/" },
-  { title: "Orchard Finance", url: "https://www.orchardfinance.com/", embeddable: false },
-  { title: "Trouwshots.nl", url: "https://trouwshots.nl/" },
-  { title: "Nieuwbouw Makelaar Spanje", url: "https://www.nieuwbouwmakelaarspanje.com/" },
-  { title: "Zelfstandigen Bouw", url: "https://www.zelfstandigenbouw.nl/" },
-  { title: "Kozijnrubbers (Externe websitebouwer FEKA)", url: "https://kozijnrubbers.nl/" },
-  { title: "Spanje Advies", url: "https://spanje-advies.nl/" },
+  { title: "Limisan", url: "https://limisan.nl/", role: t("Gemaakt en beheerd door Slimmer dan Gisteren", "Built and managed by Slimmer dan Gisteren", "Creada y gestionada por Slimmer dan Gisteren") },
+  { title: "Paul Seuntjens", url: "https://paulseuntjens.nl/", role: t("Gemaakt door FEKA, in beheer bij Slimmer dan Gisteren", "Built by FEKA, managed by Slimmer dan Gisteren", "Creada por FEKA, gestionada por Slimmer dan Gisteren") },
+  { title: "Orchard Finance", url: "https://www.orchardfinance.com/", embeddable: false, previewVideo: "/assets/websites/orchard-finance-preview.mp4", role: t("Gemaakt door De Toekomst, onderhouden door Slimmer dan Gisteren", "Built by De Toekomst, maintained by Slimmer dan Gisteren", "Creada por De Toekomst, mantenida por Slimmer dan Gisteren") },
+  { title: "Trouwshots.nl", url: "https://trouwshots.nl/", role: t("Gemaakt en beheerd door Slimmer dan Gisteren", "Built and managed by Slimmer dan Gisteren", "Creada y gestionada por Slimmer dan Gisteren") },
+  { title: "Nieuwbouw Makelaar Spanje", url: "https://www.nieuwbouwmakelaarspanje.com/", role: t("Gemaakt en beheerd door Slimmer dan Gisteren", "Built and managed by Slimmer dan Gisteren", "Creada y gestionada por Slimmer dan Gisteren") },
+  { title: "Zelfstandigen Bouw", url: "https://www.zelfstandigenbouw.nl/", role: t("Gemaakt door FEKA, in beheer bij Slimmer dan Gisteren", "Built by FEKA, managed by Slimmer dan Gisteren", "Creada por FEKA, gestionada por Slimmer dan Gisteren") },
+  { title: "Kozijnrubbers", url: "https://kozijnrubbers.nl/", role: t("Gemaakt door FEKA, in beheer bij Slimmer dan Gisteren", "Built by FEKA, managed by Slimmer dan Gisteren", "Creada por FEKA, gestionada por Slimmer dan Gisteren") },
+  { title: "Spanje Advies", url: "https://spanje-advies.nl/", role: t("Gemaakt en beheerd door Slimmer dan Gisteren", "Built and managed by Slimmer dan Gisteren", "Creada y gestionada por Slimmer dan Gisteren") },
+  { title: "CYB Training", url: "https://cybtraining.nl/", role: t("In beheer gehad, niet zelf gemaakt", "Previously managed, not built by Slimmer dan Gisteren", "Gestionada anteriormente, no creada por Slimmer dan Gisteren") },
 ];
 
 const googleAdsItems = [
@@ -243,7 +244,7 @@ const artistPhotos = [
 
 const proofItems = [
   { value: "50%", label: t("minder advertentiekosten in klantcase", "lower ad spend in a client case", "menos inversión publicitaria en un caso cliente") },
-  { value: "8", label: t("websites in beheer of samenwerking", "websites managed or supported", "webs gestionadas o en colaboración") },
+  { value: "9", label: t("websitecases in beheer of samenwerking", "website cases managed or supported", "casos web gestionados o en colaboración") },
   { value: "3", label: t("kanalen: website, ads en social", "channels: website, ads and social", "canales: web, anuncios y social") },
 ];
 
@@ -610,7 +611,7 @@ export function WebsiteManagementShowcase() {
               <article key={site.title}>
                 <span>{String(index + 1).padStart(2, "0")}</span>
                 <strong>{site.title}</strong>
-                <small><Text value={t("In beheer", "Managed", "En gestión")} /></small>
+                <small><Text value={site.role} /></small>
               </article>
             ))}
           </div>
@@ -1089,6 +1090,7 @@ export function WebsitePortfolio({ compact = false }: { compact?: boolean }) {
             <div>
               <span><Text value={t("Websitecase", "Website case", "Caso web")} /></span>
               <h3>{site.title}</h3>
+              <p className="website-case-role"><Text value={site.role} /></p>
             </div>
             <small><Text value={t("Live preview", "Live preview", "Vista previa en vivo")} /></small>
           </div>
@@ -1103,6 +1105,11 @@ function WebsitePreview({ site, title }: { site: (typeof websites)[number]; titl
   if (site.embeddable === false) {
     return (
       <a className="website-preview-fallback" href={site.url} target="_blank" rel="noreferrer" aria-label={`${site.title} openen`}>
+        {site.previewVideo ? (
+          <video autoPlay muted loop playsInline preload="metadata" aria-hidden="true">
+            <source src={videoPreviewSrc(site.previewVideo)} type="video/mp4" />
+          </video>
+        ) : null}
         <span><Text value={t("Live website", "Live website", "Web en vivo")} /></span>
         <strong>{site.title}</strong>
         <small>{site.url.replace("https://", "").replace(/\/$/, "")}</small>
@@ -1134,7 +1141,7 @@ export function WebsiteCaseWall({
           <div className="website-tile-copy">
             <span>{String(index + 1).padStart(2, "0")} / <Text value={t("Websitecase", "Website case", "Caso web")} /></span>
             <h3>{site.title}</h3>
-            <small><Text value={t("Live preview", "Live preview", "Vista previa en vivo")} /></small>
+            <p className="website-case-role"><Text value={site.role} /></p>
           </div>
           <WebsitePreview site={site} title={`${site.title} live preview`} />
         </article>
