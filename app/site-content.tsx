@@ -560,6 +560,7 @@ export function WebsiteFeatureCase() {
 
 export function WebsiteManagementShowcase() {
   const caseCards = websites;
+  const managementSite = websites.find((site) => site.title === "Orchard Finance") ?? websites[0];
 
   return (
     <div className="website-management-showcase">
@@ -587,9 +588,9 @@ export function WebsiteManagementShowcase() {
         <div className="management-browser">
           <div className="management-browser-top">
             <span><Text value={t("Live websitebeheer", "Live website management", "Gestión web en vivo")} /></span>
-            <strong>{websites[0].title}</strong>
+            <strong>{managementSite.title}</strong>
           </div>
-          <iframe title={`${websites[0].title} beheer preview`} src={websites[0].url} loading="lazy" />
+          <WebsitePreview site={managementSite} title={`${managementSite.title} beheer preview`} />
         </div>
 
         <div className="management-side">

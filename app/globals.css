@@ -1536,6 +1536,11 @@ h3 {
   background: white;
 }
 
+.management-browser .website-preview-fallback {
+  height: 100%;
+  min-height: 620px;
+}
+
 .management-side {
   display: grid;
   grid-template-rows: auto auto minmax(0, 1fr);
@@ -6966,6 +6971,18 @@ h3 {
 
 .service-premium-website .management-browser iframe {
   filter: saturate(0.96) contrast(1.03);
+}
+
+.service-premium-website .management-browser .website-preview-fallback {
+  filter: saturate(0.96) contrast(1.03);
+}
+
+@media (min-width: 981px) {
+  .service-premium-website .management-copy h2 {
+    max-width: 680px;
+    font-size: clamp(3.15rem, 4.45vw, 4.85rem);
+    line-height: 0.98;
+  }
 }
 
 .service-premium-website .website-workflow {
