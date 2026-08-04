@@ -56,6 +56,7 @@ const navItems = [
 
 const websites = [
   { title: "Zelfstandigen Bouw", url: "https://www.zelfstandigenbouw.nl/" },
+  { title: "Orchard Finance", url: "https://www.orchardfinance.com/" },
   { title: "Trouwshots.nl", url: "https://trouwshots.nl/" },
   { title: "Nieuwbouw Makelaar Spanje", url: "https://www.nieuwbouwmakelaarspanje.com/" },
   { title: "Limisan", url: "https://limisan.nl/" },
@@ -242,7 +243,7 @@ const artistPhotos = [
 
 const proofItems = [
   { value: "50%", label: t("minder advertentiekosten in klantcase", "lower ad spend in a client case", "menos inversión publicitaria en un caso cliente") },
-  { value: "7", label: t("websites in beheer of samenwerking", "websites managed or supported", "webs gestionadas o en colaboración") },
+  { value: "8", label: t("websites in beheer of samenwerking", "websites managed or supported", "webs gestionadas o en colaboración") },
   { value: "3", label: t("kanalen: website, ads en social", "channels: website, ads and social", "canales: web, anuncios y social") },
 ];
 
@@ -558,7 +559,7 @@ export function WebsiteFeatureCase() {
 }
 
 export function WebsiteManagementShowcase() {
-  const caseCards = websites.slice(0, 7);
+  const caseCards = websites;
 
   return (
     <div className="website-management-showcase">
