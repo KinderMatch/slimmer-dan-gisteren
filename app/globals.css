@@ -1564,8 +1564,9 @@ h3 {
   color: var(--night);
   font-size: clamp(2rem, 3vw, 3.4rem);
   line-height: 1;
-  overflow-wrap: anywhere;
+  overflow-wrap: normal;
   word-break: normal;
+  hyphens: none;
 }
 
 .management-status-card p {
@@ -7025,6 +7026,12 @@ h3 {
     max-width: 680px;
     font-size: clamp(3.15rem, 4.45vw, 4.85rem);
     line-height: 0.98;
+  }
+
+  .service-premium-website .management-status-card strong {
+    font-size: clamp(2.35rem, 2.65vw, 3rem);
+    line-height: 1.04;
+    text-wrap: balance;
   }
 }
 
