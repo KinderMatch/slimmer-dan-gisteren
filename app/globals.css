@@ -4887,6 +4887,87 @@ h3 {
   line-height: 1.05;
 }
 
+.premium-ai-actors {
+  display: grid;
+  grid-template-columns: minmax(0, 0.78fr) minmax(420px, 1.1fr);
+  gap: clamp(2rem, 5vw, 5.5rem);
+  align-items: center;
+  min-height: 88vh;
+  padding: clamp(5rem, 9vw, 9rem) clamp(1.2rem, 5vw, 5rem);
+  border-top: 1px solid var(--premium-divider);
+  border-bottom: 1px solid var(--premium-divider);
+  background:
+    radial-gradient(circle at 22% 24%, rgba(37, 99, 235, 0.2), transparent 32%),
+    linear-gradient(135deg, #111111 0%, #171717 46%, #0f1724 100%);
+}
+
+.premium-ai-actors-copy {
+  max-width: 720px;
+}
+
+.premium-ai-actors-copy h2 {
+  margin: 0;
+  color: var(--premium-light);
+  font-size: clamp(3rem, 5.6vw, 6.4rem);
+  font-weight: 820;
+  line-height: 0.94;
+}
+
+.premium-ai-actors-copy p:not(.premium-kicker) {
+  max-width: 620px;
+  margin: clamp(1.3rem, 2vw, 2rem) 0 0;
+  color: rgba(244, 240, 234, 0.72);
+  font-size: clamp(1.05rem, 1.55vw, 1.35rem);
+  line-height: 1.65;
+}
+
+.premium-ai-actors-points {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+  margin-top: clamp(1.5rem, 2.4vw, 2.2rem);
+}
+
+.premium-ai-actors-points span {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2.6rem;
+  padding: 0 1rem;
+  border: 1px solid rgba(125, 183, 255, 0.28);
+  border-radius: 999px;
+  background: rgba(125, 183, 255, 0.08);
+  color: rgba(244, 240, 234, 0.86);
+  font-size: 0.92rem;
+  font-weight: 800;
+}
+
+.premium-ai-actors-media {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(244, 240, 234, 0.16);
+  border-radius: 0;
+  background: #050505;
+  box-shadow: 0 42px 130px rgba(0, 0, 0, 0.46);
+}
+
+.premium-ai-actors-media::before {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  pointer-events: none;
+  background: linear-gradient(135deg, rgba(125, 183, 255, 0.22), transparent 34%, rgba(244, 240, 234, 0.1));
+  z-index: 1;
+}
+
+.premium-ai-actors-media video {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  max-height: min(74vh, 780px);
+  object-fit: contain;
+  background: #050505;
+}
+
 .premium-services {
   display: grid;
   gap: clamp(5rem, 9vw, 9rem);
@@ -5645,6 +5726,37 @@ h3 {
 
   .premium-manifesto {
     min-height: auto;
+  }
+
+  .premium-ai-actors {
+    grid-template-columns: 1fr;
+    min-height: auto;
+    padding-block: clamp(4.5rem, 16vw, 6.5rem);
+  }
+
+  .premium-ai-actors-copy h2 {
+    font-size: clamp(2.65rem, 13vw, 4.5rem);
+    line-height: 0.98;
+  }
+
+  .premium-ai-actors-copy p:not(.premium-kicker) {
+    font-size: 1.05rem;
+    line-height: 1.58;
+  }
+
+  .premium-ai-actors-points {
+    gap: 0.55rem;
+  }
+
+  .premium-ai-actors-points span {
+    min-height: 2.45rem;
+    padding-inline: 0.85rem;
+    font-size: 0.84rem;
+  }
+
+  .premium-ai-actors-media video {
+    max-height: none;
+    aspect-ratio: 16 / 10;
   }
 
   .premium-service-media,

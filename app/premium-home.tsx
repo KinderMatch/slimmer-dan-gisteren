@@ -243,14 +243,47 @@ export function PremiumHome() {
             </motion.div>
           </section>
 
-          <section className="premium-manifesto">
-            <motion.p initial="hidden" whileInView="show" viewport={{ once: true, margin: "-20%" }} variants={reveal} transition={transition}>
-              <EmphasisText value={t(
-                "Slimmer dan Gisteren combineert [[websites]], [[advertenties]] en [[content creatie]] tot één helder systeem. Rust in de basis. Scherpte in de uitvoering. Groei in beeld.",
-                "Slimmer dan Gisteren combines [[websites]], [[advertising]] and [[content creation]] into one clear system. Calm in the foundation. Precision in the work. Growth in view.",
-                "Slimmer dan Gisteren combina [[webs]], [[anuncios]] y [[creación de contenido]] en un sistema claro. Calma en la base. Precisión en la ejecución. Crecimiento visible.",
-              )} />
-            </motion.p>
+          <section className="premium-ai-actors">
+            <motion.div
+              className="premium-ai-actors-copy"
+              initial="hidden"
+              whileInView="show"
+              viewport={{ once: true, amount: 0.35 }}
+              variants={reveal}
+              transition={transition}
+            >
+              <p className="premium-kicker">AI actors</p>
+              <h2>
+                <EmphasisText value={t(
+                  "[[AI actors]] voor content die blijft werken.",
+                  "[[AI actors]] for content that keeps working.",
+                  "[[Actores IA]] para contenido que sigue trabajando.",
+                )} />
+              </h2>
+              <p>
+                <Text value={t(
+                  "Maak herkenbare video's voor advertenties, social media, e-mail en je website zonder elke keer een volledige draaidag. Handig voor uitleg, aanbiedingen, opvolging en content die je vaker nodig hebt.",
+                  "Create recognizable videos for ads, social media, email and your website without planning a full shoot every time. Useful for explainers, offers, follow-up and recurring content.",
+                  "Crea videos reconocibles para anuncios, redes sociales, email y tu web sin organizar una produccion completa cada vez. Ideal para explicar, vender, hacer seguimiento y repetir contenido.",
+                )} />
+              </p>
+              <div className="premium-ai-actors-points" aria-label="AI actor toepassingen">
+                <span><Text value={t("Paid media: snel varianten testen", "Paid media: test variants faster", "Paid media: probar variantes rapido")} /></span>
+                <span><Text value={t("Owned media: herkenbaar op je eigen kanalen", "Owned media: recognizable on your own channels", "Owned media: reconocible en tus canales")} /></span>
+                <span><Text value={t("Menselijker dan alleen tekst of stockbeeld", "More human than text or stock visuals alone", "Mas humano que solo texto o imagen de stock")} /></span>
+              </div>
+            </motion.div>
+            <motion.div
+              className="premium-ai-actors-media"
+              initial={{ opacity: 0, y: 40, scale: 0.98 }}
+              whileInView={{ opacity: 1, y: 0, scale: 1 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={transition}
+            >
+              <video controls playsInline preload="metadata">
+                <source src="/assets/content/ai-actors-slimmer-dan-gisteren.m4v" type="video/mp4" />
+              </video>
+            </motion.div>
           </section>
 
           <section className="premium-services" aria-label="Services">
