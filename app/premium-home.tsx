@@ -255,9 +255,9 @@ export function PremiumHome() {
               <p className="premium-kicker">AI actors</p>
               <h2>
                 <EmphasisText value={t(
-                  "[[AI actors]] voor content die blijft werken.",
-                  "[[AI actors]] for content that keeps working.",
-                  "[[Actores IA]] para contenido que sigue trabajando.",
+                  "[[Elira Veysen]]",
+                  "[[Elira Veysen]]",
+                  "[[Elira Veysen]]",
                 )} />
               </h2>
               <p>
