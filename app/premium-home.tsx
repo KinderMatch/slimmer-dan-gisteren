@@ -20,18 +20,6 @@ const transition = { duration: 0.9, ease: [0.16, 1, 0.3, 1] };
 const services = [
   {
     label: "01",
-    href: "/website/",
-    title: t("Websites", "Websites", "Webs"),
-    body: t(
-      "Digitale fundamenten die rust geven. Snel, helder en klaar voor groei.",
-      "Digital foundations that create calm. Fast, clear and ready for growth.",
-      "Bases digitales que aportan calma. Rápidas, claras y listas para crecer.",
-    ),
-    media: "/assets/content-zb.png",
-    type: "website",
-  },
-  {
-    label: "02",
     href: "/advertenties/",
     title: t("Advertenties", "Advertising", "Anuncios"),
     body: t(
@@ -43,7 +31,7 @@ const services = [
     type: "video",
   },
   {
-    label: "03",
+    label: "02",
     href: "/content-creatie/",
     title: t("Content creatie", "Content creation", "Creación de contenido"),
     body: t(
@@ -54,12 +42,24 @@ const services = [
     media: "/assets/travel/full/kgari-noosa-full.m4v",
     type: "content",
   },
+  {
+    label: "03",
+    href: "/website/",
+    title: t("Websites", "Websites", "Webs"),
+    body: t(
+      "Een sterk fundament voor campagnes en content. Additioneel, helder en campagneklaar.",
+      "A strong foundation for campaigns and content. Additional, clear and campaign-ready.",
+      "Una base fuerte para campañas y contenido. Adicional, clara y lista para campanas.",
+    ),
+    media: "/assets/content-zb.png",
+    type: "website",
+  },
 ];
 
 const cases = [
   {
     title: "Zelfstandigen Bouw",
-    discipline: t("Website + advertenties + social", "Website + advertising + social", "Web + anuncios + social"),
+    discipline: t("Advertenties + content + websitefundament", "Advertising + content + website foundation", "Anuncios + contenido + base web"),
     image: "/assets/content-zb.png",
   },
   {
@@ -233,9 +233,9 @@ export function PremiumHome() {
                 <span><EmphasisText value={t("[[Groei]] die zichtbaar wordt.", "[[Growth]] that becomes visible.", "[[Crecimiento]] que se vuelve visible.")} /></span>
               </motion.h1>
               <motion.div variants={reveal} transition={transition} className="premium-hero-meta">
-                <span>Websites</span>
                 <span><Text value={t("Advertenties", "Advertising", "Anuncios")} /></span>
                 <span>Content</span>
+                <span>Websites</span>
               </motion.div>
               <motion.a variants={reveal} transition={transition} className="premium-cta" href="https://calendly.com/buitenhuisj004/bmc-sessie">
                 <Text value={t("Plan een strategiesessie", "Plan a strategy session", "Planifica una sesión estratégica")} />
