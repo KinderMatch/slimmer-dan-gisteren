@@ -262,16 +262,19 @@ export function PremiumHome() {
               </h2>
               <p>
                 <Text value={t(
-                  "Maak herkenbare video's voor advertenties, social media, e-mail en je website zonder elke keer een volledige draaidag. Handig voor uitleg, aanbiedingen, opvolging en content die je vaker nodig hebt.",
-                  "Create recognizable videos for ads, social media, email and your website without planning a full shoot every time. Useful for explainers, offers, follow-up and recurring content.",
-                  "Crea videos reconocibles para anuncios, redes sociales, email y tu web sin organizar una produccion completa cada vez. Ideal para explicar, vender, hacer seguimiento y repetir contenido.",
+                  "Kies een AI actor voor een commercial die al bestaat, of laat een nieuwe commercial vanaf nul maken. Zo maak je herkenbare video's voor advertenties, social media, e-mail en je website zonder elke keer een volledige draaidag.",
+                  "Choose an AI actor for an existing commercial, or create a new commercial from scratch. That makes it easier to create recognizable videos for ads, social media, email and your website without planning a full shoot every time.",
+                  "Elige un actor IA para un anuncio que ya existe, o crea un anuncio nuevo desde cero. Asi puedes hacer videos reconocibles para anuncios, redes sociales, email y tu web sin organizar una produccion completa cada vez.",
                 )} />
               </p>
               <div className="premium-ai-actors-points" aria-label="AI actor toepassingen">
-                <span><Text value={t("Paid media: snel varianten testen", "Paid media: test variants faster", "Paid media: probar variantes rapido")} /></span>
-                <span><Text value={t("Owned media: herkenbaar op je eigen kanalen", "Owned media: recognizable on your own channels", "Owned media: reconocible en tus canales")} /></span>
-                <span><Text value={t("Menselijker dan alleen tekst of stockbeeld", "More human than text or stock visuals alone", "Mas humano que solo texto o imagen de stock")} /></span>
+                <span><Text value={t("Bestaande commercial verrijken", "Enrich an existing commercial", "Mejorar un anuncio existente")} /></span>
+                <span><Text value={t("Nieuwe commercial from scratch", "New commercial from scratch", "Anuncio nuevo desde cero")} /></span>
+                <span><Text value={t("Paid en owned media", "Paid and owned media", "Paid y owned media")} /></span>
               </div>
+              <a className="premium-ai-actors-cta" href="mailto:jimmy@slimmerdangisteren.nl?subject=Samenwerken%20met%20Elira">
+                <Text value={t("Samenwerken met Elira? Neem contact op", "Collaborate with Elira? Get in touch", "¿Colaborar con Elira? Contactanos")} />
+              </a>
             </motion.div>
             <motion.div
               className="premium-ai-actors-media"
