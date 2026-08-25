@@ -200,11 +200,11 @@ function LocalizedSpeechVideo() {
   const { language } = useLanguage();
   const media = {
     en: {
-      poster: "/assets/content/speech-ceo-en-poster.png",
+      poster: "/assets/content/speech-ceo-nl-poster.png",
       source: "/assets/content/speech-ceo-en.mp4",
     },
     es: {
-      poster: "/assets/content/speech-ceo-es-poster.png",
+      poster: "/assets/content/speech-ceo-nl-poster.png",
       source: "/assets/content/speech-ceo-es.mp4",
     },
     nl: {
