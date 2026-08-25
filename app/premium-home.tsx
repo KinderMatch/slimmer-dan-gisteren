@@ -198,15 +198,24 @@ function HeroVisual() {
 
 function LocalizedSpeechVideo() {
   const { language } = useLanguage();
-  const source = {
-    en: "/assets/content/speech-ceo-en.mp4",
-    es: "/assets/content/speech-ceo-es.mp4",
-    nl: "/assets/content/speech-ceo-nl.mp4",
+  const media = {
+    en: {
+      poster: "/assets/content/speech-ceo-en-poster.png",
+      source: "/assets/content/speech-ceo-en.mp4",
+    },
+    es: {
+      poster: "/assets/content/speech-ceo-es-poster.png",
+      source: "/assets/content/speech-ceo-es.mp4",
+    },
+    nl: {
+      poster: "/assets/content/speech-ceo-nl-poster.png",
+      source: "/assets/content/speech-ceo-nl.mp4",
+    },
   }[language];
 
   return (
-    <video controls playsInline preload="metadata" key={language}>
-      <source src={source} type="video/mp4" />
+    <video controls playsInline preload="metadata" poster={media.poster} key={language}>
+      <source src={media.source} type="video/mp4" />
     </video>
   );
 }
@@ -277,9 +286,9 @@ export function PremiumHome() {
               </h2>
               <p>
                 <Text value={t(
-                  "Waarom betalen voor accountmanagers, meetings en overhead als je ook direct kunt werken met degene die jouw marketing bedenkt en uitvoert? Slimmer dan Gisteren combineert paid media met je eigen kanalen, zodat advertenties zorgen voor betere content, sterkere landingspagina's en meer conversie. Minder ruis, sneller schakelen en meer marketingkracht voor je budget.",
-                  "Why pay for account managers, meetings and overhead when you can work directly with the person who creates and executes your marketing? Smarter than Yesterday combines paid media with your owned channels, so ads improve your content, landing pages, conversions and revenue. Less agency, more learning and more results.",
-                  "¿Por qué pagar gestores de cuentas, reuniones y costes de estructura si puedes trabajar directamente con quien diseña y ejecuta tu marketing? Slimmer dan Gisteren combina paid media con tus canales propios para mejorar contenido, landing pages, conversiones e ingresos. Menos agencia, más aprendizaje y más resultados.",
+                  "In deze video vertelt Jimmy, eigenaar van Slimmer dan Gisteren, waarom directe samenwerking meer oplevert dan extra lagen. Je werkt met degene die jouw marketing bedenkt én uitvoert, zodat paid media, content en landingspagina's elkaar versterken. Minder ruis, sneller schakelen en meer marketingkracht voor je budget.",
+                  "In this video, Jimmy, owner of Slimmer dan Gisteren, explains why direct collaboration creates more value than extra layers. You work with the person who creates and executes your marketing, so paid media, content and landing pages reinforce each other. Less noise, faster decisions and more marketing power for your budget.",
+                  "En este video, Jimmy, propietario de Slimmer dan Gisteren, explica por qué la colaboración directa aporta más valor que las capas adicionales. Trabajas con la persona que diseña y ejecuta tu marketing, para que paid media, contenido y landing pages se refuercen entre sí. Menos ruido, más agilidad y más fuerza de marketing para tu presupuesto.",
                 )} />
               </p>
             </motion.div>
