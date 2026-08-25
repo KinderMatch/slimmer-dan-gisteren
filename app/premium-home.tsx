@@ -270,16 +270,16 @@ export function PremiumHome() {
               <p className="premium-kicker"><Text value={t("AI video", "AI video", "Video IA")} /></p>
               <h2>
                 <EmphasisText value={t(
-                  "Een gezicht bij je [[verhaal]].",
-                  "A face for your [[story]].",
-                  "Una cara para tu [[historia]].",
+                  "[[Minder bureau.]] Meer resultaat.",
+                  "[[Less agency.]] More results.",
+                  "[[Menos agencia.]] Más resultados.",
                 )} />
               </h2>
               <p>
                 <Text value={t(
-                  "Laat een boodschap persoonlijk overkomen met een video die past bij de taal van je doelgroep. Ideaal voor advertenties, landingspagina's en social content. Bekijk de video in de taal die je bovenaan kiest.",
-                  "Make your message feel personal with a video that matches your audience's language. Ideal for ads, landing pages and social content. Watch the video in the language you choose above.",
-                  "Haz que tu mensaje se sienta personal con un video en el idioma de tu publico. Ideal para anuncios, landing pages y contenido social. Mira el video en el idioma que eliges arriba.",
+                  "Waarom betalen voor accountmanagers, meetings en overhead als je ook direct kunt werken met degene die jouw marketing bedenkt en uitvoert? Slimmer dan Gisteren combineert paid media met je eigen kanalen, zodat advertenties zorgen voor betere content, sterkere landingspagina's en meer conversie. Minder ruis, sneller schakelen en meer marketingkracht voor je budget.",
+                  "Why pay for account managers, meetings and overhead when you can work directly with the person who creates and executes your marketing? Smarter than Yesterday combines paid media with your owned channels, so ads improve your content, landing pages, conversions and revenue. Less agency, more learning and more results.",
+                  "¿Por qué pagar gestores de cuentas, reuniones y costes de estructura si puedes trabajar directamente con quien diseña y ejecuta tu marketing? Slimmer dan Gisteren combina paid media con tus canales propios para mejorar contenido, landing pages, conversiones e ingresos. Menos agencia, más aprendizaje y más resultados.",
                 )} />
               </p>
             </motion.div>
