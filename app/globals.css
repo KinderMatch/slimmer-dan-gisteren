@@ -4903,6 +4903,7 @@ h3 {
 
 .premium-ai-actors-copy {
   max-width: 720px;
+  min-width: 0;
 }
 
 .premium-ai-actors-copy h2 {
@@ -4969,6 +4970,7 @@ h3 {
 
 .premium-ai-actors-media {
   position: relative;
+  min-width: 0;
   overflow: hidden;
   border: 1px solid rgba(244, 240, 234, 0.16);
   border-radius: 0;
@@ -5780,7 +5782,10 @@ h3 {
   .premium-ai-actors {
     grid-template-columns: 1fr;
     min-height: auto;
-    padding-block: clamp(4.5rem, 16vw, 6.5rem);
+    overflow: hidden;
+    padding-inline: clamp(1rem, 5vw, 1.4rem);
+    padding-top: clamp(7.5rem, 24vw, 8.75rem);
+    padding-bottom: clamp(4.5rem, 16vw, 6.5rem);
   }
 
   .premium-speech-section .premium-ai-actors-copy,
@@ -5806,6 +5811,13 @@ h3 {
     min-height: 2.45rem;
     padding-inline: 0.85rem;
     font-size: 0.84rem;
+  }
+
+  .premium-ai-actors-cta {
+    width: fit-content;
+    min-height: 2.95rem;
+    padding-inline: 1rem;
+    font-size: 0.88rem;
   }
 
   .premium-ai-actors-media video {
