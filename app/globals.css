@@ -4995,7 +4995,7 @@ h3 {
 }
 
 .premium-speech-section {
-  grid-template-columns: minmax(440px, 1.08fr) minmax(0, 0.78fr);
+  grid-template-columns: minmax(320px, 0.62fr) minmax(0, 0.78fr);
   background:
     radial-gradient(circle at 78% 22%, rgba(125, 183, 255, 0.18), transparent 30%),
     linear-gradient(135deg, #0f1724 0%, #111111 48%, #171717 100%);
@@ -5007,11 +5007,14 @@ h3 {
 
 .premium-speech-section .premium-ai-actors-media {
   order: 1;
+  justify-self: center;
+  width: min(100%, 560px);
 }
 
 .premium-speech-media video {
-  aspect-ratio: 16 / 9;
-  object-fit: cover;
+  aspect-ratio: 832 / 1088;
+  max-height: min(78vh, 860px);
+  object-fit: contain;
 }
 
 .premium-services {
@@ -5808,6 +5811,10 @@ h3 {
   .premium-ai-actors-media video {
     max-height: none;
     aspect-ratio: 16 / 10;
+  }
+
+  .premium-speech-media video {
+    aspect-ratio: 832 / 1088;
   }
 
   .premium-service-media,
