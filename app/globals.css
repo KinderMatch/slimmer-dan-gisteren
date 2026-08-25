@@ -4994,6 +4994,26 @@ h3 {
   background: #050505;
 }
 
+.premium-speech-section {
+  grid-template-columns: minmax(440px, 1.08fr) minmax(0, 0.78fr);
+  background:
+    radial-gradient(circle at 78% 22%, rgba(125, 183, 255, 0.18), transparent 30%),
+    linear-gradient(135deg, #0f1724 0%, #111111 48%, #171717 100%);
+}
+
+.premium-speech-section .premium-ai-actors-copy {
+  order: 2;
+}
+
+.premium-speech-section .premium-ai-actors-media {
+  order: 1;
+}
+
+.premium-speech-media video {
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}
+
 .premium-services {
   display: grid;
   gap: clamp(5rem, 9vw, 9rem);
@@ -5758,6 +5778,11 @@ h3 {
     grid-template-columns: 1fr;
     min-height: auto;
     padding-block: clamp(4.5rem, 16vw, 6.5rem);
+  }
+
+  .premium-speech-section .premium-ai-actors-copy,
+  .premium-speech-section .premium-ai-actors-media {
+    order: initial;
   }
 
   .premium-ai-actors-copy h2 {

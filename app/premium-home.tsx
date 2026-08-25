@@ -4,7 +4,7 @@ import Link from "next/link";
 import { motion, useScroll, useTransform } from "framer-motion";
 
 import { ContactActionGroup, ContactDock } from "./contact-actions";
-import { EmphasisText, LanguageProvider, LanguageToggle, Text, type LocalizedString } from "./language";
+import { EmphasisText, LanguageProvider, LanguageToggle, Text, useLanguage, type LocalizedString } from "./language";
 import { MediaLightbox } from "./media-lightbox";
 import { ScrollProgress } from "./scroll-experience";
 
@@ -196,6 +196,21 @@ function HeroVisual() {
   );
 }
 
+function LocalizedSpeechVideo() {
+  const { language } = useLanguage();
+  const source = {
+    en: "/assets/content/speech-ceo-en.mp4",
+    es: "/assets/content/speech-ceo-es.mp4",
+    nl: "/assets/content/speech-ceo-nl.mp4",
+  }[language];
+
+  return (
+    <video controls playsInline preload="metadata" key={language}>
+      <source src={source} type="video/mp4" />
+    </video>
+  );
+}
+
 export function PremiumHome() {
   return (
     <LanguageProvider>
@@ -240,6 +255,42 @@ export function PremiumHome() {
               <motion.a variants={reveal} transition={transition} className="premium-cta" href="https://calendly.com/buitenhuisj004/bmc-sessie">
                 <Text value={t("Plan een strategiesessie", "Plan a strategy session", "Planifica una sesión estratégica")} />
               </motion.a>
+            </motion.div>
+          </section>
+
+          <section className="premium-ai-actors premium-speech-section">
+            <motion.div
+              className="premium-ai-actors-copy"
+              initial="hidden"
+              whileInView="show"
+              viewport={{ once: true, amount: 0.35 }}
+              variants={reveal}
+              transition={transition}
+            >
+              <p className="premium-kicker"><Text value={t("AI video", "AI video", "Video IA")} /></p>
+              <h2>
+                <EmphasisText value={t(
+                  "Een gezicht bij je [[verhaal]].",
+                  "A face for your [[story]].",
+                  "Una cara para tu [[historia]].",
+                )} />
+              </h2>
+              <p>
+                <Text value={t(
+                  "Laat een boodschap persoonlijk overkomen met een video die past bij de taal van je doelgroep. Ideaal voor advertenties, landingspagina's en social content. Bekijk de video in de taal die je bovenaan kiest.",
+                  "Make your message feel personal with a video that matches your audience's language. Ideal for ads, landing pages and social content. Watch the video in the language you choose above.",
+                  "Haz que tu mensaje se sienta personal con un video en el idioma de tu publico. Ideal para anuncios, landing pages y contenido social. Mira el video en el idioma que eliges arriba.",
+                )} />
+              </p>
+            </motion.div>
+            <motion.div
+              className="premium-ai-actors-media premium-speech-media"
+              initial={{ opacity: 0, y: 40, scale: 0.98 }}
+              whileInView={{ opacity: 1, y: 0, scale: 1 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={transition}
+            >
+              <LocalizedSpeechVideo />
             </motion.div>
           </section>
 
