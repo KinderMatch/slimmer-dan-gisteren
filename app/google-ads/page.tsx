@@ -21,6 +21,12 @@ export const metadata: Metadata = {
     locale: "nl_NL",
     type: "website",
   },
+  twitter: {
+    card: "summary_large_image",
+    title: googleAdsPage.metadata.title,
+    description: googleAdsPage.metadata.description,
+    images: [absoluteUrl("/assets/optimized/content-zb.jpg")],
+  },
 };
 
 export default function GoogleAdsPage() {

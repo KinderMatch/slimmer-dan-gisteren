@@ -457,21 +457,21 @@ export const geoPage: GrowthPageData = {
 
 export const googleAdsPage: GrowthPageData = {
   slug: "/google-ads/",
-  eyebrow: "Google Ads & Social Ads",
+  eyebrow: "Google Ads",
   title: "Meer leads en omzet met slimme Google Ads",
   subtitle:
-    "Wij bouwen, beheren en optimaliseren Google Ads-campagnes die gericht zijn op rendement. Van zoekcampagnes en Shopping tot Performance Max en remarketing.",
+    "Wij bouwen, beheren en optimaliseren Google Ads-campagnes die gericht zijn op rendement. Van Search en Shopping tot Performance Max, YouTube en remarketing.",
   primaryCta: "Vraag een gratis Google Ads-scan aan",
   secondaryCta: "Bekijk onze aanpak",
   metadata: {
     title: "Google Ads Bureau | Meer Leads & Omzet met Google Ads",
     description:
       "Meer rendement uit Google Ads. Wij beheren Search, Shopping, Performance Max, YouTube en remarketingcampagnes gericht op leads, omzet en ROAS.",
-    keywords: ["Google Ads bureau", "Google Ads uitbesteden", "Performance Max", "Shopping campagnes", "Social Ads"],
+    keywords: ["Google Ads bureau", "Google Ads uitbesteden", "Google Ads beheer", "Performance Max", "Shopping campagnes", "Google Ads specialist", "Google Ads optimalisatie"],
   },
   visual: {
-    label: "Campagne-aanpak",
-    title: "Advertentie-systeem",
+    label: "Google Ads-aanpak",
+    title: "Search, Shopping en PMax",
     rows: [],
   },
   intro: {
@@ -481,8 +481,8 @@ export const googleAdsPage: GrowthPageData = {
     points: ["Direct zichtbaar in Google", "Gericht op relevante doelgroepen", "Continu meetbaar en optimaliseerbaar"],
   },
   trust: {
-    line: "Campagnes waarin strategie, tracking, landingspagina en rapportage hetzelfde verhaal vertellen.",
-    badges: ["Search", "Performance Max", "Shopping", "Social Ads"],
+    line: "Google Ads-campagnes waarin zoekintentie, tracking, landingspagina en rapportage hetzelfde verhaal vertellen.",
+    badges: ["Search", "Performance Max", "Shopping", "Remarketing"],
   },
   servicesTitle: "Welke campagnes beheren wij?",
   servicesIntro: "Niet ieder bedrijf heeft hetzelfde campagnetype nodig. We kiezen op basis van doel, markt en meetbaarheid.",
@@ -494,7 +494,7 @@ export const googleAdsPage: GrowthPageData = {
     { title: "YouTube Ads", body: "Video-advertenties voor bereik, consideration, leads en conversies." },
     { title: "Remarketing", body: "Bezoekers opnieuw bereiken via Display, YouTube, Search en Performance Max." },
     { title: "Lokale campagnes", body: "Campagnes voor relevante zoekopdrachten binnen steden, regio's of verzorgingsgebieden." },
-    { title: "Social Ads", body: "Meta, LinkedIn of andere social campagnes die aansluiten op je funnel en content." },
+    { title: "Conversietracking", body: "Meten welke zoekwoorden, campagnes en advertenties aanvragen, afspraken of omzet opleveren." },
   ],
   processTitle: "Onze Google Ads-werkwijze",
   process: [
@@ -510,12 +510,12 @@ export const googleAdsPage: GrowthPageData = {
     "Klikken zijn niet het einddoel. Daarom richten we campagnes in rondom echte bedrijfsresultaten: aanvragen, telefoongesprekken, aankopen, omzet en leadkwaliteit.",
   stats: [],
   comparison: {
-    title: "Combineer Google Ads met SEO",
-    leftTitle: "Google Ads",
-    leftItems: ["Direct resultaat", "Betalen per klik", "Eenvoudig opschalen", "Snel data verzamelen"],
-    rightTitle: "SEO",
-    rightItems: ["Organisch verkeer", "Lange termijn", "Geen advertentiekosten per klik", "Autoriteit opbouwen"],
-    footer: "De sterkste zoekstrategie combineert betaalde en organische groei.",
+    title: "Welke Google Ads-campagnes passen bij je doel?",
+    leftTitle: "Search en Shopping",
+    leftItems: ["Actieve zoekvraag", "Hoge intentie", "Zoekwoorden en productfeed", "Sterk voor leads en directe verkoop"],
+    rightTitle: "Performance Max en remarketing",
+    rightItems: ["Breder Google-bereik", "Datagedreven optimalisatie", "YouTube, Display en Discover", "Sterk met goede conversiedata"],
+    footer: "De beste Google Ads-structuur begint bij zoekintentie, meetbaarheid en genoeg controle op budgetverspilling.",
   },
   benefitsTitle: "Meer uit ieder advertentiebudget",
   benefits: ["Minder verspilling", "Meer conversies", "Betere data", "Continu verbeteren", "Landingspagina-optimalisatie", "Heldere rapportage"],
@@ -569,11 +569,6 @@ export const googleAdsPage: GrowthPageData = {
         "Als alleen klikken worden gemeten, lijkt een campagne soms succesvol terwijl er weinig goede aanvragen binnenkomen. Met goede tracking zie je welke zoekwoorden, advertenties en pagina's bijdragen aan leads of omzet. Daardoor kun je budget verplaatsen van ruis naar campagnes die commercieel meer waarde hebben.",
     },
     {
-      question: "Wat is het verschil tussen Google Ads en SEO?",
-      answer:
-        "Google Ads is betaald verkeer: je betaalt voor zichtbaarheid en klikken. SEO bouwt organische vindbaarheid op. Google Ads werkt sneller en levert sneller data op, terwijl SEO meer op de lange termijn speelt. De sterkste zoekstrategie combineert vaak beide: Ads voor directe vraag en data, SEO voor structurele vindbaarheid.",
-    },
-    {
       question: "Wat is Performance Max?",
       answer:
         "Performance Max is een Google Ads-campagnetype dat meerdere netwerken combineert, zoals Search, Display, YouTube, Gmail en Discover. Het kan krachtig zijn, maar vraagt goede conversiedata, duidelijke assets, feedkwaliteit en controle op resultaat. Zonder goede basis kan Performance Max ook snel onduidelijk of inefficiënt worden.",
@@ -604,9 +599,9 @@ export const googleAdsPage: GrowthPageData = {
         "Campagnes worden periodiek gecontroleerd en bijgestuurd op basis van data. In het begin ligt de nadruk vaak op tracking, zoektermen, budget en structuur. Daarna verschuift de optimalisatie meer naar rendement, leadkwaliteit, schaalbaarheid, nieuwe kansen en betere landingspagina's.",
     },
     {
-      question: "Kunnen Google Ads en Social Ads samenwerken?",
+      question: "Kunnen jullie alleen Google Ads beheren?",
       answer:
-        "Ja. Social Ads kan vraag creëren en doelgroepen opwarmen, terwijl Google Ads bestaande zoekvraag opvangt. Samen kunnen ze sterker werken dan los van elkaar, zeker wanneer tracking, remarketing, landingspagina's en boodschap goed op elkaar aansluiten.",
+        "Ja. Deze pagina en scan zijn specifiek gericht op Google Ads. We kijken naar Search, Shopping, Performance Max, Display, YouTube, remarketing, conversietracking, zoektermen, budgetverdeling en de landingspagina's waar Google Ads-verkeer op binnenkomt.",
     },
   ],
   form: {

@@ -24,6 +24,10 @@ function visualAsset(data: GrowthPageData) {
     return { kind: "video", src: "/assets/content/ai-actors-slimmer-dan-gisteren.m4v", label: "AI content en zichtbaarheid" };
   }
 
+  if (data.slug === "/google-ads/") {
+    return { kind: "image", src: "/assets/google-ads.gif", label: "Google Ads-campagnes en performance" };
+  }
+
   return { kind: "video", src: "https://videos.files.wordpress.com/SiM1cMuS/zelfstandigen-bouw_commercial_rbv_hondenhok_final-1x1_social.mp4#t=0.001", label: "Campagnecreatie en performance" };
 }
 
@@ -242,9 +246,13 @@ export function FocusServicePage({ data }: { data: GrowthPageData }) {
               {accents.map((accent) => <small key={accent}>{accent}</small>)}
             </div>
             <figure className="focus-proof-media">
-              <video muted playsInline preload="none" autoPlay loop>
-                <source src={media.src} type="video/mp4" />
-              </video>
+              {media.kind === "image" ? (
+                <img src={media.src} alt={media.label} loading="eager" />
+              ) : (
+                <video muted playsInline preload="none" autoPlay loop>
+                  <source src={media.src} type="video/mp4" />
+                </video>
+              )}
               <figcaption>{media.label}</figcaption>
             </figure>
           </aside>
