@@ -9,6 +9,14 @@ mkdir -p "$publish_dir"
 cp -R dist/client/. "$publish_dir"/
 cp -R dist/server/prerendered-routes/. "$publish_dir"/
 
+rm -f \
+  "$publish_dir/assets/content-airbnb.png" \
+  "$publish_dir/assets/content-color-run.png" \
+  "$publish_dir/assets/content-maasclaim.png" \
+  "$publish_dir/assets/content-nxchange.png" \
+  "$publish_dir/assets/content-zb.png" \
+  "$publish_dir/assets/wedding/airfoto.jpg"
+
 touch "$publish_dir/.nojekyll"
 printf '%s\n' "www.slimmerdangisteren.nl" > "$publish_dir/CNAME"
 

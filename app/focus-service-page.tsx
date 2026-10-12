@@ -227,7 +227,7 @@ export function FocusServicePage({ data }: { data: GrowthPageData }) {
             {data.slug === "/seo/" ? (
               <img src="/assets/seo-google-search.gif" alt="Google zoekanimatie voor SEO marketingbureau" loading="eager" />
             ) : (
-              <video muted playsInline preload="metadata" autoPlay loop>
+              <video muted playsInline preload="none" autoPlay loop>
                 <source src={media.src} type="video/mp4" />
               </video>
             )}
@@ -242,7 +242,7 @@ export function FocusServicePage({ data }: { data: GrowthPageData }) {
               {accents.map((accent) => <small key={accent}>{accent}</small>)}
             </div>
             <figure className="focus-proof-media">
-              <video muted playsInline preload="metadata" autoPlay loop>
+              <video muted playsInline preload="none" autoPlay loop>
                 <source src={media.src} type="video/mp4" />
               </video>
               <figcaption>{media.label}</figcaption>

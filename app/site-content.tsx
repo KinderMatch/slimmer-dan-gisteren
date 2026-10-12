@@ -219,11 +219,11 @@ const videos = [
 ];
 
 const contentImages = [
-  { src: "/assets/content-zb.png", alt: t("Contentvoorbeeld Zelfstandigen Bouw", "Content example for Zelfstandigen Bouw", "Ejemplo de contenido para Zelfstandigen Bouw") },
-  { src: "/assets/content-nxchange.png", alt: t("Contentvoorbeeld Nxchange", "Content example for Nxchange", "Ejemplo de contenido para Nxchange") },
-  { src: "/assets/content-color-run.png", alt: t("The Color Run content creatie voorbeeld", "The Color Run content creation example", "Ejemplo de contenido para The Color Run") },
-  { src: "/assets/content-airbnb.png", alt: t("HealthyFest content creatie voorbeeld", "HealthyFest content creation example", "Ejemplo de contenido para HealthyFest") },
-  { src: "/assets/content-maasclaim.png", alt: t("ChickShack Valencia content creatie voorbeeld", "ChickShack Valencia content creation example", "Ejemplo de contenido para ChickShack Valencia") },
+  { src: "/assets/optimized/content-zb.jpg", alt: t("Contentvoorbeeld Zelfstandigen Bouw", "Content example for Zelfstandigen Bouw", "Ejemplo de contenido para Zelfstandigen Bouw") },
+  { src: "/assets/optimized/content-nxchange.jpg", alt: t("Contentvoorbeeld Nxchange", "Content example for Nxchange", "Ejemplo de contenido para Nxchange") },
+  { src: "/assets/optimized/content-color-run.jpg", alt: t("The Color Run content creatie voorbeeld", "The Color Run content creation example", "Ejemplo de contenido para The Color Run") },
+  { src: "/assets/optimized/content-airbnb.jpg", alt: t("HealthyFest content creatie voorbeeld", "HealthyFest content creation example", "Ejemplo de contenido para HealthyFest") },
+  { src: "/assets/optimized/content-maasclaim.jpg", alt: t("ChickShack Valencia content creatie voorbeeld", "ChickShack Valencia content creation example", "Ejemplo de contenido para ChickShack Valencia") },
 ];
 
 const travelVideos = [
@@ -236,7 +236,7 @@ const travelVideos = [
 
 const weddingCase = {
   title: "Nordin & Kyra",
-  image: "/assets/wedding/airfoto.jpg",
+  image: "/assets/optimized/airfoto.jpg",
   video: "/assets/wedding/nordin-kyra-preview.mov",
   fullVideo: "https://videos.files.wordpress.com/E5ahlDJ7/trouwerij-nordin-kyra-v3-h264.mp4",
 };
@@ -303,7 +303,7 @@ export function SiteShell({ children, initialLanguage = "nl" }: { children: Reac
       <main>{children}</main>
       <footer className="site-footer">
         <div className="footer-video">
-          <video autoPlay loop muted playsInline preload="metadata">
+          <video autoPlay loop muted playsInline preload="none">
             <source src={videoPreviewSrc(videos[5].src)} type="video/mp4" />
           </video>
           <div>
@@ -379,13 +379,13 @@ export function HomeWorkGrid() {
       type: "image",
       title: t("Contentkalender", "Content calendar", "Calendario de contenido"),
       label: t("Social content", "Social content", "Contenido social"),
-      src: "/assets/content-zb.png",
+      src: "/assets/optimized/content-zb.jpg",
     },
     {
       type: "image",
       title: "Nxchange",
       label: t("Contentvoorbeeld", "Content example", "Ejemplo de contenido"),
-      src: "/assets/content-nxchange.png",
+      src: "/assets/optimized/content-nxchange.jpg",
     },
   ];
 
@@ -401,7 +401,7 @@ export function HomeWorkGrid() {
           type={item.type as "image" | "video"}
         >
           {item.type === "video" ? (
-            <video autoPlay loop muted playsInline preload="metadata">
+            <video autoPlay loop muted playsInline preload="none">
               <source src={videoPreviewSrc(item.src)} type="video/mp4" />
             </video>
           ) : (
@@ -468,10 +468,10 @@ export function KitchenPanels() {
           <p><Text value={t("Beeld, campagne en kanaal sluiten op elkaar aan, zodat bezoekers meteen zien waarvoor ze aankloppen.", "Visuals, campaign and channel fit together so visitors immediately see what you can help with.", "Imagen, campaña y canal encajan para que los visitantes vean al instante qué puedes ofrecer.")} /></p>
         </div>
         <div className="content-strip">
-          <video autoPlay loop muted playsInline preload="metadata">
+          <video autoPlay loop muted playsInline preload="none">
             <source src={videoPreviewSrc(videos[4].src)} type="video/mp4" />
           </video>
-          <img src="/assets/content-nxchange.png" alt="" loading="lazy" />
+          <img src="/assets/optimized/content-nxchange.jpg" alt="" loading="lazy" />
         </div>
       </article>
     </div>
@@ -530,7 +530,7 @@ export function DisciplineRunway() {
           <div className="runway-visual" aria-hidden="true">
             {item.visual === "ads" ? (
               <div className="runway-video-card">
-                <video muted playsInline preload="metadata">
+                <video muted playsInline preload="none">
                   <source src={videoPreviewSrc(item.video)} type="video/mp4" />
                 </video>
                 <strong><Text value={t("Advertenties + creative", "Advertising + creative", "Anuncios + creatividad")} /></strong>
@@ -542,10 +542,10 @@ export function DisciplineRunway() {
               </div>
             ) : (
               <>
-                <video muted playsInline preload="metadata">
+                <video muted playsInline preload="none">
                   <source src={videoPreviewSrc(item.video)} type="video/mp4" />
                 </video>
-                <img src="/assets/content-airbnb.png" alt="" loading="lazy" />
+                <img src="/assets/optimized/content-airbnb.jpg" alt="" loading="lazy" />
               </>
             )}
           </div>
@@ -817,7 +817,7 @@ export function BrandingStudio() {
             title={video.title}
             type="video"
           >
-            <video muted playsInline preload="metadata">
+            <video muted playsInline preload="none">
               <source src={videoPreviewSrc(video.src)} type="video/mp4" />
             </video>
             <div>
@@ -856,8 +856,8 @@ export function TravelContentShowcase() {
             title={video.title}
             type="video"
           >
-            <video autoPlay loop muted playsInline preload="metadata">
-              <source src={video.fullSrc ?? video.src} />
+            <video autoPlay loop muted playsInline preload="none">
+              <source src={video.src} />
             </video>
             <div>
               <span><Text value={video.label} /></span>
@@ -909,8 +909,8 @@ export function HomeContentShowreel() {
             title={item.title}
             type="video"
           >
-            <video autoPlay loop muted playsInline preload="metadata">
-              <source src={item.fullSrc ?? item.src} />
+            <video autoPlay loop muted playsInline preload="none">
+              <source src={item.src} />
             </video>
             <div>
               <span><Text value={item.label} /></span>
@@ -949,8 +949,8 @@ export function WeddingContentShowcase() {
         </p>
       </div>
       <MediaLightbox className="wedding-video" fullSrc={weddingCase.fullVideo} label={t("Videografie", "Videography", "Videografía")} src={weddingCase.video} title={weddingCase.title} type="video">
-        <video autoPlay loop muted playsInline preload="metadata">
-          <source src={weddingCase.fullVideo} />
+        <video autoPlay loop muted playsInline preload="none">
+          <source src={weddingCase.video} />
         </video>
         <div>
           <span><Text value={t("Videografie", "Videography", "Videografía")} /></span>
@@ -996,7 +996,7 @@ function PageHeroVisual({ tone }: { tone: "default" | "website" | "ads" | "brand
   if (tone === "ads") {
     return (
       <div className="page-hero-visual ads-visual" aria-hidden="true">
-        <video autoPlay loop muted playsInline preload="metadata">
+        <video autoPlay loop muted playsInline preload="none">
           <source src={videoPreviewSrc(videos[0].src)} type="video/mp4" />
         </video>
         <div>
@@ -1133,7 +1133,7 @@ function WebsitePreview({ site, title }: { site: (typeof websites)[number]; titl
     return (
       <a className="website-preview-fallback" href={site.url} target="_blank" rel="noreferrer" aria-label={`${site.title} openen`}>
         {site.previewVideo ? (
-          <video autoPlay muted loop playsInline preload="metadata" aria-hidden="true">
+          <video autoPlay muted loop playsInline preload="none" aria-hidden="true">
             <source src={videoPreviewSrc(site.previewVideo)} type="video/mp4" />
           </video>
         ) : null}
@@ -1325,7 +1325,7 @@ export function VideoGrid({ limit }: { limit?: number }) {
     <div className="video-grid">
       {(limit ? videos.slice(0, limit) : videos).map((video) => (
         <article className="video-card" key={video.src}>
-          <video controls preload="auto" playsInline>
+          <video controls preload="none" playsInline>
             <source src={videoPreviewSrc(video.src)} type="video/mp4" />
           </video>
           <h3>{video.title}</h3>

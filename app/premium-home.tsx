@@ -41,7 +41,7 @@ const services = [
       "Search, Shopping, Performance Max y remarketing enfocados en rendimiento.",
     ),
     media: "/assets/google-ads.gif",
-    fallbackMedia: "/assets/content-maasclaim.png",
+    fallbackMedia: "/assets/optimized/content-maasclaim.jpg",
     type: "image",
   },
   {
@@ -65,7 +65,7 @@ const services = [
       "Content that makes campaigns visually stronger.",
       "Contenido que fortalece campañas visualmente.",
     ),
-    media: "/assets/travel/full/kgari-noosa-full.m4v",
+    media: "/assets/travel/kgari-noosa-preview.mov",
     type: "plain-video",
   },
 ];
@@ -74,12 +74,12 @@ const cases = [
   {
     title: "Zelfstandigen Bouw",
     discipline: t("Advertenties + content + websitefundament", "Advertising + content + website foundation", "Anuncios + contenido + base web"),
-    image: "/assets/content-zb.png",
+    image: "/assets/optimized/content-zb.jpg",
   },
   {
     title: "The Color Run",
     discipline: t("Content systeem", "Content system", "Sistema de contenido"),
-    image: "/assets/content-color-run.png",
+    image: "/assets/optimized/content-color-run.jpg",
   },
   {
     title: "Rode Loper",
@@ -89,12 +89,12 @@ const cases = [
 ];
 
 const archive = [
-  { kind: "image", src: "/assets/content-nxchange.png", label: "Nxchange" },
-  { kind: "image", src: "/assets/content-airbnb.png", label: "HealthyFest" },
+  { kind: "image", src: "/assets/optimized/content-nxchange.jpg", label: "Nxchange" },
+  { kind: "image", src: "/assets/optimized/content-airbnb.jpg", label: "HealthyFest" },
   { kind: "video", src: "/assets/travel/siargao-preview.mov", fullSrc: "/assets/travel/full/siargao-full.m4v", label: "Siargao" },
   { kind: "image", src: "/assets/dave-dekker/photos/event-01.jpg", label: "Rode Loper" },
   { kind: "video", src: "/assets/dave-dekker/dave-5-preview.mov", fullSrc: "/assets/dave-dekker/full/dave-5-full.mov", label: "De Rode Loper" },
-  { kind: "image", src: "/assets/content-maasclaim.png", label: "ChickShack Valencia" },
+  { kind: "image", src: "/assets/optimized/content-maasclaim.jpg", label: "ChickShack Valencia" },
   { kind: "video", src: "/assets/travel/whitsundays-preview.mov", fullSrc: "/assets/travel/full/whitsundays-full.m4v", label: "Whitsundays" },
   { kind: "image", src: "/assets/dave-dekker/photos/event-12.jpg", label: "Event photography" },
   { kind: "image", src: "/assets/dave-dekker/photos/event-11.jpg", label: "Event photography" },
@@ -132,7 +132,7 @@ function Media({ item, className = "" }: { item: { kind?: string; src: string; l
 
   if (isVideo) {
     return (
-      <video className={className} autoPlay loop muted playsInline preload="metadata">
+      <video className={className} autoPlay loop muted playsInline preload="none">
         <source src={item.src} />
       </video>
     );
@@ -162,7 +162,7 @@ function ServiceVisual({ service }: { service: (typeof services)[number] }) {
   if (service.type === "plain-video") {
     return (
       <div className="premium-video-visual">
-        <video autoPlay loop muted playsInline preload="metadata">
+        <video autoPlay loop muted playsInline preload="none">
           <source src={service.media} />
         </video>
       </div>
@@ -186,15 +186,15 @@ function ServiceVisual({ service }: { service: (typeof services)[number] }) {
   if (service.type === "content") {
     return (
       <div className="premium-content-visual">
-        <video autoPlay loop muted playsInline preload="metadata">
-          <source src="/assets/travel/full/kgari-noosa-full.m4v" />
+        <video autoPlay loop muted playsInline preload="none">
+          <source src="/assets/travel/kgari-noosa-preview.mov" />
         </video>
         <img src="/assets/dave-dekker/photos/event-03.jpg" alt="Eventfotografie voor content creatie" loading="lazy" />
-        <video autoPlay loop muted playsInline preload="metadata">
-          <source src="/assets/travel/full/huacacina-paracas-full.m4v" />
+        <video autoPlay loop muted playsInline preload="none">
+          <source src="/assets/travel/huacacina-paracas-preview.mov" />
         </video>
-        <video autoPlay loop muted playsInline preload="metadata">
-          <source src="/assets/dave-dekker/full/dave-4-full.mov" />
+        <video autoPlay loop muted playsInline preload="none">
+          <source src="/assets/dave-dekker/dave-4-preview.mov" />
         </video>
       </div>
     );
@@ -202,7 +202,7 @@ function ServiceVisual({ service }: { service: (typeof services)[number] }) {
 
   return (
     <div className="premium-ads-visual">
-      <video autoPlay loop muted playsInline preload="metadata">
+      <video autoPlay loop muted playsInline preload="none">
         <source src={service.media} />
       </video>
     </div>
@@ -216,7 +216,7 @@ function HeroVisual() {
 
   return (
     <motion.div className="premium-hero-visual" style={{ y, scale }}>
-      <img src="/assets/wedding/airfoto.jpg" alt="Cinematische dronefoto van een project van Slimmer dan Gisteren" />
+      <img src="/assets/optimized/airfoto.jpg" alt="Cinematische dronefoto van een project van Slimmer dan Gisteren" />
     </motion.div>
   );
 }
@@ -239,7 +239,7 @@ function LocalizedSpeechVideo() {
   }[language];
 
   return (
-    <video controls playsInline preload="metadata" poster={media.poster} key={language}>
+    <video controls playsInline preload="none" poster={media.poster} key={language}>
       <source src={media.source} type="video/mp4" />
     </video>
   );
@@ -371,7 +371,7 @@ export function PremiumHome({ initialLanguage = "nl" }: { initialLanguage?: Lang
               viewport={{ once: true, amount: 0.3 }}
               transition={transition}
             >
-              <video controls playsInline preload="metadata">
+              <video controls playsInline preload="none">
                 <source src="/assets/content/ai-actors-slimmer-dan-gisteren.m4v" type="video/mp4" />
               </video>
             </motion.div>
@@ -522,8 +522,8 @@ export function PremiumHome({ initialLanguage = "nl" }: { initialLanguage?: Lang
           </section>
 
           <section className="premium-final">
-            <video autoPlay loop muted playsInline preload="metadata">
-              <source src="/assets/travel/full/dive-cairns-full.m4v" />
+            <video autoPlay loop muted playsInline preload="none">
+              <source src="/assets/travel/dive-cairns-preview.mov" />
             </video>
             <div>
               <p className="premium-kicker"><Text value={t("Klaar voor helderheid?", "Ready for clarity?", "¿Listo para claridad?")} /></p>

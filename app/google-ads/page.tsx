@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     description: googleAdsPage.metadata.description,
     url: absoluteUrl(googleAdsPage.slug),
     siteName,
-    images: [{ url: absoluteUrl("/assets/content-zb.png"), alt: "Google Ads dashboard Slimmer dan Gisteren" }],
+    images: [{ url: absoluteUrl("/assets/optimized/content-zb.jpg"), alt: "Google Ads dashboard Slimmer dan Gisteren" }],
     locale: "nl_NL",
     type: "website",
   },

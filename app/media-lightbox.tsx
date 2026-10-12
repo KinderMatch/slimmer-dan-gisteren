@@ -82,7 +82,7 @@ export function MediaLightbox({ alt, children, className, fullSrc, label, src, t
           </button>
           <figure className={type === "video" ? "media-lightbox-frame video" : "media-lightbox-frame"} onClick={(event) => event.stopPropagation()}>
             {type === "video" ? (
-              <video ref={videoRef} controls playsInline preload="auto">
+              <video ref={videoRef} controls playsInline preload="metadata">
                 <source src={lightboxSrc} />
               </video>
             ) : (

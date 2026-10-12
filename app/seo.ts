@@ -4,7 +4,7 @@ export const contactEmail = "jimmy@slimmerdangisteren.nl";
 export const contactPhone = "+31610175027";
 export const calendlyUrl = "https://calendly.com/buitenhuisj004/bmc-sessie";
 
-export const defaultOgImage = "/assets/content-zb.png";
+export const defaultOgImage = "/assets/optimized/content-zb.jpg";
 
 export const servicePages = [
   {

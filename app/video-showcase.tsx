@@ -101,7 +101,7 @@ export function VideoShowcase({ compact = false, excludeSrcs = [] }: { compact?:
     <div className={compact ? "video-showcase compact" : "video-showcase"}>
       <article className="video-feature">
         <div className="video-frame">
-          <video ref={featuredVideoRef} controls preload="auto" playsInline key={featured.src}>
+          <video ref={featuredVideoRef} controls preload="metadata" playsInline key={featured.src}>
             <source src={videoPreviewSrc(featured.src)} type="video/mp4" />
           </video>
         </div>
@@ -133,7 +133,7 @@ export function VideoShowcase({ compact = false, excludeSrcs = [] }: { compact?:
             type="button"
           >
             <span>{String(index + 1).padStart(2, "0")}</span>
-            <video muted preload="auto" playsInline>
+            <video muted preload="none" playsInline>
               <source src={videoPreviewSrc(video.src)} type="video/mp4" />
             </video>
             <h3>{video.title}</h3>

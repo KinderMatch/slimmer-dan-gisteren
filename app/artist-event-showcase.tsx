@@ -25,7 +25,7 @@ export function ArtistEventShowcase({ photos, videos }: { photos: ArtistPhoto[];
   const { language } = useLanguage();
   const activeVideo = videos[activeVideoIndex] ?? videos[0];
   const activePhoto = photos[activePhotoIndex] ?? photos[0];
-  const activeVideoDisplaySrc = activeVideo?.fullSrc ?? activeVideo?.src;
+  const activeVideoDisplaySrc = activeVideo?.src;
   const otherVideos = videos
     .map((video, index) => ({ video, index }))
     .filter(({ index }) => index !== activeVideoIndex);
@@ -68,7 +68,7 @@ export function ArtistEventShowcase({ photos, videos }: { photos: ArtistPhoto[];
           title={activeVideo.title}
           type="video"
         >
-          <video autoPlay loop muted playsInline preload="metadata" key={activeVideoDisplaySrc}>
+          <video autoPlay loop muted playsInline preload="none" key={activeVideoDisplaySrc}>
             <source src={activeVideoDisplaySrc} />
           </video>
           <div>
@@ -88,7 +88,7 @@ export function ArtistEventShowcase({ photos, videos }: { photos: ArtistPhoto[];
               }}
               type="button"
             >
-              <video muted playsInline preload="metadata">
+              <video muted playsInline preload="none">
                 <source src={video.src} />
               </video>
               <span>{String(index + 1).padStart(2, "0")}</span>

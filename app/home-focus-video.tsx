@@ -67,7 +67,7 @@ export function HomeFocusVideo() {
         onEnded={showNextVideo}
         onError={showNextVideo}
         playsInline
-        preload="auto"
+        preload="metadata"
         ref={videoRef}
       >
         <source src={videoPreviewSrc(activeVideo.src)} type="video/mp4" />

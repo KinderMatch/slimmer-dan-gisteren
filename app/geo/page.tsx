@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     description: geoPage.metadata.description,
     url: absoluteUrl(geoPage.slug),
     siteName,
-    images: [{ url: absoluteUrl("/assets/content-zb.png"), alt: "GEO dashboard Slimmer dan Gisteren" }],
+    images: [{ url: absoluteUrl("/assets/optimized/content-zb.jpg"), alt: "GEO dashboard Slimmer dan Gisteren" }],
     locale: "nl_NL",
     type: "website",
   },
