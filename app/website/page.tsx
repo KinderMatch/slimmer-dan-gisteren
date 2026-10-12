@@ -11,6 +11,7 @@ import {
   WebsiteWorkflow,
 } from "../site-content";
 import { EmphasisText, Text } from "../language";
+import type { Language } from "../language";
 
 const t = (nl: string, en: string, es: string) => ({ nl, en, es });
 
@@ -39,7 +40,7 @@ export const metadata: Metadata = {
   },
 };
 
-export default function WebsitePage() {
+export default function WebsitePage({ initialLanguage = "nl" }: { initialLanguage?: Language } = {}) {
   return (
     <>
       <JsonLd
@@ -63,7 +64,7 @@ export default function WebsitePage() {
           ]),
         ]}
       />
-      <SiteShell>
+      <SiteShell initialLanguage={initialLanguage}>
         <div className="service-premium service-premium-website">
         <PageHero
           eyebrow={t("Websites", "Websites", "Webs")}

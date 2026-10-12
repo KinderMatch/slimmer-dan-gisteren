@@ -5,6 +5,7 @@ import { ArtistEventShowcase } from "./artist-event-showcase";
 import { ContactActionGroup, ContactDock } from "./contact-actions";
 import { ContentGallery as InteractiveContentGallery } from "./content-gallery";
 import { EmphasisText, LanguageProvider, LanguageToggle, type LocalizedString, Text } from "./language";
+import { LocalizedLink } from "./localized-link";
 import { MediaLightbox } from "./media-lightbox";
 import { ScrollProgress } from "./scroll-experience";
 
@@ -282,15 +283,15 @@ export function SiteShell({ children, initialLanguage = "nl" }: { children: Reac
     <LanguageProvider initialLanguage={initialLanguage}>
       <ScrollProgress />
       <header className="site-header">
-        <Link className="brand" href="/">
+        <LocalizedLink className="brand" href="/">
           <img src="/assets/logo.png" alt="Slimmer dan Gisteren" />
           <span>Slimmer dan Gisteren</span>
-        </Link>
+        </LocalizedLink>
         <nav aria-label="Hoofdnavigatie">
           {navItems.map((item) => (
-            <Link href={item.href} key={item.href}>
+            <LocalizedLink href={item.href} key={item.href}>
               <Text value={item.label} />
-            </Link>
+            </LocalizedLink>
           ))}
         </nav>
         <LanguageToggle />
@@ -311,23 +312,23 @@ export function SiteShell({ children, initialLanguage = "nl" }: { children: Reac
             <ContactActionGroup />
           </div>
         </div>
-        <Link className="footer-brand" href="/">
+        <LocalizedLink className="footer-brand" href="/">
           <img src="/assets/logo.png" alt="" />
           <div>
             <p>Slimmer dan Gisteren</p>
             <span><Text value={t("Groei begint met vandaag.", "Growth starts today.", "El crecimiento empieza hoy.")} /></span>
           </div>
-        </Link>
+        </LocalizedLink>
         <div className="footer-links">
-          <Link href="/"><Text value={t("Home", "Home", "Inicio")} /></Link>
-          <Link href="/geo/">GEO</Link>
-          <Link href="/seo/">SEO</Link>
-          <Link href="/google-ads/">Google Ads</Link>
-          <Link href="/social-ads/">Social Ads</Link>
-          <Link href="/content-creatie/"><Text value={t("Social media", "Social media", "Social media")} /></Link>
-          <Link href="/website/"><Text value={t("Website", "Website", "Web")} /></Link>
-          <Link href="/algemene-voorwaarden/"><Text value={t("Algemene voorwaarden", "Terms", "Condiciones")} /></Link>
-          <Link href="/privacy/"><Text value={t("Privacy", "Privacy", "Privacidad")} /></Link>
+          <LocalizedLink href="/"><Text value={t("Home", "Home", "Inicio")} /></LocalizedLink>
+          <LocalizedLink href="/geo/">GEO</LocalizedLink>
+          <LocalizedLink href="/seo/">SEO</LocalizedLink>
+          <LocalizedLink href="/google-ads/">Google Ads</LocalizedLink>
+          <LocalizedLink href="/social-ads/">Social Ads</LocalizedLink>
+          <LocalizedLink href="/content-creatie/"><Text value={t("Social media", "Social media", "Social media")} /></LocalizedLink>
+          <LocalizedLink href="/website/"><Text value={t("Website", "Website", "Web")} /></LocalizedLink>
+          <LocalizedLink href="/algemene-voorwaarden/"><Text value={t("Algemene voorwaarden", "Terms", "Condiciones")} /></LocalizedLink>
+          <LocalizedLink href="/privacy/"><Text value={t("Privacy", "Privacy", "Privacidad")} /></LocalizedLink>
           <a href="https://calendly.com/buitenhuisj004/bmc-sessie"><Text value={t("Kennismaken", "Introduction", "Conocernos")} /></a>
           <a href="mailto:jimmy@slimmerdangisteren.nl">Mail</a>
         </div>
@@ -520,7 +521,7 @@ export function DisciplineRunway() {
   return (
     <div className="discipline-runway">
       {runwayItems.map((item, index) => (
-        <Link className={`runway-item ${item.visual}`} href={item.href} key={item.href}>
+        <LocalizedLink className={`runway-item ${item.visual}`} href={item.href} key={item.href}>
           <div className="runway-copy">
             <span>{String(index + 1).padStart(2, "0")} / <Text value={item.kicker} /></span>
             <h3><Text value={item.title} /></h3>
@@ -548,7 +549,7 @@ export function DisciplineRunway() {
               </>
             )}
           </div>
-        </Link>
+        </LocalizedLink>
       ))}
     </div>
   );
@@ -1276,12 +1277,12 @@ export function ServiceRows() {
   return (
     <div className="service-rows">
       {services.map((service) => (
-        <Link href={service.href} className="service-row" key={service.href}>
+        <LocalizedLink href={service.href} className="service-row" key={service.href}>
           <span><Text value={service.kicker} /></span>
           <h3><Text value={service.title} /></h3>
           <p><Text value={service.summary} /></p>
           <strong><Text value={service.proof} /></strong>
-        </Link>
+        </LocalizedLink>
       ))}
     </div>
   );

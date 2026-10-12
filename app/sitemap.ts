@@ -1,22 +1,27 @@
 import type { MetadataRoute } from "next";
 
-import { absoluteUrl, servicePages } from "./seo";
+import { localizedPublicPaths, pathForLanguage, supportedLocales } from "./i18n";
+import { absoluteUrl } from "./seo";
+
+function priorityForPath(path: string) {
+  if (path === "/") return 1;
+  if (path === "/geo/" || path === "/seo/" || path === "/google-ads/") return 0.95;
+  if (path === "/social-ads/" || path === "/content-creatie/") return 0.85;
+  if (path === "/website/") return 0.7;
+  return 0.45;
+}
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();
+  const nlPaths = localizedPublicPaths.map((path) => (path ? `/${path}/` : "/"));
+  const localizedPaths = supportedLocales.flatMap((locale) =>
+    nlPaths.map((path) => pathForLanguage(path, locale)),
+  );
 
-  return [
-    {
-      url: absoluteUrl("/"),
-      lastModified: now,
-      changeFrequency: "weekly",
-      priority: 1,
-    },
-    ...servicePages.map((page) => ({
-      url: absoluteUrl(page.path),
+  return [...nlPaths, ...localizedPaths].map((path) => ({
+      url: absoluteUrl(path),
       lastModified: now,
       changeFrequency: "weekly" as const,
-      priority: page.path === "/geo/" || page.path === "/seo/" || page.path === "/google-ads/" ? 0.95 : page.path === "/website/" ? 0.7 : 0.85,
-    })),
-  ];
+      priority: priorityForPath(path.replace(/^\/(en|es)(?=\/|$)/, "") || "/"),
+  }));
 }

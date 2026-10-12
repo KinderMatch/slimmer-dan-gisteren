@@ -13,6 +13,7 @@ import {
   WeddingContentShowcase,
 } from "../site-content";
 import { EmphasisText, Text } from "../language";
+import type { Language } from "../language";
 
 const t = (nl: string, en: string, es: string) => ({ nl, en, es });
 
@@ -44,7 +45,7 @@ export const metadata: Metadata = {
   },
 };
 
-export default function ContentCreatiePage() {
+export default function ContentCreatiePage({ initialLanguage = "nl" }: { initialLanguage?: Language } = {}) {
   return (
     <>
       <JsonLd
@@ -68,7 +69,7 @@ export default function ContentCreatiePage() {
           ]),
         ]}
       />
-      <SiteShell>
+      <SiteShell initialLanguage={initialLanguage}>
         <div className="service-premium service-premium-content">
         <PageHero
           eyebrow={t("Content creatie", "Content creation", "Creación de contenido")}

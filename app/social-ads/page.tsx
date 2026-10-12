@@ -12,6 +12,7 @@ import {
   VideoShowcase,
 } from "../site-content";
 import { EmphasisText, Text } from "../language";
+import type { Language } from "../language";
 
 const t = (nl: string, en: string, es: string) => ({ nl, en, es });
 
@@ -41,7 +42,7 @@ export const metadata: Metadata = {
   },
 };
 
-export default function SocialAdsPage() {
+export default function SocialAdsPage({ initialLanguage = "nl" }: { initialLanguage?: Language } = {}) {
   return (
     <>
       <JsonLd
@@ -65,7 +66,7 @@ export default function SocialAdsPage() {
           ]),
         ]}
       />
-      <SiteShell>
+      <SiteShell initialLanguage={initialLanguage}>
         <div className="service-premium service-premium-ads">
           <PageHero
             eyebrow={t("Social Ads", "Social Ads", "Social Ads")}

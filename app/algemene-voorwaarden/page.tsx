@@ -3,6 +3,7 @@ import { languageAlternates } from "../i18n";
 
 import { JsonLd } from "../json-ld";
 import { Text } from "../language";
+import type { Language } from "../language";
 import { absoluteUrl, breadcrumbJsonLd, siteName } from "../seo";
 import { SiteShell } from "../site-content";
 
@@ -314,7 +315,7 @@ export const metadata: Metadata = {
   },
 };
 
-export default function AlgemeneVoorwaardenPage() {
+export default function AlgemeneVoorwaardenPage({ initialLanguage = "nl" }: { initialLanguage?: Language } = {}) {
   return (
     <>
       <JsonLd
@@ -323,7 +324,7 @@ export default function AlgemeneVoorwaardenPage() {
           { name: "Algemene voorwaarden", path: "/algemene-voorwaarden/" },
         ])}
       />
-      <SiteShell>
+      <SiteShell initialLanguage={initialLanguage}>
         <article className="legal-page">
           <header>
             <p className="eyebrow"><Text value={t("Juridisch", "Legal", "Legal")} /></p>

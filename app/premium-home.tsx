@@ -4,6 +4,7 @@ import Link from "next/link";
 import { motion, useScroll, useTransform } from "framer-motion";
 
 import { ContactActionGroup, ContactDock } from "./contact-actions";
+import { pathForLanguage } from "./i18n";
 import { EmphasisText, LanguageProvider, LanguageToggle, Text, useLanguage, type Language, type LocalizedString } from "./language";
 import { MediaLightbox } from "./media-lightbox";
 import { ScrollProgress } from "./scroll-experience";
@@ -250,16 +251,16 @@ export function PremiumHome({ initialLanguage = "nl" }: { initialLanguage?: Lang
       <div className="premium-home">
         <ScrollProgress />
         <header className="premium-nav">
-          <Link className="premium-brand" href="/">
+          <Link className="premium-brand" href={pathForLanguage("/", initialLanguage)}>
             <img src="/assets/logo.png" alt="Slimmer dan Gisteren" />
             <span>Slimmer dan Gisteren</span>
           </Link>
           <nav aria-label="Hoofdnavigatie">
-            <Link href="/geo/">GEO</Link>
-            <Link href="/seo/">SEO</Link>
-            <Link href="/google-ads/">Google Ads</Link>
-            <Link href="/social-ads/">Social Ads</Link>
-            <Link href="/content-creatie/"><Text value={t("Social media", "Social media", "Social media")} /></Link>
+            <Link href={pathForLanguage("/geo/", initialLanguage)}>GEO</Link>
+            <Link href={pathForLanguage("/seo/", initialLanguage)}>SEO</Link>
+            <Link href={pathForLanguage("/google-ads/", initialLanguage)}>Google Ads</Link>
+            <Link href={pathForLanguage("/social-ads/", initialLanguage)}>Social Ads</Link>
+            <Link href={pathForLanguage("/content-creatie/", initialLanguage)}><Text value={t("Social media", "Social media", "Social media")} /></Link>
           </nav>
           <LanguageToggle />
         </header>
@@ -387,14 +388,14 @@ export function PremiumHome({ initialLanguage = "nl" }: { initialLanguage?: Lang
                 variants={reveal}
                 transition={transition}
               >
-                <Link href={service.href} className="premium-service-media" aria-label={service.title.nl}>
+                <Link href={pathForLanguage(service.href, initialLanguage)} className="premium-service-media" aria-label={service.title.nl}>
                   <ServiceVisual service={service} />
                 </Link>
                 <div>
                   <span>{service.label}</span>
                   <h2><Text value={service.title} /></h2>
                   <p><Text value={service.body} /></p>
-                  <Link href={service.href} className="premium-service-cta">
+                  <Link href={pathForLanguage(service.href, initialLanguage)} className="premium-service-cta">
                     <Text value={t("Bekijk discipline", "View discipline", "Ver disciplina")} />
                     <span aria-hidden="true">→</span>
                   </Link>
@@ -536,20 +537,20 @@ export function PremiumHome({ initialLanguage = "nl" }: { initialLanguage?: Lang
         </main>
 
         <footer className="premium-footer">
-          <Link className="premium-footer-brand" href="/">
+          <Link className="premium-footer-brand" href={pathForLanguage("/", initialLanguage)}>
             <img src="/assets/logo.png" alt="" />
             <span>Slimmer dan Gisteren</span>
           </Link>
           <nav>
-            <Link href="/"><Text value={t("Home", "Home", "Inicio")} /></Link>
-            <Link href="/geo/">GEO</Link>
-            <Link href="/seo/">SEO</Link>
-            <Link href="/google-ads/">Google Ads</Link>
-            <Link href="/social-ads/">Social Ads</Link>
-            <Link href="/content-creatie/">Social media</Link>
-            <Link href="/website/">Website</Link>
-            <Link href="/algemene-voorwaarden/"><Text value={t("Algemene voorwaarden", "Terms", "Condiciones")} /></Link>
-            <Link href="/privacy/"><Text value={t("Privacy", "Privacy", "Privacidad")} /></Link>
+            <Link href={pathForLanguage("/", initialLanguage)}><Text value={t("Home", "Home", "Inicio")} /></Link>
+            <Link href={pathForLanguage("/geo/", initialLanguage)}>GEO</Link>
+            <Link href={pathForLanguage("/seo/", initialLanguage)}>SEO</Link>
+            <Link href={pathForLanguage("/google-ads/", initialLanguage)}>Google Ads</Link>
+            <Link href={pathForLanguage("/social-ads/", initialLanguage)}>Social Ads</Link>
+            <Link href={pathForLanguage("/content-creatie/", initialLanguage)}>Social media</Link>
+            <Link href={pathForLanguage("/website/", initialLanguage)}>Website</Link>
+            <Link href={pathForLanguage("/algemene-voorwaarden/", initialLanguage)}><Text value={t("Algemene voorwaarden", "Terms", "Condiciones")} /></Link>
+            <Link href={pathForLanguage("/privacy/", initialLanguage)}><Text value={t("Privacy", "Privacy", "Privacidad")} /></Link>
           </nav>
           <a href="https://wa.me/31610175027">WhatsApp</a>
           <a href="mailto:jimmy@slimmerdangisteren.nl">Mail</a>
