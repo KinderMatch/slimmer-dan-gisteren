@@ -5,26 +5,26 @@ import { PremiumHome } from "./premium-home";
 import { absoluteUrl, breadcrumbJsonLd, defaultOgImage, faqJsonLd, servicePages, siteName } from "./seo";
 
 export const metadata: Metadata = {
-  title: "Slimmer dan Gisteren - Websites, Advertenties, SEO en Content Creatie",
+  title: "Slimmer dan Gisteren - GEO, SEO, Google Ads en Social Ads",
   description:
-    "Creative growth studio voor ondernemers die websites, advertenties, SEO en content creatie willen laten samenwerken voor zichtbare groei.",
+    "Marketingbureau voor ondernemers die GEO, SEO, Google Ads, Social Ads en social media content willen laten samenwerken voor zichtbare groei.",
   alternates: {
     canonical: "/",
   },
   keywords: [
     "marketingbureau",
-    "creative growth studio",
-    "website laten maken",
+    "GEO",
+    "Generative Engine Optimization",
     "SEO uitbesteden",
-    "advertenties uitbesteden",
-    "content creatie",
-    "online marketing uitbesteden",
+    "Google Ads uitbesteden",
+    "Social Ads",
+    "social media content",
     "Slimmer dan Gisteren",
   ],
   openGraph: {
     title: "Slimmer dan Gisteren - Marketing die helderheid brengt",
     description:
-      "Websites, advertenties, SEO en content creatie onder één helder groeisysteem.",
+      "GEO, SEO, Google Ads, Social Ads en social media content onder één helder groeisysteem.",
     url: absoluteUrl("/"),
     siteName,
     images: [{ url: absoluteUrl(defaultOgImage), alt: "Slimmer dan Gisteren portfolio" }],
@@ -43,12 +43,12 @@ export default function Home() {
             {
               question: "Waar helpt Slimmer dan Gisteren mee?",
               answer:
-                "Slimmer dan Gisteren helpt met websites, websitebeheer, SEO, advertenties, tracking, rapportage, fotografie, videografie en content creatie.",
+                "Slimmer dan Gisteren helpt met GEO, SEO, Google Ads, Social Ads, tracking, rapportage en social media content.",
             },
             {
               question: "Voor wie is Slimmer dan Gisteren geschikt?",
               answer:
-                "Voor ondernemers en organisaties die marketing rustiger, meetbaarder en visueler willen maken, zonder losse bureaus voor website, advertenties en content.",
+                "Voor ondernemers en organisaties die zichtbaarheid in Google, AI-antwoorden en social campagnes rustiger en meetbaarder willen maken.",
             },
             {
               question: "Hoe kan ik kennismaken?",

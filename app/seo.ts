@@ -8,44 +8,85 @@ export const defaultOgImage = "/assets/content-zb.png";
 
 export const servicePages = [
   {
-    path: "/website/",
-    name: "Website laten maken, websitebeheer en SEO",
+    path: "/geo/",
+    name: "GEO bureau voor AI-zichtbaarheid",
     description:
-      "Websites laten maken, beheren en beter vindbaar maken met SEO, techniek, contentstructuur, tracking en conversiegericht websitebeheer.",
+      "Generative Engine Optimization voor betere zichtbaarheid in AI-antwoorden van ChatGPT, Gemini, Perplexity en Google AI Overviews.",
     keywords: [
-      "website laten maken",
-      "websitebeheer uitbesteden",
-      "SEO uitbesteden",
-      "vindbaarheid website verbeteren",
-      "website optimalisatie",
+      "GEO",
+      "Generative Engine Optimization",
+      "AI SEO",
+      "ChatGPT zichtbaarheid",
+      "AI Overviews",
     ],
   },
   {
-    path: "/advertenties/",
-    name: "Advertenties en campagnebeheer",
+    path: "/seo/",
+    name: "SEO marketingbureau voor meer klanten via Google",
     description:
-      "Advertentiebeheer voor campagnes met strategie, tracking, landingspagina's, optimalisatie en maandelijkse rapportage.",
+      "SEO marketingbureau voor bedrijven die beter vindbaar willen worden in Google met zoekmachine optimalisatie, technische SEO, zoekwoordenonderzoek, SEO-content, lokale SEO, autoriteit en conversiegerichte landingspagina's.",
     keywords: [
-      "advertenties uitbesteden",
-      "advertentiebeheer",
+      "SEO marketingbureau",
+      "SEO bureau",
+      "SEO uitbesteden",
+      "SEO scan",
+      "zoekmachine optimalisatie",
+      "online vindbaarheid",
+      "lokale SEO",
+      "technische SEO",
+      "SEO content",
+      "linkbuilding",
+    ],
+  },
+  {
+    path: "/google-ads/",
+    name: "Google Ads bureau voor leads en omzet",
+    description:
+      "Google Ads beheer voor Search, Shopping, Performance Max, YouTube en remarketingcampagnes gericht op leads, omzet en ROAS.",
+    keywords: [
+      "Google Ads bureau",
       "Google Ads uitbesteden",
-      "online adverteren",
-      "campagne optimalisatie",
+      "Performance Max",
+      "Shopping campagnes",
+      "ROAS optimalisatie",
+    ],
+  },
+  {
+    path: "/social-ads/",
+    name: "Social Ads en campagnebeheer",
+    description:
+      "Social Ads beheer voor Meta, LinkedIn, retargeting, leadgeneratie, creative testing, tracking en maandelijkse optimalisatie.",
+    keywords: [
+      "Social Ads bureau",
+      "Meta Ads uitbesteden",
+      "LinkedIn Ads",
+      "social advertising",
+      "social ads uitbesteden",
     ],
   },
   {
     path: "/content-creatie/",
-    name: "Content creatie, fotografie en videografie",
+    name: "Social media content creatie",
     description:
-      "Content creatie met fotografie, videografie, social posts, reiscontent, eventvideo en artiestencontent voor zichtbaarheid en merkwaarde.",
+      "Social media content met fotografie, videografie, social posts en formats voor zichtbaarheid en merkwaarde.",
     keywords: [
+      "social content",
+      "social media content",
       "content creatie",
       "videografie",
       "fotografie",
-      "social content",
-      "event video",
-      "reiscontent",
-      "artiestencontent",
+    ],
+  },
+  {
+    path: "/website/",
+    name: "Website laten maken en websitebeheer",
+    description:
+      "Websites laten maken, beheren en optimaliseren als rustig fundament voor SEO, campagnes, tracking en conversie.",
+    keywords: [
+      "website laten maken",
+      "websitebeheer uitbesteden",
+      "website optimalisatie",
+      "website laten beheren",
     ],
   },
 ] as const;
@@ -81,7 +122,7 @@ export function organizationJsonLd() {
     ],
     priceRange: "$$",
     description:
-      "Slimmer dan Gisteren is een creative growth studio voor websites, advertenties en content creatie. Marketing die helderheid brengt en groei zichtbaar maakt.",
+      "Slimmer dan Gisteren is een marketingbureau voor SEO, GEO, Google Ads, Social Ads, websites en content creatie. Marketing die helderheid brengt en groei zichtbaar maakt.",
     contactPoint: [
       {
         "@type": "ContactPoint",
@@ -96,8 +137,14 @@ export function organizationJsonLd() {
       "Website laten maken",
       "Websitebeheer",
       "SEO",
-      "Advertentiebeheer",
+      "SEO marketingbureau",
+      "Zoekmachine optimalisatie",
+      "Online vindbaarheid",
+      "Lokale SEO",
+      "GEO",
+      "Generative Engine Optimization",
       "Google Ads",
+      "Social Ads",
       "Content creatie",
       "Fotografie",
       "Videografie",

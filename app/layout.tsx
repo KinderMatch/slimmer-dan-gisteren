@@ -12,21 +12,19 @@ const inter = Inter({
 export const metadata: Metadata = {
   metadataBase: new URL("https://slimmerdangisteren.nl"),
   title: {
-    default: "Slimmer dan Gisteren - Websites, Advertenties en Content Creatie",
+    default: "Slimmer dan Gisteren - GEO, SEO, Google Ads en Social Ads",
     template: `%s | ${siteName}`,
   },
   description:
-    "Slimmer dan Gisteren helpt ondernemers met websites, advertenties, SEO en content creatie. Marketing die helderheid brengt en groei zichtbaar maakt.",
+    "Slimmer dan Gisteren helpt ondernemers met GEO, SEO, Google Ads, Social Ads en social media content. Marketing die helderheid brengt en groei zichtbaar maakt.",
   keywords: [
     "Slimmer dan Gisteren",
-    "website laten maken",
-    "websitebeheer",
+    "GEO",
+    "Generative Engine Optimization",
     "SEO uitbesteden",
-    "advertenties uitbesteden",
     "Google Ads uitbesteden",
-    "content creatie",
-    "videografie",
-    "fotografie",
+    "Social Ads",
+    "social media content",
     "creative growth studio",
   ],
   alternates: {
@@ -49,9 +47,9 @@ export const metadata: Metadata = {
     apple: "/assets/logo.png",
   },
   openGraph: {
-    title: "Slimmer dan Gisteren - Websites, Advertenties en Content Creatie",
+    title: "Slimmer dan Gisteren - GEO, SEO, Google Ads en Social Ads",
     description:
-      "Premium creative growth studio voor websites, advertenties, SEO en content creatie.",
+      "Premium marketingbureau voor GEO, SEO, Google Ads, Social Ads en social media content.",
     url: siteUrl,
     siteName,
     images: [
@@ -67,7 +65,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Slimmer dan Gisteren - Creative Growth Studio",
     description:
-      "Websites, advertenties, SEO en content creatie onder één helder groeisysteem.",
+      "GEO, SEO, Google Ads, Social Ads en social media content onder één helder groeisysteem.",
     images: [absoluteUrl(defaultOgImage)],
   },
 };

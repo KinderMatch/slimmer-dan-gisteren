@@ -92,6 +92,30 @@ actions tied to the current ChatGPT user. Leave public content anonymous.
 - `npm test`: build the starter and verify its rendered loading skeleton
 - `npm run db:generate`: generate Drizzle migrations after schema changes
 
+## Content Engine Campaigns
+
+The internal campaign surface lives at `/campaign-engine`.
+
+Required runtime variables:
+
+- `CAMPAIGN_ADMIN_TOKEN`: protects campaign import, scheduling, and sending routes
+- `SENDGRID_API_KEY`: SendGrid API key used for sending
+- `SENDGRID_FROM_EMAIL`: sender address, for example `jimmy@slimmerdangisteren.nl`
+- `SENDGRID_FROM_NAME`: optional sender name, defaults to `Jimmy Buitenhuis`
+- `CAMPAIGN_PUBLIC_ORIGIN`: public site origin used in unsubscribe links, for example `https://slimmerdangisteren.nl`
+- `CAMPAIGN_PROCESS_LIMIT`: optional amount of due mails processed per run, defaults to `25`
+
+Campaign API routes:
+
+- `POST /api/campaign/leads`: imports lead rows
+- `POST /api/campaign/schedule`: schedules the 5-step Content Engine sequence
+- `POST /api/campaign/process`: sends due queued mails, or dry-runs when `dryRun` is true
+- `GET /api/campaign/unsubscribe?token=...`: unsubscribes a lead and skips remaining queued mails
+
+Lead statuses `unsubscribed`, `afgemeld`, `not_interested`, and `geen_interesse` are normalized out of the active campaign flow.
+
+The Worker also exposes a `scheduled` handler that processes due queued mails when a Cloudflare cron trigger is configured.
+
 ## Learn More
 
 - [vinext Documentation](https://github.com/cloudflare/vinext)

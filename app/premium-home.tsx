@@ -20,39 +20,52 @@ const transition = { duration: 0.9, ease: [0.16, 1, 0.3, 1] };
 const services = [
   {
     label: "01",
-    href: "/advertenties/",
-    title: t("Advertenties", "Advertising", "Anuncios"),
+    href: "/seo/",
+    title: t("SEO / GEO", "SEO / GEO", "SEO / GEO"),
     body: t(
-      "Campagnes waarin strategie, tracking en creatie samenkomen.",
-      "Campaigns where strategy, tracking and creative work together.",
-      "Campañas donde estrategia, tracking y creatividad trabajan juntas.",
+      "Beter vindbaar worden in Google en AI-antwoorden met een sterke basis van techniek, content, autoriteit en conversie.",
+      "Become more visible in Google and AI answers with a strong foundation of technology, content, authority and conversion.",
+      "Ser más visible en Google y respuestas de IA con una base sólida de técnica, contenido, autoridad y conversión.",
     ),
-    media: "https://videos.files.wordpress.com/SiM1cMuS/zelfstandigen-bouw_commercial_rbv_hondenhok_final-1x1_social.mp4#t=0.001",
-    type: "video",
+    media: "/assets/seo-google-search.gif",
+    type: "image",
   },
   {
     label: "02",
-    href: "/content-creatie/",
-    title: t("Content creatie", "Content creation", "Creación de contenido"),
+    href: "/google-ads/",
+    title: t("Google Ads", "Google Ads", "Google Ads"),
     body: t(
-      "Beeld dat direct laat voelen waarom een merk ertoe doet.",
-      "Visuals that instantly show why a brand matters.",
-      "Imagen que muestra al instante por qué una marca importa.",
+      "Search, Shopping, Performance Max en remarketing gericht op rendement.",
+      "Search, Shopping, Performance Max and remarketing focused on return.",
+      "Search, Shopping, Performance Max y remarketing enfocados en rendimiento.",
     ),
-    media: "/assets/travel/full/kgari-noosa-full.m4v",
-    type: "content",
+    media: "/assets/google-ads.gif",
+    fallbackMedia: "/assets/content-maasclaim.png",
+    type: "image",
   },
   {
     label: "03",
-    href: "/website/",
-    title: t("Websites", "Websites", "Webs"),
+    href: "/social-ads/",
+    title: t("Social Ads", "Social Ads", "Social Ads"),
     body: t(
-      "Een sterk fundament voor campagnes en content. Additioneel, helder en campagneklaar.",
-      "A strong foundation for campaigns and content. Additional, clear and campaign-ready.",
-      "Una base fuerte para campañas y contenido. Adicional, clara y lista para campanas.",
+      "Social campagnes die aandacht omzetten in aanvragen.",
+      "Social campaigns that turn attention into enquiries.",
+      "Campañas sociales que convierten atención en solicitudes.",
     ),
-    media: "/assets/content-zb.png",
-    type: "website",
+    media: "https://videos.files.wordpress.com/2MO1QuZC/zelfstandigen-bouw_commercial_rbv_auto_final_1x1_social.mp4#t=0.001",
+    type: "video",
+  },
+  {
+    label: "04",
+    href: "/content-creatie/",
+    title: t("Social media", "Social media", "Social media"),
+    body: t(
+      "Content die campagnes visueel sterker maakt.",
+      "Content that makes campaigns visually stronger.",
+      "Contenido que fortalece campañas visualmente.",
+    ),
+    media: "/assets/travel/full/kgari-noosa-full.m4v",
+    type: "plain-video",
   },
 ];
 
@@ -138,6 +151,33 @@ function Media({ item, className = "" }: { item: { kind?: string; src: string; l
 }
 
 function ServiceVisual({ service }: { service: (typeof services)[number] }) {
+  if (service.type === "image") {
+    return (
+      <div className="premium-image-visual">
+        <img
+          src={service.media}
+          alt={service.title.nl}
+          loading="lazy"
+          onError={(event) => {
+            if ("fallbackMedia" in service && service.fallbackMedia) {
+              event.currentTarget.src = service.fallbackMedia;
+            }
+          }}
+        />
+      </div>
+    );
+  }
+
+  if (service.type === "plain-video") {
+    return (
+      <div className="premium-video-visual">
+        <video autoPlay loop muted playsInline preload="metadata">
+          <source src={service.media} />
+        </video>
+      </div>
+    );
+  }
+
   if (service.type === "website") {
     return (
       <div className="premium-website-visual">
@@ -231,9 +271,11 @@ export function PremiumHome() {
             <span>Slimmer dan Gisteren</span>
           </Link>
           <nav aria-label="Hoofdnavigatie">
-            <Link href="/website/"><Text value={t("Websites", "Websites", "Webs")} /></Link>
-            <Link href="/advertenties/"><Text value={t("Advertenties", "Advertising", "Anuncios")} /></Link>
-            <Link href="/content-creatie/"><Text value={t("Content", "Content", "Contenido")} /></Link>
+            <Link href="/geo/">GEO</Link>
+            <Link href="/seo/">SEO</Link>
+            <Link href="/google-ads/">Google Ads</Link>
+            <Link href="/social-ads/">Social Ads</Link>
+            <Link href="/content-creatie/"><Text value={t("Social media", "Social media", "Social media")} /></Link>
           </nav>
           <LanguageToggle />
         </header>
@@ -257,9 +299,10 @@ export function PremiumHome() {
                 <span><EmphasisText value={t("[[Groei]] die zichtbaar wordt.", "[[Growth]] that becomes visible.", "[[Crecimiento]] que se vuelve visible.")} /></span>
               </motion.h1>
               <motion.div variants={reveal} transition={transition} className="premium-hero-meta">
-                <span><Text value={t("Advertenties", "Advertising", "Anuncios")} /></span>
-                <span>Content</span>
-                <span>Websites</span>
+                <span>GEO</span>
+                <span>SEO</span>
+                <span>Google Ads</span>
+                <span>Social Ads</span>
               </motion.div>
               <motion.a variants={reveal} transition={transition} className="premium-cta" href="https://calendly.com/buitenhuisj004/bmc-sessie">
                 <Text value={t("Plan een strategiesessie", "Plan a strategy session", "Planifica una sesión estratégica")} />
@@ -369,7 +412,7 @@ export function PremiumHome() {
                   <p><Text value={service.body} /></p>
                   <Link href={service.href}><Text value={t("Bekijk discipline", "View discipline", "Ver disciplina")} /></Link>
                 </div>
-                <small>{String(index + 1).padStart(2, "0")} / 03</small>
+	                <small>{String(index + 1).padStart(2, "0")} / {String(services.length).padStart(2, "0")}</small>
               </motion.article>
             ))}
           </section>
@@ -512,9 +555,12 @@ export function PremiumHome() {
           </Link>
           <nav>
             <Link href="/"><Text value={t("Home", "Home", "Inicio")} /></Link>
-            <Link href="/website/">Websites</Link>
-            <Link href="/advertenties/"><Text value={t("Advertenties", "Advertising", "Anuncios")} /></Link>
-            <Link href="/content-creatie/">Content</Link>
+            <Link href="/geo/">GEO</Link>
+            <Link href="/seo/">SEO</Link>
+            <Link href="/google-ads/">Google Ads</Link>
+            <Link href="/social-ads/">Social Ads</Link>
+            <Link href="/content-creatie/">Social media</Link>
+            <Link href="/website/">Website</Link>
             <Link href="/algemene-voorwaarden/"><Text value={t("Algemene voorwaarden", "Terms", "Condiciones")} /></Link>
             <Link href="/privacy/"><Text value={t("Privacy", "Privacy", "Privacidad")} /></Link>
           </nav>

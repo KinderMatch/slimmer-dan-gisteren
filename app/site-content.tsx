@@ -14,30 +14,52 @@ const t = (nl: string, en: string, es = en): LocalizedString => ({ nl, en, es })
 
 export const services = [
   {
-    kicker: t("Website & SEO", "Website & SEO", "Web y SEO"),
-    title: t("Website laten maken, beheren en beter vindbaar maken.", "Build, manage and improve the visibility of your website.", "Crear, gestionar y mejorar la visibilidad de tu web."),
-    href: "/website/",
+    kicker: t("GEO", "GEO", "GEO"),
+    title: t("Zichtbaar worden in AI-antwoorden.", "Become visible in AI answers.", "Ser visible en respuestas de IA."),
+    href: "/geo/",
     summary: t(
-      "Van live websitecases tot praktisch beheer: pagina's aanpassen, techniek netjes houden, SEO verbeteren en zorgen dat je website klaarstaat voor campagnes.",
-      "From live website cases to practical management: updating pages, keeping the technical side clean, improving SEO and making sure your website is ready for campaigns.",
-      "Desde casos web en vivo hasta gestión práctica: actualizar páginas, mantener la técnica ordenada, mejorar SEO y preparar la web para campañas.",
+      "Generative Engine Optimization voor betere zichtbaarheid in ChatGPT, Gemini, Perplexity en Google AI Overviews.",
+      "Generative Engine Optimization for better visibility in ChatGPT, Gemini, Perplexity and Google AI Overviews.",
+      "Generative Engine Optimization para más visibilidad en ChatGPT, Gemini, Perplexity y Google AI Overviews.",
     ),
-    proof: t("Website, beheer en SEO", "Website, management and SEO", "Web, gestión y SEO"),
+    proof: t("AI-zichtbaarheid en autoriteit", "AI visibility and authority", "Visibilidad IA y autoridad"),
   },
   {
-    kicker: t("Advertenties", "Advertising", "Anuncios"),
-    title: t("Campagnes die meetbaar nieuwe aanvragen opleveren.", "Campaigns that measurably generate new enquiries.", "Campañas que generan solicitudes medibles."),
-    href: "/advertenties/",
+    kicker: t("SEO", "SEO", "SEO"),
+    title: t("Meer klanten via Google met slimme SEO.", "More customers from Google with smart SEO.", "Más clientes desde Google con SEO inteligente."),
+    href: "/seo/",
     summary: t(
-      "Advertenties werken pas goed als strategie, landingspagina, tracking en rapportage kloppen. Daarom sturen we op aanvragen, kosten en duidelijke maandelijkse inzichten.",
-      "Advertising only works properly when strategy, landing page, tracking and reporting line up. That is why we optimize for enquiries, cost and clear monthly insight.",
-      "Los anuncios funcionan bien cuando estrategia, página de destino, tracking e informes están alineados. Por eso optimizamos solicitudes, costes e información clara cada mes.",
+      "Techniek, zoekwoorden, content, interne links en autoriteit samenbrengen in een duidelijke SEO-strategie.",
+      "Bringing technology, keywords, content, internal links and authority together in a clear SEO strategy.",
+      "Unir técnica, palabras clave, contenido, enlaces internos y autoridad en una estrategia SEO clara.",
     ),
-    proof: t("Strategie, tracking en optimalisatie", "Strategy, tracking and optimization", "Estrategia, tracking y optimización"),
+    proof: t("Techniek, content en groei", "Technical SEO, content and growth", "SEO técnico, contenido y crecimiento"),
   },
   {
-    kicker: t("Content creatie", "Content creation", "Creación de contenido"),
-    title: t("Video, fotografie en social content die je verhaal laat zien.", "Video, photography and social content that show your story.", "Video, fotografía y contenido social que muestran tu historia."),
+    kicker: t("Google Ads", "Google Ads", "Google Ads"),
+    title: t("Zoekvraag omzetten in meetbare leads.", "Turn search intent into measurable leads.", "Convertir intención de búsqueda en leads medibles."),
+    href: "/google-ads/",
+    summary: t(
+      "Search, Shopping, Performance Max en remarketing met tracking, rapportage en optimalisatie op rendement.",
+      "Search, Shopping, Performance Max and remarketing with tracking, reporting and performance optimization.",
+      "Search, Shopping, Performance Max y remarketing con tracking, informes y optimización.",
+    ),
+    proof: t("Search, PMax, Shopping en ROAS", "Search, PMax, Shopping and ROAS", "Search, PMax, Shopping y ROAS"),
+  },
+  {
+    kicker: t("Social Ads", "Social Ads", "Social Ads"),
+    title: t("Social campagnes die aandacht omzetten in aanvragen.", "Social campaigns that turn attention into enquiries.", "Campañas sociales que convierten atención en solicitudes."),
+    href: "/social-ads/",
+    summary: t(
+      "Meta, LinkedIn en retargetingcampagnes waarin doelgroep, creatie, landingspagina en tracking samenkomen.",
+      "Meta, LinkedIn and retargeting campaigns where audience, creative, landing page and tracking work together.",
+      "Campañas de Meta, LinkedIn y retargeting donde público, creatividad, landing page y tracking se unen.",
+    ),
+    proof: t("Meta, LinkedIn en retargeting", "Meta, LinkedIn and retargeting", "Meta, LinkedIn y retargeting"),
+  },
+  {
+    kicker: t("Social media", "Social media", "Social media"),
+    title: t("Content die campagnes visueel sterker maakt.", "Content that makes campaigns visually stronger.", "Contenido que fortalece campañas visualmente."),
     href: "/content-creatie/",
     summary: t(
       "Van zakelijke videocases tot reiscontent, artiesten, evenementen en B2C-verhalen: beeld dat meteen gevoel geeft en bruikbaar is voor website, socials en advertenties.",
@@ -49,9 +71,11 @@ export const services = [
 ];
 
 const navItems = [
-  { label: t("Website", "Website", "Web"), href: "/website/" },
-  { label: t("Advertenties", "Advertising", "Anuncios"), href: "/advertenties/" },
-  { label: t("Content creatie", "Content creation", "Creación de contenido"), href: "/content-creatie/" },
+  { label: t("GEO", "GEO", "GEO"), href: "/geo/" },
+  { label: t("SEO", "SEO", "SEO"), href: "/seo/" },
+  { label: t("Google Ads", "Google Ads", "Google Ads"), href: "/google-ads/" },
+  { label: t("Social Ads", "Social Ads", "Social Ads"), href: "/social-ads/" },
+  { label: t("Social media", "Social media", "Social media"), href: "/content-creatie/" },
 ];
 
 const websites = [
@@ -283,7 +307,7 @@ export function SiteShell({ children }: { children: ReactNode }) {
           </video>
           <div>
             <p className="eyebrow"><Text value={t("Klaar om slimmer te groeien?", "Ready to grow smarter?", "¿Listo para crecer de forma más inteligente?")} /></p>
-            <h2><EmphasisText value={t("Laat website, advertenties en [[content samenwerken]].", "Let your website, advertising and [[content work together]].", "Haz que tu web, tus anuncios y tu [[contenido trabajen juntos]].")} /></h2>
+            <h2><EmphasisText value={t("Laat GEO, SEO en advertenties [[samenwerken]].", "Let GEO, SEO and ads [[work together]].", "Haz que GEO, SEO y anuncios [[trabajen juntos]].")} /></h2>
             <ContactActionGroup />
           </div>
         </div>
@@ -296,9 +320,12 @@ export function SiteShell({ children }: { children: ReactNode }) {
         </Link>
         <div className="footer-links">
           <Link href="/"><Text value={t("Home", "Home", "Inicio")} /></Link>
+          <Link href="/geo/">GEO</Link>
+          <Link href="/seo/">SEO</Link>
+          <Link href="/google-ads/">Google Ads</Link>
+          <Link href="/social-ads/">Social Ads</Link>
+          <Link href="/content-creatie/"><Text value={t("Social media", "Social media", "Social media")} /></Link>
           <Link href="/website/"><Text value={t("Website", "Website", "Web")} /></Link>
-          <Link href="/advertenties/"><Text value={t("Advertenties", "Advertising", "Anuncios")} /></Link>
-          <Link href="/content-creatie/"><Text value={t("Content creatie", "Content creation", "Creación de contenido")} /></Link>
           <Link href="/algemene-voorwaarden/"><Text value={t("Algemene voorwaarden", "Terms", "Condiciones")} /></Link>
           <Link href="/privacy/"><Text value={t("Privacy", "Privacy", "Privacidad")} /></Link>
           <a href="https://calendly.com/buitenhuisj004/bmc-sessie"><Text value={t("Kennismaken", "Introduction", "Conocernos")} /></a>
@@ -460,7 +487,7 @@ export function DisciplineRunway() {
         "Campaigns are set up with tracking, reporting and monthly optimization.",
         "Las campañas se configuran con tracking, informes y optimización mensual.",
       ),
-      href: "/advertenties/",
+      href: "/social-ads/",
       visual: "ads",
       video: videos[4].src,
     },

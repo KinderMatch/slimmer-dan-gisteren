@@ -16,7 +16,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       url: absoluteUrl(page.path),
       lastModified: now,
       changeFrequency: "weekly" as const,
-      priority: page.path === "/website/" ? 0.95 : 0.9,
+      priority: page.path === "/geo/" || page.path === "/seo/" || page.path === "/google-ads/" ? 0.95 : page.path === "/website/" ? 0.7 : 0.85,
     })),
   ];
 }
