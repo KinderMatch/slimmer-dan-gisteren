@@ -122,7 +122,7 @@ export function organizationJsonLd() {
     ],
     priceRange: "$$",
     description:
-      "Slimmer dan Gisteren is een marketingbureau voor SEO, GEO, Google Ads, Social Ads, websites en content creatie. Marketing die helderheid brengt en groei zichtbaar maakt.",
+      "Slimmer dan Gisteren is een marketingbureau voor SEO, GEO, Google Ads, Social Ads en social media content. We helpen bedrijven beter vindbaar worden, campagnes verbeteren en meer aanvragen krijgen.",
     contactPoint: [
       {
         "@type": "ContactPoint",
@@ -136,8 +136,8 @@ export function organizationJsonLd() {
     knowsAbout: [
       "Website laten maken",
       "Websitebeheer",
-      "SEO",
       "SEO marketingbureau",
+      "SEO",
       "Zoekmachine optimalisatie",
       "Online vindbaarheid",
       "Lokale SEO",

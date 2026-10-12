@@ -6,9 +6,9 @@ import { PremiumHome } from "./premium-home";
 import { absoluteUrl, breadcrumbJsonLd, defaultOgImage, faqJsonLd, servicePages, siteName } from "./seo";
 
 export const metadata: Metadata = {
-  title: "Slimmer dan Gisteren - GEO, SEO, Google Ads en Social Ads",
+  title: "Slimmer dan Gisteren - SEO, GEO, Google Ads en Social Ads",
   description:
-    "Marketingbureau voor ondernemers die GEO, SEO, Google Ads, Social Ads en social media content willen laten samenwerken voor zichtbare groei.",
+    "Marketingbureau voor SEO, GEO, Google Ads en Social Ads. Slimmer dan Gisteren helpt bedrijven beter vindbaar worden, campagnes verbeteren en meer aanvragen krijgen.",
   alternates: languageAlternates("/"),
   keywords: [
     "marketingbureau",
@@ -21,9 +21,9 @@ export const metadata: Metadata = {
     "Slimmer dan Gisteren",
   ],
   openGraph: {
-    title: "Slimmer dan Gisteren - Marketing die helderheid brengt",
+    title: "Slimmer dan Gisteren - SEO, GEO, Google Ads en Social Ads",
     description:
-      "GEO, SEO, Google Ads, Social Ads en social media content onder één helder groeisysteem.",
+      "Marketingbureau voor bedrijven die beter vindbaar willen worden in Google, AI-antwoorden en betaalde campagnes.",
     url: absoluteUrl("/"),
     siteName,
     images: [{ url: absoluteUrl(defaultOgImage), alt: "Slimmer dan Gisteren portfolio" }],
@@ -42,7 +42,7 @@ export default function Home() {
             {
               question: "Waar helpt Slimmer dan Gisteren mee?",
               answer:
-                "Slimmer dan Gisteren helpt met GEO, SEO, Google Ads, Social Ads, tracking, rapportage en social media content.",
+                "Slimmer dan Gisteren helpt bedrijven met SEO, GEO, Google Ads, Social Ads, tracking, rapportage en social media content.",
             },
             {
               question: "Voor wie is Slimmer dan Gisteren geschikt?",
@@ -65,6 +65,18 @@ export default function Home() {
               name: service.name,
               url: absoluteUrl(service.path),
             })),
+          },
+          {
+            "@context": "https://schema.org",
+            "@type": "SiteNavigationElement",
+            name: ["GEO", "SEO", "Google Ads", "Social Ads", "Social media"],
+            url: [
+              absoluteUrl("/geo/"),
+              absoluteUrl("/seo/"),
+              absoluteUrl("/google-ads/"),
+              absoluteUrl("/social-ads/"),
+              absoluteUrl("/content-creatie/"),
+            ],
           },
         ]}
       />

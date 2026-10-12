@@ -12,11 +12,11 @@ const inter = Inter({
 export const metadata: Metadata = {
   metadataBase: new URL("https://slimmerdangisteren.nl"),
   title: {
-    default: "Slimmer dan Gisteren - GEO, SEO, Google Ads en Social Ads",
+    default: "Slimmer dan Gisteren - SEO, GEO, Google Ads en Social Ads",
     template: `%s | ${siteName}`,
   },
   description:
-    "Slimmer dan Gisteren helpt ondernemers met GEO, SEO, Google Ads, Social Ads en social media content. Marketing die helderheid brengt en groei zichtbaar maakt.",
+    "Slimmer dan Gisteren is een marketingbureau voor SEO, GEO, Google Ads en Social Ads. Voor betere vindbaarheid, sterkere campagnes en meer aanvragen.",
   keywords: [
     "Slimmer dan Gisteren",
     "GEO",
@@ -47,9 +47,9 @@ export const metadata: Metadata = {
     apple: "/assets/logo.png",
   },
   openGraph: {
-    title: "Slimmer dan Gisteren - GEO, SEO, Google Ads en Social Ads",
+    title: "Slimmer dan Gisteren - SEO, GEO, Google Ads en Social Ads",
     description:
-      "Premium marketingbureau voor GEO, SEO, Google Ads, Social Ads en social media content.",
+      "Marketingbureau voor betere vindbaarheid in Google, AI-antwoorden en betaalde campagnes.",
     url: siteUrl,
     siteName,
     images: [
@@ -63,9 +63,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Slimmer dan Gisteren - Creative Growth Studio",
+    title: "Slimmer dan Gisteren - SEO, GEO, Google Ads en Social Ads",
     description:
-      "GEO, SEO, Google Ads, Social Ads en social media content onder één helder groeisysteem.",
+      "Marketingbureau voor SEO, GEO, Google Ads, Social Ads en social media content.",
     images: [absoluteUrl(defaultOgImage)],
   },
 };
