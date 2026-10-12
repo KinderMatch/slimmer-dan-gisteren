@@ -5,6 +5,7 @@ import { FocusServicePage } from "../../focus-service-page";
 import { geoPage, googleAdsPage, seoPage } from "../../growth-pages-data";
 import { localizedPublicPaths, normalizeLocale, pathForLanguage, supportedLocales, type RouteLocale } from "../../i18n";
 import { JsonLd } from "../../json-ld";
+import { LocalizedServicePage } from "../../localized-service-page";
 import { PremiumHome } from "../../premium-home";
 import { absoluteUrl, breadcrumbJsonLd, faqJsonLd, serviceJsonLd, siteName } from "../../seo";
 import { SiteShell } from "../../site-content";
@@ -138,7 +139,7 @@ export default async function LocalePage({ params }: LocalePageProps) {
           ]}
         />
         <SiteShell initialLanguage={locale}>
-          <FocusServicePage data={data} />
+          <LocalizedServicePage language={locale} service={path} />
         </SiteShell>
       </>
     );

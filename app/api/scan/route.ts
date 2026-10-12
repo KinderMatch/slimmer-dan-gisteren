@@ -13,8 +13,8 @@ export async function POST(request: Request) {
   try {
     const body = (await request.json()) as ScanRequest;
     const fields = body.fields ?? {};
-    const email = normalizeEmail(fields["E-mailadres"] || fields["Email"] || "");
-    const name = clean(fields.Naam || "");
+    const email = normalizeEmail(getFieldByLabel(fields, ["e-mail", "email", "correo"]));
+    const name = getFieldByLabel(fields, ["naam", "name", "nombre"]);
     const website = getFieldByLabel(fields, ["website", "url", "domein"]);
 
     if (!name || !email || !website) {
