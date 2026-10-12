@@ -116,16 +116,6 @@ const testimonials = [
   },
   {
     quote: t(
-      "Met 50% minder advertentiekosten behalen we hetzelfde of betere resultaten per maand dan bij onze vorige marketingpartij.",
-      "With 50% lower advertising costs, we achieve the same or better monthly results than with our previous marketing agency.",
-      "Con un 50% menos de costes publicitarios conseguimos los mismos o mejores resultados mensuales que antes.",
-    ),
-    name: "Rob en Rene",
-    result: t("-50% advertentiekosten", "-50% advertising costs", "-50% costes publicitarios"),
-    discipline: t("Advertenties", "Advertising", "Anuncios"),
-  },
-  {
-    quote: t(
       "Ik ontvang nu meer leads en hoef niet alles meer uit mijn eigen netwerk te halen. Erg belangrijk voor de duurzaamheid van mijn bedrijfsvoering.",
       "I now receive more leads and no longer have to get everything from my own network. That is important for the sustainability of my business.",
       "Ahora recibo más leads y ya no tengo que depender solo de mi propia red. Eso es importante para la sostenibilidad de mi negocio.",
