@@ -35,6 +35,7 @@ export function languageAlternates(path: string) {
       "nl-NL": cleanPath,
       "en-US": pathForLanguage(cleanPath, "en"),
       "es-ES": pathForLanguage(cleanPath, "es"),
+      "x-default": cleanPath,
     },
   };
 }

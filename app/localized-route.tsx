@@ -81,6 +81,7 @@ export function localizedMetadata(locale: RouteLocale, path: LocalizedPagePath):
     "nl-NL": path ? `/${path}/` : "/",
     "en-US": pathForLanguage(path ? `/${path}/` : "/", "en"),
     "es-ES": pathForLanguage(path ? `/${path}/` : "/", "es"),
+    "x-default": path ? `/${path}/` : "/",
   };
   const [titleKey, descriptionKey] = localizedMetadataByPath[path];
   const title = meta[titleKey];
