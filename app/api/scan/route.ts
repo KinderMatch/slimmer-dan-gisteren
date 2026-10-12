@@ -15,7 +15,7 @@ export async function POST(request: Request) {
     const fields = body.fields ?? {};
     const email = normalizeEmail(fields["E-mailadres"] || fields["Email"] || "");
     const name = clean(fields.Naam || "");
-    const website = clean(fields["Website URL"] || fields.Website || "");
+    const website = getFieldByLabel(fields, ["website", "url", "domein"]);
 
     if (!name || !email || !website) {
       return Response.json({ error: "missing_required_fields" }, { status: 400 });
@@ -144,6 +144,17 @@ function normalizeEmail(value: string) {
 
 function clean(value: string) {
   return String(value || "").trim();
+}
+
+function getFieldByLabel(fields: Record<string, string>, parts: string[]) {
+  for (const [label, value] of Object.entries(fields)) {
+    const normalized = label.toLowerCase();
+    if (parts.some((part) => normalized.includes(part))) {
+      return clean(value);
+    }
+  }
+
+  return "";
 }
 
 function escapeHtml(value: string) {

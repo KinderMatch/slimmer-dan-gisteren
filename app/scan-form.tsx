@@ -15,9 +15,16 @@ type SubmitState = "idle" | "submitting" | "success" | "error";
 function inputType(field: string) {
   const normalized = field.toLowerCase();
   if (normalized.includes("e-mail") || normalized.includes("email")) return "email";
-  if (normalized.includes("website") || normalized.includes("url")) return "url";
   if (normalized.includes("telefoon")) return "tel";
   return "text";
+}
+
+function inputMode(field: string) {
+  const normalized = field.toLowerCase();
+  if (normalized.includes("website") || normalized.includes("url") || normalized.includes("domein")) return "url";
+  if (normalized.includes("telefoon")) return "tel";
+  if (normalized.includes("e-mail") || normalized.includes("email")) return "email";
+  return undefined;
 }
 
 function isRequired(field: string) {
@@ -37,6 +44,7 @@ export function ScanForm({ fields, formId, pageTitle, pageSlug, submitLabel }: S
     const form = event.currentTarget;
     const formData = new FormData(form);
     const values = Object.fromEntries(fields.map((field) => [field, String(formData.get(field) || "").trim()]));
+    const fallbackMail = buildFallbackMail(values, pageTitle, typeof window !== "undefined" ? window.location.href : pageSlug);
 
     try {
       const response = await fetch("/api/scan", {
@@ -59,7 +67,8 @@ export function ScanForm({ fields, formId, pageTitle, pageSlug, submitLabel }: S
       setMessage("Bedankt. We hebben je aanvraag ontvangen en nemen binnen 3 werkdagen contact met je op.");
     } catch {
       setState("error");
-      setMessage("Er ging iets mis met verzenden. Probeer het opnieuw of mail direct naar jimmy@slimmerdangisteren.nl.");
+      setMessage("Het automatische formulier kon niet verzenden. Open je e-mailprogramma om je aanvraag direct naar jimmy@slimmerdangisteren.nl te sturen.");
+      window.location.href = fallbackMail;
     }
   }
 
@@ -74,7 +83,16 @@ export function ScanForm({ fields, formId, pageTitle, pageSlug, submitLabel }: S
             {isTextarea ? (
               <textarea id={fieldId} name={field} rows={4} />
             ) : (
-              <input id={fieldId} name={field} type={inputType(field)} required={isRequired(field)} />
+              <input
+                autoCapitalize={inputMode(field) === "url" ? "none" : undefined}
+                autoCorrect={inputMode(field) === "url" ? "off" : undefined}
+                id={fieldId}
+                inputMode={inputMode(field)}
+                name={field}
+                placeholder={inputMode(field) === "url" ? "bijv. slimmerdangisteren.nl of https://..." : undefined}
+                required={isRequired(field)}
+                type={inputType(field)}
+              />
             )}
           </label>
         );
@@ -89,4 +107,25 @@ export function ScanForm({ fields, formId, pageTitle, pageSlug, submitLabel }: S
       ) : null}
     </form>
   );
+}
+
+function buildFallbackMail(values: Record<string, string>, pageTitle: string, pageUrl: string) {
+  const rows = Object.entries(values)
+    .filter(([, value]) => value)
+    .map(([label, value]) => `${label}: ${value}`)
+    .join("\n");
+
+  const subject = encodeURIComponent(`Nieuwe aanvraag: ${pageTitle}`);
+  const body = encodeURIComponent(
+    [
+      "Hoi Jimmy,",
+      "",
+      "Ik wil graag een scan aanvragen.",
+      "",
+      rows,
+      pageUrl ? `\nPagina: ${pageUrl}` : "",
+    ].join("\n"),
+  );
+
+  return `mailto:jimmy@slimmerdangisteren.nl?subject=${subject}&body=${body}`;
 }

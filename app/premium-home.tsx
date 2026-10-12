@@ -394,7 +394,10 @@ export function PremiumHome() {
                   <span>{service.label}</span>
                   <h2><Text value={service.title} /></h2>
                   <p><Text value={service.body} /></p>
-                  <Link href={service.href}><Text value={t("Bekijk discipline", "View discipline", "Ver disciplina")} /></Link>
+                  <Link href={service.href} className="premium-service-cta">
+                    <Text value={t("Bekijk discipline", "View discipline", "Ver disciplina")} />
+                    <span aria-hidden="true">→</span>
+                  </Link>
                 </div>
 	                <small>{String(index + 1).padStart(2, "0")} / {String(services.length).padStart(2, "0")}</small>
               </motion.article>
