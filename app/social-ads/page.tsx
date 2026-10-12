@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 import { JsonLd } from "../json-ld";
+import { languageAlternates } from "../i18n";
 import { absoluteUrl, breadcrumbJsonLd, defaultOgImage, faqJsonLd, serviceJsonLd, siteName } from "../seo";
 import {
   AdsPerformanceLab,
@@ -18,9 +19,7 @@ export const metadata: Metadata = {
   title: "Social Ads Uitbesteden en Campagnebeheer",
   description:
     "Social Ads uitbesteden? Slimmer dan Gisteren helpt met strategie, campagnebeheer, tracking, landingspagina's, optimalisatie en rapportage.",
-  alternates: {
-    canonical: "/social-ads/",
-  },
+  alternates: languageAlternates("/social-ads/"),
   keywords: [
     "Social Ads uitbesteden",
     "Meta Ads uitbesteden",

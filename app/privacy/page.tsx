@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { languageAlternates } from "../i18n";
 
 import { JsonLd } from "../json-ld";
 import { Text } from "../language";
@@ -129,9 +130,7 @@ export const metadata: Metadata = {
   title: "Privacyverklaring | Slimmer dan Gisteren",
   description:
     "Privacyverklaring van Slimmer dan Gisteren voor websitebezoek, contact, offertes, opdrachten, analytics en klantgegevens.",
-  alternates: {
-    canonical: "/privacy/",
-  },
+  alternates: languageAlternates("/privacy/"),
   robots: {
     index: true,
     follow: true,

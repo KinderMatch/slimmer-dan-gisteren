@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 import { JsonLd } from "../json-ld";
+import { languageAlternates } from "../i18n";
 import { absoluteUrl, breadcrumbJsonLd, defaultOgImage, faqJsonLd, serviceJsonLd, siteName } from "../seo";
 import {
   PageHero,
@@ -17,9 +18,7 @@ export const metadata: Metadata = {
   title: "Website Laten Maken, Websitebeheer en SEO",
   description:
     "Website laten maken of websitebeheer uitbesteden? Slimmer dan Gisteren helpt met beheer, SEO, tracking, conversie en betere vindbaarheid.",
-  alternates: {
-    canonical: "/website/",
-  },
+  alternates: languageAlternates("/website/"),
   keywords: [
     "website laten maken",
     "websitebeheer uitbesteden",

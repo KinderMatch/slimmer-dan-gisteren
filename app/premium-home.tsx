@@ -4,7 +4,7 @@ import Link from "next/link";
 import { motion, useScroll, useTransform } from "framer-motion";
 
 import { ContactActionGroup, ContactDock } from "./contact-actions";
-import { EmphasisText, LanguageProvider, LanguageToggle, Text, useLanguage, type LocalizedString } from "./language";
+import { EmphasisText, LanguageProvider, LanguageToggle, Text, useLanguage, type Language, type LocalizedString } from "./language";
 import { MediaLightbox } from "./media-lightbox";
 import { ScrollProgress } from "./scroll-experience";
 
@@ -244,9 +244,9 @@ function LocalizedSpeechVideo() {
   );
 }
 
-export function PremiumHome() {
+export function PremiumHome({ initialLanguage = "nl" }: { initialLanguage?: Language }) {
   return (
-    <LanguageProvider>
+    <LanguageProvider initialLanguage={initialLanguage}>
       <div className="premium-home">
         <ScrollProgress />
         <header className="premium-nav">

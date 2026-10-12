@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 
 import { FocusServicePage } from "../focus-service-page";
 import { JsonLd } from "../json-ld";
+import { languageAlternates } from "../i18n";
 import { googleAdsPage } from "../growth-pages-data";
 import { absoluteUrl, breadcrumbJsonLd, faqJsonLd, serviceJsonLd, siteName } from "../seo";
 import { SiteShell } from "../site-content";
@@ -9,7 +10,7 @@ import { SiteShell } from "../site-content";
 export const metadata: Metadata = {
   title: googleAdsPage.metadata.title,
   description: googleAdsPage.metadata.description,
-  alternates: { canonical: googleAdsPage.slug },
+  alternates: languageAlternates(googleAdsPage.slug),
   keywords: googleAdsPage.metadata.keywords,
   openGraph: {
     title: googleAdsPage.metadata.title,

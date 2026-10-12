@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 
 import { FocusServicePage } from "../focus-service-page";
 import { JsonLd } from "../json-ld";
+import { languageAlternates } from "../i18n";
 import { geoPage } from "../growth-pages-data";
 import { absoluteUrl, breadcrumbJsonLd, faqJsonLd, serviceJsonLd, siteName } from "../seo";
 import { SiteShell } from "../site-content";
@@ -9,7 +10,7 @@ import { SiteShell } from "../site-content";
 export const metadata: Metadata = {
   title: geoPage.metadata.title,
   description: geoPage.metadata.description,
-  alternates: { canonical: geoPage.slug },
+  alternates: languageAlternates(geoPage.slug),
   keywords: geoPage.metadata.keywords,
   openGraph: {
     title: geoPage.metadata.title,

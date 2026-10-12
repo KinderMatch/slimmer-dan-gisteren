@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 import { JsonLd } from "./json-ld";
+import { languageAlternates } from "./i18n";
 import { PremiumHome } from "./premium-home";
 import { absoluteUrl, breadcrumbJsonLd, defaultOgImage, faqJsonLd, servicePages, siteName } from "./seo";
 
@@ -8,9 +9,7 @@ export const metadata: Metadata = {
   title: "Slimmer dan Gisteren - GEO, SEO, Google Ads en Social Ads",
   description:
     "Marketingbureau voor ondernemers die GEO, SEO, Google Ads, Social Ads en social media content willen laten samenwerken voor zichtbare groei.",
-  alternates: {
-    canonical: "/",
-  },
+  alternates: languageAlternates("/"),
   keywords: [
     "marketingbureau",
     "GEO",

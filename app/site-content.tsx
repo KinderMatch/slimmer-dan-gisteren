@@ -277,9 +277,9 @@ function videoPreviewSrc(src: string) {
 
 export const homeHeroVideoSrc = videoPreviewSrc(videos[3].src);
 
-export function SiteShell({ children }: { children: ReactNode }) {
+export function SiteShell({ children, initialLanguage = "nl" }: { children: ReactNode; initialLanguage?: "nl" | "en" | "es" }) {
   return (
-    <LanguageProvider>
+    <LanguageProvider initialLanguage={initialLanguage}>
       <ScrollProgress />
       <header className="site-header">
         <Link className="brand" href="/">

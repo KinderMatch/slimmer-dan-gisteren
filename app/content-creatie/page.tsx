@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 import { JsonLd } from "../json-ld";
+import { languageAlternates } from "../i18n";
 import { absoluteUrl, breadcrumbJsonLd, faqJsonLd, serviceJsonLd, siteName } from "../seo";
 import {
   ArtistContentShowcase,
@@ -19,9 +20,7 @@ export const metadata: Metadata = {
   title: "Content Creatie, Fotografie en Videografie",
   description:
     "Content creatie uitbesteden? Slimmer dan Gisteren maakt fotografie, videografie, social content, reiscontent, eventvideo en artiestencontent.",
-  alternates: {
-    canonical: "/content-creatie/",
-  },
+  alternates: languageAlternates("/content-creatie/"),
   keywords: [
     "content creatie",
     "content creatie uitbesteden",

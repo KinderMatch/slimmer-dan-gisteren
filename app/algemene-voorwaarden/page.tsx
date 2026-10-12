@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { languageAlternates } from "../i18n";
 
 import { JsonLd } from "../json-ld";
 import { Text } from "../language";
@@ -297,9 +298,7 @@ export const metadata: Metadata = {
   title: "Algemene Voorwaarden",
   description:
     "Uitgebreide algemene voorwaarden van Slimmer dan Gisteren voor websites, advertenties, SEO, content creatie en doorlopende samenwerking.",
-  alternates: {
-    canonical: "/algemene-voorwaarden/",
-  },
+  alternates: languageAlternates("/algemene-voorwaarden/"),
   robots: {
     index: true,
     follow: true,

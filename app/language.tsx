@@ -1,6 +1,7 @@
 "use client";
 
 import { createContext, Fragment, type ReactNode, useContext, useEffect, useMemo, useState } from "react";
+import { pathForLanguage } from "./i18n";
 
 export type Language = "nl" | "en" | "es";
 
@@ -20,10 +21,17 @@ const LanguageContext = createContext<{
   setLanguage: () => undefined,
 });
 
-export function LanguageProvider({ children }: { children: ReactNode }) {
-  const [language, setLanguageState] = useState<Language>(defaultLanguage);
+export function LanguageProvider({ children, initialLanguage = defaultLanguage }: { children: ReactNode; initialLanguage?: Language }) {
+  const [language, setLanguageState] = useState<Language>(initialLanguage);
 
   useEffect(() => {
+    const pathLanguage = window.location.pathname.match(/^\/(en|es)(?=\/|$)/)?.[1];
+    if (pathLanguage === "en" || pathLanguage === "es") {
+      setLanguageState(pathLanguage);
+      document.documentElement.lang = pathLanguage;
+      return;
+    }
+
     const requestedLanguage = new URLSearchParams(window.location.search).get("lang");
     if (requestedLanguage === "en" || requestedLanguage === "nl" || requestedLanguage === "es") {
       setLanguageState(requestedLanguage);
@@ -37,7 +45,7 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
       setLanguageState(savedLanguage);
       document.documentElement.lang = savedLanguage;
     }
-  }, []);
+  }, [initialLanguage]);
 
   const value = useMemo(
     () => ({
@@ -46,6 +54,7 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
         setLanguageState(nextLanguage);
         window.localStorage.setItem("sdg-language", nextLanguage);
         document.documentElement.lang = nextLanguage;
+        window.location.href = pathForLanguage(window.location.pathname, nextLanguage);
       },
     }),
     [language],
