@@ -214,12 +214,6 @@ function ServiceVisual({ service }: { service: (typeof services)[number] }) {
       <video autoPlay loop muted playsInline preload="metadata">
         <source src={service.media} />
       </video>
-      <div className="premium-ads-dashboard" aria-hidden="true">
-        <span>Zelfstandigen Bouw</span>
-        <strong>-50%</strong>
-        <small>Advertentiekosten</small>
-        <div />
-      </div>
     </div>
   );
 }
