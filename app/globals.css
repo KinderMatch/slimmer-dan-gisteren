@@ -5459,6 +5459,7 @@ h3 {
   --premium-bg: var(--brand-navy);
   --premium-surface: var(--brand-panel);
   --premium-light: #f4f0ea;
+  --premium-ink: #08243a;
   --premium-dark-text: #1f2937;
   --premium-muted: #b9b3ac;
   --premium-blue: #2563eb;
@@ -6082,15 +6083,20 @@ h3 {
   padding: 0.9rem 1.25rem;
   border: 1px solid rgba(244, 240, 234, 0.28);
   border-radius: 999px;
-  background: rgba(244, 240, 234, 0.96);
+  background: #f4f0ea;
   color: var(--premium-ink);
-  font-weight: 800;
+  font-weight: 900;
   text-decoration: none;
   box-shadow: 0 18px 44px rgba(0, 0, 0, 0.16);
   transition: transform 180ms ease, border-color 180ms ease, background 180ms ease, color 180ms ease;
 }
 
+.premium-service-cta:visited {
+  color: var(--premium-ink);
+}
+
 .premium-service-cta span {
+  color: currentColor;
   display: inline-flex;
   transform: translateY(-1px);
   transition: transform 180ms ease;
