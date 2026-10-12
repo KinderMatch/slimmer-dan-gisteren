@@ -1,4 +1,4 @@
-import { env } from "cloudflare:workers";
+import { getRuntimeEnv } from "@/runtime-env";
 
 type ScanRequest = {
   fields?: Record<string, string>;
@@ -71,6 +71,7 @@ export async function POST(request: Request) {
 }
 
 async function sendEmail(input: { to: string; subject: string; text: string; html: string; replyTo?: string }) {
+  const env = getRuntimeEnv();
   const apiKey = env.SENDGRID_API_KEY;
   const from = env.SENDGRID_FROM_EMAIL || notificationEmail;
   const fromName = env.SENDGRID_FROM_NAME || "Jimmy Buitenhuis";

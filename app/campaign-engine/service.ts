@@ -1,5 +1,4 @@
-import { env } from "cloudflare:workers";
-
+import { getRuntimeEnv } from "@/runtime-env";
 import { campaignSteps, renderHtml, renderSubject, renderText, type CampaignLead } from "./templates";
 
 type LeadInput = {
@@ -16,6 +15,7 @@ type LeadInput = {
 type D1Result<T = unknown> = { results?: T[] };
 
 export function requireAdmin(request: Request) {
+  const env = getRuntimeEnv();
   const configured = env.CAMPAIGN_ADMIN_TOKEN;
   if (!configured) {
     throw new Response("CAMPAIGN_ADMIN_TOKEN is not configured", { status: 503 });
@@ -27,6 +27,8 @@ export function requireAdmin(request: Request) {
 }
 
 export function getCampaignDb() {
+  const env = getRuntimeEnv();
+
   if (!env.DB) {
     throw new Response("D1 binding DB is not configured", { status: 503 });
   }
@@ -322,6 +324,7 @@ export async function unsubscribe(token: string, reason = "unsubscribed") {
 }
 
 async function sendEmail(input: { to: string; subject: string; text: string; html: string }) {
+  const env = getRuntimeEnv();
   const apiKey = env.SENDGRID_API_KEY;
   const from = env.SENDGRID_FROM_EMAIL || "jimmy@slimmerdangisteren.nl";
   const fromName = env.SENDGRID_FROM_NAME || "Jimmy Buitenhuis";
