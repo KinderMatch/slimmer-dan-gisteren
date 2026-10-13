@@ -197,15 +197,15 @@ export function PremiumHome({ initialLanguage = "nl" }: { initialLanguage?: Lang
       <div className="premium-home">
         <ScrollProgress />
         <header className="premium-nav">
-          <Link className="premium-brand" href={pathForLanguage("/", initialLanguage)}>
+          <Link className="premium-brand" href={pathForLanguage("/", initialLanguage)} prefetch={false}>
             <img src="/assets/logo.png" alt="Slimmer dan Gisteren" />
             <span>Slimmer dan Gisteren</span>
           </Link>
           <nav aria-label="Hoofdnavigatie">
-            <Link href={pathForLanguage("/geo/", initialLanguage)}>GEO</Link>
-            <Link href={pathForLanguage("/seo/", initialLanguage)}>SEO</Link>
-            <Link href={pathForLanguage("/google-ads/", initialLanguage)}>Google Ads</Link>
-            <Link href={pathForLanguage("/social-ads/", initialLanguage)}>Social Ads</Link>
+            <Link href={pathForLanguage("/geo/", initialLanguage)} prefetch={false}>GEO</Link>
+            <Link href={pathForLanguage("/seo/", initialLanguage)} prefetch={false}>SEO</Link>
+            <Link href={pathForLanguage("/google-ads/", initialLanguage)} prefetch={false}>Google Ads</Link>
+            <Link href={pathForLanguage("/social-ads/", initialLanguage)} prefetch={false}>Social Ads</Link>
           </nav>
           <LanguageToggle />
         </header>
@@ -264,14 +264,14 @@ export function PremiumHome({ initialLanguage = "nl" }: { initialLanguage?: Lang
                 className="premium-service"
                 key={service.title.nl}
               >
-                <Link href={pathForLanguage(service.href, initialLanguage)} className="premium-service-media" aria-label={service.title.nl}>
+                <Link href={pathForLanguage(service.href, initialLanguage)} className="premium-service-media" aria-label={service.title.nl} prefetch={false}>
                   <ServiceVisual service={service} />
                 </Link>
                 <div>
                   <span>{service.label}</span>
                   <h2><Text value={service.title} /></h2>
                   <p><Text value={service.body} /></p>
-                  <Link href={pathForLanguage(service.href, initialLanguage)} className="premium-service-cta">
+                  <Link href={pathForLanguage(service.href, initialLanguage)} className="premium-service-cta" prefetch={false}>
                     <Text value={t("Bekijk discipline", "View discipline", "Ver disciplina")} />
                     <span aria-hidden="true">→</span>
                   </Link>
@@ -440,16 +440,16 @@ export function PremiumHome({ initialLanguage = "nl" }: { initialLanguage?: Lang
         </main>
 
         <footer className="premium-footer">
-          <Link className="premium-footer-brand" href={pathForLanguage("/", initialLanguage)}>
+          <Link className="premium-footer-brand" href={pathForLanguage("/", initialLanguage)} prefetch={false}>
             <img src="/assets/logo.png" alt="" />
             <span>Slimmer dan Gisteren</span>
           </Link>
           <nav>
-            <Link href={pathForLanguage("/", initialLanguage)}><Text value={t("Home", "Home", "Inicio")} /></Link>
-            <Link href={pathForLanguage("/geo/", initialLanguage)}>GEO</Link>
-            <Link href={pathForLanguage("/seo/", initialLanguage)}>SEO</Link>
-            <Link href={pathForLanguage("/google-ads/", initialLanguage)}>Google Ads</Link>
-            <Link href={pathForLanguage("/social-ads/", initialLanguage)}>Social Ads</Link>
+            <Link href={pathForLanguage("/", initialLanguage)} prefetch={false}><Text value={t("Home", "Home", "Inicio")} /></Link>
+            <Link href={pathForLanguage("/geo/", initialLanguage)} prefetch={false}>GEO</Link>
+            <Link href={pathForLanguage("/seo/", initialLanguage)} prefetch={false}>SEO</Link>
+            <Link href={pathForLanguage("/google-ads/", initialLanguage)} prefetch={false}>Google Ads</Link>
+            <Link href={pathForLanguage("/social-ads/", initialLanguage)} prefetch={false}>Social Ads</Link>
           </nav>
           <a href="https://wa.me/31610175027">WhatsApp</a>
           <a href="mailto:jimmy@slimmerdangisteren.nl">Mail</a>

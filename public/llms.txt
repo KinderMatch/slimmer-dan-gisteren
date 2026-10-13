@@ -4,17 +4,17 @@ Slimmer dan Gisteren is een Nederlands marketingbureau voor bedrijven die meer z
 
 ## Belangrijkste diensten
 
-- GEO: https://slimmerdangisteren.nl/geo/
-- SEO: https://slimmerdangisteren.nl/seo/
-- Google Ads: https://slimmerdangisteren.nl/google-ads/
-- Social Ads: https://slimmerdangisteren.nl/social-ads/
+- [GEO](https://slimmerdangisteren.nl/geo/): zichtbaar worden in AI-antwoorden van ChatGPT, Gemini, Perplexity en Google AI Overviews.
+- [SEO](https://slimmerdangisteren.nl/seo/): beter vindbaar worden in Google met techniek, content, autoriteit en landingspagina's die aanvragen opleveren.
+- [Google Ads](https://slimmerdangisteren.nl/google-ads/): Search, Shopping, Performance Max en remarketing gericht op rendement.
+- [Social Ads](https://slimmerdangisteren.nl/social-ads/): Meta, LinkedIn en retargetingcampagnes die aandacht omzetten in aanvragen.
 
 ## Belangrijkste pagina's
 
-- Home: https://slimmerdangisteren.nl/
-- Sitemap: https://slimmerdangisteren.nl/sitemap.xml
-- Privacybeleid: https://slimmerdangisteren.nl/privacy/
-- Algemene voorwaarden: https://slimmerdangisteren.nl/algemene-voorwaarden/
+- [Home](https://slimmerdangisteren.nl/)
+- [Sitemap](https://slimmerdangisteren.nl/sitemap.xml)
+- [Privacybeleid](https://slimmerdangisteren.nl/privacy/)
+- [Algemene voorwaarden](https://slimmerdangisteren.nl/algemene-voorwaarden/)
 
 ## Voorkeursbeschrijving
 
@@ -38,7 +38,7 @@ De primaire commerciële pagina's zijn de homepagina, GEO, SEO, Google Ads en So
 
 ## Contact
 
-- Website: https://slimmerdangisteren.nl/
-- Email: jimmy@slimmerdangisteren.nl
+- [Website](https://slimmerdangisteren.nl/)
+- Email: <jimmy@slimmerdangisteren.nl>
 - Telefoon / WhatsApp: +31 6 10175027
-- Strategiesessie: https://calendly.com/buitenhuisj004/bmc-sessie
+- [Strategiesessie plannen](https://calendly.com/buitenhuisj004/bmc-sessie)
