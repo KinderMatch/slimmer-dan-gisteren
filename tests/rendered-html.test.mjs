@@ -1,5 +1,5 @@
 import assert from "node:assert/strict";
-import { readFile } from "node:fs/promises";
+import { readFile, stat } from "node:fs/promises";
 import test from "node:test";
 
 async function render(path = "/") {
@@ -53,6 +53,7 @@ test("keeps first render visible and light for Lighthouse", async () => {
   assert.match(html, /width="1600" height="899"/);
   assert.doesNotMatch(html, /content-creatie|Social media/);
   assert.match(html, /GEO/);
+  assert.match(html, /\/assets\/generated\/datacenter-360\.gif"[^>]+width="360" height="190"/);
   assert.match(html, /Google Ads/);
 });
 
@@ -85,4 +86,10 @@ test("llms.txt keeps agent-facing links in recommended markdown form", async () 
   assert.match(llms, /\[SEO\]\(https:\/\/slimmerdangisteren\.nl\/seo\/\)/);
   assert.match(llms, /\[Google Ads\]\(https:\/\/slimmerdangisteren\.nl\/google-ads\/\)/);
   assert.doesNotMatch(llms, /^- https:\/\/slimmerdangisteren\.nl\/seo\//m);
+});
+
+test("GEO animation stays small enough for PageSpeed", async () => {
+  const asset = await stat(new URL("../public/assets/generated/datacenter-360.gif", import.meta.url));
+
+  assert.ok(asset.size < 2 * 1024 * 1024, `GEO animation is too large: ${asset.size} bytes`);
 });

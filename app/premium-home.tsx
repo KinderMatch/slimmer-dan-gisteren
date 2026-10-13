@@ -20,7 +20,7 @@ const services = [
       "Become visible in AI answers from ChatGPT, Gemini, Perplexity and Google AI Overviews.",
       "Ser visible en respuestas de IA de ChatGPT, Gemini, Perplexity y Google AI Overviews.",
     ),
-    media: "/assets/optimized/content-zb.jpg",
+    media: "/assets/generated/datacenter-360.gif",
     type: "image",
   },
   {
@@ -64,6 +64,7 @@ const services = [
 
 const imageSizes: Record<string, { width: number; height: number }> = {
   "/assets/logo.png": { width: 512, height: 512 },
+  "/assets/generated/datacenter-360.gif": { width: 360, height: 190 },
   "/assets/optimized/airfoto.jpg": { width: 1600, height: 899 },
   "/assets/optimized/content-zb.jpg": { width: 1600, height: 1416 },
   "/assets/seo-google-search.gif": { width: 480, height: 360 },
