@@ -47,4 +47,23 @@ test("keeps first render visible and light for Lighthouse", async () => {
   assert.doesNotMatch(html, /<iframe\b/i);
   assert.match(html, /\/assets\/optimized\/airfoto\.jpg"[^>]+fetchPriority="high"/);
   assert.match(html, /width="1600" height="899"/);
+  assert.doesNotMatch(html, /content-creatie|Social media/);
+  assert.match(html, /GEO/);
+  assert.match(html, /Google Ads/);
+});
+
+test("server-renders commercial pages with crawlable SEO directives", async () => {
+  for (const path of ["/seo/", "/google-ads/"]) {
+    const response = await render(path);
+    assert.equal(response.status, 200);
+
+    const html = await response.text();
+    assert.match(html, /<!DOCTYPE html><html lang="nl">/i);
+    assert.match(html, /<meta charSet="utf-8"\/>/i);
+    assert.match(html, /<meta name="description" content="[^"]+"/i);
+    assert.match(html, new RegExp(`<link rel="canonical" href="https://slimmerdangisteren\\.nl${path}"`, "i"));
+    assert.match(html, /<link rel="alternate" hrefLang="nl-NL"/i);
+    assert.match(html, /<meta name="robots" content="(?:index, follow|follow, index)"/i);
+    assert.doesNotMatch(html, /\sautoPlay\b/i);
+  }
 });

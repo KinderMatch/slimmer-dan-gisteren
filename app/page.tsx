@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 import { JsonLd } from "./json-ld";
 import { languageAlternates } from "./i18n";
 import { PremiumHome } from "./premium-home";
-import { absoluteUrl, breadcrumbJsonLd, defaultOgImage, faqJsonLd, servicePages, siteName } from "./seo";
+import { absoluteUrl, breadcrumbJsonLd, defaultOgImage, faqJsonLd, primaryServicePages, siteName } from "./seo";
 
 export const metadata: Metadata = {
   title: "Slimmer dan Gisteren - SEO, GEO, Google Ads en Social Ads",
@@ -17,7 +17,8 @@ export const metadata: Metadata = {
     "SEO uitbesteden",
     "Google Ads uitbesteden",
     "Social Ads",
-    "social media content",
+    "Google Ads bureau",
+    "SEO marketingbureau",
     "Slimmer dan Gisteren",
   ],
   openGraph: {
@@ -42,7 +43,7 @@ export default function Home() {
             {
               question: "Waar helpt Slimmer dan Gisteren mee?",
               answer:
-                "Slimmer dan Gisteren helpt bedrijven met SEO, GEO, Google Ads, Social Ads, tracking, rapportage en social media content.",
+                "Slimmer dan Gisteren helpt bedrijven met GEO, SEO, Google Ads, Social Ads, tracking, rapportage en conversiegerichte optimalisatie.",
             },
             {
               question: "Voor wie is Slimmer dan Gisteren geschikt?",
@@ -59,7 +60,7 @@ export default function Home() {
             "@context": "https://schema.org",
             "@type": "ItemList",
             name: "Diensten van Slimmer dan Gisteren",
-            itemListElement: servicePages.map((service, index) => ({
+            itemListElement: primaryServicePages.map((service, index) => ({
               "@type": "ListItem",
               position: index + 1,
               name: service.name,
@@ -69,13 +70,12 @@ export default function Home() {
           {
             "@context": "https://schema.org",
             "@type": "SiteNavigationElement",
-            name: ["GEO", "SEO", "Google Ads", "Social Ads", "Social media"],
+            name: ["GEO", "SEO", "Google Ads", "Social Ads"],
             url: [
               absoluteUrl("/geo/"),
               absoluteUrl("/seo/"),
               absoluteUrl("/google-ads/"),
               absoluteUrl("/social-ads/"),
-              absoluteUrl("/content-creatie/"),
             ],
           },
         ]}

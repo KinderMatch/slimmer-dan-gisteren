@@ -32,6 +32,18 @@ function isRequired(field: string) {
   return ["naam", "bedrijfsnaam", "e-mailadres", "email", "website"].some((part) => normalized.includes(part));
 }
 
+function fieldDescription(field: string) {
+  const normalized = field.toLowerCase();
+  if (normalized.includes("naam")) return "Naam van de contactpersoon of het bedrijf.";
+  if (normalized.includes("mail")) return "E-mailadres waarop Slimmer dan Gisteren kan reageren.";
+  if (normalized.includes("telefoon")) return "Telefoonnummer voor opvolging via bellen of WhatsApp.";
+  if (normalized.includes("website") || normalized.includes("url") || normalized.includes("domein")) {
+    return "Website of domeinnaam waarvoor de scan wordt aangevraagd.";
+  }
+  if (normalized.includes("doel") || normalized.includes("bericht")) return "Korte toelichting op de gewenste groei, campagne of scan.";
+  return `Informatie voor het veld ${field}.`;
+}
+
 export function ScanForm({ fields, formId, pageTitle, pageSlug, submitLabel }: ScanFormProps) {
   const [state, setState] = useState<SubmitState>("idle");
   const [message, setMessage] = useState("");
@@ -73,7 +85,14 @@ export function ScanForm({ fields, formId, pageTitle, pageSlug, submitLabel }: S
   }
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form
+      action="/api/scan"
+      method="post"
+      onSubmit={handleSubmit}
+      toolautosubmit="false"
+      tooldescription={`Vraag een scan of strategiesessie aan voor ${pageTitle}.`}
+      toolname={`${formId}-aanvraag`}
+    >
       {fields.map((field) => {
         const fieldId = `${formId}-${field.toLowerCase().replaceAll(" ", "-")}`;
         const isTextarea = field.toLowerCase().includes("bericht") || field.toLowerCase().includes("doel");
@@ -81,7 +100,7 @@ export function ScanForm({ fields, formId, pageTitle, pageSlug, submitLabel }: S
           <label htmlFor={fieldId} key={field}>
             <span>{field}</span>
             {isTextarea ? (
-              <textarea id={fieldId} name={field} rows={4} />
+              <textarea id={fieldId} name={field} rows={4} toolparamdescription={fieldDescription(field)} />
             ) : (
               <input
                 autoCapitalize={inputMode(field) === "url" ? "none" : undefined}
@@ -91,6 +110,7 @@ export function ScanForm({ fields, formId, pageTitle, pageSlug, submitLabel }: S
                 name={field}
                 placeholder={inputMode(field) === "url" ? "bijv. slimmerdangisteren.nl of https://..." : undefined}
                 required={isRequired(field)}
+                toolparamdescription={fieldDescription(field)}
                 type={inputType(field)}
               />
             )}

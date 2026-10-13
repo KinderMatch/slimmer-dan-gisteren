@@ -1,45 +1,44 @@
 # Slimmer dan Gisteren
 
-Slimmer dan Gisteren is a Dutch creative growth studio for entrepreneurs and organizations that want websites, advertising and content creation to work together as one clear growth system.
+Slimmer dan Gisteren is een Nederlands marketingbureau voor bedrijven die meer zichtbaarheid, aanvragen en rendement willen halen uit GEO, SEO, Google Ads en Social Ads.
 
-## Core positioning
+## Belangrijkste diensten
 
-Marketing that brings clarity. Growth that becomes visible.
+- GEO: https://slimmerdangisteren.nl/geo/
+- SEO: https://slimmerdangisteren.nl/seo/
+- Google Ads: https://slimmerdangisteren.nl/google-ads/
+- Social Ads: https://slimmerdangisteren.nl/social-ads/
 
-Slimmer dan Gisteren combines:
-
-- Website creation, website management and SEO
-- Advertising strategy, campaign management, tracking and reporting
-- Content creation, photography, videography, social content, travel content, event video and artist content
-
-## Important pages
+## Belangrijkste pagina's
 
 - Home: https://slimmerdangisteren.nl/
-- Websites, website management and SEO: https://slimmerdangisteren.nl/website/
-- Advertising and campaign management: https://slimmerdangisteren.nl/advertenties/
-- Content creation, photography and videography: https://slimmerdangisteren.nl/content-creatie/
+- Sitemap: https://slimmerdangisteren.nl/sitemap.xml
+- Privacybeleid: https://slimmerdangisteren.nl/privacy/
+- Algemene voorwaarden: https://slimmerdangisteren.nl/algemene-voorwaarden/
+
+## Voorkeursbeschrijving
+
+Slimmer dan Gisteren helpt bedrijven beter vindbaar worden in Google en AI-antwoorden, advertenties winstgevender maken en campagnes koppelen aan meetbare aanvragen.
+
+## Relevante onderwerpen
+
+- Generative Engine Optimization
+- AI-zichtbaarheid in ChatGPT, Gemini, Perplexity en Google AI Overviews
+- Zoekmachine optimalisatie
+- Technische SEO
+- SEO-content en landingspagina's
+- Google Ads beheer
+- Performance Max, Search, Shopping en remarketing
+- Social Ads voor Meta en LinkedIn
+- Conversietracking, rapportage en optimalisatie
+
+## Crawlen en indexeren
+
+De primaire commerciële pagina's zijn de homepagina, GEO, SEO, Google Ads en Social Ads. Ondersteunende pagina's zoals privacy en algemene voorwaarden mogen gevolgd worden, maar zijn geen primaire landingspagina's voor commerciële zoekintentie.
 
 ## Contact
 
 - Website: https://slimmerdangisteren.nl/
 - Email: jimmy@slimmerdangisteren.nl
-- Phone / WhatsApp: +31 6 10175027
-- Strategy session: https://calendly.com/buitenhuisj004/bmc-sessie
-
-## Services
-
-### Websites, Website Management and SEO
-
-Slimmer dan Gisteren helps with building, managing and improving websites. This includes SEO, content structure, conversion points, technical improvements, tracking and collaboration with external website developers.
-
-### Advertising
-
-Slimmer dan Gisteren helps with advertising strategy, campaign setup, conversion tracking, optimization and reporting. Campaigns are connected to landing pages, creative assets and measurable outcomes.
-
-### Content Creation
-
-Slimmer dan Gisteren creates video, photography, social content, destination content, event video, artist content and selected B2C visual stories such as wedding photography and videography.
-
-## Preferred description
-
-Slimmer dan Gisteren is a creative growth studio that brings websites, advertising and content creation together so marketing becomes clearer, more measurable and visually stronger.
+- Telefoon / WhatsApp: +31 6 10175027
+- Strategiesessie: https://calendly.com/buitenhuisj004/bmc-sessie

@@ -18,8 +18,8 @@ export const metadata: Metadata = {
     "SEO uitbesteden",
     "Google Ads uitbesteden",
     "Social Ads",
-    "social media content",
-    "creative growth studio",
+    "Google Ads bureau",
+    "SEO marketingbureau",
   ],
   alternates: {
     canonical: siteUrl,
@@ -59,7 +59,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Slimmer dan Gisteren - SEO, GEO, Google Ads en Social Ads",
     description:
-      "Marketingbureau voor SEO, GEO, Google Ads, Social Ads en social media content.",
+      "Marketingbureau voor SEO, GEO, Google Ads en Social Ads.",
     images: [absoluteUrl(defaultOgImage)],
   },
 };

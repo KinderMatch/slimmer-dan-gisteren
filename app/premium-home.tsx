@@ -13,18 +13,30 @@ const t = (nl: string, en: string, es: string): LocalizedString => ({ nl, en, es
 const services = [
   {
     label: "01",
-    href: "/seo/",
-    title: t("SEO / GEO", "SEO / GEO", "SEO / GEO"),
+    href: "/geo/",
+    title: t("GEO", "GEO", "GEO"),
     body: t(
-      "Beter vindbaar worden in Google en AI-antwoorden met een sterke basis van techniek, content, autoriteit en conversie.",
-      "Become more visible in Google and AI answers with a strong foundation of technology, content, authority and conversion.",
-      "Ser más visible en Google y respuestas de IA con una base sólida de técnica, contenido, autoridad y conversión.",
+      "Zichtbaar worden in AI-antwoorden van ChatGPT, Gemini, Perplexity en Google AI Overviews.",
+      "Become visible in AI answers from ChatGPT, Gemini, Perplexity and Google AI Overviews.",
+      "Ser visible en respuestas de IA de ChatGPT, Gemini, Perplexity y Google AI Overviews.",
+    ),
+    media: "/assets/optimized/content-zb.jpg",
+    type: "image",
+  },
+  {
+    label: "02",
+    href: "/seo/",
+    title: t("SEO", "SEO", "SEO"),
+    body: t(
+      "Beter vindbaar worden in Google met techniek, content, autoriteit en pagina's die aanvragen opleveren.",
+      "Become more visible in Google with technology, content, authority and pages that generate enquiries.",
+      "Ser más visible en Google con técnica, contenido, autoridad y páginas que generan solicitudes.",
     ),
     media: "/assets/seo-google-search.gif",
     type: "image",
   },
   {
-    label: "02",
+    label: "03",
     href: "/google-ads/",
     title: t("Google Ads", "Google Ads", "Google Ads"),
     body: t(
@@ -37,7 +49,7 @@ const services = [
     type: "image",
   },
   {
-    label: "03",
+    label: "04",
     href: "/social-ads/",
     title: t("Social Ads", "Social Ads", "Social Ads"),
     body: t(
@@ -46,19 +58,7 @@ const services = [
       "Campañas sociales que convierten atención en solicitudes.",
     ),
     media: "/assets/optimized/content-zb.jpg",
-    type: "video",
-  },
-  {
-    label: "04",
-    href: "/content-creatie/",
-    title: t("Social media", "Social media", "Social media"),
-    body: t(
-      "Content die campagnes visueel sterker maakt.",
-      "Content that makes campaigns visually stronger.",
-      "Contenido que fortalece campañas visualmente.",
-    ),
-    media: "/assets/dave-dekker/photos/event-03.jpg",
-    type: "plain-video",
+    type: "image",
   },
 ];
 

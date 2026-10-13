@@ -117,8 +117,7 @@ export const seoPage: GrowthPageData = {
     related: [
       { label: "Google Ads", href: "/google-ads/", text: "Gebruik advertentiedata om sneller te leren welke zoekwoorden converteren." },
       { label: "GEO", href: "/geo/", text: "Maak je expertise ook beter begrijpelijk voor AI-antwoorden en AI-zoekmachines." },
-      { label: "Content creatie", href: "/content-creatie/", text: "Versterk SEO met consistente content, beeld en duidelijke formats." },
-      { label: "Website", href: "/website/", text: "Zorg dat techniek, snelheid en conversie de SEO-strategie ondersteunen." },
+      { label: "Social Ads", href: "/social-ads/", text: "Gebruik social campagnes om bewezen zoekinzichten breder te activeren." },
     ],
   },
   topicalAuthority: {
@@ -290,9 +289,8 @@ export const geoPage: GrowthPageData = {
     ],
     related: [
       { label: "SEO", href: "/seo/", text: "Bouw een sterke organische basis waar AI-systemen ook op kunnen leunen." },
-      { label: "Content creatie", href: "/content-creatie/", text: "Maak expertise zichtbaar met duidelijke formats, beeld en inhoudelijke content." },
-      { label: "Website", href: "/website/", text: "Zorg dat structuur, snelheid en techniek je vindbaarheid ondersteunen." },
       { label: "Google Ads", href: "/google-ads/", text: "Gebruik zoekdata om te leren welke vragen en intenties commercieel waardevol zijn." },
+      { label: "Social Ads", href: "/social-ads/", text: "Test proposities en bewijsvoering sneller met gerichte social campagnes." },
     ],
   },
   topicalAuthority: {

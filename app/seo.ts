@@ -91,6 +91,10 @@ export const servicePages = [
   },
 ] as const;
 
+export const primaryServicePages = servicePages.filter((service) =>
+  ["/geo/", "/seo/", "/google-ads/", "/social-ads/"].includes(service.path),
+);
+
 export function absoluteUrl(path = "/") {
   return new URL(path, siteUrl).toString();
 }
@@ -122,7 +126,7 @@ export function organizationJsonLd() {
     ],
     priceRange: "$$",
     description:
-      "Slimmer dan Gisteren is een marketingbureau voor SEO, GEO, Google Ads, Social Ads en social media content. We helpen bedrijven beter vindbaar worden, campagnes verbeteren en meer aanvragen krijgen.",
+      "Slimmer dan Gisteren is een marketingbureau voor GEO, SEO, Google Ads en Social Ads. We helpen bedrijven beter vindbaar worden in Google en AI-antwoorden, campagnes verbeteren en meer aanvragen krijgen.",
     contactPoint: [
       {
         "@type": "ContactPoint",
@@ -134,20 +138,23 @@ export function organizationJsonLd() {
       },
     ],
     knowsAbout: [
-      "Website laten maken",
-      "Websitebeheer",
+      "GEO bureau",
+      "Generative Engine Optimization",
+      "AI zichtbaarheid",
+      "AI Overviews",
+      "ChatGPT zichtbaarheid",
       "SEO marketingbureau",
       "SEO",
       "Zoekmachine optimalisatie",
       "Online vindbaarheid",
       "Lokale SEO",
-      "GEO",
-      "Generative Engine Optimization",
       "Google Ads",
+      "Google Ads bureau",
+      "Performance Max",
+      "Google Shopping",
       "Social Ads",
-      "Content creatie",
-      "Fotografie",
-      "Videografie",
+      "Meta Ads",
+      "LinkedIn Ads",
       "Conversietracking",
     ],
   };

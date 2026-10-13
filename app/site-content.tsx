@@ -58,17 +58,6 @@ export const services = [
     ),
     proof: t("Meta, LinkedIn en retargeting", "Meta, LinkedIn and retargeting", "Meta, LinkedIn y retargeting"),
   },
-  {
-    kicker: t("Social media", "Social media", "Social media"),
-    title: t("Content die campagnes visueel sterker maakt.", "Content that makes campaigns visually stronger.", "Contenido que fortalece campañas visualmente."),
-    href: "/content-creatie/",
-    summary: t(
-      "Van zakelijke videocases tot reiscontent, artiesten, evenementen en B2C-verhalen: beeld dat meteen gevoel geeft en bruikbaar is voor website, socials en advertenties.",
-      "From business video cases to travel content, artists, events and B2C stories: visuals that immediately create feeling and work across website, social and advertising.",
-      "Desde videos empresariales hasta viajes, artistas, eventos e historias B2C: contenido visual que transmite emoción y sirve para web, redes y anuncios.",
-    ),
-    proof: t("Video, fotografie en social formats", "Video, photography and social formats", "Video, fotografía y formatos sociales"),
-  },
 ];
 
 const navItems = [
@@ -302,9 +291,7 @@ export function SiteShell({ children, initialLanguage = "nl" }: { children: Reac
       <main>{children}</main>
       <footer className="site-footer">
         <div className="footer-video">
-          <video autoPlay loop muted playsInline preload="none">
-            <source src={videoPreviewSrc(videos[5].src)} type="video/mp4" />
-          </video>
+          <img src="/assets/optimized/airfoto.jpg" alt="" loading="lazy" width="1600" height="899" />
           <div>
             <p className="eyebrow"><Text value={t("Klaar om slimmer te groeien?", "Ready to grow smarter?", "¿Listo para crecer de forma más inteligente?")} /></p>
             <h2><EmphasisText value={t("Laat GEO, SEO en advertenties [[samenwerken]].", "Let GEO, SEO and ads [[work together]].", "Haz que GEO, SEO y anuncios [[trabajen juntos]].")} /></h2>

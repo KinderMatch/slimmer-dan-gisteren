@@ -4512,7 +4512,7 @@ h3 {
     linear-gradient(180deg, transparent, var(--night));
 }
 
-.footer-video video {
+.footer-video > img {
   position: absolute;
   inset: 0;
   width: 100%;
