@@ -65,12 +65,12 @@ const services = [
 const cases = [
   {
     title: "Zelfstandigen Bouw",
-    discipline: t("Advertenties + content + websitefundament", "Advertising + content + website foundation", "Anuncios + contenido + base web"),
+    discipline: t("Google Ads + SEO-fundament", "Google Ads + SEO foundation", "Google Ads + base SEO"),
     image: "/assets/optimized/content-zb.jpg",
   },
   {
     title: "The Color Run",
-    discipline: t("Content systeem", "Content system", "Sistema de contenido"),
+    discipline: t("Campagne- en SEO-content", "Campaign and SEO content", "Contenido para campanas y SEO"),
     image: "/assets/optimized/content-color-run.jpg",
   },
   {
@@ -115,7 +115,7 @@ const testimonials = [
     ),
     name: "Joris",
     result: t("Meer leads", "More leads", "Más leads"),
-    discipline: t("Website + advertenties", "Website + advertising", "Web + anuncios"),
+    discipline: t("SEO + advertenties", "SEO + advertising", "SEO + anuncios"),
   },
 ];
 
@@ -217,7 +217,7 @@ export function PremiumHome({ initialLanguage = "nl" }: { initialLanguage?: Lang
             <div className="premium-hero-shade" />
             <div className="premium-hero-copy">
               <p className="premium-kicker">
-                <Text value={t("Creative growth studio", "Creative growth studio", "Creative growth studio")} />
+                <Text value={t("SEO & Google Ads bureau", "SEO & Google Ads agency", "Agencia SEO y Google Ads")} />
               </p>
               <h1>
                 <EmphasisText value={t("Marketing die [[helderheid]] brengt.", "Marketing that brings [[clarity]].", "Marketing que aporta [[claridad]].")} />
@@ -247,9 +247,9 @@ export function PremiumHome({ initialLanguage = "nl" }: { initialLanguage?: Lang
               </h2>
               <p>
                 <Text value={t(
-                  "In deze video vertelt Jimmy, eigenaar van Slimmer dan Gisteren, waarom directe samenwerking meer oplevert dan extra lagen. Je werkt met degene die jouw marketing bedenkt én uitvoert, zodat paid media, content en landingspagina's elkaar versterken. Minder ruis, sneller schakelen en meer marketingkracht voor je budget.",
-                  "In this video, Jimmy, owner of Slimmer dan Gisteren, explains why direct collaboration creates more value than extra layers. You work with the person who creates and executes your marketing, so paid media, content and landing pages reinforce each other. Less noise, faster decisions and more marketing power for your budget.",
-                  "En este video, Jimmy, propietario de Slimmer dan Gisteren, explica por qué la colaboración directa aporta más valor que las capas adicionales. Trabajas con la persona que diseña y ejecuta tu marketing, para que paid media, contenido y landing pages se refuercen entre sí. Menos ruido, más agilidad y más fuerza de marketing para tu presupuesto.",
+                  "In deze video vertelt Jimmy, eigenaar van Slimmer dan Gisteren, waarom directe samenwerking meer oplevert dan extra lagen. Je werkt met degene die jouw SEO, Google Ads en landingspagina's bedenkt én uitvoert. Minder ruis, sneller schakelen en meer marketingkracht voor je budget.",
+                  "In this video, Jimmy, owner of Slimmer dan Gisteren, explains why direct collaboration creates more value than extra layers. You work with the person who creates and executes your SEO, Google Ads and landing pages. Less noise, faster decisions and more marketing power for your budget.",
+                  "En este video, Jimmy, propietario de Slimmer dan Gisteren, explica por qué la colaboración directa aporta más valor que las capas adicionales. Trabajas con la persona que diseña y ejecuta tu SEO, Google Ads y landing pages. Menos ruido, más agilidad y más fuerza de marketing para tu presupuesto.",
                 )} />
               </p>
             </div>
@@ -283,7 +283,7 @@ export function PremiumHome({ initialLanguage = "nl" }: { initialLanguage?: Lang
 
           <section className="premium-cases">
             <div className="premium-section-title">
-              <p className="premium-kicker"><Text value={t("Featured work", "Featured work", "Trabajo destacado")} /></p>
+              <p className="premium-kicker"><Text value={t("SEO & Ads cases", "SEO & Ads cases", "Casos SEO y Ads")} /></p>
               <h2><EmphasisText value={t("Werk dat niet uitlegt. Werk dat [[laat zien]].", "Work that does not explain. Work that [[shows]].", "Trabajo que no explica. Trabajo que [[muestra]].")} /></h2>
             </div>
             <div className="premium-case-grid">
@@ -347,7 +347,7 @@ export function PremiumHome({ initialLanguage = "nl" }: { initialLanguage?: Lang
 
           <section className="premium-archive">
             <div className="premium-section-title">
-              <p className="premium-kicker"><Text value={t("In de keuken", "Inside the work", "Dentro del trabajo")} /></p>
+              <p className="premium-kicker"><Text value={t("Campagnebeelden", "Campaign assets", "Recursos de campana")} /></p>
               <h2><EmphasisText value={t("[[Echte]] beelden. Echte momenten. Geen stock.", "[[Real]] visuals. Real moments. No stock.", "Imágenes [[reales]]. Momentos reales. Sin stock.")} /></h2>
             </div>
             <div className="premium-archive-grid">
