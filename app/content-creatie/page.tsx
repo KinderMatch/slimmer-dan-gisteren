@@ -21,6 +21,7 @@ export const metadata: Metadata = {
   title: "Content Creatie, Fotografie en Videografie",
   description:
     "Content creatie uitbesteden? Slimmer dan Gisteren maakt fotografie, videografie, social content, reiscontent, eventvideo en artiestencontent.",
+  robots: { index: false, follow: true },
   alternates: languageAlternates("/content-creatie/"),
   keywords: [
     "content creatie",

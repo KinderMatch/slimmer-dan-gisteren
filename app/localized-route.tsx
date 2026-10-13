@@ -70,6 +70,8 @@ const localizedMetadataByPath = {
   "algemene-voorwaarden": ["termsTitle", "termsDescription"],
 } satisfies Record<LocalizedPagePath, [keyof (typeof pageMeta)["en"], keyof (typeof pageMeta)["en"]]>;
 
+const indexedLocalizedPaths = new Set<LocalizedPagePath>(["", "seo", "geo", "google-ads", "social-ads"]);
+
 function canonicalFor(locale: RouteLocale, path: LocalizedPagePath) {
   return pathForLanguage(path ? `/${path}/` : "/", locale);
 }
@@ -90,6 +92,7 @@ export function localizedMetadata(locale: RouteLocale, path: LocalizedPagePath):
   return {
     title,
     description,
+    robots: indexedLocalizedPaths.has(path) ? undefined : { index: false, follow: true },
     alternates: { canonical, languages },
     openGraph: { title, description, url: absoluteUrl(canonical), siteName, locale: locale === "en" ? "en_US" : "es_ES", type: "website" },
   };

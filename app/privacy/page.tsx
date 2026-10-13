@@ -133,7 +133,7 @@ export const metadata: Metadata = {
     "Privacyverklaring van Slimmer dan Gisteren voor websitebezoek, contact, offertes, opdrachten, analytics en klantgegevens.",
   alternates: languageAlternates("/privacy/"),
   robots: {
-    index: true,
+    index: false,
     follow: true,
   },
   openGraph: {

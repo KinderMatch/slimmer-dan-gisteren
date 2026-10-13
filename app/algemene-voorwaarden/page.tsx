@@ -301,7 +301,7 @@ export const metadata: Metadata = {
     "Uitgebreide algemene voorwaarden van Slimmer dan Gisteren voor websites, advertenties, SEO, content creatie en doorlopende samenwerking.",
   alternates: languageAlternates("/algemene-voorwaarden/"),
   robots: {
-    index: true,
+    index: false,
     follow: true,
   },
   openGraph: {

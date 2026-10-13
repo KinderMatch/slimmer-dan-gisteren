@@ -19,6 +19,7 @@ export const metadata: Metadata = {
   title: "Website Laten Maken, Websitebeheer en SEO",
   description:
     "Website laten maken of websitebeheer uitbesteden? Slimmer dan Gisteren helpt met beheer, SEO, tracking, conversie en betere vindbaarheid.",
+  robots: { index: false, follow: true },
   alternates: languageAlternates("/website/"),
   keywords: [
     "website laten maken",

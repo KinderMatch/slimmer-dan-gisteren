@@ -76,7 +76,6 @@ const navItems = [
   { label: t("SEO", "SEO", "SEO"), href: "/seo/" },
   { label: t("Google Ads", "Google Ads", "Google Ads"), href: "/google-ads/" },
   { label: t("Social Ads", "Social Ads", "Social Ads"), href: "/social-ads/" },
-  { label: t("Social media", "Social media", "Social media"), href: "/content-creatie/" },
 ];
 
 const websites = [
@@ -320,15 +319,10 @@ export function SiteShell({ children, initialLanguage = "nl" }: { children: Reac
           </div>
         </LocalizedLink>
         <div className="footer-links">
-          <LocalizedLink href="/"><Text value={t("Home", "Home", "Inicio")} /></LocalizedLink>
           <LocalizedLink href="/geo/">GEO</LocalizedLink>
           <LocalizedLink href="/seo/">SEO</LocalizedLink>
           <LocalizedLink href="/google-ads/">Google Ads</LocalizedLink>
           <LocalizedLink href="/social-ads/">Social Ads</LocalizedLink>
-          <LocalizedLink href="/content-creatie/"><Text value={t("Social media", "Social media", "Social media")} /></LocalizedLink>
-          <LocalizedLink href="/website/"><Text value={t("Website", "Website", "Web")} /></LocalizedLink>
-          <LocalizedLink href="/algemene-voorwaarden/"><Text value={t("Algemene voorwaarden", "Terms", "Condiciones")} /></LocalizedLink>
-          <LocalizedLink href="/privacy/"><Text value={t("Privacy", "Privacy", "Privacidad")} /></LocalizedLink>
           <a href="https://calendly.com/buitenhuisj004/bmc-sessie"><Text value={t("Kennismaken", "Introduction", "Conocernos")} /></a>
           <a href="mailto:jimmy@slimmerdangisteren.nl">Mail</a>
         </div>

@@ -1,7 +1,6 @@
 "use client";
 
 import Link from "next/link";
-import { motion, useScroll, useTransform } from "framer-motion";
 
 import { ContactActionGroup, ContactDock } from "./contact-actions";
 import { pathForLanguage } from "./i18n";
@@ -10,13 +9,6 @@ import { MediaLightbox } from "./media-lightbox";
 import { ScrollProgress } from "./scroll-experience";
 
 const t = (nl: string, en: string, es: string): LocalizedString => ({ nl, en, es });
-
-const reveal = {
-  hidden: { opacity: 0, y: 34 },
-  show: { opacity: 1, y: 0 },
-};
-
-const transition = { duration: 0.9, ease: [0.16, 1, 0.3, 1] };
 
 const services = [
   {
@@ -210,14 +202,16 @@ function ServiceVisual({ service }: { service: (typeof services)[number] }) {
 }
 
 function HeroVisual() {
-  const { scrollYProgress } = useScroll();
-  const y = useTransform(scrollYProgress, [0, 0.32], [0, -90]);
-  const scale = useTransform(scrollYProgress, [0, 0.32], [1, 1.08]);
-
   return (
-    <motion.div className="premium-hero-visual" style={{ y, scale }}>
-      <img src="/assets/optimized/airfoto.jpg" alt="Cinematische dronefoto van een project van Slimmer dan Gisteren" />
-    </motion.div>
+    <div className="premium-hero-visual">
+      <img
+        src="/assets/optimized/airfoto.jpg"
+        alt="Cinematische dronefoto van een project van Slimmer dan Gisteren"
+        width={1600}
+        height={899}
+        fetchPriority="high"
+      />
+    </div>
   );
 }
 
@@ -270,40 +264,28 @@ export function PremiumHome({ initialLanguage = "nl" }: { initialLanguage?: Lang
           <section className="premium-hero">
             <HeroVisual />
             <div className="premium-hero-shade" />
-            <motion.div
-              className="premium-hero-copy"
-              initial="hidden"
-              animate="show"
-              transition={{ staggerChildren: 0.12 }}
-            >
-              <motion.p variants={reveal} transition={transition} className="premium-kicker">
+            <div className="premium-hero-copy">
+              <p className="premium-kicker">
                 <Text value={t("Creative growth studio", "Creative growth studio", "Creative growth studio")} />
-              </motion.p>
-              <motion.h1 variants={reveal} transition={transition}>
+              </p>
+              <h1>
                 <EmphasisText value={t("Marketing die [[helderheid]] brengt.", "Marketing that brings [[clarity]].", "Marketing que aporta [[claridad]].")} />
                 <span><EmphasisText value={t("[[Groei]] die zichtbaar wordt.", "[[Growth]] that becomes visible.", "[[Crecimiento]] que se vuelve visible.")} /></span>
-              </motion.h1>
-              <motion.div variants={reveal} transition={transition} className="premium-hero-meta">
+              </h1>
+              <div className="premium-hero-meta">
                 <span>GEO</span>
                 <span>SEO</span>
                 <span>Google Ads</span>
                 <span>Social Ads</span>
-              </motion.div>
-              <motion.a variants={reveal} transition={transition} className="premium-cta" href="https://calendly.com/buitenhuisj004/bmc-sessie">
+              </div>
+              <a className="premium-cta" href="https://calendly.com/buitenhuisj004/bmc-sessie">
                 <Text value={t("Plan een strategiesessie", "Plan a strategy session", "Planifica una sesión estratégica")} />
-              </motion.a>
-            </motion.div>
+              </a>
+            </div>
           </section>
 
           <section className="premium-ai-actors premium-speech-section">
-            <motion.div
-              className="premium-ai-actors-copy"
-              initial="hidden"
-              whileInView="show"
-              viewport={{ once: true, amount: 0.35 }}
-              variants={reveal}
-              transition={transition}
-            >
+            <div className="premium-ai-actors-copy">
               <p className="premium-kicker"><Text value={t("AI video", "AI video", "Video IA")} /></p>
               <h2>
                 <EmphasisText value={t(
@@ -319,27 +301,55 @@ export function PremiumHome({ initialLanguage = "nl" }: { initialLanguage?: Lang
                   "En este video, Jimmy, propietario de Slimmer dan Gisteren, explica por qué la colaboración directa aporta más valor que las capas adicionales. Trabajas con la persona que diseña y ejecuta tu marketing, para que paid media, contenido y landing pages se refuercen entre sí. Menos ruido, más agilidad y más fuerza de marketing para tu presupuesto.",
                 )} />
               </p>
-            </motion.div>
-            <motion.div
-              className="premium-ai-actors-media premium-speech-media"
-              initial={{ opacity: 0, y: 40, scale: 0.98 }}
-              whileInView={{ opacity: 1, y: 0, scale: 1 }}
-              viewport={{ once: true, amount: 0.3 }}
-              transition={transition}
-            >
+            </div>
+            <div className="premium-ai-actors-media premium-speech-media">
               <LocalizedSpeechVideo />
-            </motion.div>
+            </div>
+          </section>
+
+          <section className="premium-services" aria-label="Services">
+            {services.map((service, index) => (
+              <article
+                className="premium-service"
+                key={service.title.nl}
+              >
+                <Link href={pathForLanguage(service.href, initialLanguage)} className="premium-service-media" aria-label={service.title.nl}>
+                  <ServiceVisual service={service} />
+                </Link>
+                <div>
+                  <span>{service.label}</span>
+                  <h2><Text value={service.title} /></h2>
+                  <p><Text value={service.body} /></p>
+                  <Link href={pathForLanguage(service.href, initialLanguage)} className="premium-service-cta">
+                    <Text value={t("Bekijk discipline", "View discipline", "Ver disciplina")} />
+                    <span aria-hidden="true">→</span>
+                  </Link>
+                </div>
+	                <small>{String(index + 1).padStart(2, "0")} / {String(services.length).padStart(2, "0")}</small>
+              </article>
+            ))}
+          </section>
+
+          <section className="premium-cases">
+            <div className="premium-section-title">
+              <p className="premium-kicker"><Text value={t("Featured work", "Featured work", "Trabajo destacado")} /></p>
+              <h2><EmphasisText value={t("Werk dat niet uitlegt. Werk dat [[laat zien]].", "Work that does not explain. Work that [[shows]].", "Trabajo que no explica. Trabajo que [[muestra]].")} /></h2>
+            </div>
+            <div className="premium-case-grid">
+              {cases.map((item) => (
+                <article key={item.title} className="premium-case">
+                  <img src={item.image} alt={item.title} loading="lazy" />
+                  <div>
+                    <span><Text value={item.discipline} /></span>
+                    <h3>{item.title}</h3>
+                  </div>
+                </article>
+              ))}
+            </div>
           </section>
 
           <section className="premium-ai-actors">
-            <motion.div
-              className="premium-ai-actors-copy"
-              initial="hidden"
-              whileInView="show"
-              viewport={{ once: true, amount: 0.35 }}
-              variants={reveal}
-              transition={transition}
-            >
+            <div className="premium-ai-actors-copy">
               <p className="premium-kicker">AI actors</p>
               <h2>
                 <EmphasisText value={t(
@@ -363,63 +373,11 @@ export function PremiumHome({ initialLanguage = "nl" }: { initialLanguage?: Lang
               <a className="premium-ai-actors-cta" href="mailto:jimmy@slimmerdangisteren.nl?subject=Samenwerken%20met%20Elira">
                 <Text value={t("Samenwerken met Elira? Neem contact op", "Collaborate with Elira? Get in touch", "¿Colaborar con Elira? Contactanos")} />
               </a>
-            </motion.div>
-            <motion.div
-              className="premium-ai-actors-media"
-              initial={{ opacity: 0, y: 40, scale: 0.98 }}
-              whileInView={{ opacity: 1, y: 0, scale: 1 }}
-              viewport={{ once: true, amount: 0.3 }}
-              transition={transition}
-            >
+            </div>
+            <div className="premium-ai-actors-media">
               <video controls playsInline preload="none">
                 <source src="/assets/content/ai-actors-slimmer-dan-gisteren.m4v" type="video/mp4" />
               </video>
-            </motion.div>
-          </section>
-
-          <section className="premium-services" aria-label="Services">
-            {services.map((service, index) => (
-              <motion.article
-                className="premium-service"
-                key={service.title.nl}
-                initial="hidden"
-                whileInView="show"
-                viewport={{ once: true, amount: 0.35 }}
-                variants={reveal}
-                transition={transition}
-              >
-                <Link href={pathForLanguage(service.href, initialLanguage)} className="premium-service-media" aria-label={service.title.nl}>
-                  <ServiceVisual service={service} />
-                </Link>
-                <div>
-                  <span>{service.label}</span>
-                  <h2><Text value={service.title} /></h2>
-                  <p><Text value={service.body} /></p>
-                  <Link href={pathForLanguage(service.href, initialLanguage)} className="premium-service-cta">
-                    <Text value={t("Bekijk discipline", "View discipline", "Ver disciplina")} />
-                    <span aria-hidden="true">→</span>
-                  </Link>
-                </div>
-	                <small>{String(index + 1).padStart(2, "0")} / {String(services.length).padStart(2, "0")}</small>
-              </motion.article>
-            ))}
-          </section>
-
-          <section className="premium-cases">
-            <div className="premium-section-title">
-              <p className="premium-kicker"><Text value={t("Featured work", "Featured work", "Trabajo destacado")} /></p>
-              <h2><EmphasisText value={t("Werk dat niet uitlegt. Werk dat [[laat zien]].", "Work that does not explain. Work that [[shows]].", "Trabajo que no explica. Trabajo que [[muestra]].")} /></h2>
-            </div>
-            <div className="premium-case-grid">
-              {cases.map((item) => (
-                <motion.article key={item.title} className="premium-case" initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.35 }} variants={reveal} transition={transition}>
-                  <img src={item.image} alt={item.title} loading="lazy" />
-                  <div>
-                    <span><Text value={item.discipline} /></span>
-                    <h3>{item.title}</h3>
-                  </div>
-                </motion.article>
-              ))}
             </div>
           </section>
 
@@ -447,13 +405,9 @@ export function PremiumHome({ initialLanguage = "nl" }: { initialLanguage?: Lang
                 const mediaClass = item.src.includes("/content-") ? "contain-media" : item.kind === "video" ? "video-media" : "photo-media";
 
                 return (
-                <motion.div
+                <div
                   className={[archiveClass, mediaClass].filter(Boolean).join(" ")}
                   key={`${item.label}-${index}`}
-                  initial={{ opacity: 0, clipPath: "inset(12% 0 12% 0)" }}
-                  whileInView={{ opacity: 1, clipPath: "inset(0% 0 0% 0)" }}
-                  viewport={{ once: true, amount: 0.25 }}
-                  transition={transition}
                 >
                   <MediaLightbox
                     className="premium-archive-item"
@@ -466,7 +420,7 @@ export function PremiumHome({ initialLanguage = "nl" }: { initialLanguage?: Lang
                     <Media item={item} />
                     <span className="premium-archive-caption">{item.label}</span>
                   </MediaLightbox>
-                </motion.div>
+                </div>
                 );
               })}
             </div>
