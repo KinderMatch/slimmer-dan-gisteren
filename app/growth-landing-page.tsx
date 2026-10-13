@@ -1,4 +1,5 @@
 import { calendlyUrl } from "./seo";
+import { ScanForm } from "./scan-form";
 import type { GrowthPageData } from "./growth-pages-data";
 
 function slugToFormId(slug: GrowthPageData["slug"]) {
@@ -151,24 +152,14 @@ export function GrowthLandingPage({ data }: { data: GrowthPageData }) {
           <p>{data.form.text}</p>
           <a className="button ghost" href={calendlyUrl}>Plan liever direct een kennismaking</a>
         </div>
-        <form>
-          {data.form.fields.map((field) => {
-            const isMessage = field.toLowerCase().includes("bericht") || field.toLowerCase().includes("doel");
-            const id = `${formId}-${field.toLowerCase().replaceAll(" ", "-")}`;
-
-            return (
-              <label key={field} htmlFor={id}>
-                <span>{field}</span>
-                {isMessage ? <textarea id={id} name={field} rows={4} /> : <input id={id} name={field} />}
-              </label>
-            );
-          })}
-          <label className="growth-checkbox" htmlFor={`${formId}-privacy`}>
-            <input id={`${formId}-privacy`} name="privacy" type="checkbox" />
-            <span>Ik ga akkoord met verwerking volgens het privacybeleid.</span>
-          </label>
-          <button type="submit">{data.form.submit}</button>
-        </form>
+        <ScanForm
+          fields={data.form.fields}
+          formId={formId}
+          includePrivacyConsent
+          pageTitle={data.title}
+          pageSlug={data.slug}
+          submitLabel={data.form.submit}
+        />
       </section>
     </div>
   );

@@ -62,6 +62,29 @@ const services = [
   },
 ];
 
+const imageSizes: Record<string, { width: number; height: number }> = {
+  "/assets/logo.png": { width: 512, height: 512 },
+  "/assets/optimized/airfoto.jpg": { width: 1600, height: 899 },
+  "/assets/optimized/content-zb.jpg": { width: 1600, height: 1416 },
+  "/assets/seo-google-search.gif": { width: 480, height: 360 },
+  "/assets/google-ads.gif": { width: 400, height: 266 },
+  "/assets/optimized/content-color-run.jpg": { width: 1200, height: 1075 },
+  "/assets/dave-dekker/photos/event-13.jpg": { width: 1800, height: 1200 },
+  "/assets/optimized/content-nxchange.jpg": { width: 1600, height: 1440 },
+  "/assets/optimized/content-airbnb.jpg": { width: 1200, height: 1047 },
+  "/assets/dave-dekker/photos/event-07.jpg": { width: 1800, height: 1200 },
+  "/assets/dave-dekker/photos/event-01.jpg": { width: 1800, height: 1200 },
+  "/assets/dave-dekker/photos/event-10.jpg": { width: 1800, height: 1211 },
+  "/assets/optimized/content-maasclaim.jpg": { width: 1200, height: 898 },
+  "/assets/wedding/airfoto.jpg": { width: 2200, height: 1237 },
+  "/assets/dave-dekker/photos/event-12.jpg": { width: 1800, height: 1638 },
+  "/assets/dave-dekker/photos/event-11.jpg": { width: 1800, height: 1200 },
+  "/assets/dave-dekker/photos/event-02.jpg": { width: 1800, height: 1200 },
+  "/assets/dave-dekker/photos/event-15.jpg": { width: 1800, height: 1200 },
+  "/assets/dave-dekker/photos/event-14.jpg": { width: 1200, height: 1800 },
+  "/assets/dave-dekker/photos/event-05.jpg": { width: 1800, height: 1200 },
+};
+
 const cases = [
   {
     title: "Zelfstandigen Bouw",
@@ -120,7 +143,8 @@ const testimonials = [
 ];
 
 function Media({ item, className = "" }: { item: { kind?: string; src: string; label?: string; type?: string }; className?: string }) {
-  return <img className={className} src={item.src} alt={item.label ?? ""} loading="lazy" />;
+  const size = imageSizes[item.src];
+  return <img className={className} src={item.src} alt={item.label ?? ""} loading="lazy" width={size?.width} height={size?.height} />;
 }
 
 function ServiceVisual({ service }: { service: (typeof services)[number] }) {
@@ -131,6 +155,8 @@ function ServiceVisual({ service }: { service: (typeof services)[number] }) {
           src={service.media}
           alt={service.title.nl}
           loading="lazy"
+          width={imageSizes[service.media]?.width}
+          height={imageSizes[service.media]?.height}
           onError={(event) => {
             if ("fallbackMedia" in service && service.fallbackMedia) {
               event.currentTarget.src = service.fallbackMedia;
@@ -144,7 +170,7 @@ function ServiceVisual({ service }: { service: (typeof services)[number] }) {
   if (service.type === "plain-video" || service.type === "video") {
     return (
       <div className={service.type === "video" ? "premium-ads-visual premium-static-video-preview" : "premium-video-visual premium-static-video-preview"}>
-        <img src={service.media} alt={service.title.nl} loading="lazy" />
+        <img src={service.media} alt={service.title.nl} loading="lazy" width={imageSizes[service.media]?.width} height={imageSizes[service.media]?.height} />
         <span aria-hidden="true">Play</span>
       </div>
     );
@@ -198,7 +224,7 @@ export function PremiumHome({ initialLanguage = "nl" }: { initialLanguage?: Lang
         <ScrollProgress />
         <header className="premium-nav">
           <Link className="premium-brand" href={pathForLanguage("/", initialLanguage)} prefetch={false}>
-            <img src="/assets/logo.png" alt="Slimmer dan Gisteren" />
+            <img src="/assets/logo.png" alt="Slimmer dan Gisteren" width={512} height={512} />
             <span>Slimmer dan Gisteren</span>
           </Link>
           <nav aria-label="Hoofdnavigatie">
@@ -289,7 +315,13 @@ export function PremiumHome({ initialLanguage = "nl" }: { initialLanguage?: Lang
             <div className="premium-case-grid">
               {cases.map((item) => (
                 <article key={item.title} className="premium-case">
-                  <img src={item.image} alt={item.title} loading="lazy" />
+                  <img
+                    src={item.image}
+                    alt={item.title}
+                    loading="lazy"
+                    width={imageSizes[item.image]?.width}
+                    height={imageSizes[item.image]?.height}
+                  />
                   <div>
                     <span><Text value={item.discipline} /></span>
                     <h3>{item.title}</h3>
@@ -389,7 +421,7 @@ export function PremiumHome({ initialLanguage = "nl" }: { initialLanguage?: Lang
                 "El mejor crecimiento se siente tranquilo. Sabes qué pasa, por qué pasa y cuál es la siguiente mejora.",
               )} />
             </p>
-            <img src="/assets/dave-dekker/photos/event-05.jpg" alt="Echte productie achter de schermen" loading="lazy" />
+            <img src="/assets/dave-dekker/photos/event-05.jpg" alt="Echte productie achter de schermen" loading="lazy" width={1800} height={1200} />
           </section>
 
           <section className="premium-testimonials">
@@ -427,7 +459,7 @@ export function PremiumHome({ initialLanguage = "nl" }: { initialLanguage?: Lang
           </section>
 
           <section className="premium-final">
-            <img src="/assets/optimized/airfoto.jpg" alt="" loading="lazy" />
+            <img src="/assets/optimized/airfoto.jpg" alt="" loading="lazy" width={1600} height={899} />
             <div>
               <p className="premium-kicker"><Text value={t("Klaar voor helderheid?", "Ready for clarity?", "¿Listo para claridad?")} /></p>
               <h2><EmphasisText value={t("Laat marketing voelen als [[één systeem]].", "Make marketing feel like [[one system]].", "Haz que el marketing se sienta como [[un sistema]].")} /></h2>
@@ -441,7 +473,7 @@ export function PremiumHome({ initialLanguage = "nl" }: { initialLanguage?: Lang
 
         <footer className="premium-footer">
           <Link className="premium-footer-brand" href={pathForLanguage("/", initialLanguage)} prefetch={false}>
-            <img src="/assets/logo.png" alt="" />
+            <img src="/assets/logo.png" alt="" width={512} height={512} />
             <span>Slimmer dan Gisteren</span>
           </Link>
           <nav>

@@ -5,6 +5,7 @@ import { useState, type FormEvent } from "react";
 type ScanFormProps = {
   fields: string[];
   formId: string;
+  includePrivacyConsent?: boolean;
   pageTitle: string;
   pageSlug: string;
   submitLabel: string;
@@ -44,7 +45,7 @@ function fieldDescription(field: string) {
   return `Informatie voor het veld ${field}.`;
 }
 
-export function ScanForm({ fields, formId, pageTitle, pageSlug, submitLabel }: ScanFormProps) {
+export function ScanForm({ fields, formId, includePrivacyConsent = false, pageTitle, pageSlug, submitLabel }: ScanFormProps) {
   const [state, setState] = useState<SubmitState>("idle");
   const [message, setMessage] = useState("");
 
@@ -117,6 +118,17 @@ export function ScanForm({ fields, formId, pageTitle, pageSlug, submitLabel }: S
           </label>
         );
       })}
+      {includePrivacyConsent ? (
+        <label className="growth-checkbox" htmlFor={`${formId}-privacy`}>
+          <input
+            id={`${formId}-privacy`}
+            name="privacy"
+            toolparamdescription="Bevestiging dat de aanvraag volgens het privacybeleid mag worden verwerkt."
+            type="checkbox"
+          />
+          <span>Ik ga akkoord met verwerking volgens het privacybeleid.</span>
+        </label>
+      ) : null}
       <button type="submit" disabled={state === "submitting"}>
         {state === "submitting" ? "Versturen..." : submitLabel}
       </button>

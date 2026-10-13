@@ -1,4 +1,5 @@
 import assert from "node:assert/strict";
+import { readFile } from "node:fs/promises";
 import test from "node:test";
 
 async function render(path = "/") {
@@ -34,6 +35,9 @@ test("server-renders the homepage with crawlable SEO content", async () => {
   assert.match(html, /Marketing die/);
   assert.match(html, /Groei/);
   assert.match(html, /Plan een strategiesessie/);
+  assert.match(html, /Creative growth studio/);
+  assert.doesNotMatch(html, /SEO & Google Ads bureau/);
+  assert.doesNotMatch(html, /\/_rsc/);
 });
 
 test("keeps first render visible and light for Lighthouse", async () => {
@@ -63,7 +67,22 @@ test("server-renders commercial pages with crawlable SEO directives", async () =
     assert.match(html, /<meta name="description" content="[^"]+"/i);
     assert.match(html, new RegExp(`<link rel="canonical" href="https://slimmerdangisteren\\.nl${path}"`, "i"));
     assert.match(html, /<link rel="alternate" hrefLang="nl-NL"/i);
+    assert.match(html, /<link rel="alternate" hrefLang="en-US"/i);
+    assert.match(html, /<link rel="alternate" hrefLang="es-ES"/i);
+    assert.match(html, /<link rel="alternate" hrefLang="x-default"/i);
     assert.match(html, /<meta name="robots" content="(?:index, follow|follow, index)"/i);
+    assert.match(html, /toolname="[^"]+-aanvraag"/i);
+    assert.match(html, /toolparamdescription="[^"]+"/i);
     assert.doesNotMatch(html, /\sautoPlay\b/i);
+    assert.doesNotMatch(html, /\/_rsc/);
   }
+});
+
+test("llms.txt keeps agent-facing links in recommended markdown form", async () => {
+  const llms = await readFile(new URL("../public/llms.txt", import.meta.url), "utf8");
+
+  assert.match(llms, /^# Slimmer dan Gisteren/m);
+  assert.match(llms, /\[SEO\]\(https:\/\/slimmerdangisteren\.nl\/seo\/\)/);
+  assert.match(llms, /\[Google Ads\]\(https:\/\/slimmerdangisteren\.nl\/google-ads\/\)/);
+  assert.doesNotMatch(llms, /^- https:\/\/slimmerdangisteren\.nl\/seo\//m);
 });
