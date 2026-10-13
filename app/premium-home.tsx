@@ -45,7 +45,7 @@ const services = [
       "Social campaigns that turn attention into enquiries.",
       "Campañas sociales que convierten atención en solicitudes.",
     ),
-    media: "https://videos.files.wordpress.com/2MO1QuZC/zelfstandigen-bouw_commercial_rbv_auto_final_1x1_social.mp4#t=0.001",
+    media: "/assets/optimized/content-zb.jpg",
     type: "video",
   },
   {
@@ -57,7 +57,7 @@ const services = [
       "Content that makes campaigns visually stronger.",
       "Contenido que fortalece campañas visualmente.",
     ),
-    media: "/assets/travel/kgari-noosa-preview.mov",
+    media: "/assets/dave-dekker/photos/event-03.jpg",
     type: "plain-video",
   },
 ];
@@ -83,16 +83,16 @@ const cases = [
 const archive = [
   { kind: "image", src: "/assets/optimized/content-nxchange.jpg", label: "Nxchange" },
   { kind: "image", src: "/assets/optimized/content-airbnb.jpg", label: "HealthyFest" },
-  { kind: "video", src: "/assets/travel/siargao-preview.mov", fullSrc: "/assets/travel/full/siargao-full.m4v", label: "Siargao" },
+  { kind: "video", src: "/assets/dave-dekker/photos/event-07.jpg", fullSrc: "/assets/travel/full/siargao-full.m4v", label: "Siargao" },
   { kind: "image", src: "/assets/dave-dekker/photos/event-01.jpg", label: "Rode Loper" },
-  { kind: "video", src: "/assets/dave-dekker/dave-5-preview.mov", fullSrc: "/assets/dave-dekker/full/dave-5-full.mov", label: "De Rode Loper" },
+  { kind: "video", src: "/assets/dave-dekker/photos/event-10.jpg", fullSrc: "/assets/dave-dekker/full/dave-5-full.mov", label: "De Rode Loper" },
   { kind: "image", src: "/assets/optimized/content-maasclaim.jpg", label: "ChickShack Valencia" },
-  { kind: "video", src: "/assets/travel/whitsundays-preview.mov", fullSrc: "/assets/travel/full/whitsundays-full.m4v", label: "Whitsundays" },
+  { kind: "video", src: "/assets/wedding/airfoto.jpg", fullSrc: "/assets/travel/full/whitsundays-full.m4v", label: "Whitsundays" },
   { kind: "image", src: "/assets/dave-dekker/photos/event-12.jpg", label: "Event photography" },
   { kind: "image", src: "/assets/dave-dekker/photos/event-11.jpg", label: "Event photography" },
-  { kind: "video", src: "/assets/wedding/nordin-kyra-preview.mov", fullSrc: "https://videos.files.wordpress.com/E5ahlDJ7/trouwerij-nordin-kyra-v3-h264.mp4", label: "Wedding film" },
+  { kind: "video", src: "/assets/wedding/airfoto.jpg", fullSrc: "https://videos.files.wordpress.com/E5ahlDJ7/trouwerij-nordin-kyra-v3-h264.mp4", label: "Wedding film" },
   { kind: "image", src: "/assets/dave-dekker/photos/event-02.jpg", label: "Audience moment" },
-  { kind: "video", src: "/assets/dave-dekker/dave-1-preview.mov", fullSrc: "/assets/dave-dekker/full/dave-1-full.mov", label: "Artiest video" },
+  { kind: "video", src: "/assets/dave-dekker/photos/event-15.jpg", fullSrc: "/assets/dave-dekker/full/dave-1-full.mov", label: "Artiest video" },
   { kind: "image", src: "/assets/dave-dekker/photos/event-14.jpg", label: "Live registratie" },
 ];
 
@@ -120,16 +120,6 @@ const testimonials = [
 ];
 
 function Media({ item, className = "" }: { item: { kind?: string; src: string; label?: string; type?: string }; className?: string }) {
-  const isVideo = item.kind === "video" || item.type === "video";
-
-  if (isVideo) {
-    return (
-      <video className={className} autoPlay loop muted playsInline preload="none">
-        <source src={item.src} />
-      </video>
-    );
-  }
-
   return <img className={className} src={item.src} alt={item.label ?? ""} loading="lazy" />;
 }
 
@@ -151,54 +141,16 @@ function ServiceVisual({ service }: { service: (typeof services)[number] }) {
     );
   }
 
-  if (service.type === "plain-video") {
+  if (service.type === "plain-video" || service.type === "video") {
     return (
-      <div className="premium-video-visual">
-        <video autoPlay loop muted playsInline preload="none">
-          <source src={service.media} />
-        </video>
+      <div className={service.type === "video" ? "premium-ads-visual premium-static-video-preview" : "premium-video-visual premium-static-video-preview"}>
+        <img src={service.media} alt={service.title.nl} loading="lazy" />
+        <span aria-hidden="true">Play</span>
       </div>
     );
   }
 
-  if (service.type === "website") {
-    return (
-      <div className="premium-website-visual">
-        <div className="premium-browser-bar">
-          <span />
-          <span />
-          <span />
-          <strong>zelfstandigenbouw.nl</strong>
-        </div>
-        <iframe title="Websitecase Zelfstandigen Bouw" src="https://www.zelfstandigenbouw.nl/" loading="lazy" />
-      </div>
-    );
-  }
-
-  if (service.type === "content") {
-    return (
-      <div className="premium-content-visual">
-        <video autoPlay loop muted playsInline preload="none">
-          <source src="/assets/travel/kgari-noosa-preview.mov" />
-        </video>
-        <img src="/assets/dave-dekker/photos/event-03.jpg" alt="Eventfotografie voor content creatie" loading="lazy" />
-        <video autoPlay loop muted playsInline preload="none">
-          <source src="/assets/travel/huacacina-paracas-preview.mov" />
-        </video>
-        <video autoPlay loop muted playsInline preload="none">
-          <source src="/assets/dave-dekker/dave-4-preview.mov" />
-        </video>
-      </div>
-    );
-  }
-
-  return (
-    <div className="premium-ads-visual">
-      <video autoPlay loop muted playsInline preload="none">
-        <source src={service.media} />
-      </video>
-    </div>
-  );
+  return null;
 }
 
 function HeroVisual() {
@@ -254,7 +206,6 @@ export function PremiumHome({ initialLanguage = "nl" }: { initialLanguage?: Lang
             <Link href={pathForLanguage("/seo/", initialLanguage)}>SEO</Link>
             <Link href={pathForLanguage("/google-ads/", initialLanguage)}>Google Ads</Link>
             <Link href={pathForLanguage("/social-ads/", initialLanguage)}>Social Ads</Link>
-            <Link href={pathForLanguage("/content-creatie/", initialLanguage)}><Text value={t("Social media", "Social media", "Social media")} /></Link>
           </nav>
           <LanguageToggle />
         </header>
@@ -476,9 +427,7 @@ export function PremiumHome({ initialLanguage = "nl" }: { initialLanguage?: Lang
           </section>
 
           <section className="premium-final">
-            <video autoPlay loop muted playsInline preload="none">
-              <source src="/assets/travel/dive-cairns-preview.mov" />
-            </video>
+            <img src="/assets/optimized/airfoto.jpg" alt="" loading="lazy" />
             <div>
               <p className="premium-kicker"><Text value={t("Klaar voor helderheid?", "Ready for clarity?", "¿Listo para claridad?")} /></p>
               <h2><EmphasisText value={t("Laat marketing voelen als [[één systeem]].", "Make marketing feel like [[one system]].", "Haz que el marketing se sienta como [[un sistema]].")} /></h2>
@@ -501,10 +450,6 @@ export function PremiumHome({ initialLanguage = "nl" }: { initialLanguage?: Lang
             <Link href={pathForLanguage("/seo/", initialLanguage)}>SEO</Link>
             <Link href={pathForLanguage("/google-ads/", initialLanguage)}>Google Ads</Link>
             <Link href={pathForLanguage("/social-ads/", initialLanguage)}>Social Ads</Link>
-            <Link href={pathForLanguage("/content-creatie/", initialLanguage)}>Social media</Link>
-            <Link href={pathForLanguage("/website/", initialLanguage)}>Website</Link>
-            <Link href={pathForLanguage("/algemene-voorwaarden/", initialLanguage)}><Text value={t("Algemene voorwaarden", "Terms", "Condiciones")} /></Link>
-            <Link href={pathForLanguage("/privacy/", initialLanguage)}><Text value={t("Privacy", "Privacy", "Privacidad")} /></Link>
           </nav>
           <a href="https://wa.me/31610175027">WhatsApp</a>
           <a href="mailto:jimmy@slimmerdangisteren.nl">Mail</a>

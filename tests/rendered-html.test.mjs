@@ -43,6 +43,8 @@ test("keeps first render visible and light for Lighthouse", async () => {
   assert.doesNotMatch(html, /opacity:0;transform:translateY\(34px\)/);
   assert.doesNotMatch(html, /framer-motion|motion-dom|motion-utils/);
   assert.doesNotMatch(html, /_vinext_fonts/);
+  assert.doesNotMatch(html, /\sautoPlay\b/i);
+  assert.doesNotMatch(html, /<iframe\b/i);
   assert.match(html, /\/assets\/optimized\/airfoto\.jpg"[^>]+fetchPriority="high"/);
   assert.match(html, /width="1600" height="899"/);
 });
