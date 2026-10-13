@@ -53,7 +53,7 @@ test("keeps first render visible and light for Lighthouse", async () => {
   assert.match(html, /width="1600" height="899"/);
   assert.doesNotMatch(html, /content-creatie|Social media/);
   assert.match(html, /GEO/);
-  assert.match(html, /\/assets\/generated\/datacenter-360\.gif"[^>]+width="360" height="190"/);
+  assert.match(html, /\/assets\/generated\/datacenter-320\.gif"[^>]+width="320" height="169"/);
   assert.match(html, /Google Ads/);
 });
 
@@ -79,6 +79,22 @@ test("server-renders commercial pages with crawlable SEO directives", async () =
   }
 });
 
+test("server-rendered local images include explicit dimensions on priority pages", async () => {
+  for (const path of ["/", "/seo/", "/google-ads/"]) {
+    const response = await render(path);
+    const html = await response.text();
+    const imageTags = html.match(/<img\b[^>]*>/gi) ?? [];
+    const localImages = imageTags.filter((tag) => /src="\/assets\//i.test(tag));
+
+    assert.ok(localImages.length > 0, `Expected local images on ${path}`);
+
+    for (const tag of localImages) {
+      assert.match(tag, /\bwidth="[^"]+"/i, `Missing width on ${path}: ${tag}`);
+      assert.match(tag, /\bheight="[^"]+"/i, `Missing height on ${path}: ${tag}`);
+    }
+  }
+});
+
 test("llms.txt keeps agent-facing links in recommended markdown form", async () => {
   const llms = await readFile(new URL("../public/llms.txt", import.meta.url), "utf8");
 
@@ -89,7 +105,7 @@ test("llms.txt keeps agent-facing links in recommended markdown form", async () 
 });
 
 test("GEO animation stays small enough for PageSpeed", async () => {
-  const asset = await stat(new URL("../public/assets/generated/datacenter-360.gif", import.meta.url));
+  const asset = await stat(new URL("../public/assets/generated/datacenter-320.gif", import.meta.url));
 
   assert.ok(asset.size < 2 * 1024 * 1024, `GEO animation is too large: ${asset.size} bytes`);
 });

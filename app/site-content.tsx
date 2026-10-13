@@ -4,6 +4,7 @@ import type { ReactNode } from "react";
 import { ArtistEventShowcase } from "./artist-event-showcase";
 import { ContactActionGroup, ContactDock } from "./contact-actions";
 import { ContentGallery as InteractiveContentGallery } from "./content-gallery";
+import { dimensionsFor } from "./image-dimensions";
 import { EmphasisText, LanguageProvider, LanguageToggle, type LocalizedString, Text } from "./language";
 import { LocalizedLink } from "./localized-link";
 import { MediaLightbox } from "./media-lightbox";
@@ -272,7 +273,7 @@ export function SiteShell({ children, initialLanguage = "nl" }: { children: Reac
       <ScrollProgress />
       <header className="site-header">
         <LocalizedLink className="brand" href="/">
-          <img src="/assets/logo.png" alt="Slimmer dan Gisteren" />
+          <img src="/assets/logo.png" alt="Slimmer dan Gisteren" width={dimensionsFor("/assets/logo.png")?.width} height={dimensionsFor("/assets/logo.png")?.height} />
           <span>Slimmer dan Gisteren</span>
         </LocalizedLink>
         <nav aria-label="Hoofdnavigatie">
@@ -299,7 +300,7 @@ export function SiteShell({ children, initialLanguage = "nl" }: { children: Reac
           </div>
         </div>
         <LocalizedLink className="footer-brand" href="/">
-          <img src="/assets/logo.png" alt="" />
+          <img src="/assets/logo.png" alt="" width={dimensionsFor("/assets/logo.png")?.width} height={dimensionsFor("/assets/logo.png")?.height} />
           <div>
             <p>Slimmer dan Gisteren</p>
             <span><Text value={t("Groei begint met vandaag.", "Growth starts today.", "El crecimiento empieza hoy.")} /></span>
@@ -386,7 +387,13 @@ export function HomeWorkGrid() {
               <source src={videoPreviewSrc(item.src)} type="video/mp4" />
             </video>
           ) : (
-            <img src={item.src} alt={typeof item.title === "string" ? item.title : item.title.nl} loading="lazy" />
+            <img
+              src={item.src}
+              alt={typeof item.title === "string" ? item.title : item.title.nl}
+              loading="lazy"
+              width={dimensionsFor(item.src)?.width}
+              height={dimensionsFor(item.src)?.height}
+            />
           )}
           <div>
             <span><Text value={item.label} /></span>
@@ -452,7 +459,7 @@ export function KitchenPanels() {
           <video autoPlay loop muted playsInline preload="none">
             <source src={videoPreviewSrc(videos[4].src)} type="video/mp4" />
           </video>
-          <img src="/assets/optimized/content-nxchange.jpg" alt="" loading="lazy" />
+          <img src="/assets/optimized/content-nxchange.jpg" alt="" loading="lazy" width={dimensionsFor("/assets/optimized/content-nxchange.jpg")?.width} height={dimensionsFor("/assets/optimized/content-nxchange.jpg")?.height} />
         </div>
       </article>
     </div>
@@ -526,7 +533,7 @@ export function DisciplineRunway() {
                 <video muted playsInline preload="none">
                   <source src={videoPreviewSrc(item.video)} type="video/mp4" />
                 </video>
-                <img src="/assets/optimized/content-airbnb.jpg" alt="" loading="lazy" />
+                <img src="/assets/optimized/content-airbnb.jpg" alt="" loading="lazy" width={dimensionsFor("/assets/optimized/content-airbnb.jpg")?.width} height={dimensionsFor("/assets/optimized/content-airbnb.jpg")?.height} />
               </>
             )}
           </div>
@@ -915,7 +922,7 @@ export function WeddingContentShowcase() {
         title={t("Luchtfoto trouwlocatie", "Aerial photo of wedding venue", "Foto aérea del lugar de la boda")}
         type="image"
       >
-        <img src={weddingCase.image} alt="Luchtfoto van trouwlocatie" loading="lazy" />
+        <img src={weddingCase.image} alt="Luchtfoto van trouwlocatie" loading="lazy" width={dimensionsFor(weddingCase.image)?.width} height={dimensionsFor(weddingCase.image)?.height} />
         <figcaption><Text value={t("Fotografie", "Photography", "Fotografía")} /></figcaption>
       </MediaLightbox>
       <div className="wedding-copy">
@@ -992,7 +999,7 @@ function PageHeroVisual({ tone }: { tone: "default" | "website" | "ads" | "brand
   if (tone === "branding") {
     return (
       <div className="page-hero-visual content-visual" aria-hidden="true">
-        <img src="/assets/dave-dekker/photos/event-15.jpg" alt="" loading="eager" />
+        <img src="/assets/dave-dekker/photos/event-15.jpg" alt="" loading="eager" width={dimensionsFor("/assets/dave-dekker/photos/event-15.jpg")?.width} height={dimensionsFor("/assets/dave-dekker/photos/event-15.jpg")?.height} />
         <div>
           <span><Text value={t("Video", "Video", "Video")} /></span>
           <span><Text value={t("Fotografie", "Photography", "Fotografía")} /></span>

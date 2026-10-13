@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 
+import { dimensionsFor } from "./image-dimensions";
 import { type LocalizedString, resolveText, Text, useLanguage } from "./language";
 
 export type ContentImage = {
@@ -33,24 +34,28 @@ export function ContentGallery({ images }: { images: ContentImage[] }) {
   return (
     <>
       <div className="content-gallery" aria-label="Voorbeelden van social content">
-        {images.map((image, index) => (
-          <button
-            aria-label={
-              language === "en"
-                ? `View ${resolveText(image.alt, language)} in full`
-                : language === "es"
-                  ? `Ver ${resolveText(image.alt, language)} completa`
-                  : `${resolveText(image.alt, language)} volledig bekijken`
-            }
-            className="content-gallery-item"
-            key={image.src}
-            onClick={() => setActiveIndex(index)}
-            type="button"
-          >
-            <img src={image.src} alt={resolveText(image.alt, language)} loading="lazy" />
-            <span><Text value={{ nl: "Bekijk", en: "View", es: "Ver" }} /></span>
-          </button>
-        ))}
+        {images.map((image, index) => {
+          const dimensions = dimensionsFor(image.src);
+
+          return (
+            <button
+              aria-label={
+                language === "en"
+                  ? `View ${resolveText(image.alt, language)} in full`
+                  : language === "es"
+                    ? `Ver ${resolveText(image.alt, language)} completa`
+                    : `${resolveText(image.alt, language)} volledig bekijken`
+              }
+              className="content-gallery-item"
+              key={image.src}
+              onClick={() => setActiveIndex(index)}
+              type="button"
+            >
+              <img src={image.src} alt={resolveText(image.alt, language)} loading="lazy" width={dimensions?.width} height={dimensions?.height} />
+              <span><Text value={{ nl: "Bekijk", en: "View", es: "Ver" }} /></span>
+            </button>
+          );
+        })}
       </div>
 
       {activeImage ? (
@@ -69,7 +74,12 @@ export function ContentGallery({ images }: { images: ContentImage[] }) {
             {language === "en" ? "Close" : language === "es" ? "Cerrar" : "Sluiten"}
           </button>
           <figure onClick={(event) => event.stopPropagation()}>
-            <img src={activeImage.src} alt={resolveText(activeImage.alt, language)} />
+            <img
+              src={activeImage.src}
+              alt={resolveText(activeImage.alt, language)}
+              width={dimensionsFor(activeImage.src)?.width}
+              height={dimensionsFor(activeImage.src)?.height}
+            />
             <figcaption>{resolveText(activeImage.alt, language)}</figcaption>
           </figure>
         </div>

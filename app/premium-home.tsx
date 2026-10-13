@@ -4,6 +4,7 @@ import Link from "next/link";
 
 import { ContactActionGroup, ContactDock } from "./contact-actions";
 import { pathForLanguage } from "./i18n";
+import { dimensionsFor } from "./image-dimensions";
 import { EmphasisText, LanguageProvider, LanguageToggle, Text, useLanguage, type Language, type LocalizedString } from "./language";
 import { MediaLightbox } from "./media-lightbox";
 import { ScrollProgress } from "./scroll-experience";
@@ -20,7 +21,7 @@ const services = [
       "Become visible in AI answers from ChatGPT, Gemini, Perplexity and Google AI Overviews.",
       "Ser visible en respuestas de IA de ChatGPT, Gemini, Perplexity y Google AI Overviews.",
     ),
-    media: "/assets/generated/datacenter-360.gif",
+    media: "/assets/generated/datacenter-320.gif",
     type: "image",
   },
   {
@@ -61,30 +62,6 @@ const services = [
     type: "image",
   },
 ];
-
-const imageSizes: Record<string, { width: number; height: number }> = {
-  "/assets/logo.png": { width: 512, height: 512 },
-  "/assets/generated/datacenter-360.gif": { width: 360, height: 190 },
-  "/assets/optimized/airfoto.jpg": { width: 1600, height: 899 },
-  "/assets/optimized/content-zb.jpg": { width: 1600, height: 1416 },
-  "/assets/seo-google-search.gif": { width: 480, height: 360 },
-  "/assets/google-ads.gif": { width: 400, height: 266 },
-  "/assets/optimized/content-color-run.jpg": { width: 1200, height: 1075 },
-  "/assets/dave-dekker/photos/event-13.jpg": { width: 1800, height: 1200 },
-  "/assets/optimized/content-nxchange.jpg": { width: 1600, height: 1440 },
-  "/assets/optimized/content-airbnb.jpg": { width: 1200, height: 1047 },
-  "/assets/dave-dekker/photos/event-07.jpg": { width: 1800, height: 1200 },
-  "/assets/dave-dekker/photos/event-01.jpg": { width: 1800, height: 1200 },
-  "/assets/dave-dekker/photos/event-10.jpg": { width: 1800, height: 1211 },
-  "/assets/optimized/content-maasclaim.jpg": { width: 1200, height: 898 },
-  "/assets/wedding/airfoto.jpg": { width: 2200, height: 1237 },
-  "/assets/dave-dekker/photos/event-12.jpg": { width: 1800, height: 1638 },
-  "/assets/dave-dekker/photos/event-11.jpg": { width: 1800, height: 1200 },
-  "/assets/dave-dekker/photos/event-02.jpg": { width: 1800, height: 1200 },
-  "/assets/dave-dekker/photos/event-15.jpg": { width: 1800, height: 1200 },
-  "/assets/dave-dekker/photos/event-14.jpg": { width: 1200, height: 1800 },
-  "/assets/dave-dekker/photos/event-05.jpg": { width: 1800, height: 1200 },
-};
 
 const cases = [
   {
@@ -144,7 +121,7 @@ const testimonials = [
 ];
 
 function Media({ item, className = "" }: { item: { kind?: string; src: string; label?: string; type?: string }; className?: string }) {
-  const size = imageSizes[item.src];
+  const size = dimensionsFor(item.src);
   return <img className={className} src={item.src} alt={item.label ?? ""} loading="lazy" width={size?.width} height={size?.height} />;
 }
 
@@ -156,8 +133,8 @@ function ServiceVisual({ service }: { service: (typeof services)[number] }) {
           src={service.media}
           alt={service.title.nl}
           loading="lazy"
-          width={imageSizes[service.media]?.width}
-          height={imageSizes[service.media]?.height}
+          width={dimensionsFor(service.media)?.width}
+          height={dimensionsFor(service.media)?.height}
           onError={(event) => {
             if ("fallbackMedia" in service && service.fallbackMedia) {
               event.currentTarget.src = service.fallbackMedia;
@@ -171,7 +148,7 @@ function ServiceVisual({ service }: { service: (typeof services)[number] }) {
   if (service.type === "plain-video" || service.type === "video") {
     return (
       <div className={service.type === "video" ? "premium-ads-visual premium-static-video-preview" : "premium-video-visual premium-static-video-preview"}>
-        <img src={service.media} alt={service.title.nl} loading="lazy" width={imageSizes[service.media]?.width} height={imageSizes[service.media]?.height} />
+        <img src={service.media} alt={service.title.nl} loading="lazy" width={dimensionsFor(service.media)?.width} height={dimensionsFor(service.media)?.height} />
         <span aria-hidden="true">Play</span>
       </div>
     );
@@ -320,8 +297,8 @@ export function PremiumHome({ initialLanguage = "nl" }: { initialLanguage?: Lang
                     src={item.image}
                     alt={item.title}
                     loading="lazy"
-                    width={imageSizes[item.image]?.width}
-                    height={imageSizes[item.image]?.height}
+                    width={dimensionsFor(item.image)?.width}
+                    height={dimensionsFor(item.image)?.height}
                   />
                   <div>
                     <span><Text value={item.discipline} /></span>

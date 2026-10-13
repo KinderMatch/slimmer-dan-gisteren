@@ -4,6 +4,8 @@ import type { ReactNode } from "react";
 import Link from "next/link";
 import { useMemo, useState } from "react";
 
+import { dimensionsFor } from "../image-dimensions";
+
 const sampleCsv = `email,voornaam,bedrijf,functie,vacature_haakje,persoonlijke_observatie,status
 naam@bedrijf.nl,Sanne,Voorbeeld BV,Marketing medewerker,"Ik zag dat content en zichtbaarheid duidelijk terugkomen in de vacature.","jullie behoefte aan structurele zichtbaarheid zonder elke week opnieuw content te bedenken",active`;
 
@@ -79,7 +81,7 @@ export default function CampaignEnginePage() {
     <main className="campaign-engine-page">
       <header className="campaign-engine-hero">
         <Link className="campaign-engine-brand" href="/">
-          <img src="/assets/logo.png" alt="" />
+          <img src="/assets/logo.png" alt="" width={dimensionsFor("/assets/logo.png")?.width} height={dimensionsFor("/assets/logo.png")?.height} />
           <span>Slimmer dan Gisteren</span>
         </Link>
         <div>
@@ -90,7 +92,13 @@ export default function CampaignEnginePage() {
             of geen interesse.
           </p>
         </div>
-        <img className="campaign-engine-portrait" src="/assets/jimmy-buitenhuis.png" alt="Jimmy Buitenhuis" />
+        <img
+          className="campaign-engine-portrait"
+          src="/assets/jimmy-buitenhuis.png"
+          alt="Jimmy Buitenhuis"
+          width={dimensionsFor("/assets/jimmy-buitenhuis.png")?.width}
+          height={dimensionsFor("/assets/jimmy-buitenhuis.png")?.height}
+        />
       </header>
 
       <section className="campaign-engine-toolbar">

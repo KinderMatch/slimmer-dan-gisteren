@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 
+import { dimensionsFor } from "./image-dimensions";
 import { type LocalizedString, resolveText, Text, useLanguage } from "./language";
 import { MediaLightbox } from "./media-lightbox";
 
@@ -120,7 +121,14 @@ export function ArtistEventShowcase({ photos, videos }: { photos: ArtistPhoto[];
           title={activePhoto.alt}
           type="image"
         >
-          <img src={activePhoto.src} alt={resolveText(activePhoto.alt, language)} loading="lazy" key={activePhoto.src} />
+          <img
+            src={activePhoto.src}
+            alt={resolveText(activePhoto.alt, language)}
+            loading="lazy"
+            width={dimensionsFor(activePhoto.src)?.width}
+            height={dimensionsFor(activePhoto.src)?.height}
+            key={activePhoto.src}
+          />
           <figcaption>
             <span>{String(activePhotoIndex + 1).padStart(2, "0")} / <Text value={{ nl: "Event fotografie", en: "Event photography", es: "Fotografía de eventos" }} /></span>
             <strong><Text value={activePhoto.alt} /></strong>
@@ -144,7 +152,7 @@ export function ArtistEventShowcase({ photos, videos }: { photos: ArtistPhoto[];
               }}
               type="button"
             >
-              <img src={photo.src} alt="" loading="lazy" />
+              <img src={photo.src} alt="" loading="lazy" width={dimensionsFor(photo.src)?.width} height={dimensionsFor(photo.src)?.height} />
             </button>
           ))}
         </div>

@@ -28,6 +28,16 @@ function inputMode(field: string) {
   return undefined;
 }
 
+function autoComplete(field: string) {
+  const normalized = field.toLowerCase();
+  if (normalized.includes("e-mail") || normalized.includes("email")) return "email";
+  if (normalized.includes("telefoon")) return "tel";
+  if (normalized.includes("voornaam") || normalized === "naam") return "name";
+  if (normalized.includes("naam")) return "organization";
+  if (normalized.includes("website") || normalized.includes("url") || normalized.includes("domein")) return "url";
+  return undefined;
+}
+
 function isRequired(field: string) {
   const normalized = field.toLowerCase();
   return ["naam", "bedrijfsnaam", "e-mailadres", "email", "website"].some((part) => normalized.includes(part));
@@ -105,6 +115,7 @@ export function ScanForm({ fields, formId, includePrivacyConsent = false, pageTi
             ) : (
               <input
                 autoCapitalize={inputMode(field) === "url" ? "none" : undefined}
+                autoComplete={autoComplete(field)}
                 autoCorrect={inputMode(field) === "url" ? "off" : undefined}
                 id={fieldId}
                 inputMode={inputMode(field)}

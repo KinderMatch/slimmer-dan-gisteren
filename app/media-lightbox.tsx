@@ -2,6 +2,7 @@
 
 import { type ReactNode, useEffect, useRef, useState } from "react";
 
+import { dimensionsFor } from "./image-dimensions";
 import { type LocalizedString, resolveText, useLanguage } from "./language";
 
 type MediaLightboxProps = {
@@ -23,6 +24,7 @@ export function MediaLightbox({ alt, children, className, fullSrc, label, src, t
   const translatedLabel = label ? resolveText(label, language) : "";
   const translatedAlt = alt ? resolveText(alt, language) : translatedTitle;
   const lightboxSrc = fullSrc ?? src;
+  const imageSize = type === "image" ? dimensionsFor(lightboxSrc) : undefined;
 
   useEffect(() => {
     if (!isOpen) return;
@@ -86,7 +88,7 @@ export function MediaLightbox({ alt, children, className, fullSrc, label, src, t
                 <source src={lightboxSrc} />
               </video>
             ) : (
-              <img src={lightboxSrc} alt={translatedAlt} />
+              <img src={lightboxSrc} alt={translatedAlt} width={imageSize?.width} height={imageSize?.height} />
             )}
             <figcaption>
               {label ? <span>{translatedLabel}</span> : null}

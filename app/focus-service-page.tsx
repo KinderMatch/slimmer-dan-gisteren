@@ -1,4 +1,5 @@
 import { EmphasisText } from "./language";
+import { dimensionsFor } from "./image-dimensions";
 import { ScanForm } from "./scan-form";
 import { calendlyUrl } from "./seo";
 import type { GrowthPageData } from "./growth-pages-data";
@@ -229,7 +230,13 @@ export function FocusServicePage({ data }: { data: GrowthPageData }) {
         {compactPage && data.slug !== "/geo/" ? (
           <figure className="focus-compact-hero-visual" aria-label={`${data.eyebrow} visualisatie`}>
             {data.slug === "/seo/" ? (
-              <img src="/assets/seo-google-search.gif" alt="Google zoekanimatie voor SEO marketingbureau" loading="eager" />
+              <img
+                src="/assets/seo-google-search.gif"
+                alt="Google zoekanimatie voor SEO marketingbureau"
+                loading="eager"
+                width={dimensionsFor("/assets/seo-google-search.gif")?.width}
+                height={dimensionsFor("/assets/seo-google-search.gif")?.height}
+              />
             ) : (
               <video muted playsInline preload="none" autoPlay loop>
                 <source src={media.src} type="video/mp4" />
@@ -247,7 +254,7 @@ export function FocusServicePage({ data }: { data: GrowthPageData }) {
             </div>
             <figure className="focus-proof-media">
               {media.kind === "image" ? (
-                <img src={media.src} alt={media.label} loading="eager" />
+                <img src={media.src} alt={media.label} loading="eager" width={dimensionsFor(media.src)?.width} height={dimensionsFor(media.src)?.height} />
               ) : (
                 <video muted playsInline preload="none" autoPlay loop>
                   <source src={media.src} type="video/mp4" />
