@@ -14,6 +14,7 @@ export const imageDimensionsBySrc: Record<string, ImageDimensions> = {
   "/assets/optimized/content-maasclaim.jpg": { width: 1200, height: 898 },
   "/assets/optimized/content-nxchange.jpg": { width: 1600, height: 1440 },
   "/assets/optimized/content-zb.jpg": { width: 1600, height: 1416 },
+  "/assets/optimized/social-ads-schilder.jpg": { width: 800, height: 707 },
   "/assets/seo-google-search.gif": { width: 480, height: 360 },
   "/assets/wedding/airfoto.jpg": { width: 2200, height: 1237 },
   "/assets/dave-dekker/photos/event-01.jpg": { width: 1800, height: 1200 },

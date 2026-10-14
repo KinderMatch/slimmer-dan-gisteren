@@ -56,6 +56,7 @@ test("keeps first render visible and light for Lighthouse", async () => {
   assert.match(html, /<footer class="premium-footer">[\s\S]*Social media/);
   assert.match(html, /GEO/);
   assert.match(html, /\/assets\/generated\/datacenter-320\.gif"[^>]+width="320" height="169"/);
+  assert.match(html, /\/assets\/optimized\/social-ads-schilder\.jpg"[^>]+width="800" height="707"/);
   assert.match(html, /Google Ads/);
 });
 

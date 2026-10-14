@@ -58,7 +58,7 @@ const services = [
       "Social campaigns that turn attention into enquiries.",
       "Campañas sociales que convierten atención en solicitudes.",
     ),
-    media: "/assets/optimized/content-zb.jpg",
+    media: "/assets/optimized/social-ads-schilder.jpg",
     type: "image",
   },
 ];
