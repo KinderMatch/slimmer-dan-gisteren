@@ -5,6 +5,7 @@ import { useEffect, useRef, useState } from "react";
 import { dimensionsFor } from "./image-dimensions";
 import { type LocalizedString, resolveText, Text, useLanguage } from "./language";
 import { MediaLightbox } from "./media-lightbox";
+import { VideoPoster } from "./video-poster";
 
 type ArtistVideo = {
   fullSrc?: string;
@@ -89,9 +90,7 @@ export function ArtistEventShowcase({ photos, videos }: { photos: ArtistPhoto[];
               }}
               type="button"
             >
-              <video muted playsInline preload="none">
-                <source src={video.src} />
-              </video>
+              <VideoPoster src={video.src} />
               <span>{String(index + 1).padStart(2, "0")}</span>
               <strong><Text value={video.title} /></strong>
               <small><Text value={video.label} /></small>

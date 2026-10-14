@@ -9,6 +9,8 @@ import { EmphasisText, LanguageProvider, LanguageToggle, type LocalizedString, T
 import { LocalizedLink } from "./localized-link";
 import { MediaLightbox } from "./media-lightbox";
 import { ScrollProgress } from "./scroll-experience";
+import { VideoPoster } from "./video-poster";
+import { videoThumbnailFor } from "./video-thumbnails";
 
 export { VideoShowcase } from "./video-showcase";
 
@@ -530,9 +532,7 @@ export function DisciplineRunway() {
           <div className="runway-visual" aria-hidden="true">
             {item.visual === "ads" ? (
               <div className="runway-video-card">
-                <video muted playsInline preload="none">
-                  <source src={videoPreviewSrc(item.video)} type="video/mp4" />
-                </video>
+                <VideoPoster src={item.video} />
                 <strong><Text value={t("Advertenties + creative", "Advertising + creative", "Anuncios + creatividad")} /></strong>
               </div>
             ) : item.visual === "website" ? (
@@ -542,9 +542,7 @@ export function DisciplineRunway() {
               </div>
             ) : (
               <>
-                <video muted playsInline preload="none">
-                  <source src={videoPreviewSrc(item.video)} type="video/mp4" />
-                </video>
+                <VideoPoster src={item.video} />
                 <img src="/assets/optimized/content-airbnb.jpg" alt="" loading="lazy" width={dimensionsFor("/assets/optimized/content-airbnb.jpg")?.width} height={dimensionsFor("/assets/optimized/content-airbnb.jpg")?.height} />
               </>
             )}
@@ -817,9 +815,7 @@ export function BrandingStudio() {
             title={video.title}
             type="video"
           >
-            <video muted playsInline preload="none">
-              <source src={videoPreviewSrc(video.src)} type="video/mp4" />
-            </video>
+            <VideoPoster src={video.src} />
             <div>
               <span>{String(index + 1).padStart(2, "0")} / <Text value={t("Videoformat", "Video format", "Formato de video")} /></span>
               <strong>{video.title}</strong>
@@ -1325,7 +1321,7 @@ export function VideoGrid({ limit }: { limit?: number }) {
     <div className="video-grid">
       {(limit ? videos.slice(0, limit) : videos).map((video) => (
         <article className="video-card" key={video.src}>
-          <video controls preload="none" playsInline>
+          <video controls preload="none" playsInline poster={videoThumbnailFor(video.src)}>
             <source src={videoPreviewSrc(video.src)} type="video/mp4" />
           </video>
           <h3>{video.title}</h3>

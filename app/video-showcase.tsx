@@ -4,6 +4,8 @@ import { useEffect, useRef, useState } from "react";
 
 import { type LocalizedString, Text } from "./language";
 import { MediaLightbox } from "./media-lightbox";
+import { VideoPoster } from "./video-poster";
+import { videoThumbnailFor } from "./video-thumbnails";
 
 const t = (nl: string, en: string, es = en): LocalizedString => ({ nl, en, es });
 
@@ -101,7 +103,7 @@ export function VideoShowcase({ compact = false, excludeSrcs = [] }: { compact?:
     <div className={compact ? "video-showcase compact" : "video-showcase"}>
       <article className="video-feature">
         <div className="video-frame">
-          <video ref={featuredVideoRef} controls preload="metadata" playsInline key={featured.src}>
+          <video ref={featuredVideoRef} controls preload="metadata" playsInline poster={videoThumbnailFor(featured.src)} key={featured.src}>
             <source src={videoPreviewSrc(featured.src)} type="video/mp4" />
           </video>
         </div>
@@ -133,9 +135,7 @@ export function VideoShowcase({ compact = false, excludeSrcs = [] }: { compact?:
             type="button"
           >
             <span>{String(index + 1).padStart(2, "0")}</span>
-            <video muted preload="none" playsInline>
-              <source src={videoPreviewSrc(video.src)} type="video/mp4" />
-            </video>
+            <VideoPoster src={video.src} />
             <h3>{video.title}</h3>
             <small><Text value={video.label} /></small>
           </button>

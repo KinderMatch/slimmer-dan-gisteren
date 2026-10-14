@@ -4,6 +4,7 @@ import { type ReactNode, useEffect, useRef, useState } from "react";
 
 import { dimensionsFor } from "./image-dimensions";
 import { type LocalizedString, resolveText, useLanguage } from "./language";
+import { videoThumbnailFor } from "./video-thumbnails";
 
 type MediaLightboxProps = {
   alt?: LocalizedString | string;
@@ -84,7 +85,7 @@ export function MediaLightbox({ alt, children, className, fullSrc, label, src, t
           </button>
           <figure className={type === "video" ? "media-lightbox-frame video" : "media-lightbox-frame"} onClick={(event) => event.stopPropagation()}>
             {type === "video" ? (
-              <video ref={videoRef} controls playsInline preload="metadata">
+              <video ref={videoRef} controls playsInline preload="metadata" poster={videoThumbnailFor(lightboxSrc)}>
                 <source src={lightboxSrc} />
               </video>
             ) : (

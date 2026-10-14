@@ -8,6 +8,7 @@ import { dimensionsFor } from "./image-dimensions";
 import { EmphasisText, LanguageProvider, LanguageToggle, Text, useLanguage, type Language, type LocalizedString } from "./language";
 import { MediaLightbox } from "./media-lightbox";
 import { ScrollProgress } from "./scroll-experience";
+import { videoThumbnailFor } from "./video-thumbnails";
 
 const t = (nl: string, en: string, es: string): LocalizedString => ({ nl, en, es });
 
@@ -189,7 +190,7 @@ function LocalizedSpeechVideo() {
   }[language];
 
   return (
-    <video controls playsInline preload="none" poster={media.poster} key={language}>
+    <video controls playsInline preload="none" poster={videoThumbnailFor(media.source) ?? media.poster} key={language}>
       <source src={media.source} type="video/mp4" />
     </video>
   );
@@ -336,7 +337,7 @@ export function PremiumHome({ initialLanguage = "nl" }: { initialLanguage?: Lang
               </a>
             </div>
             <div className="premium-ai-actors-media">
-              <video controls playsInline preload="none">
+              <video controls playsInline preload="none" poster={videoThumbnailFor("/assets/content/ai-actors-slimmer-dan-gisteren.m4v")}>
                 <source src="/assets/content/ai-actors-slimmer-dan-gisteren.m4v" type="video/mp4" />
               </video>
             </div>
