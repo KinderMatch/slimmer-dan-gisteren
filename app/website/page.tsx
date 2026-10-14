@@ -65,7 +65,7 @@ export default function WebsitePage({ initialLanguage = "nl" }: { initialLanguag
           ]),
         ]}
       />
-      <SiteShell initialLanguage={initialLanguage}>
+      <SiteShell initialLanguage={initialLanguage} premiumNavigation>
         <div className="service-premium service-premium-website">
         <PageHero
           eyebrow={t("Websites", "Websites", "Webs")}

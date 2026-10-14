@@ -33,7 +33,7 @@ export default function GeoPage() {
           faqJsonLd(geoPage.faq),
         ]}
       />
-      <SiteShell>
+      <SiteShell premiumNavigation>
         <FocusServicePage data={geoPage} />
       </SiteShell>
     </>

@@ -69,7 +69,7 @@ export default function SeoPage() {
           faqJsonLd(seoPage.faq),
         ]}
       />
-      <SiteShell>
+      <SiteShell premiumNavigation>
         <FocusServicePage data={seoPage} />
       </SiteShell>
     </>

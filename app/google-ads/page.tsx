@@ -39,7 +39,7 @@ export default function GoogleAdsPage() {
           faqJsonLd(googleAdsPage.faq),
         ]}
       />
-      <SiteShell>
+      <SiteShell premiumNavigation>
         <FocusServicePage data={googleAdsPage} />
       </SiteShell>
     </>

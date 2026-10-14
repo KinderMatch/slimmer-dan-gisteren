@@ -267,12 +267,20 @@ function videoPreviewSrc(src: string) {
 
 export const homeHeroVideoSrc = videoPreviewSrc(videos[3].src);
 
-export function SiteShell({ children, initialLanguage = "nl" }: { children: ReactNode; initialLanguage?: "nl" | "en" | "es" }) {
+export function SiteShell({
+  children,
+  initialLanguage = "nl",
+  premiumNavigation = false,
+}: {
+  children: ReactNode;
+  initialLanguage?: "nl" | "en" | "es";
+  premiumNavigation?: boolean;
+}) {
   return (
     <LanguageProvider initialLanguage={initialLanguage}>
       <ScrollProgress />
-      <header className="site-header">
-        <LocalizedLink className="brand" href="/">
+      <header className={premiumNavigation ? "premium-nav" : "site-header"}>
+        <LocalizedLink className={premiumNavigation ? "premium-brand" : "brand"} href="/">
           <img src="/assets/logo.png" alt="Slimmer dan Gisteren" width={dimensionsFor("/assets/logo.png")?.width} height={dimensionsFor("/assets/logo.png")?.height} />
           <span>Slimmer dan Gisteren</span>
         </LocalizedLink>
@@ -284,9 +292,11 @@ export function SiteShell({ children, initialLanguage = "nl" }: { children: Reac
           ))}
         </nav>
         <LanguageToggle />
-        <a className="header-cta" href="https://wa.me/31610175027">
-          <Text value={t("Contact", "Contact", "Contacto")} />
-        </a>
+        {premiumNavigation ? null : (
+          <a className="header-cta" href="https://wa.me/31610175027">
+            <Text value={t("Contact", "Contact", "Contacto")} />
+          </a>
+        )}
       </header>
       <ContactDock />
       <main>{children}</main>

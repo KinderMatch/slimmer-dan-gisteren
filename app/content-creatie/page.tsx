@@ -70,7 +70,7 @@ export default function ContentCreatiePage({ initialLanguage = "nl" }: { initial
           ]),
         ]}
       />
-      <SiteShell initialLanguage={initialLanguage}>
+      <SiteShell initialLanguage={initialLanguage} premiumNavigation>
         <div className="service-premium service-premium-content">
         <PageHero
           eyebrow={t("Content creatie", "Content creation", "Creación de contenido")}

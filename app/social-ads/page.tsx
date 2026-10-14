@@ -66,7 +66,7 @@ export default function SocialAdsPage({ initialLanguage = "nl" }: { initialLangu
           ]),
         ]}
       />
-      <SiteShell initialLanguage={initialLanguage}>
+      <SiteShell initialLanguage={initialLanguage} premiumNavigation>
         <div className="service-premium service-premium-ads">
           <PageHero
             eyebrow={t("Social Ads", "Social Ads", "Social Ads")}

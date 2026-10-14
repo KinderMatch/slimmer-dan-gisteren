@@ -113,7 +113,7 @@ export function LocalizedRoutePage({ locale, path }: { locale: RouteLocale; path
             faqJsonLd(data.faq),
           ]}
         />
-        <SiteShell initialLanguage={locale}>
+        <SiteShell initialLanguage={locale} premiumNavigation>
           <LocalizedServicePage language={locale} service={path} />
         </SiteShell>
       </>
