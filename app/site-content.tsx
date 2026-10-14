@@ -1,3 +1,4 @@
+import { ResponsiveImage } from "./responsive-image";
 import Link from "next/link";
 import type { ReactNode } from "react";
 
@@ -283,7 +284,7 @@ export function SiteShell({
       <ScrollProgress />
       <header className={premiumNavigation ? "premium-nav" : "site-header"}>
         <LocalizedLink className={premiumNavigation ? "premium-brand" : "brand"} href="/">
-          <img src="/assets/logo.png" alt="Slimmer dan Gisteren" width={dimensionsFor("/assets/logo.png")?.width} height={dimensionsFor("/assets/logo.png")?.height} />
+          <ResponsiveImage src="/assets/logo.png" alt="Slimmer dan Gisteren" width={dimensionsFor("/assets/logo.png")?.width} height={dimensionsFor("/assets/logo.png")?.height} />
           <span>Slimmer dan Gisteren</span>
         </LocalizedLink>
         <nav aria-label="Hoofdnavigatie">
@@ -304,7 +305,7 @@ export function SiteShell({
       <main>{children}</main>
       <footer className="site-footer">
         <div className="footer-video">
-          <img src="/assets/optimized/airfoto.jpg" alt="" loading="lazy" width="1600" height="899" />
+          <ResponsiveImage src="/assets/optimized/airfoto.jpg" alt="" loading="lazy" width="1600" height="899" />
           <div>
             <p className="eyebrow"><Text value={t("Klaar om slimmer te groeien?", "Ready to grow smarter?", "¿Listo para crecer de forma más inteligente?")} /></p>
             <h2><EmphasisText value={t("Laat GEO, SEO en advertenties [[samenwerken]].", "Let GEO, SEO and ads [[work together]].", "Haz que GEO, SEO y anuncios [[trabajen juntos]].")} /></h2>
@@ -312,7 +313,7 @@ export function SiteShell({
           </div>
         </div>
         <LocalizedLink className="footer-brand" href="/">
-          <img src="/assets/logo.png" alt="" width={dimensionsFor("/assets/logo.png")?.width} height={dimensionsFor("/assets/logo.png")?.height} />
+          <ResponsiveImage src="/assets/logo.png" alt="" width={dimensionsFor("/assets/logo.png")?.width} height={dimensionsFor("/assets/logo.png")?.height} />
           <div>
             <p>Slimmer dan Gisteren</p>
             <span><Text value={t("Groei begint met vandaag.", "Growth starts today.", "El crecimiento empieza hoy.")} /></span>
@@ -401,7 +402,7 @@ export function HomeWorkGrid() {
               <source src={videoPreviewSrc(item.src)} type="video/mp4" />
             </video>
           ) : (
-            <img
+            <ResponsiveImage
               src={item.src}
               alt={typeof item.title === "string" ? item.title : item.title.nl}
               loading="lazy"
@@ -473,7 +474,7 @@ export function KitchenPanels() {
           <video autoPlay loop muted playsInline preload="none">
             <source src={videoPreviewSrc(videos[4].src)} type="video/mp4" />
           </video>
-          <img src="/assets/optimized/content-nxchange.jpg" alt="" loading="lazy" width={dimensionsFor("/assets/optimized/content-nxchange.jpg")?.width} height={dimensionsFor("/assets/optimized/content-nxchange.jpg")?.height} />
+          <ResponsiveImage src="/assets/optimized/content-nxchange.jpg" alt="" loading="lazy" width={dimensionsFor("/assets/optimized/content-nxchange.jpg")?.width} height={dimensionsFor("/assets/optimized/content-nxchange.jpg")?.height} />
         </div>
       </article>
     </div>
@@ -543,7 +544,7 @@ export function DisciplineRunway() {
             ) : (
               <>
                 <VideoPoster src={item.video} />
-                <img src="/assets/optimized/content-airbnb.jpg" alt="" loading="lazy" width={dimensionsFor("/assets/optimized/content-airbnb.jpg")?.width} height={dimensionsFor("/assets/optimized/content-airbnb.jpg")?.height} />
+                <ResponsiveImage src="/assets/optimized/content-airbnb.jpg" alt="" loading="lazy" width={dimensionsFor("/assets/optimized/content-airbnb.jpg")?.width} height={dimensionsFor("/assets/optimized/content-airbnb.jpg")?.height} />
               </>
             )}
           </div>
@@ -930,7 +931,7 @@ export function WeddingContentShowcase() {
         title={t("Luchtfoto trouwlocatie", "Aerial photo of wedding venue", "Foto aérea del lugar de la boda")}
         type="image"
       >
-        <img src={weddingCase.image} alt="Luchtfoto van trouwlocatie" loading="lazy" width={dimensionsFor(weddingCase.image)?.width} height={dimensionsFor(weddingCase.image)?.height} />
+        <ResponsiveImage src={weddingCase.image} alt="Luchtfoto van trouwlocatie" loading="lazy" width={dimensionsFor(weddingCase.image)?.width} height={dimensionsFor(weddingCase.image)?.height} />
         <figcaption><Text value={t("Fotografie", "Photography", "Fotografía")} /></figcaption>
       </MediaLightbox>
       <div className="wedding-copy">
@@ -1007,7 +1008,7 @@ function PageHeroVisual({ tone }: { tone: "default" | "website" | "ads" | "brand
   if (tone === "branding") {
     return (
       <div className="page-hero-visual content-visual" aria-hidden="true">
-        <img src="/assets/dave-dekker/photos/event-15.jpg" alt="" loading="eager" width={dimensionsFor("/assets/dave-dekker/photos/event-15.jpg")?.width} height={dimensionsFor("/assets/dave-dekker/photos/event-15.jpg")?.height} />
+        <ResponsiveImage src="/assets/dave-dekker/photos/event-15.jpg" alt="" loading="eager" width={dimensionsFor("/assets/dave-dekker/photos/event-15.jpg")?.width} height={dimensionsFor("/assets/dave-dekker/photos/event-15.jpg")?.height} />
         <div>
           <span><Text value={t("Video", "Video", "Video")} /></span>
           <span><Text value={t("Fotografie", "Photography", "Fotografía")} /></span>

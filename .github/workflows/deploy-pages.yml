@@ -37,6 +37,9 @@ jobs:
       - name: Prepare Pages artifact
         run: bash scripts/prepare-github-pages.sh
 
+      - name: Validate published SEO and images
+        run: node scripts/validate-pages.mjs
+
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:

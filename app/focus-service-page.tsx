@@ -1,3 +1,4 @@
+import { ResponsiveImage } from "./responsive-image";
 import { EmphasisText } from "./language";
 import { dimensionsFor } from "./image-dimensions";
 import { ScanForm } from "./scan-form";
@@ -230,7 +231,7 @@ export function FocusServicePage({ data }: { data: GrowthPageData }) {
         {compactPage && data.slug !== "/geo/" ? (
           <figure className="focus-compact-hero-visual" aria-label={`${data.eyebrow} visualisatie`}>
             {data.slug === "/seo/" ? (
-              <img
+              <ResponsiveImage
                 src="/assets/seo-google-search.gif"
                 alt="Google zoekanimatie voor SEO marketingbureau"
                 loading="eager"
@@ -254,7 +255,7 @@ export function FocusServicePage({ data }: { data: GrowthPageData }) {
             </div>
             <figure className="focus-proof-media">
               {media.kind === "image" ? (
-                <img src={media.src} alt={media.label} loading="eager" width={dimensionsFor(media.src)?.width} height={dimensionsFor(media.src)?.height} />
+                <ResponsiveImage src={media.src} alt={media.label} loading="eager" width={dimensionsFor(media.src)?.width} height={dimensionsFor(media.src)?.height} />
               ) : (
                 <video muted playsInline preload="none" autoPlay loop>
                   <source src={media.src} type="video/mp4" />

@@ -14,8 +14,7 @@ rm -f \
   "$publish_dir/assets/content-color-run.png" \
   "$publish_dir/assets/content-maasclaim.png" \
   "$publish_dir/assets/content-nxchange.png" \
-  "$publish_dir/assets/content-zb.png" \
-  "$publish_dir/assets/wedding/airfoto.jpg"
+  "$publish_dir/assets/content-zb.png"
 
 if [[ -d "$publish_dir/en" ]]; then
   find "$publish_dir/en" -name 'index.html' -exec perl -0pi -e 's/<html lang="nl">/<html lang="en">/' {} +

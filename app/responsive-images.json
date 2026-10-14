@@ -1,0 +1,837 @@
+{
+  "/assets/jimmy-buitenhuis.png": {
+    "width": 320,
+    "height": 320,
+    "variants": [
+      {
+        "src": "/assets/responsive/jimmy-buitenhuis-320-46ac5f9eafd1.webp",
+        "width": 320,
+        "bytes": 8018
+      }
+    ]
+  },
+  "/assets/logo.png": {
+    "width": 512,
+    "height": 512,
+    "variants": [
+      {
+        "src": "/assets/responsive/logo-64-90bb50338be8.webp",
+        "width": 64,
+        "bytes": 2260
+      },
+      {
+        "src": "/assets/responsive/logo-128-0a0a2964c602.webp",
+        "width": 128,
+        "bytes": 5134
+      },
+      {
+        "src": "/assets/responsive/logo-256-cb206227d071.webp",
+        "width": 256,
+        "bytes": 12298
+      },
+      {
+        "src": "/assets/responsive/logo-512-052103f061a4.webp",
+        "width": 512,
+        "bytes": 23692
+      }
+    ]
+  },
+  "/assets/optimized/airfoto.jpg": {
+    "width": 1600,
+    "height": 899,
+    "variants": [
+      {
+        "src": "/assets/responsive/airfoto-480-b20b64964602.webp",
+        "width": 480,
+        "bytes": 26418
+      },
+      {
+        "src": "/assets/responsive/airfoto-960-88de6661e4fd.webp",
+        "width": 960,
+        "bytes": 91298
+      },
+      {
+        "src": "/assets/responsive/airfoto-1600-6d8b6af82093.webp",
+        "width": 1600,
+        "bytes": 199408
+      }
+    ]
+  },
+  "/assets/optimized/content-airbnb.jpg": {
+    "width": 1200,
+    "height": 1047,
+    "variants": [
+      {
+        "src": "/assets/responsive/content-airbnb-480-67e7ad7004aa.webp",
+        "width": 480,
+        "bytes": 55688
+      },
+      {
+        "src": "/assets/responsive/content-airbnb-960-a0a8646df3b9.webp",
+        "width": 960,
+        "bytes": 149636
+      },
+      {
+        "src": "/assets/responsive/content-airbnb-1200-4b2c55989240.webp",
+        "width": 1200,
+        "bytes": 202642
+      }
+    ]
+  },
+  "/assets/optimized/content-color-run.jpg": {
+    "width": 1200,
+    "height": 1075,
+    "variants": [
+      {
+        "src": "/assets/responsive/content-color-run-480-b45be5dce4db.webp",
+        "width": 480,
+        "bytes": 61080
+      },
+      {
+        "src": "/assets/responsive/content-color-run-960-12131f9ebad1.webp",
+        "width": 960,
+        "bytes": 170938
+      },
+      {
+        "src": "/assets/responsive/content-color-run-1200-61448c10a2ed.webp",
+        "width": 1200,
+        "bytes": 236720
+      }
+    ]
+  },
+  "/assets/optimized/content-maasclaim.jpg": {
+    "width": 1200,
+    "height": 898,
+    "variants": [
+      {
+        "src": "/assets/responsive/content-maasclaim-480-0bdf35a5c057.webp",
+        "width": 480,
+        "bytes": 46322
+      },
+      {
+        "src": "/assets/responsive/content-maasclaim-960-c79762d8dd59.webp",
+        "width": 960,
+        "bytes": 120390
+      },
+      {
+        "src": "/assets/responsive/content-maasclaim-1200-54efcf9d3942.webp",
+        "width": 1200,
+        "bytes": 159542
+      }
+    ]
+  },
+  "/assets/optimized/content-nxchange.jpg": {
+    "width": 1600,
+    "height": 1440,
+    "variants": [
+      {
+        "src": "/assets/responsive/content-nxchange-480-1bd77c57fa0c.webp",
+        "width": 480,
+        "bytes": 53822
+      },
+      {
+        "src": "/assets/responsive/content-nxchange-960-cce5ba511abb.webp",
+        "width": 960,
+        "bytes": 149500
+      },
+      {
+        "src": "/assets/responsive/content-nxchange-1600-315e24d4d846.webp",
+        "width": 1600,
+        "bytes": 288072
+      }
+    ]
+  },
+  "/assets/optimized/content-zb.jpg": {
+    "width": 1600,
+    "height": 1416,
+    "variants": [
+      {
+        "src": "/assets/responsive/content-zb-480-7c4d43025cc4.webp",
+        "width": 480,
+        "bytes": 59916
+      },
+      {
+        "src": "/assets/responsive/content-zb-960-53cf6ceb5a4c.webp",
+        "width": 960,
+        "bytes": 183618
+      },
+      {
+        "src": "/assets/responsive/content-zb-1600-fcae8278f581.webp",
+        "width": 1600,
+        "bytes": 388348
+      }
+    ]
+  },
+  "/assets/optimized/social-ads-schilder.jpg": {
+    "width": 800,
+    "height": 707,
+    "variants": [
+      {
+        "src": "/assets/responsive/social-ads-schilder-480-a1da7bf23adf.webp",
+        "width": 480,
+        "bytes": 23342
+      },
+      {
+        "src": "/assets/responsive/social-ads-schilder-800-95cdb60a5b31.webp",
+        "width": 800,
+        "bytes": 44690
+      }
+    ]
+  },
+  "/assets/wedding/airfoto.jpg": {
+    "width": 2200,
+    "height": 1237,
+    "variants": [
+      {
+        "src": "/assets/responsive/airfoto-480-99305e9a7810.webp",
+        "width": 480,
+        "bytes": 28234
+      },
+      {
+        "src": "/assets/responsive/airfoto-960-1a86affbad1c.webp",
+        "width": 960,
+        "bytes": 99774
+      },
+      {
+        "src": "/assets/responsive/airfoto-1600-29a30ef3f202.webp",
+        "width": 1600,
+        "bytes": 237170
+      }
+    ]
+  },
+  "/assets/video-thumbnails/ai-actors-slimmer-dan-gisteren.m4v.jpg": {
+    "width": 960,
+    "height": 540,
+    "variants": [
+      {
+        "src": "/assets/responsive/ai-actors-slimmer-dan-gisteren.m4v-480-2702ae625b62.webp",
+        "width": 480,
+        "bytes": 8556
+      },
+      {
+        "src": "/assets/responsive/ai-actors-slimmer-dan-gisteren.m4v-960-c3a5ba9bbe01.webp",
+        "width": 960,
+        "bytes": 20114
+      }
+    ]
+  },
+  "/assets/video-thumbnails/dave-1-preview.mov.jpg": {
+    "width": 960,
+    "height": 544,
+    "variants": [
+      {
+        "src": "/assets/responsive/dave-1-preview.mov-480-72d7b0d82a31.webp",
+        "width": 480,
+        "bytes": 17800
+      },
+      {
+        "src": "/assets/responsive/dave-1-preview.mov-960-70e99e082af5.webp",
+        "width": 960,
+        "bytes": 39192
+      }
+    ]
+  },
+  "/assets/video-thumbnails/dave-3-preview.mov.jpg": {
+    "width": 960,
+    "height": 544,
+    "variants": [
+      {
+        "src": "/assets/responsive/dave-3-preview.mov-480-e8593ab91a92.webp",
+        "width": 480,
+        "bytes": 13442
+      },
+      {
+        "src": "/assets/responsive/dave-3-preview.mov-960-ac6b40e095fa.webp",
+        "width": 960,
+        "bytes": 29612
+      }
+    ]
+  },
+  "/assets/video-thumbnails/dave-4-preview.mov.jpg": {
+    "width": 960,
+    "height": 544,
+    "variants": [
+      {
+        "src": "/assets/responsive/dave-4-preview.mov-480-2898f47c95a3.webp",
+        "width": 480,
+        "bytes": 18742
+      },
+      {
+        "src": "/assets/responsive/dave-4-preview.mov-960-306616acfcd0.webp",
+        "width": 960,
+        "bytes": 42074
+      }
+    ]
+  },
+  "/assets/video-thumbnails/dave-5-preview.mov.jpg": {
+    "width": 960,
+    "height": 544,
+    "variants": [
+      {
+        "src": "/assets/responsive/dave-5-preview.mov-480-35035705b23e.webp",
+        "width": 480,
+        "bytes": 13208
+      },
+      {
+        "src": "/assets/responsive/dave-5-preview.mov-960-8d3f76c893e1.webp",
+        "width": 960,
+        "bytes": 29148
+      }
+    ]
+  },
+  "/assets/video-thumbnails/dive-cairns-preview.mov.jpg": {
+    "width": 960,
+    "height": 544,
+    "variants": [
+      {
+        "src": "/assets/responsive/dive-cairns-preview.mov-480-23b0d611bdbc.webp",
+        "width": 480,
+        "bytes": 11030
+      },
+      {
+        "src": "/assets/responsive/dive-cairns-preview.mov-960-25aaa347d11a.webp",
+        "width": 960,
+        "bytes": 26808
+      }
+    ]
+  },
+  "/assets/video-thumbnails/gym-republic.mp4.jpg": {
+    "width": 960,
+    "height": 540,
+    "variants": [
+      {
+        "src": "/assets/responsive/gym-republic.mp4-480-1caf20756d07.webp",
+        "width": 480,
+        "bytes": 11972
+      },
+      {
+        "src": "/assets/responsive/gym-republic.mp4-960-5ac0eec75d0a.webp",
+        "width": 960,
+        "bytes": 26484
+      }
+    ]
+  },
+  "/assets/video-thumbnails/huacacina-paracas-preview.mov.jpg": {
+    "width": 960,
+    "height": 544,
+    "variants": [
+      {
+        "src": "/assets/responsive/huacacina-paracas-preview.mov-480-3770c51af6ae.webp",
+        "width": 480,
+        "bytes": 20566
+      },
+      {
+        "src": "/assets/responsive/huacacina-paracas-preview.mov-960-6a598fda5da5.webp",
+        "width": 960,
+        "bytes": 45438
+      }
+    ]
+  },
+  "/assets/video-thumbnails/kgari-noosa-preview.mov.jpg": {
+    "width": 960,
+    "height": 544,
+    "variants": [
+      {
+        "src": "/assets/responsive/kgari-noosa-preview.mov-480-9dbf3882c1b2.webp",
+        "width": 480,
+        "bytes": 10772
+      },
+      {
+        "src": "/assets/responsive/kgari-noosa-preview.mov-960-47b96ad1d308.webp",
+        "width": 960,
+        "bytes": 25066
+      }
+    ]
+  },
+  "/assets/video-thumbnails/massaclaim-airbnb.mp4.jpg": {
+    "width": 960,
+    "height": 540,
+    "variants": [
+      {
+        "src": "/assets/responsive/massaclaim-airbnb.mp4-480-83b67d840cb4.webp",
+        "width": 480,
+        "bytes": 11452
+      },
+      {
+        "src": "/assets/responsive/massaclaim-airbnb.mp4-960-e86e3f1a5392.webp",
+        "width": 960,
+        "bytes": 33744
+      }
+    ]
+  },
+  "/assets/video-thumbnails/nordin-kyra-preview.mov.jpg": {
+    "width": 960,
+    "height": 544,
+    "variants": [
+      {
+        "src": "/assets/responsive/nordin-kyra-preview.mov-480-a576403fbd05.webp",
+        "width": 480,
+        "bytes": 11644
+      },
+      {
+        "src": "/assets/responsive/nordin-kyra-preview.mov-960-e655f01001f3.webp",
+        "width": 960,
+        "bytes": 26158
+      }
+    ]
+  },
+  "/assets/video-thumbnails/orchard-finance-preview.mp4.jpg": {
+    "width": 960,
+    "height": 474,
+    "variants": [
+      {
+        "src": "/assets/responsive/orchard-finance-preview.mp4-480-d5e570e958be.webp",
+        "width": 480,
+        "bytes": 13092
+      },
+      {
+        "src": "/assets/responsive/orchard-finance-preview.mp4-960-5440417ee500.webp",
+        "width": 960,
+        "bytes": 30512
+      }
+    ]
+  },
+  "/assets/video-thumbnails/siargao-preview.mov.jpg": {
+    "width": 960,
+    "height": 544,
+    "variants": [
+      {
+        "src": "/assets/responsive/siargao-preview.mov-480-89aa927ee4ed.webp",
+        "width": 480,
+        "bytes": 15822
+      },
+      {
+        "src": "/assets/responsive/siargao-preview.mov-960-29abe926a8a4.webp",
+        "width": 960,
+        "bytes": 38902
+      }
+    ]
+  },
+  "/assets/video-thumbnails/speech-ceo-en.mp4.jpg": {
+    "width": 960,
+    "height": 1255,
+    "variants": [
+      {
+        "src": "/assets/responsive/speech-ceo-en.mp4-480-758388af00c3.webp",
+        "width": 480,
+        "bytes": 26280
+      },
+      {
+        "src": "/assets/responsive/speech-ceo-en.mp4-960-7dd187b1cb28.webp",
+        "width": 960,
+        "bytes": 66776
+      }
+    ]
+  },
+  "/assets/video-thumbnails/speech-ceo-es.mp4.jpg": {
+    "width": 960,
+    "height": 1255,
+    "variants": [
+      {
+        "src": "/assets/responsive/speech-ceo-es.mp4-480-507444641160.webp",
+        "width": 480,
+        "bytes": 27130
+      },
+      {
+        "src": "/assets/responsive/speech-ceo-es.mp4-960-a293de4062d2.webp",
+        "width": 960,
+        "bytes": 69000
+      }
+    ]
+  },
+  "/assets/video-thumbnails/speech-ceo-nl.mp4.jpg": {
+    "width": 960,
+    "height": 1255,
+    "variants": [
+      {
+        "src": "/assets/responsive/speech-ceo-nl.mp4-480-a78b12854bf7.webp",
+        "width": 480,
+        "bytes": 27610
+      },
+      {
+        "src": "/assets/responsive/speech-ceo-nl.mp4-960-c17443b96f6a.webp",
+        "width": 960,
+        "bytes": 70750
+      }
+    ]
+  },
+  "/assets/video-thumbnails/whitsundays-preview.mov.jpg": {
+    "width": 960,
+    "height": 544,
+    "variants": [
+      {
+        "src": "/assets/responsive/whitsundays-preview.mov-480-ad1957cb6dbf.webp",
+        "width": 480,
+        "bytes": 9368
+      },
+      {
+        "src": "/assets/responsive/whitsundays-preview.mov-960-119fb6ad9867.webp",
+        "width": 960,
+        "bytes": 21984
+      }
+    ]
+  },
+  "/assets/video-thumbnails/zb-auto.mp4.jpg": {
+    "width": 960,
+    "height": 960,
+    "variants": [
+      {
+        "src": "/assets/responsive/zb-auto.mp4-480-f1789fee8ffd.webp",
+        "width": 480,
+        "bytes": 15606
+      },
+      {
+        "src": "/assets/responsive/zb-auto.mp4-960-2e9c2d1a0265.webp",
+        "width": 960,
+        "bytes": 36878
+      }
+    ]
+  },
+  "/assets/video-thumbnails/zb-hondenhok.mp4.jpg": {
+    "width": 960,
+    "height": 960,
+    "variants": [
+      {
+        "src": "/assets/responsive/zb-hondenhok.mp4-480-a1d84d7c64af.webp",
+        "width": 480,
+        "bytes": 18386
+      },
+      {
+        "src": "/assets/responsive/zb-hondenhok.mp4-960-8436c839dd57.webp",
+        "width": 960,
+        "bytes": 43770
+      }
+    ]
+  },
+  "/assets/video-thumbnails/zb-schilder.mp4.jpg": {
+    "width": 960,
+    "height": 960,
+    "variants": [
+      {
+        "src": "/assets/responsive/zb-schilder.mp4-480-58acad598ae0.webp",
+        "width": 480,
+        "bytes": 28070
+      },
+      {
+        "src": "/assets/responsive/zb-schilder.mp4-960-2afc7464b089.webp",
+        "width": 960,
+        "bytes": 70990
+      }
+    ]
+  },
+  "/assets/dave-dekker/photos/event-01.jpg": {
+    "width": 1800,
+    "height": 1200,
+    "variants": [
+      {
+        "src": "/assets/responsive/event-01-480-52c0b330e582.webp",
+        "width": 480,
+        "bytes": 29126
+      },
+      {
+        "src": "/assets/responsive/event-01-960-d6fc32c35561.webp",
+        "width": 960,
+        "bytes": 76678
+      },
+      {
+        "src": "/assets/responsive/event-01-1600-2d9ae6194356.webp",
+        "width": 1600,
+        "bytes": 151220
+      }
+    ]
+  },
+  "/assets/dave-dekker/photos/event-02.jpg": {
+    "width": 1800,
+    "height": 1200,
+    "variants": [
+      {
+        "src": "/assets/responsive/event-02-480-cd9763397390.webp",
+        "width": 480,
+        "bytes": 20318
+      },
+      {
+        "src": "/assets/responsive/event-02-960-dbf52aea3f4f.webp",
+        "width": 960,
+        "bytes": 48326
+      },
+      {
+        "src": "/assets/responsive/event-02-1600-4ac971a9dd2a.webp",
+        "width": 1600,
+        "bytes": 94890
+      }
+    ]
+  },
+  "/assets/dave-dekker/photos/event-03.jpg": {
+    "width": 1200,
+    "height": 1800,
+    "variants": [
+      {
+        "src": "/assets/responsive/event-03-480-ee6f2ec9637e.webp",
+        "width": 480,
+        "bytes": 53852
+      },
+      {
+        "src": "/assets/responsive/event-03-960-fd93040471da.webp",
+        "width": 960,
+        "bytes": 139564
+      },
+      {
+        "src": "/assets/responsive/event-03-1200-3ccc904ca349.webp",
+        "width": 1200,
+        "bytes": 188184
+      }
+    ]
+  },
+  "/assets/dave-dekker/photos/event-04.jpg": {
+    "width": 1800,
+    "height": 1200,
+    "variants": [
+      {
+        "src": "/assets/responsive/event-04-480-43c8225da257.webp",
+        "width": 480,
+        "bytes": 33234
+      },
+      {
+        "src": "/assets/responsive/event-04-960-bdc01b62e673.webp",
+        "width": 960,
+        "bytes": 92984
+      },
+      {
+        "src": "/assets/responsive/event-04-1600-292d4b8f9dc1.webp",
+        "width": 1600,
+        "bytes": 183814
+      }
+    ]
+  },
+  "/assets/dave-dekker/photos/event-05.jpg": {
+    "width": 1800,
+    "height": 1200,
+    "variants": [
+      {
+        "src": "/assets/responsive/event-05-480-856253c32cb0.webp",
+        "width": 480,
+        "bytes": 17836
+      },
+      {
+        "src": "/assets/responsive/event-05-960-1b2b9734fe13.webp",
+        "width": 960,
+        "bytes": 46368
+      },
+      {
+        "src": "/assets/responsive/event-05-1600-0f792cd8ead1.webp",
+        "width": 1600,
+        "bytes": 94032
+      }
+    ]
+  },
+  "/assets/dave-dekker/photos/event-06.jpg": {
+    "width": 1800,
+    "height": 1200,
+    "variants": [
+      {
+        "src": "/assets/responsive/event-06-480-88b076989872.webp",
+        "width": 480,
+        "bytes": 27120
+      },
+      {
+        "src": "/assets/responsive/event-06-960-5d45af8d0102.webp",
+        "width": 960,
+        "bytes": 73242
+      },
+      {
+        "src": "/assets/responsive/event-06-1600-7062bb79c3bb.webp",
+        "width": 1600,
+        "bytes": 146398
+      }
+    ]
+  },
+  "/assets/dave-dekker/photos/event-07.jpg": {
+    "width": 1800,
+    "height": 1200,
+    "variants": [
+      {
+        "src": "/assets/responsive/event-07-480-b0848c6d3109.webp",
+        "width": 480,
+        "bytes": 21704
+      },
+      {
+        "src": "/assets/responsive/event-07-960-d6c4e176297e.webp",
+        "width": 960,
+        "bytes": 62506
+      },
+      {
+        "src": "/assets/responsive/event-07-1600-054dbc274f10.webp",
+        "width": 1600,
+        "bytes": 129968
+      }
+    ]
+  },
+  "/assets/dave-dekker/photos/event-08.jpg": {
+    "width": 1800,
+    "height": 1622,
+    "variants": [
+      {
+        "src": "/assets/responsive/event-08-480-289e5e88dea8.webp",
+        "width": 480,
+        "bytes": 23912
+      },
+      {
+        "src": "/assets/responsive/event-08-960-68d49e6d2950.webp",
+        "width": 960,
+        "bytes": 64186
+      },
+      {
+        "src": "/assets/responsive/event-08-1600-17673a3d84d9.webp",
+        "width": 1600,
+        "bytes": 138266
+      }
+    ]
+  },
+  "/assets/dave-dekker/photos/event-09.jpg": {
+    "width": 1800,
+    "height": 1200,
+    "variants": [
+      {
+        "src": "/assets/responsive/event-09-480-c6178bf1ab23.webp",
+        "width": 480,
+        "bytes": 15718
+      },
+      {
+        "src": "/assets/responsive/event-09-960-8d6a98270cbb.webp",
+        "width": 960,
+        "bytes": 35356
+      },
+      {
+        "src": "/assets/responsive/event-09-1600-a5706db78b7a.webp",
+        "width": 1600,
+        "bytes": 68392
+      }
+    ]
+  },
+  "/assets/dave-dekker/photos/event-10.jpg": {
+    "width": 1800,
+    "height": 1211,
+    "variants": [
+      {
+        "src": "/assets/responsive/event-10-480-b1b1b53e3e2a.webp",
+        "width": 480,
+        "bytes": 26774
+      },
+      {
+        "src": "/assets/responsive/event-10-960-2b392c360127.webp",
+        "width": 960,
+        "bytes": 66980
+      },
+      {
+        "src": "/assets/responsive/event-10-1600-144df1f8f38f.webp",
+        "width": 1600,
+        "bytes": 133692
+      }
+    ]
+  },
+  "/assets/dave-dekker/photos/event-11.jpg": {
+    "width": 1800,
+    "height": 1200,
+    "variants": [
+      {
+        "src": "/assets/responsive/event-11-480-a9d549dba25d.webp",
+        "width": 480,
+        "bytes": 24762
+      },
+      {
+        "src": "/assets/responsive/event-11-960-28e624e45265.webp",
+        "width": 960,
+        "bytes": 69158
+      },
+      {
+        "src": "/assets/responsive/event-11-1600-52eca8c1326f.webp",
+        "width": 1600,
+        "bytes": 137210
+      }
+    ]
+  },
+  "/assets/dave-dekker/photos/event-12.jpg": {
+    "width": 1800,
+    "height": 1638,
+    "variants": [
+      {
+        "src": "/assets/responsive/event-12-480-9142226d28ff.webp",
+        "width": 480,
+        "bytes": 34028
+      },
+      {
+        "src": "/assets/responsive/event-12-960-528a7bfef2f5.webp",
+        "width": 960,
+        "bytes": 82024
+      },
+      {
+        "src": "/assets/responsive/event-12-1600-d2c2bbda6fef.webp",
+        "width": 1600,
+        "bytes": 164020
+      }
+    ]
+  },
+  "/assets/dave-dekker/photos/event-13.jpg": {
+    "width": 1800,
+    "height": 1200,
+    "variants": [
+      {
+        "src": "/assets/responsive/event-13-480-d982604c3b53.webp",
+        "width": 480,
+        "bytes": 22832
+      },
+      {
+        "src": "/assets/responsive/event-13-960-bc63fe559943.webp",
+        "width": 960,
+        "bytes": 61828
+      },
+      {
+        "src": "/assets/responsive/event-13-1600-b884cb7bd9b1.webp",
+        "width": 1600,
+        "bytes": 125736
+      }
+    ]
+  },
+  "/assets/dave-dekker/photos/event-14.jpg": {
+    "width": 1200,
+    "height": 1800,
+    "variants": [
+      {
+        "src": "/assets/responsive/event-14-480-97cb46e004b3.webp",
+        "width": 480,
+        "bytes": 49210
+      },
+      {
+        "src": "/assets/responsive/event-14-960-5e076a800e94.webp",
+        "width": 960,
+        "bytes": 129428
+      },
+      {
+        "src": "/assets/responsive/event-14-1200-53cff7dd234e.webp",
+        "width": 1200,
+        "bytes": 185490
+      }
+    ]
+  },
+  "/assets/dave-dekker/photos/event-15.jpg": {
+    "width": 1800,
+    "height": 1200,
+    "variants": [
+      {
+        "src": "/assets/responsive/event-15-480-e696864cb969.webp",
+        "width": 480,
+        "bytes": 20936
+      },
+      {
+        "src": "/assets/responsive/event-15-960-01696eb64c7e.webp",
+        "width": 960,
+        "bytes": 55368
+      },
+      {
+        "src": "/assets/responsive/event-15-1600-31fcb0ad0592.webp",
+        "width": 1600,
+        "bytes": 111402
+      }
+    ]
+  }
+}

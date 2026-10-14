@@ -49,7 +49,7 @@ test("keeps first render visible and light for Lighthouse", async () => {
   assert.doesNotMatch(html, /_vinext_fonts/);
   assert.doesNotMatch(html, /\sautoPlay\b/i);
   assert.doesNotMatch(html, /<iframe\b/i);
-  assert.match(html, /\/assets\/optimized\/airfoto\.jpg"[^>]+fetchPriority="high"/);
+  assert.match(html, /<img[^>]*fetchPriority="high"[^>]*src="\/assets\/optimized\/airfoto\.jpg"/);
   assert.match(html, /width="1600" height="899"/);
   assert.match(html, /<footer class="premium-footer">[\s\S]*href="\/website\/"/);
   assert.match(html, /<footer class="premium-footer">[\s\S]*href="\/content-creatie\/"/);
