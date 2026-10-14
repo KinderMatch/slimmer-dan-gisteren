@@ -1,17 +1,8 @@
-import Link from "next/link";
-
 import { EmphasisText } from "./language";
 import { dimensionsFor } from "./image-dimensions";
 import { ScanForm } from "./scan-form";
 import { calendlyUrl } from "./seo";
 import type { GrowthPageData } from "./growth-pages-data";
-
-const focusNavItems = [
-  { href: "/geo/", label: "GEO" },
-  { href: "/seo/", label: "SEO" },
-  { href: "/google-ads/", label: "Google Ads" },
-  { href: "/social-ads/", label: "Social Ads" },
-];
 
 function formId(slug: GrowthPageData["slug"]) {
   return `${slug.replaceAll("/", "")}-scan`;
@@ -164,24 +155,6 @@ function SeoSystemVisual() {
   );
 }
 
-function FocusPremiumNav() {
-  return (
-    <header className="focus-premium-nav">
-      <Link className="focus-premium-brand" href="/" prefetch={false}>
-        <img src="/assets/logo.png" alt="Slimmer dan Gisteren" width="512" height="512" />
-        <span>Slimmer dan Gisteren</span>
-      </Link>
-      <nav aria-label="Hoofdnavigatie landingspagina">
-        {focusNavItems.map((item) => (
-          <Link key={item.href} href={item.href} prefetch={false}>
-            {item.label}
-          </Link>
-        ))}
-      </nav>
-    </header>
-  );
-}
-
 function FaqPanel({ data }: { data: GrowthPageData }) {
   return (
     <div className="focus-faq-panel">
@@ -235,7 +208,6 @@ export function FocusServicePage({ data }: { data: GrowthPageData }) {
 
   return (
     <div className={pageClassName}>
-      <FocusPremiumNav />
       <section className="focus-premium-hero">
         <div className="focus-premium-shade" aria-hidden="true" />
         <div className="focus-premium-copy">

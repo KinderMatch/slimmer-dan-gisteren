@@ -9037,66 +9037,6 @@ h3 {
   background: var(--brand-navy);
 }
 
-.focus-premium-nav {
-  position: fixed;
-  top: 1.15rem;
-  right: clamp(1rem, 3vw, 2rem);
-  left: clamp(1rem, 3vw, 2rem);
-  z-index: 60;
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) auto;
-  gap: 1rem;
-  align-items: center;
-  padding: 0.72rem 0.78rem;
-  border: 1px solid rgba(244, 240, 234, 0.12);
-  border-radius: 999px;
-  background: rgba(8, 36, 58, 0.72);
-  box-shadow: 0 20px 90px rgba(2, 18, 31, 0.32);
-  backdrop-filter: blur(22px);
-}
-
-.focus-premium-brand {
-  display: inline-flex;
-  gap: 0.72rem;
-  align-items: center;
-  min-width: 0;
-  color: #f4f0ea;
-  font-size: 0.84rem;
-  font-weight: 800;
-  text-transform: uppercase;
-}
-
-.focus-premium-brand img {
-  width: 2.55rem;
-  height: 2.55rem;
-  flex: 0 0 auto;
-  border-radius: 50%;
-}
-
-.focus-premium-brand span {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-
-.focus-premium-nav nav {
-  display: inline-flex;
-  gap: clamp(0.9rem, 2vw, 1.8rem);
-  align-items: center;
-  color: rgba(244, 240, 234, 0.72);
-  font-size: 0.88rem;
-  font-weight: 650;
-  white-space: nowrap;
-}
-
-.focus-premium-nav nav a {
-  transition: color 180ms ease;
-}
-
-.focus-premium-nav nav a:hover {
-  color: #f4f0ea;
-}
-
 .focus-premium-hero {
   position: relative;
   display: grid;
@@ -10938,54 +10878,6 @@ h3 {
 }
 
 @media (max-width: 560px) {
-  .focus-premium-nav {
-    top: 0.65rem;
-    right: 0.75rem;
-    left: 0.75rem;
-    grid-template-columns: auto minmax(0, 1fr);
-    gap: 0.55rem;
-    padding: 0.5rem;
-  }
-
-  .focus-premium-brand {
-    gap: 0;
-  }
-
-  .focus-premium-brand img {
-    width: 2.25rem;
-    height: 2.25rem;
-  }
-
-  .focus-premium-brand span {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    padding: 0;
-    overflow: hidden;
-    clip: rect(0, 0, 0, 0);
-    white-space: nowrap;
-    border: 0;
-  }
-
-  .focus-premium-nav nav {
-    justify-content: flex-start;
-    gap: 0.72rem;
-    min-width: 0;
-    overflow-x: auto;
-    color: rgba(244, 240, 234, 0.8);
-    font-size: 0.78rem;
-    scrollbar-width: none;
-  }
-
-  .focus-premium-nav nav::-webkit-scrollbar {
-    display: none;
-  }
-
-  .focus-premium-nav nav a {
-    flex: 0 0 auto;
-    padding: 0.42rem 0;
-  }
-
   .focus-compact-page .section,
   .focus-compact-page .focus-premium-hero,
   .focus-compact-page .focus-seo-depth,

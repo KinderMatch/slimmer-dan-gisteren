@@ -77,8 +77,6 @@ test("server-renders commercial pages with crawlable SEO directives", async () =
     assert.match(html, /<meta name="robots" content="(?:index, follow|follow, index)"/i);
     assert.match(html, /toolname="[^"]+-aanvraag"/i);
     assert.match(html, /toolparamdescription="[^"]+"/i);
-    assert.match(html, /class="focus-premium-nav"/);
-    assert.match(html, /aria-label="Hoofdnavigatie landingspagina"/);
     assert.match(html, /href="\/geo\/"/);
     assert.match(html, /href="\/seo\/"/);
     assert.match(html, /href="\/google-ads\/"/);
