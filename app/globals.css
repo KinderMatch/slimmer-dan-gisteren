@@ -5570,10 +5570,14 @@ h3 {
   gap: 0.72rem;
   align-items: center;
   min-width: 0;
-  color: var(--premium-light);
+  color: #ffffff;
   font-size: 0.84rem;
   font-weight: 800;
   text-transform: uppercase;
+}
+
+.premium-brand span {
+  color: #ffffff;
 }
 
 .premium-brand img {
@@ -6708,6 +6712,7 @@ h3 {
   }
 
   .premium-brand span {
+    color: #ffffff;
     font-size: 0.72rem;
   }
 
