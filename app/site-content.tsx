@@ -311,6 +311,8 @@ export function SiteShell({ children, initialLanguage = "nl" }: { children: Reac
           <LocalizedLink href="/seo/">SEO</LocalizedLink>
           <LocalizedLink href="/google-ads/">Google Ads</LocalizedLink>
           <LocalizedLink href="/social-ads/">Social Ads</LocalizedLink>
+          <LocalizedLink href="/website/">Website</LocalizedLink>
+          <LocalizedLink href="/content-creatie/">Social media</LocalizedLink>
           <a href="https://calendly.com/buitenhuisj004/bmc-sessie"><Text value={t("Kennismaken", "Introduction", "Conocernos")} /></a>
           <a href="mailto:jimmy@slimmerdangisteren.nl">Mail</a>
         </div>

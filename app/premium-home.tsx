@@ -460,6 +460,8 @@ export function PremiumHome({ initialLanguage = "nl" }: { initialLanguage?: Lang
             <Link href={pathForLanguage("/seo/", initialLanguage)} prefetch={false}>SEO</Link>
             <Link href={pathForLanguage("/google-ads/", initialLanguage)} prefetch={false}>Google Ads</Link>
             <Link href={pathForLanguage("/social-ads/", initialLanguage)} prefetch={false}>Social Ads</Link>
+            <Link href={pathForLanguage("/website/", initialLanguage)} prefetch={false}>Website</Link>
+            <Link href={pathForLanguage("/content-creatie/", initialLanguage)} prefetch={false}>Social media</Link>
           </nav>
           <a href="https://wa.me/31610175027">WhatsApp</a>
           <a href="mailto:jimmy@slimmerdangisteren.nl">Mail</a>
