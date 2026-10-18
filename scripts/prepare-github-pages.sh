@@ -9,6 +9,9 @@ mkdir -p "$publish_dir"
 cp -R dist/client/. "$publish_dir"/
 cp -R dist/server/prerendered-routes/. "$publish_dir"/
 
+# Prerender emits a plain 404; retain the explicit noindex error document.
+cp public/404.html "$publish_dir/404.html"
+
 rm -f \
   "$publish_dir/assets/content-airbnb.png" \
   "$publish_dir/assets/content-color-run.png" \
@@ -25,7 +28,7 @@ if [[ -d "$publish_dir/es" ]]; then
 fi
 
 touch "$publish_dir/.nojekyll"
-printf '%s\n' "www.slimmerdangisteren.nl" > "$publish_dir/CNAME"
+printf '%s\n' "slimmerdangisteren.nl" > "$publish_dir/CNAME"
 
 base_url="https://slimmerdangisteren.nl"
 lastmod="$(date -u +%F)"

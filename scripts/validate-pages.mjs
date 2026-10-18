@@ -31,3 +31,16 @@ for (const locale of ['', 'en', 'es']) {
 const images = JSON.parse(await readFile('app/responsive-images.json','utf8'));
 for (const image of Object.values(images)) for (const variant of image.variants) await access(join(root, variant.src));
 console.log('PASS all responsive image variants exist in the publish artifact');
+
+// Retired WordPress URLs must remain genuine 404s, never indexable placeholder pages.
+const retiredPaths = JSON.parse(await readFile('scripts/retired-paths.json', 'utf8'));
+const sitemap = await readFile(join(root, 'sitemap.xml'), 'utf8');
+for (const path of retiredPaths) {
+  await assert.rejects(access(join(root, path, 'index.html')), { code: 'ENOENT' }, `${path}: retired URL was published again`);
+  assert.ok(!sitemap.includes(`https://slimmerdangisteren.nl${path}<`), `${path}: retired URL in sitemap`);
+}
+const notFound = await readFile(join(root, '404.html'), 'utf8');
+assert.match(notFound, /<meta name="robots" content="noindex, follow">/);
+assert.doesNotMatch(notFound, /http-equiv="refresh"/i);
+assert.equal((await readFile(join(root, 'CNAME'), 'utf8')).trim(), 'slimmerdangisteren.nl');
+console.log('PASS retired URLs stay unpublished; 404 is noindex; hosting domain matches canonicals');
