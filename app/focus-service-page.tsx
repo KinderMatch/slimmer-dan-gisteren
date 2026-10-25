@@ -279,6 +279,7 @@ export function FocusServicePage({ data }: { data: GrowthPageData }) {
           <a href="#seo-praktijkvoorbeeld">Praktijkvoorbeeld</a>
           <a href="#seo-kosten">Kosten en afspraken</a>
           <a href="#aanpak">Onze aanpak</a>
+          <a href="#seo-google-updates">Google-updates</a>
           <a href="#seo-scan">Gratis scan aanvragen</a>
         </nav>
       ) : null}
@@ -300,6 +301,7 @@ export function FocusServicePage({ data }: { data: GrowthPageData }) {
               </article>
             ))}
           </div>
+          <p>We gebruiken de <a href="https://developers.google.com/search/docs/fundamentals/seo-starter-guide?hl=nl">SEO-richtlijnen van Google</a> als technische basis. Content moet een klantvraag beantwoorden en eigen vakkennis toevoegen. Bij externe vermeldingen volgen we <a href="https://developers.google.com/search/docs/essentials/spam-policies#link-spam">Googles beleid voor links</a>: betaalde reclame wordt als zodanig gemarkeerd; we kopen geen links om rankings te manipuleren.</p>
           <p>Twijfel je waar je moet beginnen? De <a href="#seo-scan">gratis SEO-scan</a> geeft een eerste diagnose. Bekijk ook <a href="#seo-kosten">wat de kosten bepaalt</a> en ons <a href="#seo-praktijkvoorbeeld">praktijkvoorbeeld op deze website</a>.</p>
           <div className="focus-premium-actions"><a className="button primary" href="#seo-scan">Ontdek de prioriteiten voor mijn website</a><a className="button ghost" href={calendlyUrl}>Maak kennis met Jimmy</a></div>
         </section>
@@ -408,7 +410,7 @@ export function FocusServicePage({ data }: { data: GrowthPageData }) {
             <article><h3>Een plan dat je kunt beoordelen</h3><p>Voor de uitvoering spreken we af welke pagina’s en zoekvragen prioriteit krijgen, welke technische verbeteringen nodig zijn en wie wat oppakt. De omvang en kosten hangen af van je website, concurrentie en beschikbare capaciteit.</p></article>
             <article><h3>Inzicht in werkzaamheden en effect</h3><p>We leggen vast wat is aangepast. Vooraf leggen we een nulmeting vast. In Search Console vergelijken we dezelfde pagina’s en zoekvragen over vergelijkbare perioden, met merknaamzoekopdrachten apart. Waar aanvragen worden gemeten, nemen we ook leadkwaliteit mee. In de rapportage staan de uitgevoerde acties, ontwikkeling en volgende prioriteiten. Frequentie en meetinrichting spreken we vooraf af; een gemiddelde positie is geen vaste Google-ranking.</p></article>
             <article><h3>Voorbeeld van een SEO-diagnose</h3><p>Een dienstpagina krijgt vertoningen maar weinig klikken. Dan onderzoeken we eerst de zoekvragen, positie en getoonde titel. Sluit de pagina aan op de vraag? Is het aanbod duidelijk? We veranderen gericht één onderdeel en vergelijken daarna de ontwikkeling. Dit is een werkwijzevoorbeeld, geen klantresultaat.</p></article>
-            <article><h3>De basis van ons advies</h3><p>Onze technische controles sluiten aan op de <a href="https://developers.google.com/search/docs/fundamentals/seo-starter-guide?hl=nl">SEO-richtlijnen van Google</a>. Voor keuzes over content kijken we naar de klantvraag, je eigen expertise en wat je aantoonbaar kunt onderbouwen.</p></article>
+            <article id="seo-google-updates"><h3>Hoe we omgaan met Google-updates</h3><p>Bij een verandering in zoekverkeer vergelijken we de timing met de <a href="https://status.search.google.com/products/rGHU1u87FJnkP6W2GwMi/history">officiële updategeschiedenis van Google</a>. Samenvallende datums bewijzen niet dat een update de oorzaak is. Ook wijzigingen aan je website, zoekvraag en concurrentie kunnen meespelen.</p><p>Voor een core-update volgen we <a href="https://developers.google.com/search/docs/appearance/core-updates">Googles analyseadvies</a>: eerst de uitrol laten afronden, daarna minimaal een volle week wachten en vergelijken met een periode vóór de update. We bekijken getroffen pagina’s en zoekvragen voordat we ingrijpen. Technische fouten lossen we wel direct op.</p></article>
           </div>
           <div className="focus-premium-actions"><a className="button primary" href="#seo-scan">Vraag een eerste SEO-analyse aan</a><a className="button ghost" href="tel:+31610175027">Bel Jimmy: 06 10175027</a></div>
         </section>

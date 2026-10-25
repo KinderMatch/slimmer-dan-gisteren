@@ -1,0 +1,27 @@
+GOOGLE-UPDATES — TOEPASSING OP /seo/ — 25 oktober 2026
+
+Bronnen gecontroleerd:
+https://status.search.google.com/products/rGHU1u87FJnkP6W2GwMi/history
+https://status.search.google.com/incidents/XhUDXP7A67iHCD2kmbVu
+https://developers.google.com/search/docs/appearance/core-updates
+https://developers.google.com/search/docs/appearance/spam-updates
+https://developers.google.com/search/docs/essentials/spam-policies
+
+Het dashboard registreert aangekondigde updates en incidenten. Het biedt geen diagnose voor slimmerdangisteren.nl en geen lijst met specifieke rankingfactoren. De getoonde september-spamupdate is volgens de incidentpagina op 8 oktober 2026 afgerond. Dit is geen bewijs dat deze website is geraakt.
+
+Uitgevoerd op de SEO-pagina:
+- Bestaande advieskaart uitgebreid met updateonderzoek en links naar de officiële bronnen.
+- Onderscheid tussen core-updateanalyse, spambeleid en technische fouten.
+- Navigatie naar de uitleg over Google-updates toegevoegd.
+- Praktische FAQ over wanneer aanpassen zinvol is; automatisch meegenomen in de FAQ-gegevens voor zoekmachines.
+- Linkbuilding-uitleg aangescherpt: relevante publicaties voor lezers, geen manipulatieve linkinkoop, correcte markering bij betaalde reclame.
+- Technische Google-bron behouden en content gekoppeld aan klantvragen en eigen vakkennis.
+
+Voor een latere effectanalyse:
+1. Noteer eigen publicatiedatums en begin/einde van relevante Google-updates.
+2. Onderzoek dezelfde pagina’s en zoekvragen over vergelijkbare perioden; splits merkzoekvragen en zoektypen.
+3. Na een core-update minimaal een volle week na voltooiing afwachten voordat het effect wordt beoordeeld. Los bereikbaarheid- of indexeringsfouten wel direct op.
+4. Onderzoek bij dalingen ook technische wijzigingen, veranderde vraag en concurrentie. Een gelijktijdige update is geen bewijs van oorzakelijk verband.
+5. Bij een spam-update de relevante beleidsregels toetsen. Geen overtreding of herstel claimen zonder bewijs.
+
+Er is geen automatische monitoring ingesteld, geen nieuwe rankingmeting uitgevoerd en geen herstel na een update geclaimd. De landelijk gerichte positionering en vormgeving blijven behouden.
