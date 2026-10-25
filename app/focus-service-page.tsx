@@ -272,6 +272,7 @@ export function FocusServicePage({ data }: { data: GrowthPageData }) {
 
       {data.slug === "/seo/" ? (
         <nav className="section focus-seo-jumps" aria-label="Op deze SEO-pagina">
+          <a href="#seo-diensten">Diensten en oplevering</a>
           <a href="#seo-topic-heading">Wat is SEO marketing?</a>
           <a href="#seo-uitbesteden">SEO uitbesteden</a>
           <a href="#seo-region-heading">Lokale en landelijke SEO</a>
@@ -280,6 +281,28 @@ export function FocusServicePage({ data }: { data: GrowthPageData }) {
           <a href="#aanpak">Onze aanpak</a>
           <a href="#seo-scan">Gratis scan aanvragen</a>
         </nav>
+      ) : null}
+
+      {data.slug === "/seo/" ? (
+        <section className="section focus-seo-depth" id="seo-diensten" aria-labelledby="seo-services-heading">
+          <div className="focus-seo-depth-heading">
+            <p className="eyebrow">Diensten en oplevering</p>
+            <h2 id="seo-services-heading">{data.servicesTitle}</h2>
+            <p>{data.servicesIntro}</p>
+            <p>Je werkt rechtstreeks met <a href="#seo-uitbesteden">Jimmy Buitenhuis</a>, vanuit Diemen voor bedrijven in heel Nederland. We overleggen online of op afspraak bij jou op locatie.</p>
+          </div>
+          <div className="focus-seo-depth-grid">
+            {featuredServices.map((service) => (
+              <article key={service.title}>
+                <h3>{service.title}</h3>
+                <p>{service.body}</p>
+                {service.deliverable ? <p><strong>Concrete oplevering: </strong>{service.deliverable}</p> : null}
+              </article>
+            ))}
+          </div>
+          <p>Twijfel je waar je moet beginnen? De <a href="#seo-scan">gratis SEO-scan</a> geeft een eerste diagnose. Bekijk ook <a href="#seo-kosten">wat de kosten bepaalt</a> en ons <a href="#seo-praktijkvoorbeeld">praktijkvoorbeeld op deze website</a>.</p>
+          <div className="focus-premium-actions"><a className="button primary" href="#seo-scan">Ontdek de prioriteiten voor mijn website</a><a className="button ghost" href={calendlyUrl}>Maak kennis met Jimmy</a></div>
+        </section>
       ) : null}
 
       {data.intro && !compactPage ? (
@@ -383,7 +406,7 @@ export function FocusServicePage({ data }: { data: GrowthPageData }) {
           </div>
           <div className="focus-seo-depth-grid">
             <article><h3>Een plan dat je kunt beoordelen</h3><p>Voor de uitvoering spreken we af welke pagina’s en zoekvragen prioriteit krijgen, welke technische verbeteringen nodig zijn en wie wat oppakt. De omvang en kosten hangen af van je website, concurrentie en beschikbare capaciteit.</p></article>
-            <article><h3>Inzicht in werkzaamheden en effect</h3><p>We leggen vast wat is aangepast. In Search Console vergelijken we vertoningen en klikken per pagina en zoekvraag. Als aanvragen worden gemeten, kijken we ook naar de bijdrage aan je bedrijf. Een gemiddelde positie alleen vertelt niet het hele verhaal.</p></article>
+            <article><h3>Inzicht in werkzaamheden en effect</h3><p>We leggen vast wat is aangepast. Vooraf leggen we een nulmeting vast. In Search Console vergelijken we dezelfde pagina’s en zoekvragen over vergelijkbare perioden, met merknaamzoekopdrachten apart. Waar aanvragen worden gemeten, nemen we ook leadkwaliteit mee. In de rapportage staan de uitgevoerde acties, ontwikkeling en volgende prioriteiten. Frequentie en meetinrichting spreken we vooraf af; een gemiddelde positie is geen vaste Google-ranking.</p></article>
             <article><h3>Voorbeeld van een SEO-diagnose</h3><p>Een dienstpagina krijgt vertoningen maar weinig klikken. Dan onderzoeken we eerst de zoekvragen, positie en getoonde titel. Sluit de pagina aan op de vraag? Is het aanbod duidelijk? We veranderen gericht één onderdeel en vergelijken daarna de ontwikkeling. Dit is een werkwijzevoorbeeld, geen klantresultaat.</p></article>
             <article><h3>De basis van ons advies</h3><p>Onze technische controles sluiten aan op de <a href="https://developers.google.com/search/docs/fundamentals/seo-starter-guide?hl=nl">SEO-richtlijnen van Google</a>. Voor keuzes over content kijken we naar de klantvraag, je eigen expertise en wat je aantoonbaar kunt onderbouwen.</p></article>
           </div>

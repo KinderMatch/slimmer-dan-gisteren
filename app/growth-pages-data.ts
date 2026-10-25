@@ -42,7 +42,7 @@ export type GrowthPageData = {
   };
   servicesTitle: string;
   servicesIntro: string;
-  services: Array<{ title: string; body: string }>;
+  services: Array<{ title: string; body: string; deliverable?: string }>;
   processTitle: string;
   process: Array<{ title: string; body: string }>;
   resultTitle: string;
@@ -79,7 +79,7 @@ export const seoPage: GrowthPageData = {
   metadata: {
     title: "SEO marketingbureau voor meer aanvragen",
     description:
-      "SEO marketingbureau voor betere vindbaarheid. Persoonlijke aanpak voor techniek, content en meer aanvragen via Google. Vraag je gratis SEO-scan aan.",
+      "SEO marketingbureau voor betere vindbaarheid. Werk direct met Jimmy aan techniek, content en vindbaarheid in heel Nederland. Vraag een gratis SEO-scan aan.",
     keywords: ["SEO marketingbureau", "SEO bureau", "SEO scan", "SEO uitbesteden", "zoekmachine optimalisatie", "online vindbaarheid", "lokale SEO", "technische SEO", "SEO content", "SEO strategie"],
   },
   visual: {
@@ -182,15 +182,15 @@ export const seoPage: GrowthPageData = {
     line: "Geen losse SEO-checklist, maar een concreet groeiplan voor betere vindbaarheid en meer aanvragen.",
     badges: ["Gratis scan", "Geen verplichting", "Duidelijke prioriteiten", "Persoonlijk advies"],
   },
-  servicesTitle: "SEO-diensten die jouw online vindbaarheid versterken",
-  servicesIntro: "We bouwen geen losse checklist, maar een SEO-strategie waarin techniek, zoekintentie, content, autoriteit en conversie elkaar versterken.",
+  servicesTitle: "Wat doet ons SEO marketingbureau voor jouw website?",
+  servicesIntro: "Van onderzoek tot uitvoering: dit zijn de onderdelen waaruit we je SEO-traject samenstellen. We spreken vooraf af welke werkzaamheden bij jouw website passen. Je hoeft dus niet elk onderdeel tegelijk af te nemen.",
   services: [
-    { title: "Technische SEO", body: "We controleren indexering, snelheid, crawlbaarheid, mobiele bruikbaarheid, redirects en technische fouten die groei kunnen remmen." },
-    { title: "Zoekwoordenonderzoek", body: "We bepalen welke zoekopdrachten commerciële waarde hebben en welke pagina's nodig zijn om daarop gevonden te worden." },
-    { title: "Concurrentieanalyse", body: "We analyseren welke websites op jouw relevante zoekopdrachten worden gevonden, welke klantvragen zij beantwoorden en waar jouw kansen liggen." },
-    { title: "SEO-content", body: "We verbeteren bestaande pagina's en maken nieuwe landingspagina's rond zoekintentie, relevantie en conversie." },
-    { title: "Websitestructuur & interne links", body: "We bouwen een logische structuur zodat bezoekers en Google snel begrijpen welke pagina's belangrijk zijn." },
-    { title: "Autoriteit & linkbuilding", body: "We versterken vertrouwen met relevante vermeldingen, backlinks en content die expertise laat zien." },
+    { title: "Technische SEO", body: "We controleren indexering, snelheid, crawlbaarheid, mobiele bruikbaarheid, redirects en technische fouten die groei kunnen remmen.", deliverable: "Een geprioriteerde lijst met betrokken URL’s, de benodigde correcties en controle na de afgesproken uitvoering." },
+    { title: "Zoekwoordenonderzoek", body: "We bepalen hoe jouw klanten zoeken en onderscheiden informatie zoeken, aanbieders vergelijken en contact opnemen. Je doelgroep kan lokaal of landelijk zijn.", deliverable: "Een zoekwoordenplan per pagina: hoofdonderwerp, zoekintentie en de bestaande of nieuwe pagina die daarop aansluit." },
+    { title: "Concurrentieanalyse", body: "We vergelijken het aanbod, de uitleg, interne links en het zichtbare bewijs van pagina’s die op jouw relevante zoekopdrachten worden gevonden.", deliverable: "Een overzicht van inhoudelijke hiaten en kansen voor je eigen pagina’s, met prioriteit en onderbouwing." },
+    { title: "SEO-content", body: "We verbeteren bestaande pagina’s en maken waar nodig nieuwe landingspagina’s. Jouw vakkennis vormt de basis voor uitleg die klanten helpt kiezen.", deliverable: "Afgesproken paginaverbeteringen: titel, koppen, inhoud, interne links en een passende route naar contact." },
+    { title: "Websitestructuur & interne links", body: "We verbinden diensten en ondersteunende uitleg, zodat bezoekers en Google de samenhang tussen je pagina’s kunnen volgen.", deliverable: "Een overzicht van pagina’s en linkverbindingen, gevolgd door de afgesproken aanpassingen aan navigatie en contextuele links." },
+    { title: "Autoriteit & relevante vermeldingen", body: "We onderzoeken welke vakinhoud, echte ervaringen en passende externe vermeldingen je expertise kunnen onderbouwen. Een plaatsing bij een andere website is afhankelijk van die partij.", deliverable: "Een onderbouwde kansenlijst voor bewijs en vermeldingen. Publicaties, eventuele kosten en uitvoering spreken we apart af; we beloven geen vast aantal backlinks." },
   ],
   processTitle: "Ons SEO-proces",
   process: [
