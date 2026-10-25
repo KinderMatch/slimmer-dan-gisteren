@@ -119,3 +119,17 @@ test("GEO animation stays small enough for PageSpeed", async () => {
 
   assert.ok(asset.size < 2 * 1024 * 1024, `GEO animation is too large: ${asset.size} bytes`);
 });
+
+test("SEO enquiry uses an explicit email draft on static hosting and section links resolve", async () => {
+  const html = await (await render("/seo/")).text();
+  assert.match(html, /action="mailto:jimmy@slimmerdangisteren.nl"/);
+  assert.doesNotMatch(html, /action="\/api\/scan"/);
+  assert.match(html, /Zet mijn aanvraagmail klaar/);
+  assert.doesNotMatch(html, /name="Bedrijfsnaam"/);
+  assert.match(html, /Je verstuurt deze daarna vanuit je eigen e-mailprogramma/);
+  for (const [, id] of html.matchAll(/href="#([^"]+)"/g)) {
+    assert.ok(html.includes(`id="${id}"`), `Missing section target: ${id}`);
+  }
+  const adsHtml = await (await render("/google-ads/")).text();
+  assert.match(adsHtml, /action="\/api\/scan"/);
+});

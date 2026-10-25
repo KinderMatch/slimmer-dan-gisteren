@@ -182,7 +182,7 @@ function ScanFormPanel({ data, id, microcopy }: { data: GrowthPageData; id: stri
       <div className="focus-form-promise">
         {microcopy.map((item) => <span key={item}>{item}</span>)}
       </div>
-      <ScanForm fields={data.form.fields} formId={id} pageTitle={data.form.title} pageSlug={data.slug} submitLabel={data.form.submit} />
+      <ScanForm delivery={data.slug === "/seo/" ? "email" : "server"} fields={data.form.fields} formId={id} pageTitle={data.form.title} pageSlug={data.slug} submitLabel={data.form.submit} />
       <a className="button ghost" href={calendlyUrl}>Plan liever direct een kennismaking</a>
     </div>
   );
@@ -235,6 +235,8 @@ export function FocusServicePage({ data }: { data: GrowthPageData }) {
                 src="/assets/seo-google-search.gif"
                 alt="Google zoekanimatie voor SEO marketingbureau"
                 loading="eager"
+                fetchPriority="high"
+                sizes="(max-width: 768px) 100vw, 520px"
                 width={dimensionsFor("/assets/seo-google-search.gif")?.width}
                 height={dimensionsFor("/assets/seo-google-search.gif")?.height}
               />
@@ -266,6 +268,16 @@ export function FocusServicePage({ data }: { data: GrowthPageData }) {
           </aside>
         ) : null}
       </section>
+
+      {data.slug === "/seo/" ? (
+        <nav className="section focus-seo-jumps" aria-label="Op deze SEO-pagina">
+          <a href="#seo-topic-heading">Wat is SEO marketing?</a>
+          <a href="#seo-uitbesteden">SEO uitbesteden</a>
+          <a href="#seo-region-heading">Lokale en landelijke SEO</a>
+          <a href="#aanpak">Onze aanpak</a>
+          <a href="#seo-scan">Gratis scan aanvragen</a>
+        </nav>
+      ) : null}
 
       {data.intro && !compactPage ? (
         <section className="section focus-manifesto">
@@ -356,6 +368,23 @@ export function FocusServicePage({ data }: { data: GrowthPageData }) {
               </article>
             ))}
           </div>
+        </section>
+      ) : null}
+
+      {data.slug === "/seo/" ? (
+        <section className="section focus-seo-depth" id="seo-uitbesteden" aria-labelledby="seo-outsource-heading">
+          <div className="focus-seo-depth-heading">
+            <p className="eyebrow">SEO uitbesteden</p>
+            <h2 id="seo-outsource-heading">Wat neem je af en wie voert het uit?</h2>
+            <p>Je aanspreekpunt is Jimmy Buitenhuis. Vanuit Diemen werken we online of op afspraak bij jou op locatie. We beginnen met je website, aanbod en de klanten die je wilt bereiken.</p>
+          </div>
+          <div className="focus-seo-depth-grid">
+            <article><h3>Een plan dat je kunt beoordelen</h3><p>Voor de uitvoering spreken we af welke pagina’s en zoekvragen prioriteit krijgen, welke technische verbeteringen nodig zijn en wie wat oppakt. De omvang en kosten hangen af van je website, concurrentie en beschikbare capaciteit.</p></article>
+            <article><h3>Inzicht in werkzaamheden en effect</h3><p>We leggen vast wat is aangepast. In Search Console vergelijken we vertoningen en klikken per pagina en zoekvraag. Als aanvragen worden gemeten, kijken we ook naar de bijdrage aan je bedrijf. Een gemiddelde positie alleen vertelt niet het hele verhaal.</p></article>
+            <article><h3>Voorbeeld van een SEO-diagnose</h3><p>Een dienstpagina krijgt vertoningen maar weinig klikken. Dan onderzoeken we eerst de zoekvragen, positie en getoonde titel. Sluit de pagina aan op de vraag? Is het aanbod duidelijk? We veranderen gericht één onderdeel en vergelijken daarna de ontwikkeling. Dit is een werkwijzevoorbeeld, geen klantresultaat.</p></article>
+            <article><h3>De basis van ons advies</h3><p>Onze technische controles sluiten aan op de <a href="https://developers.google.com/search/docs/fundamentals/seo-starter-guide?hl=nl">SEO-richtlijnen van Google</a>. Voor keuzes over content kijken we naar de klantvraag, je eigen expertise en wat je aantoonbaar kunt onderbouwen.</p></article>
+          </div>
+          <div className="focus-premium-actions"><a className="button primary" href="#seo-scan">Vraag een eerste SEO-analyse aan</a><a className="button ghost" href="tel:+31610175027">Bel Jimmy: 06 10175027</a></div>
         </section>
       ) : null}
 

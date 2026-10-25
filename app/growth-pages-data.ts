@@ -258,8 +258,8 @@ export const seoPage: GrowthPageData = {
   form: {
     title: "Ontvang een compacte SEO-scan",
     text: "Stuur je website mee. We geven je geen generiek rapport, maar een eerste diagnose van techniek, zoekintentie, concurrentie en pagina's die prioriteit verdienen.",
-    submit: "Ontvang mijn SEO-scan",
-    fields: ["Naam", "Bedrijfsnaam", "E-mailadres", "Website URL", "Bericht"],
+    submit: "Zet mijn aanvraagmail klaar",
+    fields: ["Naam", "E-mailadres", "Website URL", "Bericht"],
   },
 };
 

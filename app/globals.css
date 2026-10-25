@@ -11020,3 +11020,10 @@ h3 {
     min-height: 260px;
   }
 }
+
+/* Keep SEO section links visible below the fixed navigation. */
+.focus-seo-page [id] { scroll-margin-top: 9rem; }
+.focus-seo-jumps { display: flex; flex-wrap: wrap; gap: 1rem 1.5rem; padding-block: 1.5rem; }
+.focus-seo-jumps a { text-decoration: underline; text-underline-offset: .2em; font-weight: 700; }
+.focus-seo-page a:focus-visible, .focus-seo-page button:focus-visible { outline: 3px solid #2874b8; outline-offset: 4px; }
+@media (max-width: 768px) { .focus-seo-page [id] { scroll-margin-top: 12rem; } }

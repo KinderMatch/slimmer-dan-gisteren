@@ -833,5 +833,21 @@
         "bytes": 111402
       }
     ]
+  },
+  "/assets/seo-google-search.gif": {
+    "width": 480,
+    "height": 360,
+    "variants": [
+      {
+        "src": "/assets/responsive/seo-google-search-320-e46990793849.webp",
+        "width": 320,
+        "bytes": 191256
+      },
+      {
+        "src": "/assets/responsive/seo-google-search-480-68e756e4f5c7.webp",
+        "width": 480,
+        "bytes": 376290
+      }
+    ]
   }
 }

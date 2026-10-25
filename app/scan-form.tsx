@@ -4,6 +4,7 @@ import { useState, type FormEvent } from "react";
 
 type ScanFormProps = {
   fields: string[];
+  delivery?: "server" | "email";
   formId: string;
   includePrivacyConsent?: boolean;
   pageTitle: string;
@@ -55,9 +56,10 @@ function fieldDescription(field: string) {
   return `Informatie voor het veld ${field}.`;
 }
 
-export function ScanForm({ fields, formId, includePrivacyConsent = false, pageTitle, pageSlug, submitLabel }: ScanFormProps) {
+export function ScanForm({ delivery = "server", fields, formId, includePrivacyConsent = false, pageTitle, pageSlug, submitLabel }: ScanFormProps) {
   const [state, setState] = useState<SubmitState>("idle");
   const [message, setMessage] = useState("");
+  const [emailDraft, setEmailDraft] = useState("");
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -68,6 +70,13 @@ export function ScanForm({ fields, formId, includePrivacyConsent = false, pageTi
     const formData = new FormData(form);
     const values = Object.fromEntries(fields.map((field) => [field, String(formData.get(field) || "").trim()]));
     const fallbackMail = buildFallbackMail(values, pageTitle, typeof window !== "undefined" ? window.location.href : pageSlug);
+
+    if (delivery === "email") {
+      setEmailDraft(fallbackMail);
+      setState("idle");
+      setMessage("Je aanvraag staat klaar. Open de e-mail hieronder en verstuur deze zelf. Er is nog niets verzonden.");
+      return;
+    }
 
     try {
       const response = await fetch("/api/scan", {
@@ -97,19 +106,21 @@ export function ScanForm({ fields, formId, includePrivacyConsent = false, pageTi
 
   return (
     <form
-      action="/api/scan"
+      action={delivery === "email" ? "mailto:jimmy@slimmerdangisteren.nl" : "/api/scan"}
       method="post"
       onSubmit={handleSubmit}
+      onChange={delivery === "email" ? () => { setEmailDraft(""); setMessage(""); } : undefined}
       toolautosubmit="false"
-      tooldescription={`Vraag een scan of strategiesessie aan voor ${pageTitle}.`}
+      tooldescription={delivery === "email" ? `Stel een aanvraagmail op voor ${pageTitle}. De bezoeker verstuurt deze zelf.` : `Vraag een scan of strategiesessie aan voor ${pageTitle}.`}
       toolname={`${formId}-aanvraag`}
     >
+      {delivery === "email" ? <p>Vul je gegevens in om een aanvraagmail klaar te zetten. Je verstuurt deze daarna vanuit je eigen e-mailprogramma. Liever direct contact? <a href="mailto:jimmy@slimmerdangisteren.nl">Mail Jimmy</a>.</p> : null}
       {fields.map((field) => {
         const fieldId = `${formId}-${field.toLowerCase().replaceAll(" ", "-")}`;
         const isTextarea = field.toLowerCase().includes("bericht") || field.toLowerCase().includes("doel");
         return (
           <label htmlFor={fieldId} key={field}>
-            <span>{field}</span>
+            <span>{field}{isRequired(field) ? " *" : " (optioneel)"}</span>
             {isTextarea ? (
               <textarea id={fieldId} name={field} rows={4} toolparamdescription={fieldDescription(field)} />
             ) : (
@@ -143,8 +154,10 @@ export function ScanForm({ fields, formId, includePrivacyConsent = false, pageTi
       <button type="submit" disabled={state === "submitting"}>
         {state === "submitting" ? "Versturen..." : submitLabel}
       </button>
+      {emailDraft ? <a className="button primary" href={emailDraft}>Open mijn aanvraag in e-mail</a> : null}
+      {delivery === "email" ? <><p>* Verplicht. We gebruiken je gegevens om op je aanvraag te reageren. <a href="/privacy/">Privacybeleid</a>.</p><noscript><p>Stuur je website en vraag naar <a href="mailto:jimmy@slimmerdangisteren.nl">jimmy@slimmerdangisteren.nl</a>.</p></noscript></> : null}
       {message ? (
-        <p className={`focus-form-status ${state === "success" ? "success" : "error"}`} role="status" aria-live="polite">
+        <p className={`focus-form-status ${state === "error" ? "error" : "success"}`} role="status" aria-live="polite">
           {message}
         </p>
       ) : null}
