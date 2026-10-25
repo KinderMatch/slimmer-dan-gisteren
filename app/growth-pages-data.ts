@@ -68,13 +68,13 @@ export const seoPage: GrowthPageData = {
   eyebrow: "SEO marketingbureau",
   title: "SEO marketingbureau voor meer klanten via Google",
   subtitle:
-    "Geen losse zoekwoordenlijst, maar een compacte SEO-aanpak die laat zien welke pagina's, technische verbeteringen en contentkansen het snelst kunnen bijdragen aan betere vindbaarheid en meer aanvragen.",
+    "Slimmer dan Gisteren helpt bedrijven met SEO marketing: beter vindbaar worden in de organische zoekresultaten en relevante bezoekers omzetten in aanvragen. Als SEO marketingbureau combineren we zoekwoordenonderzoek, technische verbeteringen en sterke content in een concreet plan voor jouw website.",
   primaryCta: "Vraag een gratis SEO-scan aan",
   secondaryCta: "Bekijk onze aanpak",
   metadata: {
-    title: "SEO Marketingbureau | SEO Bureau voor Meer Aanvragen",
+    title: "SEO marketingbureau voor meer aanvragen",
     description:
-      "SEO marketingbureau voor bedrijven die beter vindbaar willen worden in Google. Compacte SEO-strategie voor techniek, content, autoriteit, lokale SEO en meer aanvragen.",
+      "SEO marketingbureau voor meer aanvragen via Google. Versterk je vindbaarheid met techniek, content en een helder plan. Vraag je gratis SEO-scan aan.",
     keywords: ["SEO marketingbureau", "SEO bureau", "SEO scan", "SEO uitbesteden", "zoekmachine optimalisatie", "online vindbaarheid", "lokale SEO", "technische SEO", "SEO content", "SEO strategie"],
   },
   visual: {
@@ -121,32 +121,32 @@ export const seoPage: GrowthPageData = {
     ],
   },
   topicalAuthority: {
-    title: "De compacte SEO-aanpak",
+    title: "SEO marketing: van zoekvraag naar aanvraag",
     intro:
-      "We houden de pagina bewust compact: alleen de onderdelen die nodig zijn om beter vindbaar te worden op relevante zoekopdrachten en bezoekers richting aanvraag te helpen.",
+      "SEO staat voor zoekmachineoptimalisatie. Met SEO marketing verbeter je de onbetaalde vindbaarheid van je website, zodat potentiële klanten je vinden wanneer ze zoeken naar jouw diensten. Daarvoor verbinden we vier onderdelen: techniek, relevante content, autoriteit en conversie.",
     clusters: [
       {
         title: "1. Vindbaar fundament",
         body:
-          "Google moet je website kunnen crawlen, indexeren en snel laden. We halen technische blokkades weg voordat we extra content toevoegen.",
+          "We controleren of Google je belangrijke pagina’s kan crawlen en indexeren. Daarbij bekijken we onder meer laadsnelheid, mobiel gebruik, omleidingen en canonieke URL’s. Je krijgt inzicht in technische blokkades en welke oplossingen eerst nodig zijn.",
         items: ["Indexeerbaarheid", "Laadsnelheid", "Mobiel gebruik", "Technische fouten"],
       },
       {
         title: "2. Pagina's met zoekintentie",
         body:
-          "Iedere belangrijke zoekvraag krijgt een logische pagina: helder aanbod, relevante uitleg, bewijs en een duidelijke vervolgstap.",
-        items: ["SEO marketingbureau", "SEO uitbesteden", "Lokale SEO", "Dienstpagina's"],
+          "Zoekwoordenonderzoek koppelt de taal van jouw klanten aan de juiste pagina. We verbeteren bestaande dienstpagina’s op inhoud, titel en zoekintentie. Nieuwe content voegen we toe waar een relevante klantvraag nog niet wordt beantwoord.",
+        items: ["Zoekwoordenonderzoek", "Zoekintentie", "Lokale SEO", "Dienstpagina's"],
       },
       {
         title: "3. Autoriteit en bewijs",
         body:
-          "Een pagina moet geloofwaardig zijn. We versterken interne links, expertise, reviews, externe vermeldingen en inhoudelijke diepte.",
+          "We maken expertise zichtbaar met heldere uitleg, controleerbare bedrijfsinformatie en beschikbare klantcases. Interne links verbinden relevante pagina’s; passende externe vermeldingen helpen bezoekers jouw bedrijf te ontdekken en beoordelen.",
         items: ["Interne links", "Reviews", "Expertise", "Relevante vermeldingen"],
       },
       {
         title: "4. Conversie naar aanvraag",
         body:
-          "We verlagen frictie: duidelijke CTA's, korte formulieren, logische pagina-opbouw en een SEO-scan als laagdrempelige eerste stap.",
+          "Vindbaarheid is pas waardevol als de juiste bezoeker verder komt. We verbeteren aanbod, contactknoppen en formulieren. Vervolgens vergelijken we organische klikken en aanvragen, zodat duidelijk wordt welke pagina’s bijdragen en waar bezoekers afhaken.",
         items: ["Heldere CTA's", "Korte route", "Gratis scan", "Leadkwaliteit"],
       },
     ],
@@ -160,23 +160,23 @@ export const seoPage: GrowthPageData = {
   services: [
     { title: "Technische SEO", body: "We controleren indexering, snelheid, crawlbaarheid, mobiele bruikbaarheid, redirects en technische fouten die groei kunnen remmen." },
     { title: "Zoekwoordenonderzoek", body: "We bepalen welke zoekopdrachten commerciële waarde hebben en welke pagina's nodig zijn om daarop gevonden te worden." },
-    { title: "Concurrentieanalyse", body: "We analyseren waarom concurrerende SEO-bureaus en marktpartijen goed scoren en waar jouw kansen liggen." },
+    { title: "Concurrentieanalyse", body: "We analyseren welke websites op jouw relevante zoekopdrachten worden gevonden, welke klantvragen zij beantwoorden en waar jouw kansen liggen." },
     { title: "SEO-content", body: "We verbeteren bestaande pagina's en maken nieuwe landingspagina's rond zoekintentie, relevantie en conversie." },
     { title: "Websitestructuur & interne links", body: "We bouwen een logische structuur zodat bezoekers en Google snel begrijpen welke pagina's belangrijk zijn." },
     { title: "Autoriteit & linkbuilding", body: "We versterken vertrouwen met relevante vermeldingen, backlinks en content die expertise laat zien." },
   ],
   processTitle: "Ons SEO-proces",
   process: [
-    { title: "Diagnose", body: "We bekijken techniek, indexering, zoekwoorden, concurrenten, content en conversie. Eerst begrijpen waar de grootste bottleneck zit." },
-    { title: "Prioriteitenplan", body: "Je krijgt een compacte volgorde: welke pagina's, technische fixes en contentkansen nu het meeste kunnen bijdragen." },
+    { title: "Diagnose", body: "We bespreken je diensten, doelgroep en gewenste aanvragen. Daarna bekijken we techniek, indexering, bestaande content en de websites die op jouw relevante zoektermen worden gevonden." },
+    { title: "Prioriteitenplan", body: "Je krijgt een prioriteitenplan met zoektermen per pagina, technische verbeteringen en contentkansen. We spreken af welke acties we uitvoeren, wat je zelf oppakt en hoe we voortgang beoordelen." },
     { title: "Uitvoering", body: "We verbeteren techniek, pagina's, interne links, lokale SEO en content zonder onnodige ruis of losse SEO-taken." },
-    { title: "Meten en verbeteren", body: "We volgen posities, organisch verkeer, aanvragen en leadkwaliteit en scherpen de aanpak periodiek aan." },
+    { title: "Meten en verbeteren", body: "Met Google Search Console volgen we vertoningen, klikken en zoekopdrachten per pagina. Waar conversiemeting is ingericht, nemen we ook aanvragen en leadkwaliteit mee. Je ziet welke verbeteringen zijn uitgevoerd en welke vervolgstappen logisch zijn." },
   ],
   resultTitle: "SEO die verder kijkt dan rankings",
   resultText:
     "Een hoge positie in Google is waardevol, maar alleen als de juiste bezoekers doorklikken en contact opnemen. Daarom optimaliseren we niet alleen voor rankings, maar ook voor zoekintentie, conversie en commerciële waarde.",
   stats: [],
-  benefitsTitle: "Waarom deze SEO-aanpak overtuigt",
+  benefitsTitle: "Waarom Slimmer dan Gisteren als SEO marketingbureau?",
   benefits: [
     "Duidelijk resultaat: beter vindbaar op zoekvragen die klanten kunnen opleveren",
     "Meer zekerheid: techniek, concurrentie en zoekintentie worden eerst onderzocht",
@@ -191,6 +191,8 @@ export const seoPage: GrowthPageData = {
     { quote: "Techniek, content en rapportage kwamen samen in één helder plan.", name: "Nora Bakker", company: "Bakker & Co" },
   ],
   faq: [
+    { question: "Wat is SEO marketing?", answer: "SEO marketing is het verbeteren van je website om relevante bezoekers uit de onbetaalde zoekresultaten te bereiken. SEO staat voor zoekmachineoptimalisatie. Je werkt aan techniek, inhoud, websitestructuur en autoriteit. Je betaalt niet per organische klik, maar investeert wel in onderzoek, uitvoering en onderhoud. Het doel is vindbaarheid op zoekvragen die passen bij je aanbod en kunnen leiden tot klanten." },
+    { question: "Wat krijg ik als ik SEO uitbesteed aan Slimmer dan Gisteren?", answer: "We beginnen met een analyse van je website, doelgroep en zoekvraag. Daaruit volgt een plan met prioriteiten voor techniek, bestaande pagina’s, content en interne links. Voor de uitvoering spreken we de werkzaamheden en taakverdeling af. Daarna volgen we zichtbaarheid, organische klikken en, waar meetbaar, aanvragen. De gratis SEO-scan is een eerste kennismaking; de omvang en kosten van een vervolgtraject bepalen we op basis van wat jouw website nodig heeft." },
     { question: "Wat doet een SEO marketingbureau?", answer: "Een SEO marketingbureau helpt je website beter vindbaar worden op zoekopdrachten die relevant zijn voor jouw bedrijf. Dat gaat verder dan alleen zoekwoorden toevoegen. We kijken naar technische SEO, websitestructuur, content, autoriteit, lokale vindbaarheid en conversie. Het doel is dat de juiste mensen je vinden, begrijpen waarom jij relevant bent en makkelijker contact opnemen." },
     { question: "Waarom kiezen voor een compacte SEO-aanpak?", answer: "Veel SEO-trajecten worden onnodig groot gemaakt, waardoor je vooral rapporten, lijstjes en losse taken krijgt. Een compacte SEO-aanpak begint met de vraag wat nu de grootste bottleneck is: techniek, content, autoriteit, zoekintentie of conversie. Daardoor ontstaat er een duidelijke volgorde en weet je welke verbeteringen als eerste aandacht verdienen." },
     { question: "Hoe kies je een goed SEO marketingbureau?", answer: "Een goed SEO marketingbureau praat niet alleen over rankings, maar ook over zoekintentie, concurrentie, techniek, contentkwaliteit en aanvragen. Je moet kunnen begrijpen waarom bepaalde pagina's prioriteit krijgen, welke zoekwoorden commerciële waarde hebben en hoe succes wordt gemeten. Transparantie, realistische verwachtingen en duidelijke uitleg zijn daarbij belangrijker dan grote beloftes." },

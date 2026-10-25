@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   alternates: languageAlternates(seoPage.slug),
   keywords: seoPage.metadata.keywords,
   openGraph: {
-    title: seoPage.metadata.title,
+    title: `${seoPage.metadata.title} | ${siteName}`,
     description: seoPage.metadata.description,
     url: absoluteUrl(seoPage.slug),
     siteName,
@@ -37,6 +37,7 @@ function seoMarketingbureauPageJsonLd() {
     },
     about: [
       { "@type": "Thing", name: "SEO marketingbureau" },
+      { "@type": "Thing", name: "SEO marketing" },
       { "@type": "Thing", name: "Zoekmachine optimalisatie" },
       { "@type": "Thing", name: "Technische SEO" },
       { "@type": "Thing", name: "SEO-content" },
