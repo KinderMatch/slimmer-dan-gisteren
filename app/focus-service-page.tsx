@@ -319,7 +319,7 @@ export function FocusServicePage({ data }: { data: GrowthPageData }) {
       {data.regional ? (
         <section className="section focus-seo-depth" aria-labelledby={`${slugKey}-region-heading`}>
           <div className="focus-seo-depth-heading">
-            <p className="eyebrow">Werkgebied Amsterdam</p>
+            <p className="eyebrow">Samenwerken</p>
             <h2 id={`${slugKey}-region-heading`}>{data.regional.title}</h2>
             <p>{data.regional.intro}</p>
           </div>
@@ -332,7 +332,7 @@ export function FocusServicePage({ data }: { data: GrowthPageData }) {
             ))}
           </div>
           <div className="focus-premium-actions">
-            <a className="button primary" href={`#${id}`}>Bespreek jouw SEO-kansen in Amsterdam</a>
+            <a className="button primary" href={`#${id}`}>Bespreek jouw SEO-kansen</a>
             <a className="button ghost" href="mailto:jimmy@slimmerdangisteren.nl">Mail Jimmy rechtstreeks</a>
           </div>
         </section>

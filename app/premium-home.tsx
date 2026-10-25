@@ -31,7 +31,7 @@ const services = [
     href: "/seo/",
     title: t("SEO", "SEO", "SEO"),
     body: t(
-      "SEO marketingbureau voor bedrijven in regio Amsterdam en daarbuiten. Techniek, content en pagina’s gericht op relevante aanvragen.",
+      "SEO marketingbureau voor bedrijven in heel Nederland. Techniek, content en pagina’s gericht op relevante aanvragen.",
       "Become more visible in Google with technology, content, authority and pages that generate enquiries.",
       "Ser más visible en Google con técnica, contenido, autoridad y páginas que generan solicitudes.",
     ),
@@ -278,7 +278,7 @@ export function PremiumHome({ initialLanguage = "nl" }: { initialLanguage?: Lang
                   <h2><Text value={service.title} /></h2>
                   <p><Text value={service.body} /></p>
                   <Link href={pathForLanguage(service.href, initialLanguage)} className="premium-service-cta" prefetch={false}>
-                    <Text value={t(service.href === "/seo/" ? "Bekijk onze SEO-aanpak voor Amsterdam" : `Bekijk ${service.title.nl}`, `Explore ${service.title.en}`, `Ver ${service.title.es}`)} />
+                    <Text value={t(service.href === "/seo/" ? "Bekijk onze SEO-aanpak" : `Bekijk ${service.title.nl}`, `Explore ${service.title.en}`, `Ver ${service.title.es}`)} />
                     <span aria-hidden="true">→</span>
                   </Link>
                 </div>

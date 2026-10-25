@@ -22,7 +22,7 @@ export const servicePages = [
   },
   {
     path: "/seo/",
-    name: "SEO marketingbureau voor bedrijven in regio Amsterdam",
+    name: "SEO marketingbureau voor betere vindbaarheid",
     description:
       "SEO marketingbureau voor bedrijven die beter vindbaar willen worden in Google met zoekmachine optimalisatie, technische SEO, zoekwoordenonderzoek, SEO-content, lokale SEO, autoriteit en conversiegerichte landingspagina's.",
     keywords: [
