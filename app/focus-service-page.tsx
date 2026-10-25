@@ -316,6 +316,28 @@ export function FocusServicePage({ data }: { data: GrowthPageData }) {
         </section>
       ) : null}
 
+      {data.regional ? (
+        <section className="section focus-seo-depth" aria-labelledby={`${slugKey}-region-heading`}>
+          <div className="focus-seo-depth-heading">
+            <p className="eyebrow">Werkgebied Amsterdam</p>
+            <h2 id={`${slugKey}-region-heading`}>{data.regional.title}</h2>
+            <p>{data.regional.intro}</p>
+          </div>
+          <div className="focus-seo-depth-grid">
+            {data.regional.blocks.map((block) => (
+              <article key={block.title}>
+                <h3>{block.title}</h3>
+                <p>{block.body}</p>
+              </article>
+            ))}
+          </div>
+          <div className="focus-premium-actions">
+            <a className="button primary" href={`#${id}`}>Bespreek jouw SEO-kansen in Amsterdam</a>
+            <a className="button ghost" href="mailto:jimmy@slimmerdangisteren.nl">Mail Jimmy rechtstreeks</a>
+          </div>
+        </section>
+      ) : null}
+
       {data.topicalAuthority ? (
         <section className="section focus-topic-section" aria-labelledby={topicHeadingId}>
           <div className="section-heading">

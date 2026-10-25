@@ -22,7 +22,7 @@ export const servicePages = [
   },
   {
     path: "/seo/",
-    name: "SEO marketingbureau voor meer klanten via Google",
+    name: "SEO marketingbureau voor bedrijven in regio Amsterdam",
     description:
       "SEO marketingbureau voor bedrijven die beter vindbaar willen worden in Google met zoekmachine optimalisatie, technische SEO, zoekwoordenonderzoek, SEO-content, lokale SEO, autoriteit en conversiegerichte landingspagina's.",
     keywords: [
@@ -193,10 +193,9 @@ export function serviceJsonLd(path: (typeof servicePages)[number]["path"]) {
     provider: {
       "@id": `${siteUrl}/#organization`,
     },
-    areaServed: {
-      "@type": "Country",
-      name: "Nederland",
-    },
+    areaServed: path === "/seo/"
+      ? [{ "@type": "Country", name: "Nederland" }, { "@type": "City", name: "Amsterdam" }]
+      : { "@type": "Country", name: "Nederland" },
     serviceType: service.name,
     termsOfService: absoluteUrl("/algemene-voorwaarden/"),
     offers: {

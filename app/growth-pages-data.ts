@@ -26,6 +26,11 @@ export type GrowthPageData = {
     blocks: Array<{ title: string; body: string }>;
     related?: Array<{ label: string; href: string; text: string }>;
   };
+  regional?: {
+    title: string;
+    intro: string;
+    blocks: Array<{ title: string; body: string }>;
+  };
   topicalAuthority?: {
     title: string;
     intro: string;
@@ -66,15 +71,15 @@ export type GrowthPageData = {
 export const seoPage: GrowthPageData = {
   slug: "/seo/",
   eyebrow: "SEO marketingbureau",
-  title: "SEO marketingbureau voor meer klanten via Google",
+  title: "SEO marketingbureau voor bedrijven in regio Amsterdam",
   subtitle:
-    "Slimmer dan Gisteren helpt bedrijven met SEO marketing: beter vindbaar worden in de organische zoekresultaten en relevante bezoekers omzetten in aanvragen. Als SEO marketingbureau combineren we zoekwoordenonderzoek, technische verbeteringen en sterke content in een concreet plan voor jouw website.",
+    "Slimmer dan Gisteren helpt bedrijven in Amsterdam en daarbuiten met SEO marketing: beter vindbaar worden in de organische zoekresultaten en relevante bezoekers omzetten in aanvragen. Als SEO marketingbureau combineren we zoekwoordenonderzoek, technische verbeteringen en sterke content in een concreet plan voor jouw website.",
   primaryCta: "Vraag een gratis SEO-scan aan",
   secondaryCta: "Bekijk onze aanpak",
   metadata: {
-    title: "SEO marketingbureau voor meer aanvragen",
+    title: "SEO marketingbureau voor Amsterdam",
     description:
-      "SEO marketingbureau voor meer aanvragen via Google. Versterk je vindbaarheid met techniek, content en een helder plan. Vraag je gratis SEO-scan aan.",
+      "SEO marketingbureau voor bedrijven in regio Amsterdam. Persoonlijke aanpak voor techniek, content en meer aanvragen via Google. Vraag je gratis SEO-scan aan.",
     keywords: ["SEO marketingbureau", "SEO bureau", "SEO scan", "SEO uitbesteden", "zoekmachine optimalisatie", "online vindbaarheid", "lokale SEO", "technische SEO", "SEO content", "SEO strategie"],
   },
   visual: {
@@ -118,6 +123,28 @@ export const seoPage: GrowthPageData = {
       { label: "Google Ads", href: "/google-ads/", text: "Gebruik advertentiedata om sneller te leren welke zoekwoorden converteren." },
       { label: "GEO", href: "/geo/", text: "Maak je expertise ook beter begrijpelijk voor AI-antwoorden en AI-zoekmachines." },
       { label: "Social Ads", href: "/social-ads/", text: "Gebruik social campagnes om bewezen zoekinzichten breder te activeren." },
+    ],
+  },
+  regional: {
+    title: "SEO voor jouw bedrijf in Amsterdam: lokaal én organisch vindbaar",
+    intro: "Zoek je een SEO marketingbureau voor regio Amsterdam? Je werkt bij Slimmer dan Gisteren rechtstreeks met Jimmy Buitenhuis, die strategie en uitvoering verbindt. We bedienen Amsterdam vanuit een andere plaats. De samenwerking begint met jouw diensten, doelgroep en werkgebied; je hoeft geen Amsterdamse vestiging te hebben om klanten in de stad te bedienen.",
+    blocks: [
+      {
+        title: "Een zoekstrategie die past bij je werkgebied",
+        body: "Een dienstverlener die klanten in Amsterdam bezoekt, heeft een andere zoekstrategie nodig dan een webshop die landelijk levert. We onderzoeken zoekopdrachten met en zonder plaatsnaam en koppelen die aan je aanbod. Alleen diensten en gebieden waar je werkelijk actief bent krijgen een plek in het plan.",
+      },
+      {
+        title: "Lokale concurrentie en inhoudelijke verschillen",
+        body: "We vergelijken de pagina’s die op jouw relevante zoektermen worden gevonden: welke diensten beschrijven ze, welke vragen beantwoorden ze en welk bewijs laten ze zien? Op basis daarvan verbeteren we je bestaande pagina’s met concrete uitleg over je werkwijze, dienstverlening en bereikbaarheid.",
+      },
+      {
+        title: "Je website en Google Bedrijfsprofiel",
+        body: "Voor bedrijven die daarvoor in aanmerking komen, hoort een correct Google Bedrijfsprofiel bij de lokale aanpak. Bedrijfsnaam, categorie, diensten en contactgegevens moeten aansluiten op de werkelijkheid en je website. De organische zoekresultaten en de kaartresultaten meten we afzonderlijk; een werkgebied vermelden is geen garantie op een positie in Google Maps.",
+      },
+      {
+        title: "Van zichtbaarheid naar relevante aanvragen",
+        body: "We starten met een nulmeting van je belangrijkste pagina’s en zoekvragen. Search Console laat organische vertoningen, klikken en gemiddelde posities zien. Voor een specifieke positie in Amsterdam is daarnaast een meting met een vaste zoeklocatie en apparaat nodig. Waar conversiemeting beschikbaar is, kijken we ook welke aanvragen uit organisch verkeer komen.",
+      },
     ],
   },
   topicalAuthority: {
@@ -191,6 +218,8 @@ export const seoPage: GrowthPageData = {
     { quote: "Techniek, content en rapportage kwamen samen in één helder plan.", name: "Nora Bakker", company: "Bakker & Co" },
   ],
   faq: [
+    { question: "Werken jullie als SEO marketingbureau voor Amsterdam?", answer: "Ja. Slimmer dan Gisteren bedient bedrijven in regio Amsterdam vanuit een andere plaats. Je werkt rechtstreeks met Jimmy Buitenhuis aan de SEO-strategie en uitvoering. We stemmen de aanpak af op je diensten en echte werkgebied; een eigen vestiging in Amsterdam is daarvoor niet nodig." },
+    { question: "Kunnen jullie een top-3-positie in Amsterdam garanderen?", answer: "Nee. Google bepaalt de zoekresultaten en de volgorde kan verschillen per zoeklocatie, apparaat en moment. We kunnen de relevantie, techniek, inhoud en interne structuur van je website verbeteren. Voor lokale kaartresultaten spelen ook afstand en de bekendheid van je bedrijf mee. Daarom spreken we concrete werkzaamheden af en meten we de ontwikkeling, zonder een vaste positie te beloven." },
     { question: "Wat is SEO marketing?", answer: "SEO marketing is het verbeteren van je website om relevante bezoekers uit de onbetaalde zoekresultaten te bereiken. SEO staat voor zoekmachineoptimalisatie. Je werkt aan techniek, inhoud, websitestructuur en autoriteit. Je betaalt niet per organische klik, maar investeert wel in onderzoek, uitvoering en onderhoud. Het doel is vindbaarheid op zoekvragen die passen bij je aanbod en kunnen leiden tot klanten." },
     { question: "Wat krijg ik als ik SEO uitbesteed aan Slimmer dan Gisteren?", answer: "We beginnen met een analyse van je website, doelgroep en zoekvraag. Daaruit volgt een plan met prioriteiten voor techniek, bestaande pagina’s, content en interne links. Voor de uitvoering spreken we de werkzaamheden en taakverdeling af. Daarna volgen we zichtbaarheid, organische klikken en, waar meetbaar, aanvragen. De gratis SEO-scan is een eerste kennismaking; de omvang en kosten van een vervolgtraject bepalen we op basis van wat jouw website nodig heeft." },
     { question: "Wat doet een SEO marketingbureau?", answer: "Een SEO marketingbureau helpt je website beter vindbaar worden op zoekopdrachten die relevant zijn voor jouw bedrijf. Dat gaat verder dan alleen zoekwoorden toevoegen. We kijken naar technische SEO, websitestructuur, content, autoriteit, lokale vindbaarheid en conversie. Het doel is dat de juiste mensen je vinden, begrijpen waarom jij relevant bent en makkelijker contact opnemen." },
