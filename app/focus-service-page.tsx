@@ -1,3 +1,4 @@
+import { SeoEvidence } from "./seo-evidence";
 import { ResponsiveImage } from "./responsive-image";
 import { EmphasisText } from "./language";
 import { dimensionsFor } from "./image-dimensions";
@@ -274,6 +275,8 @@ export function FocusServicePage({ data }: { data: GrowthPageData }) {
           <a href="#seo-topic-heading">Wat is SEO marketing?</a>
           <a href="#seo-uitbesteden">SEO uitbesteden</a>
           <a href="#seo-region-heading">Lokale en landelijke SEO</a>
+          <a href="#seo-praktijkvoorbeeld">Praktijkvoorbeeld</a>
+          <a href="#seo-kosten">Kosten en afspraken</a>
           <a href="#aanpak">Onze aanpak</a>
           <a href="#seo-scan">Gratis scan aanvragen</a>
         </nav>
@@ -387,6 +390,8 @@ export function FocusServicePage({ data }: { data: GrowthPageData }) {
           <div className="focus-premium-actions"><a className="button primary" href="#seo-scan">Vraag een eerste SEO-analyse aan</a><a className="button ghost" href="tel:+31610175027">Bel Jimmy: 06 10175027</a></div>
         </section>
       ) : null}
+
+      {data.slug === "/seo/" ? <SeoEvidence /> : null}
 
       <section className="section focus-timeline-section" id="aanpak">
         <div className="section-heading">
