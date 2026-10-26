@@ -141,4 +141,5 @@ cat > "$publish_dir/advertenties/index.html" <<'HTML'
 </html>
 HTML
 
+node scripts/trim-published-css.mjs "$publish_dir"
 printf '%s\n' "$publish_dir"
