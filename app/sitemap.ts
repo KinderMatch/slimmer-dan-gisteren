@@ -3,7 +3,8 @@ import type { MetadataRoute } from "next";
 import { pathForLanguage, supportedLocales } from "./i18n";
 import { absoluteUrl } from "./seo";
 
-const lastModified = new Date("2026-10-12");
+import contentDates from "./content-dates.json";
+const modifiedDates: Record<string, string> = contentDates;
 const navigationPaths = ["/", "/geo/", "/seo/", "/google-ads/", "/social-ads/"] as const;
 
 function priorityForPath(path: string) {
@@ -33,9 +34,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     nlPaths.map((path) => pathForLanguage(path, locale)),
   );
 
-  return [...["/seo/zoekwoordenonderzoek/", "/seo/technische-seo/"].map(path => ({url: absoluteUrl(path), lastModified: new Date("2026-10-26")})), ...[...nlPaths, ...localizedPaths].map((path) => ({
+  return [...["/seo/zoekwoordenonderzoek/", "/seo/technische-seo/"].map(path => ({url: absoluteUrl(path), lastModified: new Date(modifiedDates[path])})), ...[...nlPaths, ...localizedPaths].map((path) => ({
       url: absoluteUrl(path),
-      lastModified,
+      ...(modifiedDates[path] ? { lastModified: new Date(modifiedDates[path]) } : {}),
       changeFrequency: changeFrequencyForPath(path.replace(/^\/(en|es)(?=\/|$)/, "") || "/"),
       priority: priorityForPath(path.replace(/^\/(en|es)(?=\/|$)/, "") || "/"),
       alternates: alternatesForPath(path.replace(/^\/(en|es)(?=\/|$)/, "") || "/"),

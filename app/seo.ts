@@ -115,14 +115,6 @@ export function organizationJsonLd() {
         "@type": "Country",
         name: "Nederland",
       },
-      {
-        "@type": "AdministrativeArea",
-        name: "Noord-Brabant",
-      },
-      {
-        "@type": "AdministrativeArea",
-        name: "Limburg",
-      },
     ],
     priceRange: "$$",
     description:

@@ -9,5 +9,5 @@ import { useLanguage } from "./language";
 export function LocalizedLink({ href, ...props }: Omit<ComponentProps<typeof Link>, "href"> & { href: string }) {
   const { language } = useLanguage();
 
-  return <Link href={pathForLanguage(href, language)} {...props} />;
+  return <Link prefetch={false} href={pathForLanguage(href, language)} {...props} />;
 }

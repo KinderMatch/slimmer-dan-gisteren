@@ -31,7 +31,10 @@ touch "$publish_dir/.nojekyll"
 printf '%s\n' "slimmerdangisteren.nl" > "$publish_dir/CNAME"
 
 base_url="https://slimmerdangisteren.nl"
-lastmod="$(date -u +%F)"
+# Only advertise a verified content change, never the date of an unrelated build.
+lastmod_for_path() {
+  node -e 'const dates = require("./app/content-dates.json"); process.stdout.write(dates[process.argv[1]] || "");' "$1"
+}
 paths=(
   "/"
   "/geo/"
@@ -100,7 +103,8 @@ print_sitemap_alternates() {
       printf '  <url>\n'
       printf '    <loc>%s%s</loc>\n' "$base_url" "$localized_path"
       print_sitemap_alternates "$path"
-      printf '    <lastmod>%s</lastmod>\n' "$lastmod"
+      lastmod="$(lastmod_for_path "$localized_path")"
+      if [[ -n "$lastmod" ]]; then printf '    <lastmod>%s</lastmod>\n' "$lastmod"; fi
       printf '    <changefreq>%s</changefreq>\n' "$changefreq"
       printf '    <priority>%s</priority>\n' "$priority"
       printf '  </url>\n'
@@ -108,7 +112,7 @@ print_sitemap_alternates() {
   done
   # Dutch-only guides: do not advertise nonexistent translations.
   for path in "/seo/zoekwoordenonderzoek/" "/seo/technische-seo/"; do
-    printf '  <url><loc>%s%s</loc><lastmod>2026-10-26</lastmod></url>\n' "$base_url" "$path"
+    printf '  <url><loc>%s%s</loc><lastmod>%s</lastmod></url>\n' "$base_url" "$path" "$(lastmod_for_path "$path")"
   done
   printf '%s\n' '</urlset>'
 } > "$publish_dir/sitemap.xml"

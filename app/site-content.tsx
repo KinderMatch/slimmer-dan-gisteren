@@ -284,7 +284,7 @@ export function SiteShell({
       <ScrollProgress />
       <header className={premiumNavigation ? "premium-nav" : "site-header"}>
         <LocalizedLink className={premiumNavigation ? "premium-brand" : "brand"} href="/">
-          <ResponsiveImage src="/assets/logo.png" alt="Slimmer dan Gisteren" width={dimensionsFor("/assets/logo.png")?.width} height={dimensionsFor("/assets/logo.png")?.height} />
+          <ResponsiveImage src="/assets/logo.png" alt="" width={dimensionsFor("/assets/logo.png")?.width} height={dimensionsFor("/assets/logo.png")?.height} />
           <span>Slimmer dan Gisteren</span>
         </LocalizedLink>
         <nav aria-label="Hoofdnavigatie">

@@ -35,6 +35,14 @@ console.log('PASS all responsive image variants exist in the publish artifact');
 // Retired WordPress URLs must remain genuine 404s, never indexable placeholder pages.
 const retiredPaths = JSON.parse(await readFile('scripts/retired-paths.json', 'utf8'));
 const sitemap = await readFile(join(root, 'sitemap.xml'), 'utf8');
+const contentDates = JSON.parse(await readFile('app/content-dates.json', 'utf8'));
+for (const block of sitemap.match(/<url>[\s\S]*?<\/url>/g) ?? []) {
+  const location = block.match(/<loc>(.*?)<\/loc>/)[1];
+  const path = new URL(location).pathname;
+  const lastmod = block.match(/<lastmod>(.*?)<\/lastmod>/)?.[1];
+  assert.equal(lastmod, contentDates[path], `${path}: sitemap must use a verified content date, not the build date`);
+}
+console.log('PASS sitemap modification dates match verified content changes');
 for (const path of retiredPaths) {
   await assert.rejects(access(join(root, path, 'index.html')), { code: 'ENOENT' }, `${path}: retired URL was published again`);
   assert.ok(!sitemap.includes(`https://slimmerdangisteren.nl${path}<`), `${path}: retired URL in sitemap`);

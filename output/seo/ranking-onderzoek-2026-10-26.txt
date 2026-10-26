@@ -1,0 +1,32 @@
+SEO-onderzoek en gerichte verbeteringen — 26 oktober 2026
+
+Meetbasis
+De eerder uitgelezen Search Console-gegevens voor /seo/ liepen tot 24 oktober: 16 vertoningen, 1 klik, gemiddelde positie 63,9 over alle zoekvragen. De exacte combinatie pagina + zoekvraag seo marketingbureau had geen gegevens. Deze meting gaat vooraf aan de wijzigingen van 25–26 oktober en is geen actuele exacte zoekwoordpositie.
+
+Onderzoek
+Google beoordeelt relevantie, behulpzame eigen inhoud, betrouwbaarheid, links en gebruikerservaring met meerdere systemen. Er bestaat geen checklist die top 3 verzekert. Wijzigingen kunnen dagen tot maanden nodig hebben; geen bewezen core-updateoorzaak vastgesteld.
+https://developers.google.com/search/docs/appearance/ranking-systems-guide
+https://developers.google.com/search/docs/fundamentals/creating-helpful-content
+https://developers.google.com/search/docs/appearance/core-updates
+https://developers.google.com/search/docs/crawling-indexing/links-crawlable
+https://developers.google.com/search/docs/crawling-indexing/sitemaps/build-sitemap
+
+Uitgevoerd
+- Sitemap lastmod gekoppeld aan vastgelegde inhoudelijke wijzigingsdatums, niet aan iedere build. Onbekende datums weggelaten; regressiecontrole toegevoegd.
+- Zichtbare broodkruimels op SEO-dienstpagina en beide uitlegpagina’s.
+- Uitgever gekoppeld aan bedrijfsinformatie; uitlegpagina’s gekoppeld aan het bestaande bruikbare CSV-verbeterplan en de diensten/oplevering.
+- Landelijk werkgebied behouden; willekeurige provincies uit organisatiegegevens verwijderd.
+- Leesbaarheid van contactdock en dienstlabels verbeterd.
+- Dubbele voorgelezen merknaam bij navigatielogo verwijderd.
+- Automatisch voorladen in gedeelde navigatie uitgeschakeld: statische hosting heeft geen dynamische RSC-rootendpoint. Lokaal geen consolefouten na laden.
+
+Controles
+Build geslaagd, 8 tests geslaagd, publicatiecontrole van 17 kernroutes geslaagd. Mobiele breedte 390 px zonder horizontale overflow. Canonicals, indexeerbaarheid, talen, afbeeldingen, oude 404’s en sitemap gecontroleerd.
+
+PageSpeed nulmeting
+Rapport 26 oktober 2026 21:35:36 CET (desktop): performance 100, SEO 100, toegankelijkheid 96, best practices 73; geen velddata. LCP 0,7s, CLS 0, TBT 0ms. Dit is geen rankingmeting en geen na-meting van de huidige wijzigingen.
+https://pagespeed.web.dev/analysis/https-slimmerdangisteren-nl-seo/fpivuz4v77?hl=nl&form_factor=desktop
+Het gemelde onveilige verzoek wees op mailto in het formulier, niet op een gedownloade HTTP-bron. De automatische formulierdienst is op verzoek uitgesteld. Geen vervangende dienst geconfigureerd.
+
+Vervolg op basis van echte data
+Vergelijk in Search Console exact /seo/ + exact seo marketingbureau, met land en apparaat gelijk, over nieuwe volledige perioden na herverwerking. Ontbrekende zoekvraagdata betekent onbekende positie, niet positie 0 of buiten top 100. Breid echte klantcases uit zodra resultaten en toestemming beschikbaar zijn. Relevante externe verwijzingen zijn een kans, maar een tekort is zonder linkanalyse geen vastgestelde oorzaak. Geen berichten verzonden of links gekocht.

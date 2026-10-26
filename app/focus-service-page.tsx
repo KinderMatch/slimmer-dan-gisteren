@@ -227,6 +227,7 @@ export function FocusServicePage({ data }: { data: GrowthPageData }) {
       <section className="focus-premium-hero">
         <div className="focus-premium-shade" aria-hidden="true" />
         <div className="focus-premium-copy">
+          {data.slug === "/seo/" ? <nav className="seo-breadcrumbs" aria-label="Broodkruimel"><a href="/">Home</a><span aria-hidden="true"> / </span><span aria-current="page">SEO</span></nav> : null}
           <p className="eyebrow">{data.eyebrow}</p>
           <h1>{data.title}</h1>
           <p>{data.subtitle}</p>
