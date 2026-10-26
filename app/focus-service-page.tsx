@@ -196,6 +196,7 @@ function ScanFormPanel({ data, id, microcopy }: { data: GrowthPageData; id: stri
       <p className="eyebrow">Gratis scan</p>
       <h2><EmphasisText value={data.form.title} /></h2>
       <p>{data.form.text}</p>
+      {data.slug === "/seo/" ? <ul>{scanDeliverables(data).map(item => <li key={item}>{item}</li>)}</ul> : null}
       <div className="focus-form-promise">
         {microcopy.map((item) => <span key={item}>{item}</span>)}
       </div>
@@ -209,7 +210,7 @@ function ScanFormPanel({ data, id, microcopy }: { data: GrowthPageData; id: stri
 export function FocusServicePage({ data, locale = "nl" }: { data: GrowthPageData; locale?: Language }) {
   const id = formId(data.slug);
   const accents = pageAccent(data);
-  const featuredServices = data.services.slice(0, 6);
+  const featuredServices = data.slug === "/seo/" ? data.services : data.services.slice(0, 6);
   const timeline = timelineLabels(data);
   const media = visualAsset(data);
   const deliverables = scanDeliverables(data);
@@ -306,8 +307,8 @@ export function FocusServicePage({ data, locale = "nl" }: { data: GrowthPageData
           <div className="focus-seo-depth-heading">
             <p className="eyebrow">Diensten en oplevering</p>
             <h2 id="seo-services-heading">{data.servicesTitle}</h2>
+            <p id="seo-topic-heading">{data.topicalAuthority?.intro}</p>
             <p>{data.servicesIntro}</p>
-            <p>Je werkt rechtstreeks met <a href="#seo-uitbesteden">Jimmy Buitenhuis</a>, vanuit Diemen voor bedrijven in heel Nederland. We overleggen online of op afspraak bij jou op locatie.</p>
           </div>
           <div className="focus-seo-depth-grid">
             {featuredServices.map((service) => (
@@ -492,27 +493,6 @@ export function FocusServicePage({ data, locale = "nl" }: { data: GrowthPageData
         </section>
       ) : null}
 
-      {data.slug === "/seo/" && data.topicalAuthority ? (
-        <section className="section focus-topic-section" aria-labelledby={topicHeadingId}>
-          <div className="section-heading">
-            <p className="eyebrow">{data.eyebrow}</p>
-            <h2 id={topicHeadingId}>{data.topicalAuthority.title}</h2>
-            <p>{data.topicalAuthority.intro}</p>
-          </div>
-          <details className="seo-explainer"><summary>Verdiep je in de vier onderdelen van SEO</summary><div className="focus-topic-grid">
-            {data.topicalAuthority.clusters.map((cluster) => (
-              <article key={cluster.title}>
-                <h3>{cluster.title}</h3>
-                <p>{cluster.body}</p>
-                <ul>
-                  {cluster.items.map((item) => <li key={item}>{item}</li>)}
-                </ul>
-              </article>
-            ))}
-          </div></details>
-        </section>
-      ) : null}
-
       {!compactPage ? (
         <section className="section focus-runway-section">
           <div className="section-heading">
@@ -606,6 +586,7 @@ export function FocusServicePage({ data, locale = "nl" }: { data: GrowthPageData
         </section>
       ) : null}
 
+      {data.slug !== "/seo/" ? (
       <section className="section focus-scan-offer">
         <div>
           <p className="eyebrow">Gratis scan</p>
@@ -621,6 +602,7 @@ export function FocusServicePage({ data, locale = "nl" }: { data: GrowthPageData
           ))}
         </div>
       </section>
+      ) : null}
 
       {data.slug === "/google-ads/" && data.reviews.length > 0 ? (
         <section className="section soft focus-review-section">

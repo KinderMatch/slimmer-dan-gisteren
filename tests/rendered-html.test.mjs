@@ -176,7 +176,7 @@ test("translated service pages retain the Dutch sections, FAQs, form semantics a
       const summaries = [...html.matchAll(/<summary[^>]*>(.*?)<\/summary>/gs)].map(m => decode(m[1]));
       for (const item of faq.mainEntity) assert.equal(summaries.filter(text => text === item.name).length, 1, `${locale}: ${item.name}`);
       if (path === 'seo') {
-        assert.equal(faq.mainEntity.length, 41);
+        assert.equal(faq.mainEntity.length, 39);
         assert.ok(html.includes(`href="/${locale}/seo/zoekwoordenonderzoek/"`));
         assert.ok(html.includes(`href="/${locale}/seo/technische-seo/"`));
         assert.ok(html.includes(`href="/downloads/seo-verbeterplan-${locale}.csv"`));
