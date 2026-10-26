@@ -40,7 +40,7 @@ function scanDeliverables(data: GrowthPageData) {
   }
 
   if (data.slug === "/seo/") {
-    return ["Technische quickscan", "Zoekwoorden met koopintentie", "Pagina's die prioriteit verdienen", "Eerste verbeterplan zonder verplichting"];
+    return ["Jouw website en doelen bespreken", "Eerste technische aandachtspunten", "Belangrijke zoekvragen en pagina’s", "Samen de vervolgstap bepalen"];
   }
 
   return ["Campagne- en trackingcheck", "Budget- en verspilling-indicatie", "Landingspagina-observaties", "Concrete optimalisatiekansen"];
@@ -70,7 +70,7 @@ function inlineCtaCopy(data: GrowthPageData) {
   return {
     eyebrow: "Snelle check",
     title: "Wil je weten welke SEO-kansen jouw website nu laat liggen?",
-    text: "Vraag de scan aan en krijg een eerste prioriteitenlijst voor techniek, content, zoekintentie en conversie.",
+    text: "Vraag contact aan over je SEO-scan. Na ontvangst bespreken we je website, doelen en eerste aandachtspunten.",
     cta: "Vraag de SEO-scan aan",
   };
 }
@@ -158,20 +158,33 @@ function SeoSystemVisual() {
 }
 
 function FaqPanel({ data }: { data: GrowthPageData }) {
-  return (
-    <div className="focus-faq-panel">
-      <p className="eyebrow">FAQ</p>
-      <h2>Veelgestelde vragen</h2>
-      <div>
-        {data.faq.map((item) => (
-          <details key={item.question}>
-            <summary>{item.question}</summary>
-            <p>{item.answer}</p>
-          </details>
-        ))}
-      </div>
-    </div>
+  const important = new Set([
+    "Wat krijg ik als ik SEO uitbesteed aan Slimmer dan Gisteren?",
+    "Wat kost een SEO marketingbureau?", "Hoe snel zie je SEO-resultaat?",
+    "Werken jullie alleen voor bedrijven rond Amsterdam?", "Wat hebben jullie van mij nodig?",
+    "Hoe meten jullie SEO-resultaat?", "Kan ik eerst alleen de gratis SEO-scan aanvragen?",
+    "Kunnen jullie een top-3-positie in Google garanderen?",
+  ]);
+  const renderQuestion = (item: GrowthPageData["faq"][number]) => (
+    <details key={item.question}><summary>{item.question}</summary><p>{item.answer}</p></details>
   );
+  if (data.slug !== "/seo/") return <div className="focus-faq-panel"><p className="eyebrow">FAQ</p><h2>Veelgestelde vragen</h2><div>{data.faq.map(renderQuestion)}</div></div>;
+  const groups = [
+    { title: "SEO begrijpen", match: /Wat is|Wat doet|Waarom|zoekintentie|topical authority/ },
+    { title: "Techniek, content en kanalen", match: /content|landingspagina|linkbuilding|WordPress|migratie|blogs|structured data|Ads|GEO|AI/ },
+    { title: "Samenwerking en vervolg", match: /.*/ },
+  ];
+  const remaining = data.faq.filter(item => !important.has(item.question));
+  return <div className="focus-faq-panel" id="seo-vragen">
+    <p className="eyebrow">Jouw vragen</p><h2>Voordat je SEO uitbesteedt</h2>
+    <div>{data.faq.filter(item => important.has(item.question)).map(renderQuestion)}</div>
+    <h3>Meer uitleg over SEO</h3>
+    <p>Wil je je verder verdiepen? Open hieronder het onderwerp dat bij je vraag past.</p>
+    {groups.map((group, index) => <details className="seo-faq-group" key={group.title}>
+      <summary>{group.title}</summary>
+      <div>{remaining.filter(item => groups.findIndex(g => g.match.test(item.question)) === index).map(renderQuestion)}</div>
+    </details>)}
+  </div>;
 }
 
 function ScanFormPanel({ data, id, microcopy }: { data: GrowthPageData; id: string; microcopy: string[] }) {
@@ -318,7 +331,7 @@ export function FocusServicePage({ data }: { data: GrowthPageData }) {
         </section>
       ) : null}
 
-      {data.deepDive ? (
+      {data.slug !== "/seo/" && data.deepDive ? (
         <section className="section focus-seo-depth" aria-labelledby={depthHeadingId}>
           <div className="focus-seo-depth-heading">
             <p className="eyebrow">{data.slug === "/geo/" ? "GEO-strategie" : "SEO-strategie"}</p>
@@ -356,29 +369,7 @@ export function FocusServicePage({ data }: { data: GrowthPageData }) {
         </section>
       ) : null}
 
-      {data.regional ? (
-        <section className="section focus-seo-depth" aria-labelledby={`${slugKey}-region-heading`}>
-          <div className="focus-seo-depth-heading">
-            <p className="eyebrow">Samenwerken</p>
-            <h2 id={`${slugKey}-region-heading`}>{data.regional.title}</h2>
-            <p>{data.regional.intro}</p>
-          </div>
-          <div className="focus-seo-depth-grid">
-            {data.regional.blocks.map((block) => (
-              <article key={block.title}>
-                <h3>{block.title}</h3>
-                <p>{block.body}</p>
-              </article>
-            ))}
-          </div>
-          <div className="focus-premium-actions">
-            <a className="button primary" href={`#${id}`}>Bespreek jouw SEO-kansen</a>
-            <a className="button ghost" href="mailto:jimmy@slimmerdangisteren.nl">Mail Jimmy rechtstreeks</a>
-          </div>
-        </section>
-      ) : null}
-
-      {data.topicalAuthority ? (
+      {data.slug !== "/seo/" && data.topicalAuthority ? (
         <section className="section focus-topic-section" aria-labelledby={topicHeadingId}>
           <div className="section-heading">
             <p className="eyebrow">{data.eyebrow}</p>
@@ -399,12 +390,34 @@ export function FocusServicePage({ data }: { data: GrowthPageData }) {
         </section>
       ) : null}
 
+      {data.regional ? (
+        <section className="section focus-seo-depth" aria-labelledby={`${slugKey}-region-heading`}>
+          <div className="focus-seo-depth-heading">
+            <p className="eyebrow">Samenwerken</p>
+            <h2 id={`${slugKey}-region-heading`}>{data.regional.title}</h2>
+            <p>{data.regional.intro}</p>
+          </div>
+          <details className="seo-explainer" open={data.slug !== "/seo/"}><summary>Zo stemmen we SEO af op je werkgebied</summary><div className="focus-seo-depth-grid">
+            {data.regional.blocks.map((block) => (
+              <article key={block.title}>
+                <h3>{block.title}</h3>
+                <p>{block.body}</p>
+              </article>
+            ))}
+          </div></details>
+          <div className="focus-premium-actions">
+            <a className="button primary" href={`#${id}`}>Bespreek jouw SEO-kansen</a>
+            <a className="button ghost" href="mailto:jimmy@slimmerdangisteren.nl">Mail Jimmy rechtstreeks</a>
+          </div>
+        </section>
+      ) : null}
+
       {data.slug === "/seo/" ? (
         <section className="section focus-seo-depth" id="seo-uitbesteden" aria-labelledby="seo-outsource-heading">
           <div className="focus-seo-depth-heading">
             <p className="eyebrow">SEO uitbesteden</p>
             <h2 id="seo-outsource-heading">Wat neem je af en wie voert het uit?</h2>
-            <p>Je aanspreekpunt is Jimmy Buitenhuis. Vanuit Diemen werken we online of op afspraak bij jou op locatie. We beginnen met je website, aanbod en de klanten die je wilt bereiken.</p>
+            <div className="seo-person"><ResponsiveImage src="/assets/jimmy-buitenhuis.png" alt="Jimmy Buitenhuis, jouw aanspreekpunt bij Slimmer dan Gisteren" width={320} height={320} loading="lazy" sizes="160px" /><div><h3>Jimmy Buitenhuis</h3><p>Bij Slimmer dan Gisteren ben ik je aanspreekpunt voor SEO-strategie en uitvoering. Samen bepalen we welke klanten je wilt bereiken, wat je website daarvoor nodig heeft en welke verbeteringen eerst komen.</p><p>Je spreekt rechtstreeks met mij. Vanuit Diemen werk ik met bedrijven in heel Nederland, online of op afspraak bij jou op locatie.</p><a href="mailto:jimmy@slimmerdangisteren.nl">Stel Jimmy je vraag</a></div></div>
           </div>
           <div className="focus-seo-depth-grid">
             <article><h3>Een plan dat je kunt beoordelen</h3><p>Voor de uitvoering spreken we af welke pagina’s en zoekvragen prioriteit krijgen, welke technische verbeteringen nodig zijn en wie wat oppakt. De omvang en kosten hangen af van je website, concurrentie en beschikbare capaciteit.</p></article>
@@ -434,6 +447,65 @@ export function FocusServicePage({ data }: { data: GrowthPageData }) {
           ))}
         </div>
       </section>
+
+      {data.slug === "/seo/" && data.deepDive ? (
+        <section className="section focus-seo-depth" aria-labelledby={depthHeadingId}>
+          <div className="focus-seo-depth-heading">
+            <p className="eyebrow">{data.slug === "/geo/" ? "GEO-strategie" : "SEO-strategie"}</p>
+            <h2 id={depthHeadingId}>{data.deepDive.title}</h2>
+            <p>{data.deepDive.intro}</p>
+          </div>
+          <details className="seo-explainer"><summary>Bekijk de situaties waarin SEO kan helpen</summary><div className="focus-seo-depth-grid">
+            {data.deepDive.blocks.map((block) => (
+              <article key={block.title}>
+                <h3>{block.title}</h3>
+                <p>{block.body}</p>
+              </article>
+            ))}
+          </div></details>
+          {data.deepDive.related ? (
+            <div className="focus-related-links" aria-label="Gerelateerde diensten">
+              {data.deepDive.related.map((item) => (
+                <a href={item.href} key={item.href}>
+                  <span>{item.label}</span>
+                  <p>{item.text}</p>
+                </a>
+              ))}
+            </div>
+          ) : null}
+          {compactPage ? (
+            <div className="focus-inline-cta">
+              <div>
+                <p className="eyebrow">{inlineCta.eyebrow}</p>
+                <h3>{inlineCta.title}</h3>
+                <p>{inlineCta.text}</p>
+              </div>
+              <a className="button primary" href={`#${id}`}>{inlineCta.cta}</a>
+            </div>
+          ) : null}
+        </section>
+      ) : null}
+
+      {data.slug === "/seo/" && data.topicalAuthority ? (
+        <section className="section focus-topic-section" aria-labelledby={topicHeadingId}>
+          <div className="section-heading">
+            <p className="eyebrow">{data.eyebrow}</p>
+            <h2 id={topicHeadingId}>{data.topicalAuthority.title}</h2>
+            <p>{data.topicalAuthority.intro}</p>
+          </div>
+          <details className="seo-explainer"><summary>Verdiep je in de vier onderdelen van SEO</summary><div className="focus-topic-grid">
+            {data.topicalAuthority.clusters.map((cluster) => (
+              <article key={cluster.title}>
+                <h3>{cluster.title}</h3>
+                <p>{cluster.body}</p>
+                <ul>
+                  {cluster.items.map((item) => <li key={item}>{item}</li>)}
+                </ul>
+              </article>
+            ))}
+          </div></details>
+        </section>
+      ) : null}
 
       {!compactPage ? (
         <section className="section focus-runway-section">
@@ -531,8 +603,8 @@ export function FocusServicePage({ data }: { data: GrowthPageData }) {
       <section className="section focus-scan-offer">
         <div>
           <p className="eyebrow">Gratis scan</p>
-          <h2>Je krijgt geen algemeen advies, maar een eerste prioriteitenlijst.</h2>
-          <p>De scan is bedoeld om snel te zien waar de meeste winst of duidelijkheid zit. Geen verplichting, wel een concreet startpunt voor een beter gesprek.</p>
+          <h2>{data.slug === "/seo/" ? "Van je aanvraag naar persoonlijk contact" : "Je krijgt geen algemeen advies, maar een eerste prioriteitenlijst."}</h2>
+          <p>{data.slug === "/seo/" ? "Vul je gegevens en website in en verstuur je aanvraag. Daarna nemen we contact met je op om de SEO-scan en jouw vragen te bespreken. Een eventueel betaald vervolg spreken we apart af." : "De scan is bedoeld om snel te zien waar de meeste winst of duidelijkheid zit. Geen verplichting, wel een concreet startpunt voor een beter gesprek."}</p>
         </div>
         <div className="focus-offer-list">
           {deliverables.map((item) => (

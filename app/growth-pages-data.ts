@@ -207,7 +207,7 @@ export const seoPage: GrowthPageData = {
   benefits: [
     "Duidelijk resultaat: beter vindbaar op zoekvragen die klanten kunnen opleveren",
     "Meer zekerheid: techniek, concurrentie en zoekintentie worden eerst onderzocht",
-    "Sneller eerste inzicht: de scan geeft direct prioriteiten",
+    "Persoonlijk contact: we bespreken je doelen en eerste SEO-prioriteiten",
     "Minder frictie: je krijgt geen lange checklist, maar een uitvoerbare volgorde",
     "Sterkere pagina's: content, bewijs en CTA's worden samen bekeken",
     "Geen nepgaranties: wel eerlijk advies over kansen, moeite en volgorde",
@@ -254,11 +254,11 @@ export const seoPage: GrowthPageData = {
     { question: "Heeft AI invloed op SEO?", answer: "Ja. AI verandert hoe mensen zoeken en hoe informatie wordt samengevat. Toch blijft een sterke SEO-basis belangrijk: duidelijke pagina's, betrouwbare informatie, autoriteit en technische structuur helpen zowel zoekmachines als AI-systemen om je bedrijf beter te begrijpen. SEO en GEO groeien daardoor steeds meer naar elkaar toe." },
     { question: "Moet mijn website na iedere Google-update worden aangepast?", answer: "Nee. We bekijken eerst of er een blijvende verandering is op belangrijke pagina’s en zoekvragen. Bij een core-update wachten we met de effectanalyse tot minimaal een volle week na de uitrol. Bij een spam-update toetsen we de werkwijze aan Googles spambeleid. Een daling op hetzelfde moment is op zichzelf geen bewijs van een overtreding. We verbeteren wat bezoekers echt helpt; extra zoekwoordherhaling of bijna identieke plaatsnaam­pagina’s zijn geen oplossing." },
     { question: "Hoe vaak moet SEO worden bijgewerkt?", answer: "SEO is geen eenmalige taak. Zoekgedrag, concurrentie, Google-updates en je eigen aanbod veranderen. Daarom is periodieke optimalisatie belangrijk. Dat hoeft niet altijd groot te zijn; soms gaat het om kleine technische fixes, nieuwe interne links, het aanscherpen van pagina's of het toevoegen van content waar zoekvraag ontstaat." },
-    { question: "Kan ik eerst alleen de gratis SEO-scan aanvragen?", answer: "Ja. De scan is bedoeld als laagdrempelige eerste stap. Je krijgt inzicht in de belangrijkste SEO-kansen zonder dat je direct aan een traject vastzit. Daarna kun je zelf bepalen of je de verbeteringen intern oppakt of dat je hulp wilt bij strategie, uitvoering en maandelijkse optimalisatie." },
+    { question: "Kan ik eerst alleen de gratis SEO-scan aanvragen?", answer: "Ja. Vul het aanvraagformulier in en verstuur de klaargezette e-mail. Na ontvangst nemen we contact op om je website en doelen te bespreken. De scan is vrijblijvend; een betaald vervolg bespreken we apart. Het formulier levert geen automatische analyse en we spreken de vervolgstap persoonlijk met je af." },
   ],
   form: {
-    title: "Ontvang een compacte SEO-scan",
-    text: "Stuur je website mee. We geven je geen generiek rapport, maar een eerste diagnose van techniek, zoekintentie, concurrentie en pagina's die prioriteit verdienen.",
+    title: "Vraag contact aan over jouw SEO-scan",
+    text: "Vul je naam, e-mailadres en website in. Na ontvangst van je aanvraag nemen we persoonlijk contact met je op. We bespreken je doel en de eerste aandachtspunten voor techniek, vindbaarheid en belangrijke pagina’s. De scan is vrijblijvend en wordt niet automatisch door dit formulier gegenereerd.",
     submit: "Zet mijn aanvraagmail klaar",
     fields: ["Naam", "E-mailadres", "Website URL", "Bericht"],
   },

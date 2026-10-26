@@ -133,3 +133,15 @@ test("SEO enquiry uses an explicit email draft on static hosting and section lin
   const adsHtml = await (await render("/google-ads/")).text();
   assert.match(adsHtml, /action="\/api\/scan"/);
 });
+
+test("SEO FAQ groups preserve every structured question in accessible native disclosures", async () => {
+  const html = await (await render("/seo/")).text();
+  const scripts = [...html.matchAll(/<script type="application\/ld\+json">(.*?)<\/script>/gs)].map(m => JSON.parse(m[1]));
+  const entities = scripts.flatMap(item => Array.isArray(item) ? item : [item]);
+  const faq = entities.find(item => item["@type"] === "FAQPage");
+  assert.ok(faq?.mainEntity.length > 8);
+  const summaries = [...html.matchAll(/<summary[^>]*>(.*?)<\/summary>/gs)].map(m => m[1].replaceAll("&#x27;", "'").replaceAll("&amp;", "&"));
+  for (const item of faq.mainEntity) assert.equal(summaries.filter(text => text === item.name).length, 1, item.name);
+  assert.equal((html.match(/class="seo-faq-group"/g) ?? []).length, 3);
+  assert.match(html, /Na ontvangst van je aanvraag nemen we persoonlijk contact/);
+});

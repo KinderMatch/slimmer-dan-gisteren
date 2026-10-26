@@ -9,27 +9,15 @@ export function SeoEvidence() {
           <p>Op <time dateTime="2026-10-25">25 oktober 2026</time> hebben we deze website onderzocht en verbeterd. Hieronder staan de vastgestelde problemen, de ingrepen en wat we konden controleren. Dit is een technisch praktijkvoorbeeld van onze eigen site, geen klantcase of bewijs van hogere Google-posities.</p>
         </div>
         <div className="focus-seo-depth-grid">
-          <article>
-            <h3>1. Een lichtere zoekanimatie</h3>
-            <p>De oorspronkelijke GIF bovenaan de SEO-pagina was 471.711 bytes. De nieuwe WebP-versie van dezelfde breedte is 376.290 bytes: ongeveer 20% kleiner. Voor kleinere weergaven is ook een versie van 320 pixels beschikbaar.</p>
-            <p>We controleerden de afmetingen en de animatieduur: 480 × 360 pixels en 5,6 seconden voor de grote versie. Dit is een besparing op het afbeeldingsbestand; het is geen gemeten verbetering van 20% in de totale laadtijd.</p>
-          </article>
-          <article>
-            <h3>2. Een aanvraagroute die past bij de website</h3>
-            <p>Het eerdere scanformulier probeerde een aanvraag naar een niet-beschikbaar formulieradres te sturen. Dat adres gaf bij controle een 404-melding. De SEO-aanvraag zet nu expliciet een e-mail klaar die de bezoeker zelf verstuurt.</p>
-            <p>We testten of naam, e-mailadres, website en bericht correct in de aanvraag terechtkomen. De pagina claimt niet dat de aanvraag al ontvangen is. Wie liever direct een afspraak maakt, kan een kennismaking boeken.</p>
-          </article>
-          <article>
-            <h3>3. Vindbare inhoud en bruikbare navigatie</h3>
-            <p>De pagina kreeg links naar de uitleg over SEO marketing, uitbesteden, werkgebied en aanvraag. Alle acht interne paginabestemmingen waren bij controle aanwezig. Op een mobiele schermbreedte van 390 pixels paste de inhoud zonder horizontale overloop.</p>
-            <p>Ook controleerden we de paginatitel, beschrijving, voorkeurs-URL, indexeerbaarheid en afbeeldingsafmetingen. De zeven geautomatiseerde controles van de website slaagden na de aanpassingen.</p>
-          </article>
-          <article>
-            <h3>Wat we daarna willen weten</h3>
-            <p>Een werkende pagina is het begin. De vervolgvraag is of relevante zoekvragen meer vertoningen, klikken en aanvragen opleveren. Dat vraagt een vergelijking over tijd, met dezelfde pagina’s en zoekvragen.</p>
-            <p>Voor deze aanpassingen publiceren we nog geen stijging in posities, verkeer of omzet. Daarvoor zijn eerst voldoende metingen na publicatie nodig. Dat onderscheid tussen uitvoering en resultaat hanteren we ook in een SEO-traject.</p>
-          </article>
+          <article><h3>Probleem: onnodig zwaar beeld</h3><p>De zoekanimatie vroeg meer downloadwerk dan nodig. We maakten kleinere versies die passen bij het scherm van de bezoeker, met behoud van de animatie.</p><p><strong>Gecontroleerd:</strong> het grote afbeeldingsbestand is ongeveer 20% kleiner. Het effect op de totale laadtijd moet apart worden gemeten.</p></article>
+          <article><h3>Probleem: onduidelijke aanvraagroute</h3><p>Het formulier probeerde een niet-beschikbaar adres te bereiken. De pagina zet nu duidelijk een e-mail klaar die de bezoeker zelf verstuurt. Ook kan een bezoeker direct een kennismaking boeken.</p><p><strong>Gecontroleerd:</strong> de aanvraaggegevens komen in het e-mailconcept terecht. De website meldt niet ten onrechte dat de aanvraag al ontvangen is.</p></article>
+          <article><h3>Probleem: veel uitleg, lastig overzicht</h3><p>We maakten het dienstenaanbod zichtbaar en voegden routes toe naar kosten, werkwijze en contact. Verdiepende uitleg blijft beschikbaar voor bezoekers die verder willen lezen.</p><p><strong>Gecontroleerd:</strong> de paginalinks werkten en de inhoud paste bij de controle op een mobiel scherm van 390 pixels.</p></article>
+          <article><h3>Uitvoering is nog geen SEO-resultaat</h3><p>Deze verbeteringen laten zien hoe we problemen onderzoeken en oplossen. We hebben hiermee nog geen stijging in Google-posities, bezoekers of omzet aangetoond.</p><p>De volgende stap is vergelijken wat er over tijd verandert in relevante zoekvragen, klikken en aanvragen.</p></article>
         </div>
+        <details className="seo-explainer"><summary>Bekijk de technische onderbouwing van dit voorbeeld</summary>
+          <p>Bij de controle op 25 oktober 2026 was de oorspronkelijke GIF 471.711 bytes en de WebP van dezelfde breedte 376.290 bytes. De grote versie meet 480 × 360 pixels en duurt 5,6 seconden; er is ook een versie van 320 pixels. Dit is bestandsbesparing, geen gemeten versnelling van de hele pagina.</p>
+          <p>Het eerdere formulieradres gaf een 404-melding. We controleerden naam, e-mailadres, website en bericht in de e-mailaanvraag. Daarnaast zijn paginatitel, beschrijving, voorkeurs-URL, indexeerbaarheid en afbeeldingsafmetingen gecontroleerd. De zeven geautomatiseerde websitecontroles slaagden.</p>
+        </details>
         <div className="focus-premium-actions"><a className="button primary" href="#seo-scan">Laat ook mijn website bekijken</a><a className="button ghost" href="#aanpak">Bekijk de aanpak</a></div>
       </section>
       <section className="section focus-seo-depth" id="seo-kosten" aria-labelledby="seo-cost-heading">
