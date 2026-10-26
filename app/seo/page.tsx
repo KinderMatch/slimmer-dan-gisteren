@@ -53,7 +53,7 @@ function seoMarketingbureauPageJsonLd() {
     },
     potentialAction: {
       "@type": "ContactAction",
-      name: "Vraag een gratis SEO-scan aan",
+      name: "Plan een kennismaking met Jimmy",
       target: calendlyUrl,
     },
   };

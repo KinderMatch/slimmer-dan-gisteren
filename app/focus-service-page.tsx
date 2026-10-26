@@ -47,7 +47,7 @@ function scanDeliverables(data: GrowthPageData) {
 }
 
 function ctaMicrocopy(data: GrowthPageData) {
-  if (data.slug === "/seo/") return ["Gratis analyse", "Geen verplichting", "Concrete prioriteiten"];
+  if (data.slug === "/seo/") return ["Direct met Jimmy", "Vrijblijvend kennismaken", "Heel Nederland"];
   if (data.slug === "/geo/") return ["AI-zichtbaarheid", "Kansen per prompt", "Geen garanties, wel richting"];
   return ["Trackingcheck", "Budgetkansen", "Geen verplichting"];
 }
@@ -198,6 +198,7 @@ function ScanFormPanel({ data, id, microcopy }: { data: GrowthPageData; id: stri
       </div>
       <ScanForm delivery={data.slug === "/seo/" ? "email" : "server"} fields={data.form.fields} formId={id} pageTitle={data.form.title} pageSlug={data.slug} submitLabel={data.form.submit} />
       <a className="button ghost" href={calendlyUrl}>Plan liever direct een kennismaking</a>
+      {data.slug === "/seo/" ? <div className="seo-contact-next"><h3>Wat gebeurt er daarna?</h3><ol><li>Je verstuurt je aanvraagmail of boekt een gesprek.</li><li>We bespreken je website, doelgroep en wat je met SEO wilt bereiken.</li><li>Als vervolgwerk past, ontvang je eerst een voorstel met werkzaamheden en kosten.</li></ol><p>Liever bellen? <a href="tel:+31610175027">06 10175027</a> (ma–vr 09.00–18.00).</p></div> : null}
     </div>
   );
 }
@@ -230,12 +231,13 @@ export function FocusServicePage({ data }: { data: GrowthPageData }) {
           <h1>{data.title}</h1>
           <p>{data.subtitle}</p>
           <div className="focus-premium-actions">
-            <a className="button primary" href={`#${id}`}>{data.primaryCta}</a>
-            <a className="button ghost" href="#aanpak">{data.secondaryCta}</a>
+            <a className="button primary" href={data.slug === "/seo/" ? calendlyUrl : `#${id}`}>{data.slug === "/seo/" ? "Plan een kennismaking met Jimmy" : data.primaryCta}</a>
+            <a className="button ghost" href={data.slug === "/seo/" ? `#${id}` : "#aanpak"}>{data.slug === "/seo/" ? "Vraag contact over een SEO-scan" : data.secondaryCta}</a>
           </div>
           <div className="focus-cta-microcopy" aria-label="Wat je mag verwachten">
             {microcopy.map((item) => <span key={item}>{item}</span>)}
           </div>
+          {data.slug === "/seo/" ? <p className="seo-hero-contact">Liever bellen? <a href="tel:+31610175027">06 10175027</a> · ma–vr 09.00–18.00</p> : null}
           {compactPage ? (
             <div className="focus-seo-hero-proof" aria-label={`${data.eyebrow} scan onderdelen`}>
               {proofLabels.map((label) => <span key={label}>{label}</span>)}
@@ -283,9 +285,15 @@ export function FocusServicePage({ data }: { data: GrowthPageData }) {
         ) : null}
       </section>
 
+      {data.slug === "/seo/" ? <aside className="section seo-contact-summary" aria-label="Jouw aanspreekpunt voor SEO">
+        <ResponsiveImage src="/assets/jimmy-buitenhuis.png" alt="Jimmy Buitenhuis" width={320} height={320} loading="lazy" sizes="72px" />
+        <div><strong>Van eerste gesprek tot uitvoering: direct contact met Jimmy.</strong><p>We bespreken je website, doelgroep en gewenste aanvragen. Een betaald vervolg begint pas nadat we de werkzaamheden en kosten hebben afgesproken.</p><a href="#seo-praktijkvoorbeeld">Bekijk wat we op onze eigen website hebben verbeterd</a></div>
+      </aside> : null}
+
       {data.slug === "/seo/" ? (
         <nav className="section focus-seo-jumps" aria-label="Op deze SEO-pagina">
           <a href="#seo-diensten">Diensten en oplevering</a>
+          <a href="#seo-vragen">Veelgestelde vragen</a>
           <a href="#seo-topic-heading">Wat is SEO marketing?</a>
           <a href="#seo-uitbesteden">SEO uitbesteden</a>
           <a href="#seo-region-heading">Lokale en landelijke SEO</a>
@@ -424,7 +432,7 @@ export function FocusServicePage({ data }: { data: GrowthPageData }) {
           <div className="focus-seo-depth-grid">
             <article><h3>Een plan dat je kunt beoordelen</h3><p>Voor de uitvoering spreken we af welke pagina’s en zoekvragen prioriteit krijgen, welke technische verbeteringen nodig zijn en wie wat oppakt. De omvang en kosten hangen af van je website, concurrentie en beschikbare capaciteit.</p></article>
             <article><h3>Inzicht in werkzaamheden en effect</h3><p>We leggen vast wat is aangepast. Vooraf leggen we een nulmeting vast. In Search Console vergelijken we dezelfde pagina’s en zoekvragen over vergelijkbare perioden, met merknaamzoekopdrachten apart. Waar aanvragen worden gemeten, nemen we ook leadkwaliteit mee. In de rapportage staan de uitgevoerde acties, ontwikkeling en volgende prioriteiten. Frequentie en meetinrichting spreken we vooraf af; een gemiddelde positie is geen vaste Google-ranking.</p></article>
-            <article><h3>Voorbeeld van een SEO-diagnose</h3><p>Een dienstpagina krijgt vertoningen maar weinig klikken. Dan onderzoeken we eerst de zoekvragen, positie en getoonde titel. Sluit de pagina aan op de vraag? Is het aanbod duidelijk? We veranderen gericht één onderdeel en vergelijken daarna de ontwikkeling. Dit is een werkwijzevoorbeeld, geen klantresultaat.</p></article>
+            <article><h3>Voorbeeld van een SEO-diagnose</h3><p>Een dienstpagina krijgt vertoningen maar weinig klikken. Dan onderzoeken we eerst de zoekvragen, positie en getoonde titel. Sluit de pagina aan op de vraag? Is het aanbod duidelijk? We veranderen gericht één onderdeel en vergelijken daarna de ontwikkeling. Dit is een werkwijzevoorbeeld, geen klantresultaat.</p><p><a href="/downloads/seo-verbeterplan.csv" download>Download een voorbeeld van een SEO-verbeterplan (CSV)</a>. Open het in Excel of Google Sheets; de voorbeeldregels zijn fictief en kunnen worden vervangen door je eigen bevindingen.</p></article>
             <article id="seo-google-updates"><h3>Hoe we omgaan met Google-updates</h3><p>Bij een verandering in zoekverkeer vergelijken we de timing met de <a href="https://status.search.google.com/products/rGHU1u87FJnkP6W2GwMi/history">officiële updategeschiedenis van Google</a>. Samenvallende datums bewijzen niet dat een update de oorzaak is. Ook wijzigingen aan je website, zoekvraag en concurrentie kunnen meespelen.</p><p>Voor een core-update volgen we <a href="https://developers.google.com/search/docs/appearance/core-updates">Googles analyseadvies</a>: eerst de uitrol laten afronden, daarna minimaal een volle week wachten en vergelijken met een periode vóór de update. We bekijken getroffen pagina’s en zoekvragen voordat we ingrijpen. Technische fouten lossen we wel direct op.</p></article>
           </div>
           <div className="focus-premium-actions"><a className="button primary" href="#seo-scan">Vraag een eerste SEO-analyse aan</a><a className="button ghost" href="tel:+31610175027">Bel Jimmy: 06 10175027</a></div>
@@ -606,7 +614,7 @@ export function FocusServicePage({ data }: { data: GrowthPageData }) {
         <div>
           <p className="eyebrow">Gratis scan</p>
           <h2>{data.slug === "/seo/" ? "Van je aanvraag naar persoonlijk contact" : "Je krijgt geen algemeen advies, maar een eerste prioriteitenlijst."}</h2>
-          <p>{data.slug === "/seo/" ? "Vul je gegevens en website in en verstuur je aanvraag. Daarna nemen we contact met je op om de SEO-scan en jouw vragen te bespreken. Een eventueel betaald vervolg spreken we apart af." : "De scan is bedoeld om snel te zien waar de meeste winst of duidelijkheid zit. Geen verplichting, wel een concreet startpunt voor een beter gesprek."}</p>
+          <p>{data.slug === "/seo/" ? "Kies zelf een moment in de agenda of stel hieronder je aanvraagmail op en verstuur die. Na ontvangst nemen we contact met je op om je website en jouw vragen te bespreken. Een eventueel betaald vervolg spreken we apart af." : "De scan is bedoeld om snel te zien waar de meeste winst of duidelijkheid zit. Geen verplichting, wel een concreet startpunt voor een beter gesprek."}</p>
         </div>
         <div className="focus-offer-list">
           {deliverables.map((item) => (

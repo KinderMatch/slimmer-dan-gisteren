@@ -32,19 +32,15 @@ export function LanguageProvider({ children, initialLanguage = defaultLanguage }
       return;
     }
 
+    // The URL is authoritative: a stored preference must not mix translated
+    // navigation with Dutch service content or change its document language.
     const requestedLanguage = new URLSearchParams(window.location.search).get("lang");
-    if (requestedLanguage === "en" || requestedLanguage === "nl" || requestedLanguage === "es") {
-      setLanguageState(requestedLanguage);
-      window.localStorage.setItem("sdg-language", requestedLanguage);
-      document.documentElement.lang = requestedLanguage;
+    if (requestedLanguage === "en" || requestedLanguage === "es") {
+      window.location.replace(pathForLanguage(window.location.pathname, requestedLanguage));
       return;
     }
-
-    const savedLanguage = window.localStorage.getItem("sdg-language");
-    if (savedLanguage === "en" || savedLanguage === "nl" || savedLanguage === "es") {
-      setLanguageState(savedLanguage);
-      document.documentElement.lang = savedLanguage;
-    }
+    setLanguageState("nl");
+    document.documentElement.lang = "nl";
   }, [initialLanguage]);
 
   const value = useMemo(

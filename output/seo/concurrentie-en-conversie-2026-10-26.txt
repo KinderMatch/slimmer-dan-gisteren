@@ -1,0 +1,31 @@
+Vergelijking en uitvoering — 26 oktober 2026
+
+Bronnen opnieuw bekeken:
+https://dgtlbase.com/nl/seo-marketing/ — zichtbare dienstenstructuur, analyse-CTA, klantlogo’s en waardering.
+https://roxtar.nl/ — concreet aanspreekpunt, telefoon, cases met periode/resultaat, reviews, aanvraagroute.
+https://whello.nl/seo-bureau — specialistprofielen, cases, afspraakroute, expertiseverdieping en uitleg van samenwerking.
+Deze zichtbare kenmerken bewijzen geen causale rankingfactoren of conversiewinst. Backlinkprofielen, historische prestaties en conversiedata zijn niet beschikbaar.
+Google basis: https://developers.google.com/search/docs/fundamentals/creating-helpful-content
+
+Uitgevoerd in deze ronde:
+- Direct afspraak plannen als primaire knop bovenaan de Nederlandse SEO-pagina; bestaande scanroute als alternatief.
+- Telefoon en opgegeven bereikbaarheid ma-vr 09.00-18.00 vroeg op de pagina.
+- Compact contactblok met echte foto van Jimmy, concrete vervolgafspraken en link naar eigen praktijkvoorbeeld.
+- FAQ direct bereikbaar via paginanavigatie.
+- Downloadbaar SEO-verbeterplan (CSV) met uitdrukkelijk fictieve voorbeeldregels: klantvraag, bewijs, actie, prioriteit, eigenaar, controle en evaluatie. Geen klantresultaten verzonnen.
+- Vervolgstappen bij aanvraag verduidelijkt. Geen bevestiging van ontvangst vóór daadwerkelijke verzending.
+- ContactAction in gestructureerde gegevens sluit aan op agenda-CTA.
+
+Aanvullend gevonden en hersteld:
+- Op Nederlandse URL kon opgeslagen Engelse voorkeur navigatie en documenttaal verkeerd zetten. URL bepaalt nu de taal.
+- Lange hoofdkop drukte de tekstkolom buiten mobiel scherm; kolomminimum en mobiele lettergrootte aangepast.
+
+Al aanwezig en behouden:
+Unieke titel en beschrijving, voorkeurs-URL en taalverwijzingen, indexeerbare HTML, diensten met concrete oplevering, eigen praktijkvoorbeeld, kostenfactoren, landelijke positionering, FAQ met overeenkomstige structured data, twee inhoudelijke gidsen met interne links, sitemap en geoptimaliseerde afbeeldingen.
+
+Nog open / afhankelijk van echte gegevens:
+- Automatische formulierdienst op expliciet verzoek van gebruiker uitgesteld. Mailconcept blijft expliciet handmatig, agenda en telefoon zijn alternatieven.
+- Echte SEO-klantcases en reviews zodra beschikbaar en met toestemming. Geen namaakratings, logo’s of resultaatclaims toegevoegd.
+- Relevante externe vermeldingen moeten verdiend worden; niet door websitecode te realiseren. Geen outreach, aankoop of onbekend ondernemersnetwerk.
+- Conversiewinst niet gemeten: een klik of geopend e-mailconcept is geen ontvangen aanvraag. Geen nieuwe tracking geplaatst. Vergelijk bevestigde aanvragen en geboekte afspraken met Search Console over een langere periode; huidige exacte-termmeting had geen vertoningen.
+- Top-3 is niet te garanderen; optimalisaties zijn geen vastgestelde rankingwinst.

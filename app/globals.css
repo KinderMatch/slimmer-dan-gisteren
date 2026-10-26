@@ -11052,3 +11052,18 @@ h3 {
 .seo-guide th, .seo-guide td { padding: .8rem; border: 1px solid #cbd5dc; vertical-align: top; min-width: 150px; }
 .seo-guide caption { text-align: left; font-weight: 700; margin-bottom: .8rem; }
 @media (max-width: 600px) { .seo-guide { padding-top: 10rem; } }
+
+/* Short contact route and practical evidence for the Dutch SEO landing page. */
+.seo-contact-summary { display: flex; align-items: center; gap: 1.25rem; padding-block: 1.5rem; }
+.seo-contact-summary img { width: 72px; height: 72px; object-fit: cover; border-radius: 50%; flex-shrink: 0; }
+.seo-contact-summary p { margin: .4rem 0; }
+.seo-contact-summary a, .seo-hero-contact a { text-decoration: underline; text-underline-offset: .2em; }
+.seo-contact-next { margin-top: 1.5rem; border-top: 1px solid #bdccd5; padding-top: 1rem; }
+.seo-contact-next h3 { font-size: 1.3rem; }
+.seo-contact-next li { margin-block: .6rem; }
+@media (max-width: 600px) { .seo-contact-summary { align-items: flex-start; gap: .8rem; } .seo-contact-summary img { width: 56px; height: 56px; } }
+.focus-seo-page .focus-premium-copy { min-width: 0; }
+@media (max-width: 600px) {
+  .focus-seo-page .focus-premium-hero h1 { font-size: clamp(2rem, 8vw, 2.65rem); line-height: 1.08; overflow-wrap: anywhere; }
+  .focus-seo-page .focus-premium-actions a { max-width: 100%; white-space: normal; text-align: center; }
+}
