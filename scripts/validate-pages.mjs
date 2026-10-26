@@ -44,3 +44,16 @@ assert.match(notFound, /<meta name="robots" content="noindex, follow">/);
 assert.doesNotMatch(notFound, /http-equiv="refresh"/i);
 assert.equal((await readFile(join(root, 'CNAME'), 'utf8')).trim(), 'slimmerdangisteren.nl');
 console.log('PASS retired URLs stay unpublished; 404 is noindex; hosting domain matches canonicals');
+
+for (const slug of ['zoekwoordenonderzoek', 'technische-seo']) {
+  const route = `/seo/${slug}/`;
+  const html = await readFile(join(root, route, 'index.html'), 'utf8');
+  assert.ok(html.includes(`rel="canonical" href="https://slimmerdangisteren.nl${route}"`));
+  assert.doesNotMatch(html, /hrefLang="(?:en-US|es-ES)"/);
+  assert.doesNotMatch(html, /<meta name="robots"[^>]*noindex/);
+  assert.ok(html.includes('href="/seo/"'));
+  assert.equal((html.match(/<h1\b/g) ?? []).length, 1);
+  assert.ok(sitemap.includes(`https://slimmerdangisteren.nl${route}</loc>`));
+  assert.ok(!sitemap.includes(`https://slimmerdangisteren.nl/en${route}`));
+  console.log(`PASS ${route}: Dutch guide, canonical, sitemap and link to SEO service`);
+}

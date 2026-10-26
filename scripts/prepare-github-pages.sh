@@ -106,6 +106,10 @@ print_sitemap_alternates() {
       printf '  </url>\n'
     done
   done
+  # Dutch-only guides: do not advertise nonexistent translations.
+  for path in "/seo/zoekwoordenonderzoek/" "/seo/technische-seo/"; do
+    printf '  <url><loc>%s%s</loc><lastmod>2026-10-26</lastmod></url>\n' "$base_url" "$path"
+  done
   printf '%s\n' '</urlset>'
 } > "$publish_dir/sitemap.xml"
 

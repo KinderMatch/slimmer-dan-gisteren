@@ -33,11 +33,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
     nlPaths.map((path) => pathForLanguage(path, locale)),
   );
 
-  return [...nlPaths, ...localizedPaths].map((path) => ({
+  return [...["/seo/zoekwoordenonderzoek/", "/seo/technische-seo/"].map(path => ({url: absoluteUrl(path), lastModified: new Date("2026-10-26")})), ...[...nlPaths, ...localizedPaths].map((path) => ({
       url: absoluteUrl(path),
       lastModified,
       changeFrequency: changeFrequencyForPath(path.replace(/^\/(en|es)(?=\/|$)/, "") || "/"),
       priority: priorityForPath(path.replace(/^\/(en|es)(?=\/|$)/, "") || "/"),
       alternates: alternatesForPath(path.replace(/^\/(en|es)(?=\/|$)/, "") || "/"),
-  }));
+  }))];
 }

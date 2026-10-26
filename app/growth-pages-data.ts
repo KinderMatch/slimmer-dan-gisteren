@@ -73,7 +73,7 @@ export const seoPage: GrowthPageData = {
   eyebrow: "SEO marketingbureau",
   title: "SEO marketingbureau voor betere vindbaarheid",
   subtitle:
-    "Slimmer dan Gisteren helpt bedrijven in heel Nederland met SEO marketing: beter vindbaar worden in de organische zoekresultaten en relevante bezoekers omzetten in aanvragen. Als SEO marketingbureau combineren we zoekwoordenonderzoek, technische verbeteringen en sterke content in een concreet plan voor jouw website.",
+    "Zoek je een SEO marketingbureau dat onderzoek én uitvoering oppakt? Je werkt rechtstreeks met Jimmy Buitenhuis aan zoekwoorden, technische verbeteringen en content voor jouw website. Vanuit Diemen helpen we bedrijven in heel Nederland om relevante bezoekers uit Google te bereiken en de stap naar contact duidelijker te maken.",
   primaryCta: "Vraag een gratis SEO-scan aan",
   secondaryCta: "Bekijk onze aanpak",
   metadata: {

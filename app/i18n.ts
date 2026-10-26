@@ -24,6 +24,7 @@ export function pathForLanguage(pathname: string, language: Language) {
   const withoutLocale = cleanPath.replace(/^\/(en|es)(?=\/|$)/, "") || "/";
 
   if (language === "nl") return withoutLocale;
+  if (["/seo/zoekwoordenonderzoek/", "/seo/technische-seo/"].includes(withoutLocale)) return `/${language}/seo/`;
   return withoutLocale === "/" ? `/${language}/` : `/${language}${withoutLocale}`;
 }
 

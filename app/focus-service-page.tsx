@@ -311,6 +311,8 @@ export function FocusServicePage({ data }: { data: GrowthPageData }) {
                 <h3>{service.title}</h3>
                 <p>{service.body}</p>
                 {service.deliverable ? <p><strong>Concrete oplevering: </strong>{service.deliverable}</p> : null}
+                {service.title === "Zoekwoordenonderzoek" ? <a href="/seo/zoekwoordenonderzoek/">Zo koppelen we zoekvragen aan pagina’s</a> : null}
+                {service.title === "Technische SEO" ? <a href="/seo/technische-seo/">Bekijk de technische controlevolgorde</a> : null}
               </article>
             ))}
           </div>

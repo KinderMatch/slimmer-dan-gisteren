@@ -1,0 +1,22 @@
+SEO-vervolgstappen en nulmeting — 26 oktober 2026
+
+2. Commerciële focus: introductie /seo/ aangescherpt op bureaukeuze, direct contact met Jimmy, onderzoek en uitvoering, heel Nederland.
+3. Twee oorspronkelijke ondersteunende gidsen toegevoegd: /seo/zoekwoordenonderzoek/ en /seo/technische-seo/. Onderling verbonden en gelinkt vanuit diensten op /seo/. Nederlandse canonicals en sitemap. Voorbeeld uitdrukkelijk fictief, geen verzonnen klantresultaten.
+4. Externe vermeldingen: kans onderzocht bij Ondernemend Diemen. Gemeente verwijst naar dit lokale ondernemersnetwerk. Lidmaatschap heeft kosten en voorwaarden; geen aanmelding of betaling uitgevoerd. Geen externe publicatie of backlink beloofd. Publiceer eigen bruikbare gidsen en bied een inhoudelijke bijdrage aan, zonder verplichte link.
+Bronnen: https://www.diemen.nl/Onderwerpen/Ondernemen_in_Diemen/Onderneming_starten en https://ondernemenddiemen.nl/ en https://ondernemenddiemen.nl/aanmelden/
+Frankwatching accepteert inhoudelijke bijdragen maar geen linkpromotie; daarom geen backlinkactie of herpublicatie van de gidsen. Bron https://www.frankwatching.com/over/terms-policies/
+
+Conceptbericht, NIET VERZONDEN
+Aan: info@od-diemen.nl
+Onderwerp: Inhoudelijke bijdrage over online vindbaarheid voor ondernemers in Diemen
+Beste team van Ondernemend Diemen,
+Ik ben Jimmy Buitenhuis van Slimmer dan Gisteren, gevestigd in Diemen. Ik help bedrijven met SEO en online marketing. Ik zou graag verkennen of een praktische bijdrage over online vindbaarheid aansluit bij jullie activiteiten voor ondernemers. Bijvoorbeeld: hoe koppel je echte klantvragen aan de juiste pagina op je website, zonder voor elk zoekwoord een losse pagina te maken?
+Ik heb hierover een praktische uitleg met een fictief werkvoorbeeld gepubliceerd: https://slimmerdangisteren.nl/seo/zoekwoordenonderzoek/ . Is er ruimte voor zo’n kennisbijdrage, en welke voorwaarden gelden daarvoor? Deze vraag is nog geen aanmelding voor een lidmaatschap.
+Met vriendelijke groet,
+Jimmy Buitenhuis
+Slimmer dan Gisteren
+
+5. Nulmeting Search Console
+Gelezen op 26 oktober 2026: exacte zoekvraag seo marketingbureau, domein slimmerdangisteren.nl, zoektype Web, 28 dagen geselecteerd; grafiek toont 11 t/m 24 oktober. 0 vertoningen, 0 klikken, Geen gegevens. Getoonde gemiddelde positie 0 is geen daadwerkelijke ranking. Geen betrouwbare positie voor deze zoekvraag beschikbaar. Dit bewijst niet dat de pagina buiten de top 100 staat. Daarna ook exact paginafilter https://slimmerdangisteren.nl/seo/ bevestigd: eveneens 0 vertoningen, 0 klikken en Geen gegevens.
+Geen vaste actuele locatiegebonden rang gemeten. Land/apparaat/zoeklocatie kunnen resultaten veranderen. Eerdere gemiddelde positie over alle zoekvragen mag niet als positie voor deze term worden gebruikt.
+Evalueer na circa vier weken dezelfde exacte zoekvraag én /seo/, naast alle zoekvragen voor /seo/, met vergelijkbare perioden. Noteer vertoningen, klikken, gemiddelde positie en echte ontvangen aanvragen apart. Geen automatische monitor ingesteld.

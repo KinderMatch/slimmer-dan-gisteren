@@ -11041,3 +11041,14 @@ h3 {
 .focus-seo-page .seo-faq-group { margin-top: 1rem; }
 .focus-seo-page .seo-faq-group > div { padding-left: 1rem; }
 @media (max-width: 600px) { .focus-seo-page .seo-person { grid-template-columns: 1fr; } }
+
+.seo-guide { padding-top: 8rem; }
+.seo-guide .focus-seo-depth { max-width: 1050px; }
+.seo-guide h1 { font-size: clamp(2rem, 5vw, 3.5rem); line-height: 1.12; }
+.seo-guide h2 { font-size: clamp(1.6rem, 3vw, 2.5rem); line-height: 1.2; }
+.seo-guide li { margin-block: .8rem; }
+.seo-guide-table { overflow-x: auto; margin-block: 1.5rem; }
+.seo-guide table { border-collapse: collapse; width: 100%; text-align: left; }
+.seo-guide th, .seo-guide td { padding: .8rem; border: 1px solid #cbd5dc; vertical-align: top; min-width: 150px; }
+.seo-guide caption { text-align: left; font-weight: 700; margin-bottom: .8rem; }
+@media (max-width: 600px) { .seo-guide { padding-top: 10rem; } }
