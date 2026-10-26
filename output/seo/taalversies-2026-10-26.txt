@@ -1,0 +1,17 @@
+Taalversies – 26 oktober 2026
+
+Nederlands is de bron voor de opbouw en inhoud van SEO, GEO en Google Ads.
+Engels en Spaans gebruiken nu dezelfde componenten, secties, FAQ's en formulieren.
+De SEO-pagina bevat in iedere taal dezelfde 41 vragen.
+Ook de gidsen voor zoekwoordenonderzoek en technische SEO zijn vertaald,
+inclusief interne links, taalwissel, metadata, structured data en downloads.
+Overige bestaande taalpagina's zijn gecontroleerd; metadata en algemene labels zijn afgestemd.
+
+Controle: productiebuild geslaagd; 10/10 tests geslaagd; publicatievalidatie geslaagd.
+Browsercontrole: Engelse en Spaanse SEO-pagina, taalwissel en e-mailconceptformulieren getest.
+Geen testaanvraag verstuurd. Spaanse mobiele pagina: schermbreedte en inhoud beide 390 px.
+De eerder bestaande TypeScript-fouten buiten deze vertaalwijzigingen zijn niet opgelost.
+
+Search Console: nieuwe indexeringsaanvraag niet bevestigd. Eerst bleef de inspectie hangen;
+vervolgens was de Mac vergrendeld. Sitemap is in deze wijziging bijgewerkt.
+Publicatie en Google-indexering zijn afzonderlijke stappen.

@@ -21,14 +21,17 @@ export function useMailUrl() {
 
 export function ContactDock() {
   const mailUrl = useMailUrl();
+  const { language } = useLanguage();
+  const label = (nl: string, en: string, es: string) => ({nl,en,es})[language];
+  const localizedWhatsapp = `https://wa.me/31610175027?text=${encodeURIComponent(label("Hoi Jimmy, ik wil graag even sparren over Slimmer dan Gisteren.", "Hi Jimmy, I would like to discuss Slimmer dan Gisteren.", "Hola Jimmy, me gustaría hablar sobre Slimmer dan Gisteren."))}`;
 
   return (
-    <aside className="contact-dock" aria-label="Contactopties">
-      <a className="contact-dock-primary" href={calendlyUrl} aria-label="Plan een strategiegesprek via Calendly">
+    <aside className="contact-dock" aria-label={label("Contactopties", "Contact options", "Opciones de contacto")}>
+      <a className="contact-dock-primary" href={calendlyUrl} aria-label={label("Plan een strategiegesprek via Calendly", "Book a strategy call via Calendly", "Reserva una llamada estratégica en Calendly")}>
         <Text value={t("Plan gesprek", "Plan call", "Agenda llamada")} />
       </a>
-      <a href={whatsappUrl} aria-label="Stuur een WhatsApp bericht">WhatsApp</a>
-      <a href={mailUrl} aria-label="Stuur een e-mail naar Jimmy">Mail</a>
+      <a href={localizedWhatsapp} aria-label={label("Stuur een WhatsApp bericht", "Send a WhatsApp message", "Enviar un mensaje de WhatsApp")}>WhatsApp</a>
+      <a href={mailUrl} aria-label={label("Stuur een e-mail naar Jimmy", "Email Jimmy", "Enviar un correo a Jimmy")}>{label("Mail", "Email", "Correo")}</a>
     </aside>
   );
 }
@@ -41,18 +44,21 @@ export function ContactActionGroup({
   primaryLabel?: LocalizedString | string;
 }) {
   const mailUrl = useMailUrl();
+  const { language } = useLanguage();
+  const label = (nl: string, en: string, es: string) => ({nl,en,es})[language];
+  const localizedWhatsapp = `https://wa.me/31610175027?text=${encodeURIComponent(label("Hoi Jimmy, ik wil graag even sparren over Slimmer dan Gisteren.", "Hi Jimmy, I would like to discuss Slimmer dan Gisteren.", "Hola Jimmy, me gustaría hablar sobre Slimmer dan Gisteren."))}`;
 
   return (
     <div className={`contact-action-wrap ${className}`}>
       <div className="contact-action-group">
-        <a className="button primary" href={calendlyUrl} aria-label="Plan een strategiegesprek via Calendly">
+        <a className="button primary" href={calendlyUrl} aria-label={label("Plan een strategiegesprek via Calendly", "Book a strategy call via Calendly", "Reserva una llamada estratégica en Calendly")}>
           <Text value={primaryLabel ?? t("Plan kennismaking", "Book an introduction", "Agenda una llamada")} />
         </a>
-        <a className="button ghost" href={whatsappUrl} aria-label="Stuur een WhatsApp bericht">
+        <a className="button ghost" href={localizedWhatsapp} aria-label={label("Stuur een WhatsApp bericht", "Send a WhatsApp message", "Enviar un mensaje de WhatsApp")}>
           WhatsApp
         </a>
-        <a className="button ghost" href={mailUrl} aria-label="Stuur een e-mail naar Jimmy">
-          Mail
+        <a className="button ghost" href={mailUrl} aria-label={label("Stuur een e-mail naar Jimmy", "Email Jimmy", "Enviar un correo a Jimmy")}>
+          {label("Mail", "Email", "Correo")}
         </a>
       </div>
       <p className="contact-microcopy">

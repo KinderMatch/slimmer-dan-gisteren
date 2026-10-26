@@ -1,0 +1,5 @@
+﻿Type;Page;Customer question;Observation;Proposed action;Priority;Owner;Post-implementation check;Review date;Status
+FICTIONAL EXAMPLE;/service/;What does the service cost?;Cost explanation missing;Explain pricing factors and what a proposal includes;High;To be completed;Visitor can find cost information and contact options;To be completed;Proposal
+FICTIONAL EXAMPLE;/service/;Can I book an appointment?;Contact button points to an outdated address;Fix the link and test the enquiry process;High;To be completed;Link works and receipt of test enquiry confirmed;To be completed;Proposal
+FICTIONAL EXAMPLE;/guide/;How do I recognise the problem?;Article does not link to the relevant service;Add a relevant internal link;Normal;To be completed;Link leads to the correct service page;To be completed;Proposal
+OWN FINDING;;;;;;;;;To be investigated

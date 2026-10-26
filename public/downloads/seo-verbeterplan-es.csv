@@ -1,0 +1,5 @@
+﻿Tipo;Página;Pregunta del cliente;Observación;Acción propuesta;Prioridad;Responsable;Comprobación tras la ejecución;Fecha de evaluación;Estado
+EJEMPLO FICTICIO;/servicio/;¿Cuánto cuesta el servicio?;Falta una explicación de los costes;Explicar los factores de precio y qué incluye una propuesta;Alta;Por completar;El visitante encuentra información de costes y contacto;Por completar;Propuesta
+EJEMPLO FICTICIO;/servicio/;¿Puedo reservar una cita?;El botón de contacto enlaza a una dirección antigua;Corregir el enlace y probar la solicitud;Alta;Por completar;El enlace funciona y se confirma la recepción de la solicitud de prueba;Por completar;Propuesta
+EJEMPLO FICTICIO;/guia/;¿Cómo reconozco el problema?;El artículo no enlaza al servicio pertinente;Añadir un enlace interno pertinente;Normal;Por completar;El enlace lleva a la página de servicio correcta;Por completar;Propuesta
+HALLAZGO PROPIO;;;;;;;;;Pendiente de investigar

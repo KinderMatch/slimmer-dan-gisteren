@@ -49,7 +49,7 @@ export const metadata: Metadata = {
 export default function ContentCreatiePage({ initialLanguage = "nl" }: { initialLanguage?: Language } = {}) {
   return (
     <>
-      <JsonLd
+      <JsonLd locale={initialLanguage}
         data={[
           breadcrumbJsonLd([
             { name: "Home", path: "/" },

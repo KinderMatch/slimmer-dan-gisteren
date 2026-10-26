@@ -39,6 +39,8 @@ paths=(
   "/"
   "/geo/"
   "/seo/"
+  "/seo/zoekwoordenonderzoek/"
+  "/seo/technische-seo/"
   "/google-ads/"
   "/social-ads/"
   "/content-creatie/"
@@ -109,10 +111,6 @@ print_sitemap_alternates() {
       printf '    <priority>%s</priority>\n' "$priority"
       printf '  </url>\n'
     done
-  done
-  # Dutch-only guides: do not advertise nonexistent translations.
-  for path in "/seo/zoekwoordenonderzoek/" "/seo/technische-seo/"; do
-    printf '  <url><loc>%s%s</loc><lastmod>%s</lastmod></url>\n' "$base_url" "$path" "$(lastmod_for_path "$path")"
   done
   printf '%s\n' '</urlset>'
 } > "$publish_dir/sitemap.xml"

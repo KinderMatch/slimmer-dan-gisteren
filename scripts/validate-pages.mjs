@@ -57,11 +57,16 @@ for (const slug of ['zoekwoordenonderzoek', 'technische-seo']) {
   const route = `/seo/${slug}/`;
   const html = await readFile(join(root, route, 'index.html'), 'utf8');
   assert.ok(html.includes(`rel="canonical" href="https://slimmerdangisteren.nl${route}"`));
-  assert.doesNotMatch(html, /hrefLang="(?:en-US|es-ES)"/);
+  assert.match(html, /hrefLang="en-US"/);
+  assert.match(html, /hrefLang="es-ES"/);
   assert.doesNotMatch(html, /<meta name="robots"[^>]*noindex/);
   assert.ok(html.includes('href="/seo/"'));
   assert.equal((html.match(/<h1\b/g) ?? []).length, 1);
   assert.ok(sitemap.includes(`https://slimmerdangisteren.nl${route}</loc>`));
-  assert.ok(!sitemap.includes(`https://slimmerdangisteren.nl/en${route}`));
-  console.log(`PASS ${route}: Dutch guide, canonical, sitemap and link to SEO service`);
+  for (const locale of ["en", "es"]) {
+    assert.ok(sitemap.includes(`https://slimmerdangisteren.nl/${locale}${route}`));
+    const translated = await readFile(join(root, locale, route, "index.html"), "utf8");
+    assert.ok(translated.includes(`rel="canonical" href="https://slimmerdangisteren.nl/${locale}${route}"`));
+  }
+  console.log(`PASS ${route}: translated guides, canonicals, sitemap and link to SEO service`);
 }

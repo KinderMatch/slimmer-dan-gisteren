@@ -1,3 +1,4 @@
+import type { Language } from "./language";
 import type { Metadata } from "next";
 
 import { JsonLd } from "./json-ld";
@@ -33,10 +34,10 @@ export const metadata: Metadata = {
   },
 };
 
-export default function Home() {
+export default function Home({ initialLanguage = "nl" }: { initialLanguage?: Language } = {}) {
   return (
     <>
-      <JsonLd
+      <JsonLd locale={initialLanguage}
         data={[
           breadcrumbJsonLd([{ name: "Home", path: "/" }]),
           faqJsonLd([
@@ -80,7 +81,7 @@ export default function Home() {
           },
         ]}
       />
-      <PremiumHome />
+      <PremiumHome initialLanguage={initialLanguage} />
     </>
   );
 }

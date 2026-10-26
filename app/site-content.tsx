@@ -287,7 +287,7 @@ export function SiteShell({
           <ResponsiveImage src="/assets/logo.png" alt="" width={dimensionsFor("/assets/logo.png")?.width} height={dimensionsFor("/assets/logo.png")?.height} />
           <span>Slimmer dan Gisteren</span>
         </LocalizedLink>
-        <nav aria-label="Hoofdnavigatie">
+        <nav aria-label={initialLanguage === "en" ? "Main navigation" : initialLanguage === "es" ? "Navegación principal" : "Hoofdnavigatie"}>
           {navItems.map((item) => (
             <LocalizedLink href={item.href} key={item.href}>
               <Text value={item.label} />
@@ -324,10 +324,10 @@ export function SiteShell({
           <LocalizedLink href="/seo/">SEO</LocalizedLink>
           <LocalizedLink href="/google-ads/">Google Ads</LocalizedLink>
           <LocalizedLink href="/social-ads/">Social Ads</LocalizedLink>
-          <LocalizedLink href="/website/">Website</LocalizedLink>
-          <LocalizedLink href="/content-creatie/">Social media</LocalizedLink>
+          <LocalizedLink href="/website/"><Text value={t("Website", "Website", "Sitio web")} /></LocalizedLink>
+          <LocalizedLink href="/content-creatie/"><Text value={t("Social media", "Social media", "Redes sociales")} /></LocalizedLink>
           <a href="https://calendly.com/buitenhuisj004/bmc-sessie"><Text value={t("Kennismaken", "Introduction", "Conocernos")} /></a>
-          <a href="mailto:jimmy@slimmerdangisteren.nl">Mail</a>
+          <a href="mailto:jimmy@slimmerdangisteren.nl"><Text value={t("Mail", "Email", "Correo")}/></a>
         </div>
       </footer>
     </LanguageProvider>

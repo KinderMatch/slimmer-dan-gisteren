@@ -1,17 +1,18 @@
 import type { Metadata } from "next";
 
-import TermsPage from "./algemene-voorwaarden/page";
-import ContentPage from "./content-creatie/page";
+import TermsPage, { metadata as termsMetadata } from "./algemene-voorwaarden/page";
+import ContentPage, { metadata as contentMetadata } from "./content-creatie/page";
 import { geoPage, googleAdsPage, seoPage } from "./growth-pages-data";
 import { localizedPublicPaths, pathForLanguage, type RouteLocale } from "./i18n";
 import { JsonLd } from "./json-ld";
-import { LocalizedServicePage } from "./localized-service-page";
-import { PremiumHome } from "./premium-home";
-import PrivacyPage from "./privacy/page";
-import SocialAdsPage from "./social-ads/page";
+import { FocusServicePage } from "./focus-service-page";
+import { translateCopy } from "./localize-service-tree";
+import Home, { metadata as homeMetadata } from "./page";
+import PrivacyPage, { metadata as privacyMetadata } from "./privacy/page";
+import SocialAdsPage, { metadata as socialMetadata } from "./social-ads/page";
 import { absoluteUrl, breadcrumbJsonLd, faqJsonLd, serviceJsonLd, siteName } from "./seo";
 import { SiteShell } from "./site-content";
-import WebsitePage from "./website/page";
+import WebsitePage, { metadata as websiteMetadata } from "./website/page";
 
 export type LocalizedPagePath = (typeof localizedPublicPaths)[number];
 
@@ -86,8 +87,10 @@ export function localizedMetadata(locale: RouteLocale, path: LocalizedPagePath):
     "x-default": path ? `/${path}/` : "/",
   };
   const [titleKey, descriptionKey] = localizedMetadataByPath[path];
-  const title = meta[titleKey];
-  const description = meta[descriptionKey];
+  const service = path === "seo" ? seoPage : path === "geo" ? geoPage : path === "google-ads" ? googleAdsPage : null;
+  const source = service?.metadata ?? ({ "": homeMetadata, "social-ads": socialMetadata, "content-creatie": contentMetadata, website: websiteMetadata, privacy: privacyMetadata, "algemene-voorwaarden": termsMetadata } as Record<string, Metadata>)[path];
+  const title = source ? translateCopy(source.title as string, locale) : meta[titleKey];
+  const description = source ? translateCopy(source.description as string, locale) : meta[descriptionKey];
 
   return {
     title,
@@ -99,7 +102,7 @@ export function localizedMetadata(locale: RouteLocale, path: LocalizedPagePath):
 }
 
 export function LocalizedRoutePage({ locale, path }: { locale: RouteLocale; path: LocalizedPagePath }) {
-  if (!path) return <PremiumHome initialLanguage={locale} />;
+  if (!path) return <Home initialLanguage={locale} />;
 
   if (path === "seo" || path === "geo" || path === "google-ads") {
     const data = path === "seo" ? seoPage : path === "geo" ? geoPage : googleAdsPage;
@@ -108,13 +111,14 @@ export function LocalizedRoutePage({ locale, path }: { locale: RouteLocale; path
       <>
         <JsonLd
           data={[
-            breadcrumbJsonLd([{ name: "Home", path: canonicalFor(locale, "") }, { name: data.eyebrow, path: canonicalFor(locale, path) }]),
-            serviceJsonLd(data.slug),
-            faqJsonLd(data.faq),
+            breadcrumbJsonLd([{ name: "Home", path: canonicalFor(locale, "") }, { name: translateCopy(data.eyebrow, locale), path: canonicalFor(locale, path) }]),
+            { ...serviceJsonLd(data.slug), "@id": `${absoluteUrl(canonicalFor(locale, path))}#service`, url: absoluteUrl(canonicalFor(locale, path)), name: translateCopy(data.eyebrow, locale), serviceType: translateCopy(data.eyebrow, locale), description: translateCopy(data.metadata.description, locale), termsOfService: absoluteUrl(pathForLanguage("/algemene-voorwaarden/", locale)) },
+            { "@context": "https://schema.org", "@type": "WebPage", "@id": `${absoluteUrl(canonicalFor(locale, path))}#webpage`, url: absoluteUrl(canonicalFor(locale, path)), name: translateCopy(data.metadata.title, locale), description: translateCopy(data.metadata.description, locale), inLanguage: locale === "en" ? "en-US" : "es-ES" },
+            faqJsonLd(data.faq.map(item => ({ question: translateCopy(item.question, locale), answer: translateCopy(item.answer, locale) }))),
           ]}
         />
         <SiteShell initialLanguage={locale} premiumNavigation>
-          <LocalizedServicePage language={locale} service={path} />
+          <FocusServicePage locale={locale} data={data} />
         </SiteShell>
       </>
     );

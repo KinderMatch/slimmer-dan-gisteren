@@ -1,9 +1,11 @@
 "use client";
 
+import { useLanguage } from "./language";
 import { useEffect, useRef } from "react";
 
 /** Load the animation only when visible; respect reduced-motion preferences. */
 export function SeoAnimation() {
+  const { language } = useLanguage();
   const ref = useRef<HTMLVideoElement>(null);
   useEffect(() => {
     const video = ref.current;
@@ -18,5 +20,5 @@ export function SeoAnimation() {
     observer.observe(video);
     return () => observer.disconnect();
   }, []);
-  return <video ref={ref} width={480} height={360} poster="/assets/seo-search-poster.webp" muted playsInline loop controls preload="none" aria-label="Animatie van een zoekresultaat in Google" />;
+  return <video ref={ref} width={480} height={360} poster="/assets/seo-search-poster.webp" muted playsInline loop controls preload="none" aria-label={language === "en" ? "Animation of a Google search result" : language === "es" ? "Animación de un resultado de búsqueda de Google" : "Animatie van een zoekresultaat in Google"} />;
 }

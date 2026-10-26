@@ -318,7 +318,7 @@ export const metadata: Metadata = {
 export default function AlgemeneVoorwaardenPage({ initialLanguage = "nl" }: { initialLanguage?: Language } = {}) {
   return (
     <>
-      <JsonLd
+      <JsonLd locale={initialLanguage}
         data={breadcrumbJsonLd([
           { name: "Home", path: "/" },
           { name: "Algemene voorwaarden", path: "/algemene-voorwaarden/" },

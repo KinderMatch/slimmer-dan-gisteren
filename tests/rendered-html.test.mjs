@@ -154,3 +154,34 @@ test("SEO FAQ groups preserve every structured question in accessible native dis
   assert.equal((html.match(/class="seo-faq-group"/g) ?? []).length, 3);
   assert.match(html, /Na ontvangst van je aanvraag nemen we persoonlijk contact/);
 });
+
+test("translated service pages retain the Dutch sections, FAQs, form semantics and local links", async () => {
+  const decode = text => text.replaceAll("&#x27;", "'").replaceAll("&quot;", '"').replaceAll("&amp;", "&");
+  for (const path of ['seo', 'geo', 'google-ads']) {
+    const nl = await readFile(`dist/server/prerendered-routes/${path}/index.html`, 'utf8');
+    const main = html => html.match(/<main>([\s\S]*?)<\/main>/)?.[1] ?? '';
+    const structure = html => [...main(html).matchAll(/<(section|article|details|summary|h[1-6]|input|textarea|video)\b/g)].map(m => m[1]);
+    const fields = html => [...main(html).matchAll(/<(input|textarea)\b[^>]*>/g)].map(m => m[0]);
+    for (const locale of ['en', 'es']) {
+      const html = await readFile(`dist/server/prerendered-routes/${locale}/${path}/index.html`, 'utf8');
+      assert.deepEqual(structure(html), structure(nl), `${locale}/${path}: content structure`);
+      for (const attr of ['name', 'type', 'required', 'autocomplete']) {
+        const values = tags => tags.map(tag => tag.match(new RegExp(`\\b${attr}="([^"]*)"`))?.[1] ?? null);
+        assert.deepEqual(values(fields(html)), values(fields(nl)), `${locale}/${path}: ${attr}`);
+      }
+      for (const [, id] of main(html).matchAll(/href="#([^"]+)"/g)) assert.ok(html.includes(`id="${id}"`), `Missing ${id}`);
+      assert.ok(html.includes(`rel="canonical" href="https://slimmerdangisteren.nl/${locale}/${path}/"`));
+      const schema = [...html.matchAll(/<script type="application\/ld\+json">(.*?)<\/script>/gs)].flatMap(m => JSON.parse(m[1]));
+      const faq = schema.find(item => item['@type'] === 'FAQPage');
+      const summaries = [...html.matchAll(/<summary[^>]*>(.*?)<\/summary>/gs)].map(m => decode(m[1]));
+      for (const item of faq.mainEntity) assert.equal(summaries.filter(text => text === item.name).length, 1, `${locale}: ${item.name}`);
+      if (path === 'seo') {
+        assert.equal(faq.mainEntity.length, 41);
+        assert.ok(html.includes(`href="/${locale}/seo/zoekwoordenonderzoek/"`));
+        assert.ok(html.includes(`href="/${locale}/seo/technische-seo/"`));
+        assert.ok(html.includes(`href="/downloads/seo-verbeterplan-${locale}.csv"`));
+        assert.doesNotMatch(main(html), /Wat gebeurt er daarna|Gratis scan|Je werkt rechtstreeks|Smarter than Yesterday|Más inteligente que ayer/);
+      }
+    }
+  }
+});

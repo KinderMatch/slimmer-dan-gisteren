@@ -1,3 +1,5 @@
+import { localizeServiceTree } from "./localize-service-tree";
+import type { Language } from "./language";
 import { SeoEvidence } from "./seo-evidence";
 import { SeoAnimation } from "./seo-animation";
 import { ResponsiveImage } from "./responsive-image";
@@ -204,7 +206,7 @@ function ScanFormPanel({ data, id, microcopy }: { data: GrowthPageData; id: stri
   );
 }
 
-export function FocusServicePage({ data }: { data: GrowthPageData }) {
+export function FocusServicePage({ data, locale = "nl" }: { data: GrowthPageData; locale?: Language }) {
   const id = formId(data.slug);
   const accents = pageAccent(data);
   const featuredServices = data.services.slice(0, 6);
@@ -223,7 +225,7 @@ export function FocusServicePage({ data }: { data: GrowthPageData }) {
 
   const pageClassName = `service-premium focus-premium-page ${compactPage ? "focus-compact-page" : ""} ${data.slug === "/seo/" ? "focus-seo-page" : ""} ${data.slug === "/geo/" ? "focus-geo-page" : ""}`;
 
-  return (
+  return localizeServiceTree(
     <div className={pageClassName}>
       <section className="focus-premium-hero">
         <div className="focus-premium-shade" aria-hidden="true" />
@@ -656,5 +658,5 @@ export function FocusServicePage({ data }: { data: GrowthPageData }) {
         </section>
       )}
     </div>
-  );
+  , locale, new Set([FaqPanel, ScanFormPanel, SeoEvidence, SeoSystemVisual]));
 }
