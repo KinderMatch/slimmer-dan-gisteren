@@ -11074,3 +11074,7 @@ h3 {
 
 .seo-breadcrumbs { font-size: .9rem; line-height: 1.6; margin-bottom: 1rem; overflow-wrap: anywhere; }
 .seo-breadcrumbs a { text-decoration: underline; text-underline-offset: .2em; }
+
+/* Keep the SEO introduction visible from the first paint. */
+.focus-seo-page .focus-premium-copy,
+.focus-seo-page .focus-compact-hero-visual { animation: none; }

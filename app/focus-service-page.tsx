@@ -1,4 +1,5 @@
 import { SeoEvidence } from "./seo-evidence";
+import { SeoAnimation } from "./seo-animation";
 import { ResponsiveImage } from "./responsive-image";
 import { EmphasisText } from "./language";
 import { dimensionsFor } from "./image-dimensions";
@@ -248,15 +249,7 @@ export function FocusServicePage({ data }: { data: GrowthPageData }) {
         {compactPage && data.slug !== "/geo/" ? (
           <figure className="focus-compact-hero-visual" aria-label={`${data.eyebrow} visualisatie`}>
             {data.slug === "/seo/" ? (
-              <ResponsiveImage
-                src="/assets/seo-google-search.gif"
-                alt="Google zoekanimatie voor SEO marketingbureau"
-                loading="eager"
-                fetchPriority="high"
-                sizes="(max-width: 768px) 100vw, 520px"
-                width={dimensionsFor("/assets/seo-google-search.gif")?.width}
-                height={dimensionsFor("/assets/seo-google-search.gif")?.height}
-              />
+              <SeoAnimation />
             ) : (
               <video muted playsInline preload="none" autoPlay loop>
                 <source src={media.src} type="video/mp4" />

@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, type FormEvent } from "react";
+import { useEffect, useState, type FormEvent } from "react";
 
 type ScanFormProps = {
   fields: string[];
@@ -60,6 +60,8 @@ export function ScanForm({ delivery = "server", fields, formId, includePrivacyCo
   const [state, setState] = useState<SubmitState>("idle");
   const [message, setMessage] = useState("");
   const [emailDraft, setEmailDraft] = useState("");
+  const [ready, setReady] = useState(false);
+  useEffect(() => { setReady(true); }, []);
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -106,7 +108,7 @@ export function ScanForm({ delivery = "server", fields, formId, includePrivacyCo
 
   return (
     <form
-      action={delivery === "email" ? "mailto:jimmy@slimmerdangisteren.nl" : "/api/scan"}
+      action={delivery === "email" ? undefined : "/api/scan"}
       method="post"
       onSubmit={handleSubmit}
       onChange={delivery === "email" ? () => { setEmailDraft(""); setMessage(""); } : undefined}
@@ -151,7 +153,7 @@ export function ScanForm({ delivery = "server", fields, formId, includePrivacyCo
           <span>Ik ga akkoord met verwerking volgens het privacybeleid.</span>
         </label>
       ) : null}
-      <button type="submit" disabled={state === "submitting"}>
+      <button type="submit" disabled={state === "submitting" || (delivery === "email" && !ready)}>
         {state === "submitting" ? "Versturen..." : submitLabel}
       </button>
       {emailDraft ? <a className="button primary" href={emailDraft}>Open mijn aanvraag in e-mail</a> : null}

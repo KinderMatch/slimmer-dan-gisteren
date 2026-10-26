@@ -122,7 +122,8 @@ test("GEO animation stays small enough for PageSpeed", async () => {
 
 test("SEO enquiry uses an explicit email draft on static hosting and section links resolve", async () => {
   const html = await (await render("/seo/")).text();
-  assert.match(html, /action="mailto:jimmy@slimmerdangisteren.nl"/);
+  assert.doesNotMatch(html, /action="mailto:/);
+  assert.match(html, /<button type="submit" disabled="">Zet mijn aanvraagmail klaar/);
   assert.doesNotMatch(html, /action="\/api\/scan"/);
   assert.match(html, /Zet mijn aanvraagmail klaar/);
   assert.doesNotMatch(html, /name="Bedrijfsnaam"/);
@@ -132,6 +133,14 @@ test("SEO enquiry uses an explicit email draft on static hosting and section lin
   }
   const adsHtml = await (await render("/google-ads/")).text();
   assert.match(adsHtml, /action="\/api\/scan"/);
+});
+
+test("SEO animation keeps the initial page light without removing its content", async () => {
+  const html = await (await render("/seo/")).text();
+  assert.match(html, /poster="\/assets\/seo-search-poster.webp"/);
+  assert.doesNotMatch(html, /<img[^>]+seo-google-search/);
+  assert.ok((await stat('public/assets/seo-search.mp4')).size < 100000);
+  assert.ok((await stat('public/assets/seo-search-poster.webp')).size < 10000);
 });
 
 test("SEO FAQ groups preserve every structured question in accessible native disclosures", async () => {
