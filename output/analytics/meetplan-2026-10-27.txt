@@ -1,0 +1,19 @@
+Google Analytics 4 — Slimmer dan Gisteren
+Beheeraccount: jimmy@jbpersonalcoaching.com
+Analytics-account: 413625545
+Property: 560988934
+Webstream: 16214866527
+Meetcode: G-LFP82JX4VC
+
+Dekking: de 33 openbare NL/EN/ES-pagina's. Interne campaign-engine, API's, onbekende routes en lokale previews sturen geen gegevens.
+Toestemming: standaard geen Google-script, cookies of meetverzoeken. Analytics wordt pas geladen na toestemming. Advertentiepersonalisatie en Google Signals uit. Keuze en cookielevensduur 180 dagen. Cookievoorkeuren altijd bereikbaar; intrekken stopt de meting, wist GA-cookies en herlaadt de pagina.
+
+page_view: eenmaal per pagina/route na toestemming, zonder querystrings of fragmenten.
+button_click: links, knoppen en uitklapvragen, inclusief taalkeuze. Parameters: button_text, destination, placement, page_path, language.
+contact_click: klikken op telefoon, e-mail, WhatsApp of Calendly. Parameter contact_method: phone/email/whatsapp/appointment. Dit is contactintentie, geen bevestigde lead/boeking.
+form_email_prepared: een geldige aanvraagmail klaargezet. Niet automatisch verstuurd of als ontvangen aanvraag geteld.
+generate_lead: alleen na bevestigde succesvolle verwerking door /api/scan. De huidige statische mailformulieren leveren deze gebeurtenis niet op. Backend-integratie blijft uitgesteld conform verzoek.
+
+Geen formulierinhoud, e-mailadressen, telefoonnummers of mailto-body in eventparameters. Referrer wordt beperkt tot de herkomstsite. Automatische enhanced measurement uit om dubbele pagina- en formuliergebeurtenissen te voorkomen.
+
+Beperkingen: weigering, adblockers en browserbescherming kunnen meting verhinderen. Analytics werkt niet met terugwerkende kracht. Een externe Calendly-klik bevestigt geen boeking. Een mailklik bewijst geen verzending. SEO-posities veranderen niet door het installeren van Analytics.

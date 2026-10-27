@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { JsonLd } from "./json-ld";
 import { absoluteUrl, defaultOgImage, organizationJsonLd, siteName, siteUrl, websiteJsonLd } from "./seo";
 import "./globals.css";
+import { Analytics } from "./analytics";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://slimmerdangisteren.nl"),
@@ -74,6 +75,7 @@ export default function RootLayout({
       <body className="antialiased">
         <JsonLd data={[organizationJsonLd(), websiteJsonLd()]} />
         {children}
+        <Analytics />
       </body>
     </html>
   );

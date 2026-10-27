@@ -4,6 +4,7 @@ import { useLanguage, type Language } from "./language";
 import { pathForLanguage } from "./i18n";
 import { formCopy } from "./translations/form-copy";
 import { useEffect, useState, type FormEvent } from "react";
+import { trackEvent } from "./analytics";
 
 type ScanFormProps = {
   fields: string[];
@@ -81,6 +82,7 @@ export function ScanForm({ language: requestedLanguage, delivery = "server", fie
     const fallbackMail = buildFallbackMail(values, pageTitle, typeof window !== "undefined" ? window.location.href : pageSlug, tr);
 
     if (delivery === "email") {
+      trackEvent("form_email_prepared", { form_id: formId });
       setEmailDraft(fallbackMail);
       setState("idle");
       setMessage(tr("Je aanvraag staat klaar. Open de e-mail hieronder en verstuur deze zelf. Er is nog niets verzonden."));
@@ -104,6 +106,7 @@ export function ScanForm({ language: requestedLanguage, delivery = "server", fie
       }
 
       form.reset();
+      trackEvent("generate_lead", { form_id: formId, method: "website_form" });
       setState("success");
       setMessage(tr("Bedankt. We hebben je aanvraag ontvangen en nemen binnen 3 werkdagen contact met je op."));
     } catch {
@@ -115,6 +118,7 @@ export function ScanForm({ language: requestedLanguage, delivery = "server", fie
 
   return (
     <form
+      id={`${formId}-form`}
       action={delivery === "email" ? undefined : "/api/scan"}
       method="post"
       onSubmit={handleSubmit}

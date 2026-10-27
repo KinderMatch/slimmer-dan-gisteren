@@ -72,9 +72,9 @@ const privacySections = [
   {
     title: t("5. Cookies, analytics en tracking", "5. Cookies, analytics and tracking", "5. Cookies, analitica y tracking"),
     body: t(
-      "De website kan functionele cookies en privacyvriendelijke analyse- of trackingtechnieken gebruiken om de website goed te laten werken, prestaties te meten en conversiepunten te begrijpen. Voor advertentie- of marketingcookies wordt waar nodig toestemming gevraagd.",
-      "The website may use functional cookies and privacy-friendly analytics or tracking technologies to make the website work properly, measure performance and understand conversion points. Consent is requested where required for advertising or marketing cookies.",
-      "El sitio puede usar cookies funcionales y tecnologias de analitica o tracking respetuosas con la privacidad para funcionar correctamente, medir rendimiento y entender puntos de conversion. Cuando sea necesario se solicita consentimiento para cookies publicitarias o de marketing.",
+      "Alleen na jouw toestemming laden we Google Analytics 4. Daarmee meten we paginaweergaven, taal, knoppen en contactacties, zoals klikken op telefoon, e-mail, WhatsApp en afspraken. Formulierinhoud, e-mailadressen en telefoonnummers sturen we niet mee als meetgegevens. Een klik is geen bevestigde aanvraag. Advertentiepersonalisatie staat uit. Je keuze wordt 180 dagen in je browser bewaard; Analytics-cookies hebben een ingestelde looptijd van 180 dagen. Via Cookievoorkeuren kun je toestemming altijd weigeren of intrekken. Bij intrekking stoppen we de meting en verwijderen we de Analytics-cookies op dit domein. Google kan gegevens buiten de EER verwerken; zie ook het privacybeleid van Google.",
+      "We load Google Analytics 4 only with your consent. It measures page views, language, buttons and contact actions, including phone, email, WhatsApp and appointment clicks. We do not send form contents, email addresses or phone numbers as measurement data. A click is not a confirmed enquiry. Advertising personalisation is disabled. Your choice is stored in your browser for 180 days; Analytics cookies have a configured lifetime of 180 days. You can reject or withdraw consent at any time via Cookie preferences. On withdrawal, we stop measurement and remove Analytics cookies on this domain. Google may process data outside the EEA; see also Google's privacy policy.",
+      "Solo cargamos Google Analytics 4 con tu consentimiento. Medimos visitas, idioma, botones y acciones de contacto, incluidos clics de teléfono, correo, WhatsApp y citas. No enviamos el contenido de formularios, direcciones de correo ni números de teléfono como datos de medición. Un clic no es una solicitud confirmada. La personalización publicitaria está desactivada. Tu elección se guarda en el navegador durante 180 días; las cookies de Analytics tienen una duración configurada de 180 días. Puedes rechazar o retirar tu consentimiento desde Preferencias de cookies. Al retirarlo, detenemos la medición y eliminamos las cookies de Analytics de este dominio. Google puede tratar datos fuera del EEE; consulta también su política de privacidad.",
     ),
   },
   {
@@ -168,7 +168,7 @@ export default function PrivacyPage({ initialLanguage = "nl" }: { initialLanguag
                 "Para visitas al sitio, contacto, propuestas, encargos, analitica y colaboracion con Slimmer dan Gisteren.",
               )} />
             </p>
-            <span><Text value={t("Laatst bijgewerkt: 1 augustus 2026", "Last updated: 1 August 2026", "Ultima actualizacion: 1 de agosto de 2026")} /></span>
+            <span><Text value={t("Laatst bijgewerkt: 27 oktober 2026", "Last updated: 27 October 2026", "Última actualización: 27 de octubre de 2026")} /></span>
           </header>
 
           <div className="legal-summary" aria-label="Belangrijkste privacyafspraken">
