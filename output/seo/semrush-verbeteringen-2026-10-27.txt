@@ -1,0 +1,30 @@
+Semrush: bevindingen en uitvoering — 27 oktober 2026
+
+Bronnen: ingelogde Chrome-rapporten, project 31763331 / fid13984529.
+Site Audit: 37 pagina's, desktop, JavaScript-rendering uit, 93% gezondheid.
+
+Uitgevoerd
+1. 21 herhalingen van onvolledige LocalBusiness-data: vervangen door Organization, passend bij een remote dienstverlener zonder openbaar bezoekadres. Oprichter, persoonlijk LinkedIn-profiel, contactgegevens en landelijk werkgebied blijven behouden. Geen thuisadres gepubliceerd en geen reviews verzonnen.
+2. Sitemap hersteld: publicatiescript adverteerde 33 URL's, waaronder 12 met noindex. De 21 indexeerbare URL's blijven in de sitemap. Website, content-creatie, privacy en voorwaarden in NL/EN/ES blijven expliciet noindex. Gebruiker bevestigde opnieuw dat uitgesloten pagina's uitgesloten moeten blijven.
+3. De drie verweesde sitemap-URL's zijn de voorwaarden in NL/EN/ES. Uit sitemap verwijderd en voor bezoekers bereikbaar gemaakt via de footer, samen met privacy. Noindex behouden.
+4. Lange titels verkort voor zoekwoordenonderzoek, technische SEO en Google Ads in NL/EN/ES en de Spaanse SEO-dienstpagina. Hoofdzoekonderwerp behouden. Dubbele bedrijfsnaam uit privacytitel gehaald. Geen inhoudsecties verwijderd.
+5. Publicatiecontrole uitgebreid: sitemap-URL's moeten indexeerbaar en canoniek zijn, inkomende interne links hebben, beknopte titels hebben, en de juiste bedrijfsopmaak gebruiken. Alle 12 bewust uitgesloten taalroutes moeten noindex blijven en buiten de sitemap blijven.
+
+Gecontroleerd, geen schadelijke score-optimalisatie
+- Alle 10 'broken external links' zijn WhatsApp-links die bij de crawler HTTP429 teruggeven (te veel verzoeken); geen 404's. Contactroute behouden; geen fake lokale kopie, redirect of verwijdering van contactmogelijkheid.
+- De 9 crawlingmeldingen betreffen content-creatie, website en privacy in alle talen. Bewuste noindex blijft behouden. Voorwaarden waren niet via normale links gevonden.
+- Lage tekst/HTML-verhouding: homepage NL/EN/ES 0,07 en social-ads NL/EN/ES 0,08. Geen tekstvulling toegevoegd of nuttige onderdelen verwijderd voor een verhouding. De pagina's zijn server-gerenderd; geen nieuwe inhoudelijke leemte aangetoond door deze melding.
+- HSTS ontbreekt in live response. GitHub Pages laat geen eigen responseheaders instellen. Een hosting/CDN-wijziging is een afzonderlijk infrastructuurtraject; niet met een ineffectieve HTML-tag of _headers-bestand opgelost.
+
+Overige Semrush-inzichten
+- Organic Rankings NL desktop 26 oktober: 22 zoekwoorden, geschat verkeer 0. De zichtbare voorbeelden zijn grotendeels niet relevant voor het huidige SEO-aanbod (telefoonnummers, cinjee advies, goed geschud). 21 trefwoorden gekoppeld aan homepage, 1 aan een oude product-URL. Geen reden om oude producten te herstellen of deze woorden aan de nieuwe SEO-pagina toe te voegen.
+- De lokale aanbeveling noemt 'Slimmer Administreren' in Heemskerk: ander bedrijf, niet overgenomen.
+- Authority Score 2 en 8 verwijzende domeinen zijn Semrush-metingen, geen Google-score of bewijs van de oorzaak van een specifieke ranking. Externe redactionele vermeldingen en echte klantresultaten kunnen niet door een codewijziging worden verkregen. Geen outreach of betaalde plaatsingen verricht.
+- Position Tracking is vandaag gestart voor 10 zoekwoorden; de tool meldt dat meer gegevens de volgende dag verschijnen. Geen betrouwbare verbetering of vaste rank geclaimd op basis van deze nulmeting.
+
+Google-documentatie geraadpleegd
+https://developers.google.com/search/docs/appearance/structured-data/organization
+https://developers.google.com/search/docs/appearance/structured-data/local-business
+
+Validatie
+Productiebuild gelukt. Publicatievalidatie geslaagd, inclusief sitemap/noindex/schema/interne-link-controles. 15 bestaande tests geslaagd. Live publicatie en nieuwe Semrush-crawl worden afzonderlijk gecontroleerd; een gewijzigde score wordt pas gemeld na zichtbare bevestiging.

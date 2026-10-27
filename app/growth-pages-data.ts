@@ -489,7 +489,7 @@ export const googleAdsPage: GrowthPageData = {
   primaryCta: "Vraag een gratis Google Ads-scan aan",
   secondaryCta: "Bekijk onze aanpak",
   metadata: {
-    title: "Google Ads Bureau | Meer Leads & Omzet met Google Ads",
+    title: "Google Ads bureau voor leads en omzet",
     description:
       "Meer rendement uit Google Ads. Wij beheren Search, Shopping, Performance Max, YouTube en remarketingcampagnes gericht op leads, omzet en ROAS.",
     keywords: ["Google Ads bureau", "Google Ads uitbesteden", "Google Ads beheer", "Performance Max", "Shopping campagnes", "Google Ads specialist", "Google Ads optimalisatie"],

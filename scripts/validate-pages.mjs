@@ -70,3 +70,38 @@ for (const slug of ['zoekwoordenonderzoek', 'technische-seo']) {
   }
   console.log(`PASS ${route}: translated guides, canonicals, sitemap and link to SEO service`);
 }
+
+// Sitemaps advertise only canonical, indexable pages. Legal/retired routes stay excluded.
+const sitemapLocations = [...sitemap.matchAll(/<loc>(.*?)<\/loc>/g)].map(match => match[1]);
+const indexedHtml = [];
+for (const location of sitemapLocations) {
+  const path = new URL(location).pathname;
+  const html = await readFile(join(root, path, 'index.html'), 'utf8');
+  assert.doesNotMatch(html, /<meta name="(?:robots|googlebot)"[^>]*noindex/i, `${path}: noindex URL in sitemap`);
+  assert.ok(html.includes(`rel="canonical" href="${location}"`), `${path}: sitemap URL is not canonical`);
+  const title = html.match(/<title>(.*?)<\/title>/)?.[1];
+  assert.ok(title && title.length <= 70, `${path}: title needs editorial review (${title?.length})`);
+  for (const match of html.matchAll(/<script type="application\/ld\+json">(.*?)<\/script>/g)) {
+    const parsed = JSON.parse(match[1]);
+    for (const item of Array.isArray(parsed) ? parsed : [parsed]) {
+      if (item['@id'] === 'https://slimmerdangisteren.nl/#organization') {
+        assert.equal(item['@type'], 'Organization', `${path}: remote agency must not claim an incomplete local listing`);
+        assert.equal(item.founder.name, 'Jimmy Buitenhuis');
+      }
+    }
+  }
+  indexedHtml.push({ path, html });
+}
+for (const {path} of indexedHtml) {
+  assert.ok(indexedHtml.some(page => page.path !== path && page.html.includes(`href="${path}"`)), `${path}: indexable page has no internal incoming link`);
+}
+for (const locale of ['', 'en', 'es']) {
+  const prefix = locale ? `/${locale}` : '';
+  for (const slug of ['privacy', 'algemene-voorwaarden', 'website', 'content-creatie']) {
+    const path = `${prefix}/${slug}/`;
+    assert.ok(!sitemapLocations.some(url => new URL(url).pathname === path), `${path}: excluded route reintroduced in sitemap`);
+    const html = await readFile(join(root, path, 'index.html'), 'utf8');
+    assert.match(html, /<meta name="robots"[^>]*noindex/i, `${path}: intentional noindex removed`);
+  }
+}
+console.log('PASS sitemap excludes noindex pages; indexable pages have concise titles, canonical URLs and incoming links; agency schema is consistent');

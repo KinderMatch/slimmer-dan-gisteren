@@ -43,10 +43,6 @@ paths=(
   "/seo/technische-seo/"
   "/google-ads/"
   "/social-ads/"
-  "/content-creatie/"
-  "/website/"
-  "/privacy/"
-  "/algemene-voorwaarden/"
 )
 
 priority_for_path() {

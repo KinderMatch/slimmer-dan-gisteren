@@ -102,7 +102,7 @@ export function absoluteUrl(path = "/") {
 export function organizationJsonLd() {
   return {
     "@context": "https://schema.org",
-    "@type": ["ProfessionalService", "LocalBusiness"],
+    "@type": "Organization",
     "@id": `${siteUrl}/#organization`,
     name: siteName,
     url: siteUrl,
@@ -122,7 +122,6 @@ export function organizationJsonLd() {
         name: "Nederland",
       },
     ],
-    priceRange: "$$",
     description:
       "Slimmer dan Gisteren is een marketingbureau voor GEO, SEO, Google Ads en Social Ads. We helpen bedrijven beter vindbaar worden in Google en AI-antwoorden, campagnes verbeteren en meer aanvragen krijgen.",
     contactPoint: [

@@ -320,6 +320,8 @@ export function SiteShell({
           </div>
         </LocalizedLink>
         <div className="footer-links">
+          <LocalizedLink href="/privacy/"><Text value={t("Privacy", "Privacy", "Privacidad")} /></LocalizedLink>
+          <LocalizedLink href="/algemene-voorwaarden/"><Text value={t("Voorwaarden", "Terms", "Condiciones")} /></LocalizedLink>
           <LocalizedLink href="/geo/">GEO</LocalizedLink>
           <LocalizedLink href="/seo/">SEO</LocalizedLink>
           <LocalizedLink href="/google-ads/">Google Ads</LocalizedLink>

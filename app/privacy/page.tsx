@@ -128,7 +128,7 @@ const privacySections = [
 ];
 
 export const metadata: Metadata = {
-  title: "Privacyverklaring | Slimmer dan Gisteren",
+  title: "Privacyverklaring",
   description:
     "Privacyverklaring van Slimmer dan Gisteren voor websitebezoek, contact, offertes, opdrachten, analytics en klantgegevens.",
   alternates: languageAlternates("/privacy/"),
