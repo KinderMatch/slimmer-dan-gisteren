@@ -208,14 +208,15 @@ function LocalizedSpeechVideo() {
 export function PremiumHome({ initialLanguage = "nl" }: { initialLanguage?: Language }) {
   return (
     <LanguageProvider initialLanguage={initialLanguage}>
-      <div className="premium-home">
+      <div className="premium-home site-experience">
+        <a className="skip-content" href="#main-content">{initialLanguage === "en" ? "Skip to content" : initialLanguage === "es" ? "Saltar al contenido" : "Ga naar de inhoud"}</a>
         <ScrollProgress />
         <header className="premium-nav">
           <Link className="premium-brand" href={pathForLanguage("/", initialLanguage)} prefetch={false}>
             <ResponsiveImage src="/assets/logo.png" alt="Slimmer dan Gisteren" width={512} height={512} />
             <span>Slimmer dan Gisteren</span>
           </Link>
-          <nav aria-label="Hoofdnavigatie">
+          <nav aria-label={initialLanguage === "en" ? "Main navigation" : initialLanguage === "es" ? "Navegación principal" : "Hoofdnavigatie"}>
             <Link href={pathForLanguage("/geo/", initialLanguage)} prefetch={false}>GEO</Link>
             <Link href={pathForLanguage("/seo/", initialLanguage)} prefetch={false}>SEO</Link>
             <Link href={pathForLanguage("/google-ads/", initialLanguage)} prefetch={false}>Google Ads</Link>
@@ -225,7 +226,7 @@ export function PremiumHome({ initialLanguage = "nl" }: { initialLanguage?: Lang
         </header>
         <ContactDock />
 
-        <main>
+        <main id="main-content" tabIndex={-1}>
           <section className="premium-hero">
             <HeroVisual />
             <div className="premium-hero-shade" />

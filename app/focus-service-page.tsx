@@ -225,7 +225,7 @@ export function FocusServicePage({ data, locale = "nl" }: { data: GrowthPageData
   const depthHeadingId = `${slugKey}-depth-heading`;
   const topicHeadingId = `${slugKey}-topic-heading`;
 
-  const pageClassName = `service-premium focus-premium-page ${compactPage ? "focus-compact-page" : ""} ${data.slug === "/seo/" ? "focus-seo-page seo-service-design" : ""} ${data.slug === "/geo/" ? "focus-geo-page" : ""}`;
+  const pageClassName = `service-premium focus-premium-page service-design ${compactPage ? "focus-compact-page" : ""} ${data.slug === "/seo/" ? "focus-seo-page seo-service-design" : ""} ${data.slug === "/geo/" ? "focus-geo-page" : ""}`;
 
   return localizeServiceTree(
     <div className={pageClassName}>

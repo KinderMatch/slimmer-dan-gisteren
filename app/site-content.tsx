@@ -281,6 +281,8 @@ export function SiteShell({
 }) {
   return (
     <LanguageProvider initialLanguage={initialLanguage}>
+      <div className="site-experience">
+      <a className="skip-content" href="#main-content">{initialLanguage === "en" ? "Skip to content" : initialLanguage === "es" ? "Saltar al contenido" : "Ga naar de inhoud"}</a>
       <ScrollProgress />
       <header className={premiumNavigation ? "premium-nav" : "site-header"}>
         <LocalizedLink className={premiumNavigation ? "premium-brand" : "brand"} href="/">
@@ -302,7 +304,7 @@ export function SiteShell({
         )}
       </header>
       <ContactDock />
-      <main>{children}</main>
+      <main id="main-content" tabIndex={-1}>{children}</main>
       <footer className="site-footer">
         <div className="footer-video">
           <ResponsiveImage src="/assets/optimized/airfoto.jpg" alt="" loading="lazy" width="1600" height="899" />
@@ -333,6 +335,7 @@ export function SiteShell({
           <a href="https://www.linkedin.com/in/jimmybuitenhuis/"><Text value={t("LinkedIn van Jimmy", "Jimmy’s LinkedIn", "LinkedIn de Jimmy")} /></a>
         </div>
       </footer>
+      </div>
     </LanguageProvider>
   );
 }
