@@ -11092,3 +11092,80 @@ h3 {
 .analytics-consent .analytics-banner > div { display: flex; flex-wrap: wrap; gap: 10px; }
 .analytics-consent .analytics-banner button { flex: 1; min-width: 150px; border: 1px solid #16384b; border-radius: 8px; padding: 12px; background: #16384b; color: #fff; font-size: 14px; font-weight: 600; cursor: pointer; }
 .analytics-consent button:focus-visible { outline: 3px solid #1267b2; outline-offset: 3px; }
+
+/* SEO service: a clear editorial rhythm, native disclosures and lightweight motion. */
+.seo-service-design { --seo-ink: #092b3c; --seo-muted: #405d6b; --seo-line: #d5e2e6; background: #f7faf9; }
+.seo-service-design > .section { max-width: 1240px; margin-inline: auto; padding-inline: clamp(20px, 5vw, 64px); padding-block: clamp(40px, 6vw, 80px); }
+.seo-service-design .focus-premium-hero { background: radial-gradient(ellipse at 90% 30%, #17617a 0, transparent 53%), #082b3d; min-height: auto; padding: 160px max(24px, calc((100vw - 1112px) / 2)) 72px; gap: 48px; }
+.seo-service-design .focus-premium-shade { display: none; }
+.seo-service-design .focus-premium-hero h1 { color: #fff; font-size: clamp(2.6rem, 4.7vw, 4.6rem); line-height: 1.04; letter-spacing: -.045em; max-width: 22ch; }
+.seo-service-design .focus-premium-copy > p:not(.eyebrow) { color: #dcebef; line-height: 1.75; font-size: 1.05rem; max-width: 59ch; }
+.seo-service-design .focus-premium-copy .eyebrow, .seo-service-design .seo-breadcrumbs { color: #a7e5df; }
+.seo-service-design .focus-premium-hero .button.primary { background: #b8efe0; color: #092b3c; border-color: #b8efe0; }
+.seo-service-design .focus-premium-hero .button.ghost { color: #fff; background: transparent; border-color: #8aaebc; }
+.seo-service-design .focus-premium-hero .focus-cta-microcopy span { color: #dcebef; }
+.seo-service-design .focus-seo-hero-proof { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 24px; }
+.seo-service-design .focus-seo-hero-proof span { background: #154254; color: #dcebef; border: 1px solid #426977; border-radius: 8px; padding: 8px 12px; font-size: .78rem; }
+.seo-service-design .focus-compact-hero-visual { padding: 16px; border: 1px solid #5c8798; border-radius: 28px; background: #ffffff0d; box-shadow: 0 24px 60px #00182350; transform: rotate(2deg); }
+.seo-service-design .focus-compact-hero-visual video { border-radius: 16px; }
+.seo-service-design > .seo-contact-summary { padding-block: 26px; border-bottom: 1px solid var(--seo-line); }
+.seo-service-design .seo-contact-summary p { font-size: .95rem; color: var(--seo-muted); }
+.seo-service-design > .focus-seo-jumps { padding-block: 24px; gap: 8px; }
+.seo-service-design .focus-seo-jumps a { display: inline-flex; align-items: center; min-height: 44px; padding: 10px 16px; border: 1px solid var(--seo-line); border-radius: 999px; background: #fff; color: var(--seo-ink); text-decoration: none; font-size: .88rem; }
+.seo-service-design .focus-seo-jumps a:last-child { background: #d9f3ea; border-color: #b6d9ca; }
+.seo-service-design h2 { color: var(--seo-ink); font-size: clamp(1.9rem, 3.3vw, 3rem); line-height: 1.12; letter-spacing: -.035em; }
+.seo-service-design h2 { margin-bottom: 18px; }
+.seo-service-design h3 { line-height: 1.25; letter-spacing: -.015em; }
+.seo-service-design .focus-seo-depth-heading, .seo-service-design .section-heading { max-width: 760px; margin-left: 0; margin-bottom: 32px; text-align: left; }
+.seo-service-design .focus-seo-depth-heading p:not(.eyebrow), .seo-service-design article p { color: var(--seo-muted); line-height: 1.7; font-size: 1rem; }
+.seo-service-design .focus-seo-depth-grid { gap: 16px; align-items: start; }
+.seo-service-design .focus-seo-depth-grid > article { padding: clamp(22px, 3vw, 32px); border: 1px solid var(--seo-line); border-radius: 20px; background: #fff; box-shadow: none; }
+.seo-service-design .focus-seo-depth-grid > article h3 { font-size: 1.35rem; margin-bottom: 12px; }
+.seo-service-design #seo-diensten .focus-seo-depth-grid { counter-reset: seo-service; }
+.seo-service-design #seo-diensten .focus-seo-depth-grid > article::before { counter-increment: seo-service; content: "0" counter(seo-service); display: block; margin-bottom: 20px; color: #356859; font-size: .85rem; font-weight: 700; letter-spacing: .1em; }
+.seo-service-design .seo-deliverable { margin-top: 20px; border-top: 1px solid var(--seo-line); padding-top: 12px; }
+.seo-service-design .seo-deliverable summary { min-height: 44px; display: list-item; cursor: pointer; color: #124c5e; font-weight: 700; padding-block: 10px; }
+.seo-service-design .seo-deliverable p { margin: 4px 0 18px; }
+.seo-service-design .focus-seo-depth-grid article > a { display: inline-block; margin-top: 16px; text-decoration: underline; text-underline-offset: 4px; color: #124c5e; }
+.seo-service-design .focus-fit-section { border-block: 1px solid var(--seo-line); background: #eaf4ef; border-radius: 24px; }
+.seo-service-design .focus-fit-grid article { background: #fff; border: 1px solid #cedfd5; border-radius: 16px; }
+.seo-service-design .focus-fit-grid li { line-height: 1.65; margin-bottom: 12px; color: var(--seo-muted); }
+.seo-service-design .focus-timeline { display: grid; grid-template-columns: repeat(4,minmax(0,1fr)); gap: 16px; counter-reset: seo-step; }
+.seo-service-design .focus-timeline::before { display: none; }
+.seo-service-design .focus-timeline article { display: flex; flex-direction: column; min-height: 0; gap: 12px; padding: 24px; border: 1px solid var(--seo-line); border-radius: 18px; background: #fff; }
+.seo-service-design .focus-timeline article::before { counter-increment: seo-step; content: counter(seo-step); position: static; transform: none; width: 36px; height: 36px; display: grid; place-items: center; background: #d9f3ea; color: #164b3a; border: 0; box-shadow: none; border-radius: 50%; font-weight: 700; }
+.seo-service-design .focus-timeline article span { display: none; }
+.seo-service-design .focus-timeline article h3 { font-size: 1.25rem; margin: 0; color: var(--seo-ink); text-align: left; }
+.seo-service-design .focus-timeline article p { margin: 0; text-align: left; color: var(--seo-muted); font-size: .95rem; }
+.seo-service-design .seo-person { padding: 24px; border-radius: 20px; background: #eaf4ef; }
+.seo-service-design .focus-benefit-band { border-radius: 24px; background: #eaf4ef; }
+.seo-service-design .focus-form-panel { border-radius: 24px; border: 1px solid #b7cfc8; background: #fff; padding: clamp(24px,5vw,48px); box-shadow: 0 18px 50px #092b3c0a; }
+.seo-service-design .focus-form-panel h2 { max-width: 22ch; }
+.seo-service-design .focus-form-panel input, .seo-service-design .focus-form-panel textarea { background: #f6faf8; border: 1px solid #8da69e; min-height: 48px; font-size: 16px; }
+.seo-service-design .focus-form-panel input:focus-visible, .seo-service-design .focus-form-panel textarea:focus-visible { outline: 3px solid #2c7c87; outline-offset: 2px; }
+.seo-service-design .focus-form-panel form button { background: #123e50; color: #fff; min-height: 50px; }
+.seo-service-design .focus-faq-panel details { border: 1px solid var(--seo-line); border-radius: 12px; background: #fff; padding: 18px 22px; }
+.seo-service-design .focus-faq-panel summary { line-height: 1.5; color: var(--seo-ink); min-height: 24px; }
+.seo-service-design .focus-faq-panel details[open] { background: #eff7f3; border-color: #a5c5b9; }
+.seo-service-design .focus-faq-panel details p { margin-top: 16px; max-width: 75ch; line-height: 1.75; }
+@media (hover: hover) and (prefers-reduced-motion: no-preference) {
+  .seo-service-design .button, .seo-service-design .focus-seo-jumps a, .seo-service-design #seo-diensten article { transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease; }
+  .seo-service-design .button:hover, .seo-service-design .focus-seo-jumps a:hover { transform: translateY(-2px); box-shadow: 0 6px 16px #092b3c1a; }
+  .seo-service-design #seo-diensten article:hover { border-color: #7aa89b; transform: translateY(-3px); }
+}
+@media (max-width: 1000px) { .seo-service-design .focus-timeline { grid-template-columns: repeat(2,minmax(0,1fr)); } }
+@media (max-width: 700px) {
+  .seo-service-design .focus-premium-hero { padding: 160px 20px 40px; grid-template-columns: 1fr; gap: 28px; }
+  .seo-service-design .focus-premium-hero h1 { font-size: clamp(2.3rem,9vw,3.4rem); }
+  .seo-service-design .focus-premium-actions { gap: 10px; }
+  .seo-service-design .focus-premium-actions .button { width: 100%; min-height: 48px; }
+  .seo-service-design .focus-compact-hero-visual { max-width: 420px; width: 100%; margin: 0 auto; transform: none; }
+  .seo-service-design .focus-fit-section, .seo-service-design .focus-benefit-band { border-radius: 0; }
+  .seo-service-design .focus-seo-depth-grid { grid-template-columns: 1fr; }
+  .seo-service-design .focus-timeline { grid-template-columns: 1fr; }
+  .seo-service-design .focus-timeline article { padding: 24px; }
+  .seo-service-design .seo-person { grid-template-columns: 1fr; }
+  .seo-service-design .seo-person img { width: 100px; height: 100px; }
+  .seo-service-design .focus-fit-grid { grid-template-columns: 1fr; }
+  .seo-service-design .focus-seo-hero-proof { display: flex; }
+}

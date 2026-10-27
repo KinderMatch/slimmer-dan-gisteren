@@ -225,7 +225,7 @@ export function FocusServicePage({ data, locale = "nl" }: { data: GrowthPageData
   const depthHeadingId = `${slugKey}-depth-heading`;
   const topicHeadingId = `${slugKey}-topic-heading`;
 
-  const pageClassName = `service-premium focus-premium-page ${compactPage ? "focus-compact-page" : ""} ${data.slug === "/seo/" ? "focus-seo-page" : ""} ${data.slug === "/geo/" ? "focus-geo-page" : ""}`;
+  const pageClassName = `service-premium focus-premium-page ${compactPage ? "focus-compact-page" : ""} ${data.slug === "/seo/" ? "focus-seo-page seo-service-design" : ""} ${data.slug === "/geo/" ? "focus-geo-page" : ""}`;
 
   return localizeServiceTree(
     <div className={pageClassName}>
@@ -292,14 +292,10 @@ export function FocusServicePage({ data, locale = "nl" }: { data: GrowthPageData
         <nav className="section focus-seo-jumps" aria-label="Op deze SEO-pagina">
           <a href="#seo-diensten">Diensten en oplevering</a>
           <a href="#seo-voor-wie">Voor wie</a>
-          <a href="#seo-vragen">Veelgestelde vragen</a>
-          <a href="#seo-topic-heading">Wat is SEO marketing?</a>
-          <a href="#seo-uitbesteden">SEO uitbesteden</a>
-          <a href="#seo-region-heading">Lokale en landelijke SEO</a>
+          <a href="#aanpak">Onze aanpak</a>
           <a href="#seo-praktijkvoorbeeld">Praktijkvoorbeeld</a>
           <a href="#seo-kosten">Kosten en afspraken</a>
-          <a href="#aanpak">Onze aanpak</a>
-          <a href="#seo-google-updates">Google-updates</a>
+          <a href="#seo-vragen">Veelgestelde vragen</a>
           <a href="#seo-scan">Gratis SEO check</a>
         </nav>
       ) : null}
@@ -317,7 +313,7 @@ export function FocusServicePage({ data, locale = "nl" }: { data: GrowthPageData
               <article key={service.title}>
                 <h3>{service.title}</h3>
                 <p>{service.body}</p>
-                {service.deliverable ? <p><strong>Concrete oplevering: </strong>{service.deliverable}</p> : null}
+                {service.deliverable ? <details className="seo-deliverable"><summary>Wat je ontvangt</summary><p>{service.deliverable}</p></details> : null}
                 {service.title === "Zoekwoordenonderzoek" ? <a href="/seo/zoekwoordenonderzoek/">Zo koppelen we zoekvragen aan pagina’s</a> : null}
                 {service.title === "Technische SEO" ? <a href="/seo/technische-seo/">Bekijk de technische controlevolgorde</a> : null}
               </article>
