@@ -4,7 +4,7 @@ export const consentKey = "sdg-analytics-consent-v1";
 export const consentLifetime = 180 * 24 * 60 * 60 * 1000;
 
 export function publicPath(path: string) {
-  return /^\/(?:en\/|es\/)?(?:(?:seo\/(?:zoekwoordenonderzoek\/|technische-seo\/)?|geo\/|google-ads\/|social-ads\/|content-creatie\/|website\/|privacy\/|algemene-voorwaarden\/))?$/.test(path);
+  return /^\/(?:en\/|es\/)?(?:(?:seo\/(?:zoekwoordenonderzoek\/|technische-seo\/|seo-uitbesteden\/|lokale-seo\/)?|geo\/|google-ads\/|social-ads\/|content-creatie\/|website\/|privacy\/|algemene-voorwaarden\/))?$/.test(path);
 }
 
 export function readConsent(raw: string | null, now = Date.now()): boolean | null {

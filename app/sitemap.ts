@@ -5,7 +5,7 @@ import { absoluteUrl } from "./seo";
 
 import contentDates from "./content-dates.json";
 const modifiedDates: Record<string, string> = contentDates;
-const navigationPaths = ["/", "/geo/", "/seo/", "/google-ads/", "/social-ads/", "/seo/zoekwoordenonderzoek/", "/seo/technische-seo/"] as const;
+const navigationPaths = ["/", "/geo/", "/seo/", "/google-ads/", "/social-ads/", "/seo/zoekwoordenonderzoek/", "/seo/technische-seo/", "/seo/seo-uitbesteden/", "/seo/lokale-seo/"] as const;
 
 function priorityForPath(path: string) {
   if (path === "/") return 1;

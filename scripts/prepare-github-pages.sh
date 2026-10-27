@@ -41,6 +41,8 @@ paths=(
   "/seo/"
   "/seo/zoekwoordenonderzoek/"
   "/seo/technische-seo/"
+  "/seo/seo-uitbesteden/"
+  "/seo/lokale-seo/"
   "/google-ads/"
   "/social-ads/"
 )

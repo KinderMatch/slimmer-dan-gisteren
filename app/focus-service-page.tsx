@@ -473,6 +473,8 @@ export function FocusServicePage({ data, locale = "nl" }: { data: GrowthPageData
         </div>
       </section>
 
+      {data.slug === "/seo/" ? <section className="section focus-seo-depth" aria-labelledby="seo-verdieping-heading"><div className="focus-seo-depth-heading"><p className="eyebrow">Verdiep je aanpak</p><h2 id="seo-verdieping-heading">Welke SEO-aanpak past bij jouw bedrijf?</h2></div><div className="focus-seo-depth-grid"><article><h3><a href="/seo/seo-uitbesteden/">SEO uitbesteden</a></h3><p>Bekijk wat je kunt overdragen, welke informatie je zelf aanlevert en hoe we werkzaamheden, kosten en voortgang afspreken.</p><a href="/seo/seo-uitbesteden/">Zo werkt SEO uitbesteden</a></article><article><h3><a href="/seo/lokale-seo/">Lokale SEO</a></h3><p>Maak je diensten vindbaar in je echte werkgebied. Lees hoe website, bedrijfsprofiel en contactroute op elkaar aansluiten.</p><a href="/seo/lokale-seo/">Ontdek de lokale aanpak</a></article></div></section> : null}
+
       {data.slug === "/seo/" ? <SeoCosts /> : null}
 
       {data.slug === "/seo/" && data.deepDive ? (

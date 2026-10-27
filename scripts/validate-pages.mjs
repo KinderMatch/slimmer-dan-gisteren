@@ -53,7 +53,7 @@ assert.doesNotMatch(notFound, /http-equiv="refresh"/i);
 assert.equal((await readFile(join(root, 'CNAME'), 'utf8')).trim(), 'slimmerdangisteren.nl');
 console.log('PASS retired URLs stay unpublished; 404 is noindex; hosting domain matches canonicals');
 
-for (const slug of ['zoekwoordenonderzoek', 'technische-seo']) {
+for (const slug of ['zoekwoordenonderzoek', 'technische-seo', 'seo-uitbesteden', 'lokale-seo']) {
   const route = `/seo/${slug}/`;
   const html = await readFile(join(root, route, 'index.html'), 'utf8');
   assert.ok(html.includes(`rel="canonical" href="https://slimmerdangisteren.nl${route}"`));
