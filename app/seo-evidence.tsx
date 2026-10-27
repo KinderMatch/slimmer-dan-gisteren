@@ -5,7 +5,7 @@ export function SeoEvidence() {
       <section className="section focus-seo-depth" id="seo-praktijkvoorbeeld" aria-labelledby="seo-evidence-heading">
         <div className="focus-seo-depth-heading">
           <p className="eyebrow">Praktijkvoorbeeld · eigen website</p>
-          <h2 id="seo-evidence-heading">Wat we aan onze eigen SEO-pagina verbeterden</h2>
+          <h2 id="seo-evidence-heading">Welke verbeteringen hebben we al gerealiseerd?</h2>
           <p>Op <time dateTime="2026-10-25">25 oktober 2026</time> hebben we deze website onderzocht en verbeterd. Hieronder staan de vastgestelde problemen, de ingrepen en wat we konden controleren. Dit is een technisch praktijkvoorbeeld van onze eigen site, geen klantcase of bewijs van hogere Google-posities.</p>
         </div>
         <div className="focus-seo-depth-grid">

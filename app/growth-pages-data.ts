@@ -73,11 +73,11 @@ export const seoPage: GrowthPageData = {
   eyebrow: "SEO marketingbureau",
   title: "SEO marketingbureau voor betere vindbaarheid",
   subtitle:
-    "Zoek je een SEO bureau dat onderzoek én uitvoering oppakt? Bij Slimmer dan Gisteren werk je rechtstreeks met Jimmy Buitenhuis aan techniek, zoekwoorden en content. Begin met een gratis SEO check of bespreek een SEO-traject. Vanuit Diemen helpen we bedrijven in heel Nederland, online of bij jou op locatie.",
+    "Op zoek naar een SEO marketingbureau? Slimmer dan Gisteren helpt bedrijven groeien met technische SEO, sterke content en een resultaatgerichte strategie. Je werkt rechtstreeks met Jimmy Buitenhuis: van een eerste SEO check tot de afgesproken verbeteringen. Vanuit Diemen werken we voor bedrijven in heel Nederland, online of bij jou op locatie.",
   primaryCta: "Vraag een gratis SEO-scan aan",
   secondaryCta: "Bekijk onze aanpak",
   metadata: {
-    title: "SEO bureau & gratis SEO check",
+    title: "SEO marketingbureau & gratis SEO check",
     description:
       "SEO marketingbureau voor bedrijven in heel Nederland. Vraag een gratis SEO check aan en bespreek met Jimmy de kansen voor techniek, content en aanvragen.",
     keywords: ["SEO marketingbureau", "SEO bureau", "SEO scan", "SEO uitbesteden", "zoekmachine optimalisatie", "online vindbaarheid", "lokale SEO", "technische SEO", "SEO content", "SEO strategie"],

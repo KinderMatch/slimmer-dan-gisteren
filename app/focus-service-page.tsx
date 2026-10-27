@@ -99,12 +99,12 @@ function fitSectionCopy(data: GrowthPageData) {
 
   return {
     eyebrow: "Past dit bij jou?",
-    title: "SEO werkt het best wanneer er duidelijke commerciële zoekvraag is.",
+    title: "Voor wie is ons SEO bureau er?",
     good: [
-      "Je wilt structureel meer aanvragen uit Google.",
-      "Je website heeft diensten of producten met zoekvraag.",
-      "Je wilt weten welke pagina's prioriteit verdienen.",
-      "Je zoekt een helder plan in plaats van losse SEO-taken.",
+      "Dienstverleners en zzp’ers die meer relevante aanvragen uit Google willen.",
+      "Mkb-bedrijven en B2B-specialisten met diensten waar klanten naar zoeken.",
+      "Webshops die hun categorieën, producten en technische vindbaarheid willen verbeteren.",
+      "Bedrijven die lokaal, regionaal of landelijk klanten bedienen en tijd kunnen vrijmaken voor uitvoering.",
     ],
     bad: [
       "Je verwacht gegarandeerde posities in Google.",
@@ -291,6 +291,7 @@ export function FocusServicePage({ data, locale = "nl" }: { data: GrowthPageData
       {data.slug === "/seo/" ? (
         <nav className="section focus-seo-jumps" aria-label="Op deze SEO-pagina">
           <a href="#seo-diensten">Diensten en oplevering</a>
+          <a href="#seo-voor-wie">Voor wie</a>
           <a href="#seo-vragen">Veelgestelde vragen</a>
           <a href="#seo-topic-heading">Wat is SEO marketing?</a>
           <a href="#seo-uitbesteden">SEO uitbesteden</a>
@@ -398,6 +399,29 @@ export function FocusServicePage({ data, locale = "nl" }: { data: GrowthPageData
         </section>
       ) : null}
 
+      {data.slug === "/seo/" ? (
+        <section className="section focus-fit-section" id={`${slugKey}-voor-wie`}>
+          <div>
+            <p className="eyebrow">{fitCopy.eyebrow}</p>
+            <h2>{fitCopy.title}</h2>
+          </div>
+          <div className="focus-fit-grid">
+            <article>
+              <span>Goede match</span>
+              <ul>
+                {fitCopy.good.map((item) => <li key={item}>{item}</li>)}
+              </ul>
+            </article>
+            <article>
+              <span>Minder logisch</span>
+              <ul>
+                {fitCopy.bad.map((item) => <li key={item}>{item}</li>)}
+              </ul>
+            </article>
+          </div>
+        </section>
+      ) : null}
+
       {data.regional ? (
         <section className="section focus-seo-depth" aria-labelledby={`${slugKey}-region-heading`}>
           <div className="focus-seo-depth-heading">
@@ -425,7 +449,7 @@ export function FocusServicePage({ data, locale = "nl" }: { data: GrowthPageData
           <div className="focus-seo-depth-heading">
             <p className="eyebrow">SEO uitbesteden</p>
             <h2 id="seo-outsource-heading">Wat neem je af en wie voert het uit?</h2>
-            <div className="seo-person"><ResponsiveImage src="/assets/jimmy-buitenhuis.png" alt="Jimmy Buitenhuis, jouw aanspreekpunt bij Slimmer dan Gisteren" width={320} height={320} loading="lazy" sizes="160px" /><div><h3>Jimmy Buitenhuis</h3><p>Bij Slimmer dan Gisteren ben ik je aanspreekpunt voor SEO-strategie en uitvoering. Samen bepalen we welke klanten je wilt bereiken, wat je website daarvoor nodig heeft en welke verbeteringen eerst komen.</p><p>Je spreekt rechtstreeks met mij. Vanuit Diemen werk ik met bedrijven in heel Nederland, online of op afspraak bij jou op locatie.</p><a href="mailto:jimmy@slimmerdangisteren.nl">Stel Jimmy je vraag</a></div></div>
+            <div className="seo-person"><ResponsiveImage src="/assets/jimmy-buitenhuis.png" alt="Jimmy Buitenhuis, aanspreekpunt van SEO marketingbureau Slimmer dan Gisteren" width={320} height={320} loading="lazy" sizes="160px" /><div><h3>Jimmy Buitenhuis</h3><p>Bij Slimmer dan Gisteren ben ik je aanspreekpunt voor SEO-strategie en uitvoering. Samen bepalen we welke klanten je wilt bereiken, wat je website daarvoor nodig heeft en welke verbeteringen eerst komen.</p><p>Je spreekt rechtstreeks met mij. Vanuit Diemen werk ik met bedrijven in heel Nederland, online of op afspraak bij jou op locatie.</p><a href="mailto:jimmy@slimmerdangisteren.nl">Stel Jimmy je vraag</a></div></div>
           </div>
           <div className="focus-seo-depth-grid">
             <article><h3>Een plan dat je kunt beoordelen</h3><p>Voor de uitvoering spreken we af welke pagina’s en zoekvragen prioriteit krijgen, welke technische verbeteringen nodig zijn en wie wat oppakt. De omvang en kosten hangen af van je website, concurrentie en beschikbare capaciteit.</p></article>
@@ -437,12 +461,10 @@ export function FocusServicePage({ data, locale = "nl" }: { data: GrowthPageData
         </section>
       ) : null}
 
-      {data.slug === "/seo/" ? <SeoEvidence /> : null}
-
       <section className="section focus-timeline-section" id="aanpak">
         <div className="section-heading">
           <p className="eyebrow">Tijdspad</p>
-          <h2>Van eerste analyse naar doorlopende verbetering.</h2>
+          <h2>{data.slug === "/seo/" ? "Zo werken we: van SEO check naar uitvoering" : "Van eerste analyse naar doorlopende verbetering."}</h2>
           <p>Het traject begint met scherpte aanbrengen. Daarna bouwen we stap voor stap aan een fundament dat maandelijks beter kan worden.</p>
         </div>
         <div className="focus-timeline" aria-label={`${data.eyebrow} tijdspad`}>
@@ -455,6 +477,8 @@ export function FocusServicePage({ data, locale = "nl" }: { data: GrowthPageData
           ))}
         </div>
       </section>
+
+      {data.slug === "/seo/" ? <SeoEvidence /> : null}
 
       {data.slug === "/seo/" && data.deepDive ? (
         <section className="section focus-seo-depth" aria-labelledby={depthHeadingId}>
@@ -564,8 +588,8 @@ export function FocusServicePage({ data, locale = "nl" }: { data: GrowthPageData
         </div>
       </section>
 
-      {compactPage ? (
-        <section className="section focus-fit-section">
+      {compactPage && data.slug !== "/seo/" ? (
+        <section className="section focus-fit-section" id={`${slugKey}-voor-wie`}>
           <div>
             <p className="eyebrow">{fitCopy.eyebrow}</p>
             <h2>{fitCopy.title}</h2>

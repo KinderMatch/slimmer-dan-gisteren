@@ -1,0 +1,38 @@
+Controle SEO-pagina aan de hand van de aangeleverde Rank Math-screenshots
+27 oktober 2026 — https://slimmerdangisteren.nl/seo/
+
+Dit is een controle van de gebouwde HTML, geen Rank Math-score. De screenshots tonen een andere website; die website is niet aangepast.
+
+Inhoudelijke opbouw
+1. Opening: de aangeleverde kernboodschap over technische SEO, sterke content en een resultaatgerichte strategie staat in de introductie.
+2. Aanbod: zeven onderdelen, elk met concrete oplevering.
+3. Voor wie: doelgroep eerder zichtbaar; dienstverleners, zzp’ers, mkb/B2B en webshops. Landelijk werken blijft expliciet.
+4. Werkwijze: diagnose, prioriteitenplan, uitvoering, meten en verbeteren; vóór het praktijkvoorbeeld geplaatst.
+5. Bewijs: het bestaande eigen-sitevoorbeeld blijft herkenbaar als eigen technisch werk. Geen bewezen klantresultaten beschikbaar; geen cases, reviews of omzetclaims verzonnen.
+6. Vervolg: gratis persoonlijke SEO check, afspraakroute, kostenfactoren en FAQ.
+
+Criteria uit screenshot
+- Focuszoekwoord in SEO-title: JA. SEO marketingbureau & gratis SEO check | Slimmer dan Gisteren.
+- Focuszoekwoord in meta description: JA.
+- Focuszoekwoord in eerste 10% en inhoud: JA.
+- Focuszoekwoord in H1 en subkoppen: JA. Eén H1.
+- Minimaal 600 woorden: JA. 4.802 woorden in de hoofdinhoud, inclusief uitklapbare FAQ en formulier. Deze parsermeting kan afwijken van Rank Math. Geen extra tekst toegevoegd alleen om een minimum te halen.
+- Alt-tekst: JA. Beschrijvende alt-teksten; portret benoemt Jimmy als aanspreekpunt van het SEO marketingbureau.
+- Zoekwoordfrequentie: 14 vermeldingen in hoofdinhoud. Geen vaste dichtheid nagestreefd.
+- Korte URL: JA, /seo/. Volledige focuszin niet in URL. Bestaande indexeerbare URL en canonical behouden; geen onnodige migratie of duplicaat gemaakt.
+- Uitgaande bronnen: JA. Onder meer drie reguliere links naar officiële Google-documentatie, zonder nofollow.
+- Interne links: JA. Acht links naar interne paden in hoofdinhoud, plus ankerlinks binnen de pagina.
+- Focuswoord vooraan in titel: JA.
+- Power word: titel bevat ‘gratis’ passend bij het aanbod; herkenning door de Rank Math-woordenlijst niet getest.
+- Getal in titel: NIET TOEGEVOEGD. De pagina is een dienstenpagina, geen genummerde lijst; een getal zou geen nuttige beschrijving toevoegen.
+- Inhoudsopgave: JA. Eigen paginanavigatie met werkende sectielinks, nu inclusief ‘Voor wie’. Een WordPress-plugin is hiervoor niet nodig.
+- Korte paragrafen: JA. Langste gemeten paragraaf 74 woorden.
+- Afbeeldingen/video: JA. Portretten en bestaande zoekanimatie.
+- Keyword eerder gebruikt / Pillar content / Content AI: plugininstellingen, niet van toepassing op deze statische website. Geen Rank Math of Content AI geïnstalleerd.
+
+Validatie
+Productiebouw geslaagd. Alle 15 tests geslaagd, inclusief taalpariteit, FAQ/schema, indexeerbaarheid en formuliergedrag. Publicatievalidator geslaagd voor interne links, assets, sitemap, canonicals en uitsluitingen. Engelse en Spaanse inhoud bijgewerkt.
+
+Bron voor de afwegingen:
+https://developers.google.com/search/docs/fundamentals/seo-starter-guide
+Rank Math-checkmarks zijn geen bewijs van een Google-positie. Google benadrukt nuttige inhoud, duidelijke titels, beschrijvende links en natuurlijke taal. Resultaten van klantwerk moeten nog worden aangeleverd en gecontroleerd voordat ze kunnen worden gepubliceerd.
