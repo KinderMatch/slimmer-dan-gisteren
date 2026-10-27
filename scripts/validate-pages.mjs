@@ -105,3 +105,19 @@ for (const locale of ['', 'en', 'es']) {
   }
 }
 console.log('PASS sitemap excludes noindex pages; indexable pages have concise titles, canonical URLs and incoming links; agency schema is consistent');
+
+// Google must be able to retrieve the page's text and rendering assets without JavaScript.
+const robots = await readFile(join(root, 'robots.txt'), 'utf8');
+assert.match(robots, /Allow: \/(?:\r?\n|$)/);
+assert.doesNotMatch(robots, /Disallow: \/(?:assets|_next|seo)(?:\/|\s|$)/i);
+for (const { path, html } of indexedHtml) {
+  assert.equal((html.match(/<h1\b/g) ?? []).length, 1, `${path}: expected one descriptive main heading`);
+  assert.match(html, /<h1\b[^>]*>[^]*?<\/h1>/, `${path}: missing prerendered heading`);
+  for (const tag of html.match(/<img\b[^>]*>/gi) ?? []) {
+    assert.match(tag, /\balt="[^"]*"/, `${path}: missing image alternative (empty is valid for decoration)`);
+  }
+  for (const [, fragment] of html.matchAll(/href="#([^"]+)"/g)) {
+    assert.ok(html.includes(`id="${fragment}"`), `${path}: broken section link #${fragment}`);
+  }
+}
+console.log('PASS indexable pages expose headings, image alternatives and working section links; rendering paths remain crawlable');

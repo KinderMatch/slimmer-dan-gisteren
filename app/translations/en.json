@@ -792,5 +792,13 @@
   "Marketingbureau voor SEO, GEO, Google Ads en Social Ads. Werk direct met Jimmy aan betere vindbaarheid, sterkere campagnes en meer aanvragen.": "Marketing agency for SEO, GEO, Google Ads and Social Ads. Work directly with Jimmy on better visibility, stronger campaigns and more enquiries.",
   "Zoekwoordenonderzoek: praktisch plan": "Keyword research: practical plan",
   "Technische SEO: praktische controle": "Technical SEO: practical checks",
-  "Privacyverklaring": "Privacy statement"
+  "Privacyverklaring": "Privacy statement",
+  "In deze handleiding": "In this guide",
+  "5. Een rankingdaling beoordelen": "5. Assessing a ranking decline",
+  "Controleer eerst welke pagina’s en zoekvragen minder vertoningen of klikken krijgen. Vergelijk in Search Console dezelfde landen, apparaten en zoektypen over vergelijkbare perioden. Controleer daarna of Google de actuele pagina kan ophalen en welke URL als canonical is gekozen.": "First identify which pages and queries are losing impressions or clicks. Compare the same countries, devices and search types over comparable periods in Search Console. Then check whether Google can fetch the current page and which URL it has selected as canonical.",
+  "Bekijk vervolgens of de daling samenvalt met een bevestigde Google-update. Een overeenkomst in timing bewijst geen oorzaak. Verander niet steeds titels en teksten op basis van één dag: leg wijzigingen vast en beoordeel de ontwikkeling met voldoende gegevens. Een technische verbetering garandeert geen hogere positie.": "Next, check whether the decline coincides with a confirmed Google update. Timing alone does not prove a cause. Avoid repeatedly changing titles and copy based on a single day: record changes and assess trends with enough data. A technical improvement does not guarantee a higher ranking.",
+  "Controleer de": "Check the",
+  "technische voorwaarden voor Google-indexering": "technical requirements for Google indexing",
+  "en de": "and the",
+  "officiële geschiedenis van Google-rankingupdates": "official Google ranking update history"
 }

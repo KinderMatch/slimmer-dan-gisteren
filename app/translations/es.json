@@ -792,5 +792,13 @@
   "Marketingbureau voor SEO, GEO, Google Ads en Social Ads. Werk direct met Jimmy aan betere vindbaarheid, sterkere campagnes en meer aanvragen.": "Agencia de SEO, GEO, Google Ads y Social Ads. Trabaja directamente con Jimmy para mejorar tu visibilidad, campañas y solicitudes de clientes.",
   "Zoekwoordenonderzoek: praktisch plan": "Palabras clave: guía práctica",
   "Technische SEO: praktische controle": "SEO técnico: guía práctica",
-  "Privacyverklaring": "Privacidad"
+  "Privacyverklaring": "Privacidad",
+  "In deze handleiding": "En esta guía",
+  "5. Een rankingdaling beoordelen": "5. Evaluar una caída de posiciones",
+  "Controleer eerst welke pagina’s en zoekvragen minder vertoningen of klikken krijgen. Vergelijk in Search Console dezelfde landen, apparaten en zoektypen over vergelijkbare perioden. Controleer daarna of Google de actuele pagina kan ophalen en welke URL als canonical is gekozen.": "Primero identifica qué páginas y consultas están perdiendo impresiones o clics. Compara los mismos países, dispositivos y tipos de búsqueda durante períodos comparables en Search Console. Después comprueba si Google puede acceder a la página actual y qué URL ha seleccionado como canónica.",
+  "Bekijk vervolgens of de daling samenvalt met een bevestigde Google-update. Een overeenkomst in timing bewijst geen oorzaak. Verander niet steeds titels en teksten op basis van één dag: leg wijzigingen vast en beoordeel de ontwikkeling met voldoende gegevens. Een technische verbetering garandeert geen hogere positie.": "Después comprueba si la caída coincide con una actualización confirmada de Google. La coincidencia temporal no demuestra una causa. Evita cambiar títulos y textos repetidamente por los datos de un solo día: registra los cambios y evalúa la evolución con datos suficientes. Una mejora técnica no garantiza una posición más alta.",
+  "Controleer de": "Consulta los",
+  "technische voorwaarden voor Google-indexering": "requisitos técnicos de indexación de Google",
+  "en de": "y el",
+  "officiële geschiedenis van Google-rankingupdates": "historial oficial de actualizaciones de posicionamiento de Google"
 }
