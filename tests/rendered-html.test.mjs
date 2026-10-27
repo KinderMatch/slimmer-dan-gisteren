@@ -153,7 +153,7 @@ test("SEO FAQ groups preserve every structured question in accessible native dis
   const summaries = [...html.matchAll(/<summary[^>]*>(.*?)<\/summary>/gs)].map(m => m[1].replaceAll("&#x27;", "'").replaceAll("&amp;", "&"));
   for (const item of faq.mainEntity) assert.equal(summaries.filter(text => text === item.name).length, 1, item.name);
   assert.equal((html.match(/class="seo-faq-group"/g) ?? []).length, 3);
-  assert.match(html, /Na ontvangst van je aanvraag nemen we persoonlijk contact/);
+  assert.match(html, /Jimmy neemt daarna contact met je op/);
 });
 
 test("translated service pages retain the Dutch sections, FAQs, form semantics and local links", async () => {
@@ -177,7 +177,8 @@ test("translated service pages retain the Dutch sections, FAQs, form semantics a
       const summaries = [...html.matchAll(/<summary[^>]*>(.*?)<\/summary>/gs)].map(m => decode(m[1]));
       for (const item of faq.mainEntity) assert.equal(summaries.filter(text => text === item.name).length, 1, `${locale}: ${item.name}`);
       if (path === 'seo') {
-        assert.equal(faq.mainEntity.length, 39);
+        const nlSchema = [...nl.matchAll(/<script type="application\/ld\+json">(.*?)<\/script>/gs)].flatMap(m => JSON.parse(m[1]));
+        assert.equal(faq.mainEntity.length, nlSchema.find(item => item['@type'] === 'FAQPage').mainEntity.length);
         assert.ok(html.includes(`href="/${locale}/seo/zoekwoordenonderzoek/"`));
         assert.ok(html.includes(`href="/${locale}/seo/technische-seo/"`));
         assert.ok(html.includes(`href="/downloads/seo-verbeterplan-${locale}.csv"`));

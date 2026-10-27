@@ -164,6 +164,7 @@ function FaqPanel({ data }: { data: GrowthPageData }) {
   const important = new Set([
     "Wat krijg ik als ik SEO uitbesteed aan Slimmer dan Gisteren?",
     "Wat kost een SEO marketingbureau?", "Hoe snel zie je SEO-resultaat?",
+    "Wat controleren jullie bij een SEO check?",
     "Werken jullie alleen voor bedrijven rond Amsterdam?", "Wat hebben jullie van mij nodig?",
     "Hoe meten jullie SEO-resultaat?", "Kan ik eerst alleen de gratis SEO-scan aanvragen?",
     "Kunnen jullie een top-3-positie in Google garanderen?",
@@ -237,7 +238,7 @@ export function FocusServicePage({ data, locale = "nl" }: { data: GrowthPageData
           <p>{data.subtitle}</p>
           <div className="focus-premium-actions">
             <a className="button primary" href={data.slug === "/seo/" ? calendlyUrl : `#${id}`}>{data.slug === "/seo/" ? "Plan een kennismaking met Jimmy" : data.primaryCta}</a>
-            <a className="button ghost" href={data.slug === "/seo/" ? `#${id}` : "#aanpak"}>{data.slug === "/seo/" ? "Vraag contact over een SEO-scan" : data.secondaryCta}</a>
+            <a className="button ghost" href={data.slug === "/seo/" ? `#${id}` : "#aanpak"}>{data.slug === "/seo/" ? "Vraag een gratis SEO check aan" : data.secondaryCta}</a>
           </div>
           <div className="focus-cta-microcopy" aria-label="Wat je mag verwachten">
             {microcopy.map((item) => <span key={item}>{item}</span>)}
@@ -298,7 +299,7 @@ export function FocusServicePage({ data, locale = "nl" }: { data: GrowthPageData
           <a href="#seo-kosten">Kosten en afspraken</a>
           <a href="#aanpak">Onze aanpak</a>
           <a href="#seo-google-updates">Google-updates</a>
-          <a href="#seo-scan">Gratis scan aanvragen</a>
+          <a href="#seo-scan">Gratis SEO check</a>
         </nav>
       ) : null}
 
