@@ -328,6 +328,7 @@ export function SiteShell({
           <LocalizedLink href="/content-creatie/"><Text value={t("Social media", "Social media", "Redes sociales")} /></LocalizedLink>
           <a href="https://calendly.com/buitenhuisj004/bmc-sessie"><Text value={t("Kennismaken", "Introduction", "Conocernos")} /></a>
           <a href="mailto:jimmy@slimmerdangisteren.nl"><Text value={t("Mail", "Email", "Correo")}/></a>
+          <a href="https://www.linkedin.com/in/jimmybuitenhuis/"><Text value={t("LinkedIn van Jimmy", "Jimmy’s LinkedIn", "LinkedIn de Jimmy")} /></a>
         </div>
       </footer>
     </LanguageProvider>

@@ -106,6 +106,12 @@ export function organizationJsonLd() {
     "@id": `${siteUrl}/#organization`,
     name: siteName,
     url: siteUrl,
+    founder: {
+      "@type": "Person",
+      "@id": `${siteUrl}/#jimmy-buitenhuis`,
+      name: "Jimmy Buitenhuis",
+      sameAs: ["https://www.linkedin.com/in/jimmybuitenhuis/"],
+    },
     image: absoluteUrl(defaultOgImage),
     logo: absoluteUrl("/assets/logo.png"),
     email: contactEmail,

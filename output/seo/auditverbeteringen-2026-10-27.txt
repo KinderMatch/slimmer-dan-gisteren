@@ -24,3 +24,7 @@ Bewuste keuzes / resterend
 - Backlinks kunnen niet via een lokale codewijziging worden verkregen. Geen outreach of betaalde plaatsingen uitgevoerd.
 - Geen tekst toegevoegd puur om een woordenaantal te halen en geen nuttige navigatie/inhoud verwijderd om duplicatie op nul te krijgen.
 - Scores verschillen per pagina, locatie, apparaat en meetmoment. Een nieuwe score is pas bevestigd na een nieuwe rapportmeting; 100% is geen garantie op Google-posities.
+
+Aanvulling: gebruiker leverde https://www.linkedin.com/in/jimmybuitenhuis/ aan. Toegevoegd als persoonlijk profiel van Jimmy aan de homepagefooter en gedeelde footer, met Nederlandse, Engelse en Spaanse labels. In structured data gekoppeld aan de oprichter (Person), niet als bedrijfspagina voorgesteld.
+
+Validatie: 33 sitemap-pagina's gecontroleerd op interne doelen, fragmentlinks en ontbrekende alt-attributen: 0 fouten. Build, publicatievalidatie en 15 tests geslaagd voor de media-/metadatawijzigingen. De twee decoratieve beelden hebben een leeg alt-attribuut, geen ontbrekend attribuut.

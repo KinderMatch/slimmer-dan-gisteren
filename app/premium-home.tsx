@@ -476,6 +476,7 @@ export function PremiumHome({ initialLanguage = "nl" }: { initialLanguage?: Lang
           </nav>
           <a href="https://wa.me/31610175027">WhatsApp</a>
           <a href="mailto:jimmy@slimmerdangisteren.nl">Mail</a>
+          <a href="https://www.linkedin.com/in/jimmybuitenhuis/"><Text value={t("LinkedIn van Jimmy", "Jimmy’s LinkedIn", "LinkedIn de Jimmy")} /></a>
         </footer>
       </div>
     </LanguageProvider>
