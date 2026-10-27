@@ -30,7 +30,7 @@ test("server-renders the homepage with crawlable SEO content", async () => {
 
   const html = await response.text();
   assert.match(html, /<html lang="nl">/i);
-  assert.match(html, /<title>Slimmer dan Gisteren - SEO, GEO, Google Ads en Social Ads/i);
+  assert.match(html, /<title>SEO, GEO, Google Ads en Social Ads \| Slimmer dan Gisteren<\/title>/i);
   assert.match(html, /<link rel="canonical" href="https:\/\/slimmerdangisteren\.nl\/"/i);
   assert.match(html, /Marketing die/);
   assert.match(html, /Groei/);
@@ -55,7 +55,8 @@ test("keeps first render visible and light for Lighthouse", async () => {
   assert.match(html, /<footer class="premium-footer">[\s\S]*href="\/content-creatie\/"/);
   assert.match(html, /<footer class="premium-footer">[\s\S]*Social media/);
   assert.match(html, /GEO/);
-  assert.match(html, /\/assets\/generated\/datacenter-320\.gif"[^>]+width="320" height="169"/);
+  assert.match(html, /poster="\/assets\/generated\/datacenter-poster\.webp"/);
+  assert.doesNotMatch(html, /<img[^>]+datacenter-320\.gif/);
   assert.match(html, /\/assets\/optimized\/social-ads-schilder\.jpg"[^>]+width="800" height="707"/);
   assert.match(html, /Google Ads/);
 });
@@ -115,9 +116,9 @@ test("llms.txt keeps agent-facing links in recommended markdown form", async () 
 });
 
 test("GEO animation stays small enough for PageSpeed", async () => {
-  const asset = await stat(new URL("../public/assets/generated/datacenter-320.gif", import.meta.url));
+  const asset = await stat(new URL("../public/assets/generated/datacenter-320.mp4", import.meta.url));
 
-  assert.ok(asset.size < 2 * 1024 * 1024, `GEO animation is too large: ${asset.size} bytes`);
+  assert.ok(asset.size < 200 * 1024, `GEO animation is too large: ${asset.size} bytes`);
 });
 
 test("SEO enquiry uses an explicit email draft on static hosting and section links resolve", async () => {

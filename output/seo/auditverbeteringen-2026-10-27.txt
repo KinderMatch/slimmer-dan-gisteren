@@ -1,0 +1,26 @@
+Auditverbeteringen — 27 oktober 2026
+
+Bronnen
+SEOptimer: bestaand Chrome-rapport, 27 oktober 16:50 UTC, homepage. B totaal; A- on-page, A+ GEO, F links, B- usability, B+ performance.
+GTmetrix: https://gtmetrix.com/reports/slimmerdangisteren.nl/7hQEnxGV/ — SEO-pagina, 27 oktober, Seattle, desktop. 98% performance, 99% structure, LCP 916 ms, TBT 14 ms, CLS 0. Dit zijn scores vóór deze wijzigingen.
+Siteliner: bestaand rapport van 13 oktober, slechts 5 pagina's, 10% duplicate content, geen gebroken links. Geen actuele volledige websitescan.
+
+Uitgevoerd
+- Homepage-titel zonder dubbele bedrijfsnaam, NL/EN/ES, respectievelijk 57/58/56 tekens.
+- Kortere, inhoudelijke homepage-metabeschrijving in alle drie talen: 141/143/141 tekens.
+- GEO-, SEO- en Google Ads-homepageanimaties als efficiënte MP4, pas geladen wanneer zichtbaar. Pauzeren buiten beeld en bij verborgen tab; geen autoplay bij verminderde beweging. Statische WebP-posters als fallback. Inhoud en animaties behouden.
+- GEO-animatie: 1.296.576 -> 141.767 bytes.
+- SEO-homepageanimatie: 376.290 -> 76.126 bytes (bestaande SEO-video hergebruikt).
+- Google Ads-animatie: 174.776 -> 46.531 bytes.
+- NL introductievideo-poster: 184.703 -> 59.028 bytes; ook Engelse en Spaanse posters geoptimaliseerd.
+- AI-actorposter: 63.186 -> 17.082 bytes.
+- Browsericoon: 97.998 -> 6.495 bytes; apart 180px Apple-icoon.
+
+Bewuste keuzes / resterend
+- GitHub Pages stuurt 10 minuten browsercache. Een statische _headers-file of HTML-metatag wijzigt die serverheader niet. Voor controle over cacheheaders is een andere hosting/CDN-configuratie nodig. Niet gewijzigd zonder zo'n infrastructuurtraject.
+- Analytics wordt alleen geladen na toestemming; auditrobots kunnen daarom ten onrechte 'geen Analytics' melden. Geen consent omzeild om een score te halen.
+- Decoratieve footer-/achtergrondbeelden hebben correct alt="". Geen overbodige alt-tekst toegevoegd om de tool tevreden te stellen.
+- Geen Facebook Pixel toegevoegd zonder Meta-meetdoel en account. Geen fictieve sociale profielen, backlinks of klantresultaten toegevoegd. Bestaande profiellinks bij gebruiker opgevraagd.
+- Backlinks kunnen niet via een lokale codewijziging worden verkregen. Geen outreach of betaalde plaatsingen uitgevoerd.
+- Geen tekst toegevoegd puur om een woordenaantal te halen en geen nuttige navigatie/inhoud verwijderd om duplicatie op nul te krijgen.
+- Scores verschillen per pagina, locatie, apparaat en meetmoment. Een nieuwe score is pas bevestigd na een nieuwe rapportmeting; 100% is geen garantie op Google-posities.

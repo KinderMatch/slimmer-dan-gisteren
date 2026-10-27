@@ -10,6 +10,7 @@ import { EmphasisText, LanguageProvider, LanguageToggle, Text, useLanguage, type
 import { MediaLightbox } from "./media-lightbox";
 import { ScrollProgress } from "./scroll-experience";
 import { videoThumbnailFor } from "./video-thumbnails";
+import { ServiceAnimation } from "./service-animation";
 
 const t = (nl: string, en: string, es: string): LocalizedString => ({ nl, en, es });
 
@@ -128,6 +129,13 @@ function Media({ item, className = "" }: { item: { kind?: string; src: string; l
 }
 
 function ServiceVisual({ service }: { service: (typeof services)[number] }) {
+  const animations: Record<string, [string, string]> = {
+    "/geo/": ["/assets/generated/datacenter-320.mp4", "/assets/generated/datacenter-poster.webp"],
+    "/seo/": ["/assets/seo-search.mp4", "/assets/seo-search-poster.webp"],
+    "/google-ads/": ["/assets/google-ads-preview.mp4", "/assets/google-ads-poster.webp"],
+  };
+  const animation = animations[service.href];
+  if (animation) return <div className="premium-image-visual"><ServiceAnimation src={animation[0]} poster={animation[1]} /></div>;
   if (service.type === "image") {
     return (
       <div className="premium-image-visual">

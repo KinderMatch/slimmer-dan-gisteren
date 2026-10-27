@@ -1,8 +1,8 @@
 const videoThumbnailBySrc: Record<string, string> = {
-  "/assets/content/ai-actors-slimmer-dan-gisteren.m4v": "/assets/video-thumbnails/ai-actors-slimmer-dan-gisteren.m4v.jpg",
-  "/assets/content/speech-ceo-en.mp4": "/assets/video-thumbnails/speech-ceo-en.mp4.jpg",
-  "/assets/content/speech-ceo-es.mp4": "/assets/video-thumbnails/speech-ceo-es.mp4.jpg",
-  "/assets/content/speech-ceo-nl.mp4": "/assets/video-thumbnails/speech-ceo-nl.mp4.jpg",
+  "/assets/content/ai-actors-slimmer-dan-gisteren.m4v": "/assets/video-thumbnails/ai-actors-slimmer-dan-gisteren.m4v.webp",
+  "/assets/content/speech-ceo-en.mp4": "/assets/video-thumbnails/speech-ceo-en.mp4.webp",
+  "/assets/content/speech-ceo-es.mp4": "/assets/video-thumbnails/speech-ceo-es.mp4.webp",
+  "/assets/content/speech-ceo-nl.mp4": "/assets/video-thumbnails/speech-ceo-nl.mp4.webp",
   "/assets/dave-dekker/dave-1-preview.mov": "/assets/video-thumbnails/dave-1-preview.mov.jpg",
   "/assets/dave-dekker/dave-3-preview.mov": "/assets/video-thumbnails/dave-3-preview.mov.jpg",
   "/assets/dave-dekker/dave-4-preview.mov": "/assets/video-thumbnails/dave-4-preview.mov.jpg",

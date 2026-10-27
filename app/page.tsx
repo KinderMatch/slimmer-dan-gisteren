@@ -7,9 +7,9 @@ import { PremiumHome } from "./premium-home";
 import { absoluteUrl, breadcrumbJsonLd, defaultOgImage, faqJsonLd, primaryServicePages, siteName } from "./seo";
 
 export const metadata: Metadata = {
-  title: "Slimmer dan Gisteren - SEO, GEO, Google Ads en Social Ads",
+  title: "SEO, GEO, Google Ads en Social Ads",
   description:
-    "Marketingbureau voor SEO, GEO, Google Ads en Social Ads. Slimmer dan Gisteren helpt bedrijven beter vindbaar worden, campagnes verbeteren en meer aanvragen krijgen.",
+    "Marketingbureau voor SEO, GEO, Google Ads en Social Ads. Werk direct met Jimmy aan betere vindbaarheid, sterkere campagnes en meer aanvragen.",
   alternates: languageAlternates("/"),
   keywords: [
     "marketingbureau",

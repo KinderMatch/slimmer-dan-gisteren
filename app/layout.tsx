@@ -37,9 +37,9 @@ export const metadata: Metadata = {
     index: true,
   },
   icons: {
-    icon: "/assets/logo.png",
-    shortcut: "/assets/logo.png",
-    apple: "/assets/logo.png",
+    icon: "/assets/favicon-48.png",
+    shortcut: "/assets/favicon-48.png",
+    apple: "/assets/apple-touch-icon.png",
   },
   openGraph: {
     title: "Slimmer dan Gisteren - SEO, GEO, Google Ads en Social Ads",
