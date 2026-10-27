@@ -1,6 +1,6 @@
+import { SeoCosts } from "./seo-costs";
 import { localizeServiceTree } from "./localize-service-tree";
 import type { Language } from "./language";
-import { SeoEvidence } from "./seo-evidence";
 import { SeoAnimation } from "./seo-animation";
 import { ResponsiveImage } from "./responsive-image";
 import { EmphasisText } from "./language";
@@ -285,7 +285,7 @@ export function FocusServicePage({ data, locale = "nl" }: { data: GrowthPageData
 
       {data.slug === "/seo/" ? <aside className="section seo-contact-summary" aria-label="Jouw aanspreekpunt voor SEO">
         <ResponsiveImage src="/assets/jimmy-buitenhuis.png" alt="Jimmy Buitenhuis" width={320} height={320} loading="lazy" sizes="72px" />
-        <div><strong>Van eerste gesprek tot uitvoering: direct contact met Jimmy.</strong><p>We bespreken je website, doelgroep en gewenste aanvragen. Een betaald vervolg begint pas nadat we de werkzaamheden en kosten hebben afgesproken.</p><a href="#seo-praktijkvoorbeeld">Bekijk wat we op onze eigen website hebben verbeterd</a></div>
+        <div><strong>Van eerste gesprek tot uitvoering: direct contact met Jimmy.</strong><p>We bespreken je website, doelgroep en gewenste aanvragen. Een betaald vervolg begint pas nadat we de werkzaamheden en kosten hebben afgesproken.</p></div>
       </aside> : null}
 
       {data.slug === "/seo/" ? (
@@ -293,7 +293,6 @@ export function FocusServicePage({ data, locale = "nl" }: { data: GrowthPageData
           <a href="#seo-diensten">Diensten en oplevering</a>
           <a href="#seo-voor-wie">Voor wie</a>
           <a href="#aanpak">Onze aanpak</a>
-          <a href="#seo-praktijkvoorbeeld">Praktijkvoorbeeld</a>
           <a href="#seo-kosten">Kosten en afspraken</a>
           <a href="#seo-vragen">Veelgestelde vragen</a>
           <a href="#seo-scan">Gratis SEO check</a>
@@ -320,7 +319,7 @@ export function FocusServicePage({ data, locale = "nl" }: { data: GrowthPageData
             ))}
           </div>
           <p>We gebruiken de <a href="https://developers.google.com/search/docs/fundamentals/seo-starter-guide?hl=nl">SEO-richtlijnen van Google</a> als technische basis. Content moet een klantvraag beantwoorden en eigen vakkennis toevoegen. Bij externe vermeldingen volgen we <a href="https://developers.google.com/search/docs/essentials/spam-policies#link-spam">Googles beleid voor links</a>: betaalde reclame wordt als zodanig gemarkeerd; we kopen geen links om rankings te manipuleren.</p>
-          <p>Twijfel je waar je moet beginnen? De <a href="#seo-scan">gratis SEO-scan</a> geeft een eerste diagnose. Bekijk ook <a href="#seo-kosten">wat de kosten bepaalt</a> en ons <a href="#seo-praktijkvoorbeeld">praktijkvoorbeeld op deze website</a>.</p>
+          <p>Twijfel je waar je moet beginnen? De <a href="#seo-scan">gratis SEO-scan</a> geeft een eerste diagnose. Bekijk ook <a href="#seo-kosten">wat de kosten bepaalt</a>.</p>
           <div className="focus-premium-actions"><a className="button primary" href="#seo-scan">Ontdek de prioriteiten voor mijn website</a><a className="button ghost" href={calendlyUrl}>Maak kennis met Jimmy</a></div>
         </section>
       ) : null}
@@ -474,7 +473,7 @@ export function FocusServicePage({ data, locale = "nl" }: { data: GrowthPageData
         </div>
       </section>
 
-      {data.slug === "/seo/" ? <SeoEvidence /> : null}
+      {data.slug === "/seo/" ? <SeoCosts /> : null}
 
       {data.slug === "/seo/" && data.deepDive ? (
         <section className="section focus-seo-depth" aria-labelledby={depthHeadingId}>
@@ -661,5 +660,5 @@ export function FocusServicePage({ data, locale = "nl" }: { data: GrowthPageData
         </section>
       )}
     </div>
-  , locale, new Set([FaqPanel, ScanFormPanel, SeoEvidence, SeoSystemVisual]));
+  , locale, new Set([FaqPanel, ScanFormPanel, SeoCosts, SeoSystemVisual]));
 }
