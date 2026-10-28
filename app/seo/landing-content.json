@@ -295,6 +295,26 @@
         ]
       },
       {
+        "id": "bedrijfsprofiel-voorwaarden",
+        "heading": [
+          "Wanneer komt je bedrijf in aanmerking voor een Google Bedrijfsprofiel?",
+          "When is your business eligible for a Google Business Profile?",
+          "¿Cuándo puede tu empresa tener un Perfil de Empresa de Google?"
+        ],
+        "paragraphs": [
+          [
+            "Google stelt persoonlijk contact met klanten als voorwaarde. Dat kan op een geschikte bedrijfslocatie of doordat je klanten op hun locatie bezoekt. Een bedrijf dat uitsluitend online werkt, komt niet in aanmerking. Een bedrijfsprofiel is geen algemene voorwaarde om met je website in gewone zoekresultaten te verschijnen.",
+            "Google requires in-person contact with customers. This can happen at an eligible business location or when you visit customers at their premises. An online-only business is not eligible. A Business Profile is not a general requirement for your website to appear in regular search results.",
+            "Google exige contacto presencial con los clientes. Puede realizarse en una ubicación comercial apta o al visitar al cliente en sus instalaciones. Una empresa que opera exclusivamente online no cumple los requisitos. Un Perfil de Empresa no es un requisito general para que tu web aparezca en los resultados de búsqueda habituales."
+          ],
+          [
+            "Bezoek je klanten, maar ontvang je hen niet op je eigen adres? Dan past een servicegebiedprofiel: het adres wordt niet aan klanten getoond en je vermeldt waar je daadwerkelijk op locatie werkt. Een virtueel kantoor of een extra vestiging die niet echt wordt bemand, is geen manier om een groter bereik te claimen. We controleren eerst je werkwijze en bestaande profiel voordat we gegevens aanpassen.",
+            "If you visit customers but do not receive them at your own address, a service-area profile is appropriate: your address is hidden from customers and you list where you actually work in person. A virtual office or an additional location without actual staff is not a way to claim a larger footprint. We check how you operate and your existing profile before changing details.",
+            "Si visitas a los clientes pero no los recibes en tu dirección, corresponde un perfil de zona de servicio: la dirección se oculta a los clientes e indicas dónde trabajas presencialmente. Una oficina virtual o una ubicación adicional sin personal real no sirven para aparentar una presencia mayor. Comprobamos cómo trabajas y tu perfil actual antes de modificar los datos."
+          ]
+        ]
+      },
+      {
         "id": "paginas",
         "heading": [
           "Wanneer verdient een plaats een eigen pagina?",
@@ -376,6 +396,24 @@
       "Lokale SEO voor je werkgebied",
       "Local SEO for your service area",
       "SEO local para tu zona de servicio"
+    ],
+    "additionalSources": [
+      {
+        "url": "https://support.google.com/business/answer/13763036",
+        "label": [
+          "Google: voorwaarden voor een bedrijfsprofiel",
+          "Google: Business Profile eligibility",
+          "Google: requisitos del Perfil de Empresa"
+        ]
+      },
+      {
+        "url": "https://support.google.com/business/answer/3038177",
+        "label": [
+          "Google: richtlijnen voor locaties en servicegebieden",
+          "Google: location and service-area guidelines",
+          "Google: directrices sobre ubicaciones y zonas de servicio"
+        ]
+      }
     ]
   }
 }
