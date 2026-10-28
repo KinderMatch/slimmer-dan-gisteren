@@ -11339,3 +11339,47 @@ h3 {
 @media(max-width:600px) { .site-experience .service-premium-ads .performance-funnel { grid-template-columns:1fr; } }
 .site-experience .service-premium-ads .performance-funnel { grid-template-columns:repeat(auto-fit,minmax(100px,1fr)); }
 @media(max-width:1000px) { .site-experience .service-premium-ads .ads-performance-lab { grid-template-columns:1fr; } }
+
+/* Explicit foreground/background pairs prevent legacy dark-theme colors leaking
+   into light service sections. Shared by the Dutch, English and Spanish pages. */
+.site-experience .service-design > .section .eyebrow,
+.site-experience .service-design > .section .section-heading h2,
+.site-experience .service-design .focus-manifesto-points span,
+.site-experience .service-design .focus-runway article :is(span,h3),
+.site-experience .service-design .focus-benefit-band span { color:#174d61; }
+.site-experience .service-design .focus-manifesto > p,
+.site-experience .service-design > .section .section-heading p { color:#405d6b; }
+.site-experience .service-design .focus-scan-offer { background:#e4f1eb; color:#123443; }
+.site-experience .service-design .focus-scan-offer :is(h2,h3,p,span) { color:#123443; }
+.site-experience .service-design .focus-scan-offer article { background:#fff; }
+.site-experience .service-design .focus-form-panel,
+.site-experience .service-design .focus-faq-panel details { background:#fff; color:#123443; }
+.site-experience .service-design .focus-faq-panel details[open] { background:#edf6f1; }
+.site-experience .service-design .focus-faq-panel details p,
+.site-experience .service-design .focus-form-panel > p,
+.site-experience .service-design .focus-form-panel label,
+.site-experience .service-design .focus-form-panel label span { color:#405d6b; }
+.site-experience .service-design .focus-form-panel .eyebrow { color:#174d61; }
+.site-experience .service-design .focus-form-promise span { background:#edf6f1; color:#174d61; }
+.site-experience .service-design .focus-form-panel .button.ghost { background:#fff; color:#123443; border-color:#648391; }
+.site-experience .service-design .focus-form-panel :is(input,textarea)::placeholder { color:#526d79; opacity:1; }
+.site-experience .service-design .focus-form-status.success { background:#e4f4e9; color:#18532d; }
+.site-experience .service-design .focus-form-status.error { background:#fff0ee; color:#922c20; }
+.site-experience .premium-testimonial-heading .text-accent { color:#1e639f; }
+.site-experience .service-premium-ads .video-mini > span,
+.site-experience .service-premium-ads .video-play-indicator span { color:#174d61; }
+.site-experience .service-premium-ads .performance-score small,
+.site-experience .service-premium-ads .ads-metrics span { color:#eef6f8; }
+.site-experience .service-premium-ads .ads-flow article > span { color:#a5d3ff; }
+.site-experience .service-premium :is(.management-browser-top,.management-status-card) span,
+.site-experience .service-premium .management-case-list article > span,
+.site-experience .service-premium .website-workflow article > span,
+.site-experience .legal-page .eyebrow { color:#a5d3ff; }
+.site-experience .service-premium .website-case-role { color:#405d6b; }
+.site-experience .service-premium-content .travel-copy .eyebrow,
+.site-experience .service-premium-content .travel-copy p,
+.site-experience .service-premium-content .travel-copy p:not(.eyebrow) { color:#eef6f8; }
+.site-experience .service-premium-content .brand-video-tile > div > span { color:#eef6f8; }
+
+.site-experience .service-premium .management-case-list small { color:#dcebef; }
+.site-experience .service-premium-content .travel-video-card span { color:#fff; }
