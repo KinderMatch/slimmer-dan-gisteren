@@ -40,6 +40,9 @@ jobs:
       - name: Validate published SEO and images
         run: node scripts/validate-pages.mjs
 
+      - name: Validate visible structured content and published links
+        run: node scripts/audit-search-central.mjs
+
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:

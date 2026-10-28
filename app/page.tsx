@@ -4,7 +4,7 @@ import type { Metadata } from "next";
 import { JsonLd } from "./json-ld";
 import { languageAlternates } from "./i18n";
 import { PremiumHome } from "./premium-home";
-import { absoluteUrl, breadcrumbJsonLd, defaultOgImage, faqJsonLd, primaryServicePages, siteName } from "./seo";
+import { absoluteUrl, breadcrumbJsonLd, defaultOgImage, primaryServicePages, siteName } from "./seo";
 
 export const metadata: Metadata = {
   title: "SEO, GEO, Google Ads en Social Ads",
@@ -40,23 +40,6 @@ export default function Home({ initialLanguage = "nl" }: { initialLanguage?: Lan
       <JsonLd locale={initialLanguage}
         data={[
           breadcrumbJsonLd([{ name: "Home", path: "/" }]),
-          faqJsonLd([
-            {
-              question: "Waar helpt Slimmer dan Gisteren mee?",
-              answer:
-                "Slimmer dan Gisteren helpt bedrijven met GEO, SEO, Google Ads, Social Ads, tracking, rapportage en conversiegerichte optimalisatie.",
-            },
-            {
-              question: "Voor wie is Slimmer dan Gisteren geschikt?",
-              answer:
-                "Voor ondernemers en organisaties die zichtbaarheid in Google, AI-antwoorden en social campagnes rustiger en meetbaarder willen maken.",
-            },
-            {
-              question: "Hoe kan ik kennismaken?",
-              answer:
-                "Je kunt een strategiesessie plannen via Calendly, direct contact opnemen via WhatsApp of mailen naar jimmy@slimmerdangisteren.nl.",
-            },
-          ]),
           {
             "@context": "https://schema.org",
             "@type": "ItemList",

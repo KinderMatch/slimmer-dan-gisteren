@@ -244,6 +244,11 @@ export function PremiumHome({ initialLanguage = "nl" }: { initialLanguage?: Lang
                 <span>Google Ads</span>
                 <span>Social Ads</span>
               </div>
+              <p className="premium-hero-intro"><Text value={t(
+                "Voor ondernemers en bedrijven die meer relevante aanvragen willen. Je werkt rechtstreeks met Jimmy Buitenhuis aan vindbaarheid, campagnes en de pagina’s waarop klanten contact opnemen. Vanuit Diemen, voor bedrijven in heel Nederland.",
+                "For business owners and companies seeking more relevant enquiries. Work directly with Jimmy Buitenhuis on search visibility, campaigns and the pages where customers get in touch. Based in Diemen, working with companies throughout the Netherlands.",
+                "Para empresarios y empresas que buscan solicitudes más relevantes. Trabaja directamente con Jimmy Buitenhuis en visibilidad, campañas y las páginas donde los clientes contactan. Desde Diemen, para empresas de todos los Países Bajos.",
+              )} /></p>
               <a className="premium-cta" href="https://calendly.com/buitenhuisj004/bmc-sessie">
                 <Text value={t("Plan een strategiesessie", "Plan a strategy session", "Planifica una sesión estratégica")} />
               </a>

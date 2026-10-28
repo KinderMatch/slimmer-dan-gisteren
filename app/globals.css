@@ -5706,6 +5706,14 @@ h3 {
   font-size: clamp(1rem, 1.4vw, 1.3rem);
 }
 
+.premium-hero-copy .premium-hero-intro {
+  max-width: 62ch;
+  margin: 0;
+  color: var(--premium-light);
+  font-size: clamp(1rem, 1.2vw, 1.15rem);
+  line-height: 1.65;
+}
+
 .premium-hero-meta span:not(:last-child)::after {
   content: "/";
   margin-left: 0.7rem;

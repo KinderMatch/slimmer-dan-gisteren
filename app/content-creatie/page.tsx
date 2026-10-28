@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 
 import { JsonLd } from "../json-ld";
 import { languageAlternates } from "../i18n";
-import { absoluteUrl, breadcrumbJsonLd, faqJsonLd, serviceJsonLd, siteName } from "../seo";
+import { absoluteUrl, breadcrumbJsonLd, serviceJsonLd, siteName } from "../seo";
 import {
   ArtistContentShowcase,
   BrandingStudio,
@@ -56,18 +56,6 @@ export default function ContentCreatiePage({ initialLanguage = "nl" }: { initial
             { name: "Content creatie", path: "/content-creatie/" },
           ]),
           serviceJsonLd("/content-creatie/"),
-          faqJsonLd([
-            {
-              question: "Welke content maakt Slimmer dan Gisteren?",
-              answer:
-                "Slimmer dan Gisteren maakt video, fotografie, social posts, reiscontent, eventvideo, trouwvideo's en artiestencontent.",
-            },
-            {
-              question: "Is content creatie geschikt voor bedrijven en particulieren?",
-              answer:
-                "Ja. De focus ligt op B2B content voor merken en organisaties, maar B2C fotografie en videografie zoals bruiloften en persoonlijke verhalen kunnen ook worden opgepakt.",
-            },
-          ]),
         ]}
       />
       <SiteShell initialLanguage={initialLanguage} premiumNavigation>

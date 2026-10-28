@@ -133,7 +133,8 @@ test("SEO enquiry uses an explicit email draft on static hosting and section lin
     assert.ok(html.includes(`id="${id}"`), `Missing section target: ${id}`);
   }
   const adsHtml = await (await render("/google-ads/")).text();
-  assert.match(adsHtml, /action="\/api\/scan"/);
+  assert.doesNotMatch(adsHtml, /action="\/api\/scan"/);
+  assert.match(adsHtml, /Je verstuurt deze daarna vanuit je eigen e-mailprogramma/);
 });
 
 test("SEO animation keeps the initial page light without removing its content", async () => {

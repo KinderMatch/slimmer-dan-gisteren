@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 
 import { JsonLd } from "../json-ld";
 import { languageAlternates } from "../i18n";
-import { absoluteUrl, breadcrumbJsonLd, defaultOgImage, faqJsonLd, serviceJsonLd, siteName } from "../seo";
+import { absoluteUrl, breadcrumbJsonLd, defaultOgImage, serviceJsonLd, siteName } from "../seo";
 import {
   AdsPerformanceLab,
   GoogleAdsOverview,
@@ -52,18 +52,6 @@ export default function SocialAdsPage({ initialLanguage = "nl" }: { initialLangu
             { name: "Social Ads", path: "/social-ads/" },
           ]),
           serviceJsonLd("/social-ads/"),
-          faqJsonLd([
-            {
-              question: "Kan ik Social Ads uitbesteden aan Slimmer dan Gisteren?",
-              answer:
-                "Ja. Slimmer dan Gisteren helpt met social advertentiestrategie, campagne-opzet, conversietracking, optimalisatie en rapportage.",
-            },
-            {
-              question: "Worden Social Ads-campagnes meetbaar gemaakt?",
-              answer:
-                "Ja. Tracking, conversies en rapportage worden ingericht zodat duidelijk wordt wat campagnes opleveren en waar verbetering zit.",
-            },
-          ]),
         ]}
       />
       <SiteShell initialLanguage={initialLanguage} premiumNavigation>
@@ -94,9 +82,9 @@ export default function SocialAdsPage({ initialLanguage = "nl" }: { initialLangu
               <h2><EmphasisText value={t("Advertentiecreatie die direct bij de [[campagne]] hoort.", "Ad creative that belongs directly to the [[campaign]].", "Creatividad publicitaria conectada directamente a la [[campaña]].")} /></h2>
               <p>
                 <Text value={t(
-                  "Deze pagina gebruikt bewust de Zelfstandigen Bouw-video's: herkenbare social-first advertenties die campagne en doelgroep zichtbaar maken.",
-                  "This page deliberately uses the Zelfstandigen Bouw videos: recognizable social-first ads that make the campaign and audience visible.",
-                  "Esta página usa intencionadamente los videos de Zelfstandigen Bouw: anuncios social-first reconocibles que muestran campaña y público.",
+                  "De advertenties voor Zelfstandigen Bouw laten zien hoe een herkenbare situatie wordt vertaald naar een korte video voor zelfstandige bouwprofessionals. Bekijk de voorbeelden om de stijl, doelgroep en boodschap te beoordelen.",
+                  "The ads for Zelfstandigen Bouw show how a recognizable situation becomes a short video for self-employed construction professionals. Watch the examples to assess the style, audience and message.",
+                  "Los anuncios para Zelfstandigen Bouw muestran cómo una situación reconocible se convierte en un vídeo corto para profesionales autónomos de la construcción. Mira los ejemplos para valorar el estilo, el público y el mensaje.",
                 )} />
               </p>
             </div>
@@ -129,6 +117,11 @@ export default function SocialAdsPage({ initialLanguage = "nl" }: { initialLangu
               <h2><EmphasisText value={t("Wat klanten zeggen over [[slimmer adverteren]].", "What clients say about [[smarter advertising]].", "Lo que dicen los clientes sobre [[anunciar mejor]].")} /></h2>
             </div>
             <Testimonials />
+            <p><Text value={t(
+              "De genoemde kostenbesparing komt uit de klantreview van Rob en Rene over advertentiebeheer. Het is een ervaring van die klant, geen toezegging voor iedere campagne. Voor een eigen vergelijking bekijken we periode, budget, kanaal en gemeten aanvragen samen.",
+              "The advertising cost reduction comes from Rob and Rene’s review of advertising management. It reflects that client’s experience, not a promise for every campaign. For your own comparison, we assess the period, budget, channel and measured enquiries together.",
+              "La reducción del coste publicitario procede de la reseña de Rob y Rene sobre gestión de anuncios. Refleja la experiencia de ese cliente, no una promesa para todas las campañas. Para tu comparación evaluamos juntos el periodo, el presupuesto, el canal y las solicitudes medidas.",
+            )} /></p>
           </section>
         </div>
       </SiteShell>

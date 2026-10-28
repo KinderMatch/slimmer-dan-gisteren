@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 
 import { JsonLd } from "../json-ld";
 import { languageAlternates } from "../i18n";
-import { absoluteUrl, breadcrumbJsonLd, defaultOgImage, faqJsonLd, serviceJsonLd, siteName } from "../seo";
+import { absoluteUrl, breadcrumbJsonLd, defaultOgImage, serviceJsonLd, siteName } from "../seo";
 import {
   PageHero,
   SiteShell,
@@ -51,18 +51,6 @@ export default function WebsitePage({ initialLanguage = "nl" }: { initialLanguag
             { name: "Website laten maken en SEO", path: "/website/" },
           ]),
           serviceJsonLd("/website/"),
-          faqJsonLd([
-            {
-              question: "Kan ik mijn websitebeheer uitbesteden aan Slimmer dan Gisteren?",
-              answer:
-                "Ja. Slimmer dan Gisteren helpt met websitebeheer, pagina-aanpassingen, SEO, tracking, conversiepunten en samenwerking met externe websitebouwers.",
-            },
-            {
-              question: "Helpt Slimmer dan Gisteren ook met SEO?",
-              answer:
-                "Ja. De technische basis, contentstructuur, meetbaarheid en vindbaarheid van de website worden verbeterd zodat de website beter gevonden kan worden.",
-            },
-          ]),
         ]}
       />
       <SiteShell initialLanguage={initialLanguage} premiumNavigation>

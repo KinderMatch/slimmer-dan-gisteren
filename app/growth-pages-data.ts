@@ -324,7 +324,7 @@ export const geoPage: GrowthPageData = {
   topicalAuthority: {
     title: "De compacte GEO-aanpak",
     intro:
-      "De GEO-pagina volgt dezelfde compacte opbouw als SEO, maar dan gericht op zichtbaarheid in AI-antwoorden: begrijpelijke content, relevante prompts, betrouwbare bronnen en een duidelijke vervolgstap.",
+      "We onderzoeken hoe je bedrijf wordt gevonden en welke informatie klanten nodig hebben. Daarna verbeteren we bestaande pagina’s met eigen vakkennis, duidelijke uitleg en controleerbaar bewijs. Voor Google AI-antwoorden blijft SEO de basis; andere platformen beoordelen we afzonderlijk.",
     clusters: [
       {
         title: "1. Begrijpbaar fundament",
@@ -385,7 +385,7 @@ export const geoPage: GrowthPageData = {
     leftItems: ["Gericht op Google-rankings", "Zoekwoorden", "Organisch verkeer", "Klikken vanuit zoekresultaten"],
     rightTitle: "GEO",
     rightItems: ["Gericht op AI-antwoorden", "Vragen en prompts", "Merkvermeldingen", "Bronnen en autoriteit"],
-    footer: "De beste strategie combineert SEO en GEO.",
+    footer: "Voor Google AI-antwoorden zijn de bestaande SEO-principes leidend. De term GEO gebruiken we voor onderzoek naar zichtbaarheid in AI-antwoorden; een aparte Google-rankingmethode is het niet.",
   },
   benefitsTitle: "Waarom deze GEO-aanpak overtuigt",
   benefits: [
@@ -410,7 +410,7 @@ export const geoPage: GrowthPageData = {
     {
       question: "Wat is het verschil tussen GEO en SEO?",
       answer:
-        "SEO richt zich vooral op vindbaarheid in zoekmachines zoals Google. GEO richt zich op zichtbaarheid in AI-antwoorden, bijvoorbeeld wanneer iemand aan ChatGPT, Gemini, Perplexity of Google AI Overviews vraagt welk bedrijf, product of advies relevant is.",
+        "GEO is een gangbare term voor zichtbaarheid in AI-antwoorden. Volgens Google valt optimalisatie voor zijn generatieve zoekfuncties onder SEO. Voor ChatGPT, Gemini en Perplexity onderzoeken we per platform welke bronnen en antwoorden zichtbaar zijn; Googles richtlijnen beschrijven niet hoe al die platformen werken.",
     },
     {
       question: "Is GEO een vervanging van SEO?",
@@ -450,7 +450,7 @@ export const geoPage: GrowthPageData = {
     {
       question: "Heeft structured data invloed op GEO?",
       answer:
-        "Structured data is geen wondermiddel, maar het helpt zoekmachines en systemen om informatie beter te begrijpen. Voor GEO kijken we naar schema markup, FAQ-structuur, dienstinformatie, bedrijfsgegevens en de technische opbouw van pagina's.",
+        "Voor generatieve AI-functies in Google is structured data niet verplicht en is geen speciaal schema nodig. Passende structured data kan wel helpen om in aanmerking te komen voor ondersteunde uitgebreide zoekresultaten. De opmaak moet kloppen met de zichtbare inhoud; ze garandeert geen ranking of AI-vermelding.",
     },
     {
       question: "Moet ik nieuwe content maken voor GEO?",
@@ -475,8 +475,8 @@ export const geoPage: GrowthPageData = {
   ],
   form: {
     title: "Ontvang een compacte GEO-scan",
-    text: "Stuur je website mee. We geven je geen generiek rapport, maar een eerste diagnose van prompts, bronwaarde, contentkansen en autoriteit.",
-    submit: "Ontvang mijn GEO-scan",
+    text: "Stel hieronder een aanvraagmail op en verstuur die vanuit je eigen e-mailprogramma. Na ontvangst bespreken we je website, de relevante AI-platformen en eerste aandachtspunten. De scan is een persoonlijke eerste beoordeling; geen automatische analyse of garantie op AI-vermeldingen.",
+    submit: "Zet mijn aanvraagmail klaar",
     fields: ["Naam", "Bedrijfsnaam", "E-mailadres", "Website", "Bericht"],
   },
 };
@@ -632,8 +632,8 @@ export const googleAdsPage: GrowthPageData = {
   ],
   form: {
     title: "Benieuwd of je meer uit Google Ads kunt halen?",
-    text: "Laat ons jouw huidige campagnes of groeikansen analyseren en ontdek waar advertentiebudget slimmer kan worden ingezet.",
-    submit: "Vraag een gratis Google Ads-scan aan",
+    text: "Stel hieronder een aanvraagmail op en verstuur die vanuit je eigen e-mailprogramma. Na ontvangst bespreken we je campagnes of groeikansen en welke informatie nodig is voor een eerste beoordeling. Eventueel vervolgwerk en toegang tot je advertentieaccount spreken we apart af.",
+    submit: "Zet mijn aanvraagmail klaar",
     fields: ["Naam", "Bedrijfsnaam", "E-mailadres", "Telefoonnummer", "Website", "Huidig Google Ads-budget", "Doel van de campagnes", "Bericht"],
   },
 };

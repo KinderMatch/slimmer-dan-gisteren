@@ -201,7 +201,7 @@ function ScanFormPanel({ data, id, microcopy }: { data: GrowthPageData; id: stri
       <div className="focus-form-promise">
         {microcopy.map((item) => <span key={item}>{item}</span>)}
       </div>
-      <ScanForm delivery={data.slug === "/seo/" ? "email" : "server"} fields={data.form.fields} formId={id} pageTitle={data.form.title} pageSlug={data.slug} submitLabel={data.form.submit} />
+      <ScanForm delivery="email" fields={data.form.fields} formId={id} pageTitle={data.form.title} pageSlug={data.slug} submitLabel={data.form.submit} />
       <a className="button ghost" href={calendlyUrl}>Plan liever direct een kennismaking</a>
       {data.slug === "/seo/" ? <div className="seo-contact-next"><h3>Wat gebeurt er daarna?</h3><ol><li>Je verstuurt je aanvraagmail of boekt een gesprek.</li><li>We bespreken je website, doelgroep en wat je met SEO wilt bereiken.</li><li>Als vervolgwerk past, ontvang je eerst een voorstel met werkzaamheden en kosten.</li></ol><p>Liever bellen? <a href="tel:+31610175027">06 10175027</a> (ma–vr 09.00–18.00).</p></div> : null}
     </div>
@@ -391,6 +391,7 @@ export function FocusServicePage({ data, locale = "nl" }: { data: GrowthPageData
               </article>
             ))}
           </div>
+          {data.slug === "/geo/" ? <p>Voor Google volgen we de <a href="https://developers.google.com/search/docs/fundamentals/ai-optimization-guide">officiële richtlijnen voor generatieve AI in Search</a>. <span>De bestaande SEO-basis blijft leidend; speciale AI-bestanden of schema’s zijn niet vereist. Voor andere AI-platformen beoordelen we de zichtbaarheid afzonderlijk.</span></p> : null}
         </section>
       ) : null}
 
@@ -449,7 +450,7 @@ export function FocusServicePage({ data, locale = "nl" }: { data: GrowthPageData
           <div className="focus-seo-depth-grid">
             <article><h3>Een plan dat je kunt beoordelen</h3><p>Voor de uitvoering spreken we af welke pagina’s en zoekvragen prioriteit krijgen, welke technische verbeteringen nodig zijn en wie wat oppakt. De omvang en kosten hangen af van je website, concurrentie en beschikbare capaciteit.</p></article>
             <article><h3>Inzicht in werkzaamheden en effect</h3><p>We leggen vast wat is aangepast. Vooraf leggen we een nulmeting vast. In Search Console vergelijken we dezelfde pagina’s en zoekvragen over vergelijkbare perioden, met merknaamzoekopdrachten apart. Waar aanvragen worden gemeten, nemen we ook leadkwaliteit mee. In de rapportage staan de uitgevoerde acties, ontwikkeling en volgende prioriteiten. Frequentie en meetinrichting spreken we vooraf af; een gemiddelde positie is geen vaste Google-ranking.</p></article>
-            <article><h3>Voorbeeld van een SEO-diagnose</h3><p>Een dienstpagina krijgt vertoningen maar weinig klikken. Dan onderzoeken we eerst de zoekvragen, positie en getoonde titel. Sluit de pagina aan op de vraag? Is het aanbod duidelijk? We veranderen gericht één onderdeel en vergelijken daarna de ontwikkeling. Dit is een werkwijzevoorbeeld, geen klantresultaat.</p><p><a href="/downloads/seo-verbeterplan.csv" download>Download een voorbeeld van een SEO-verbeterplan (CSV)</a>. Open het in Excel of Google Sheets; de voorbeeldregels zijn fictief en kunnen worden vervangen door je eigen bevindingen.</p></article>
+            <article><h3>Van diagnose naar controleerbare uitvoering</h3><p>Op onze eigen website hebben we een niet-werkende aanvraagroute onderzocht en de contactstap expliciet gemaakt. Ook hebben we de zoekanimatie lichter gemaakt. In de <a href="/seo/technische-seo/#onderdeel-6">technische praktijkbeschrijving</a> leggen we uit wat is gewijzigd en wat dat wel en niet bewijst. Dit is eigen websitewerk, geen SEO-klantresultaat.</p><p><a href="/downloads/seo-verbeterplan.csv" download>Download een voorbeeld van een SEO-verbeterplan (CSV)</a>. Open het in Excel of Google Sheets; de voorbeeldregels zijn fictief en kunnen worden vervangen door je eigen bevindingen.</p></article>
             <article id="seo-google-updates"><h3>Hoe we omgaan met Google-updates</h3><p>Bij een verandering in zoekverkeer vergelijken we de timing met de <a href="https://status.search.google.com/products/rGHU1u87FJnkP6W2GwMi/history">officiële updategeschiedenis van Google</a>. Samenvallende datums bewijzen niet dat een update de oorzaak is. Ook wijzigingen aan je website, zoekvraag en concurrentie kunnen meespelen.</p><p>Voor een core-update volgen we <a href="https://developers.google.com/search/docs/appearance/core-updates">Googles analyseadvies</a>: eerst de uitrol laten afronden, daarna minimaal een volle week wachten en vergelijken met een periode vóór de update. We bekijken getroffen pagina’s en zoekvragen voordat we ingrijpen. Technische fouten lossen we wel direct op.</p></article>
           </div>
           <div className="focus-premium-actions"><a className="button primary" href="#seo-scan">Vraag een eerste SEO-analyse aan</a><a className="button ghost" href="tel:+31610175027">Bel Jimmy: 06 10175027</a></div>

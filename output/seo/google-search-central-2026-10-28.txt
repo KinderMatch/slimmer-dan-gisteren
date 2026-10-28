@@ -1,0 +1,69 @@
+Google Search Central — websitecontrole en verbeteringen, 28 oktober 2026
+
+Doel en grenzen
+De SEO-pagina en de gehele bestaande website verbeteren volgens de toepasselijke documentatie van Google Search Central. Een checklist is geen garantie op opname of hoge posities. Zoekintentie, inhoudelijke kwaliteit, concurrentie en externe reputatie blijven van invloed. Geen klantresultaten, bedrijfsadressen of certificaten verzonnen.
+
+Bronnen
+Leidend: het bestaande Google Search Central-tabblad in Chrome, inclusief de uitgeklapte linkernavigatie. De menu's Search Essentials, SEO fundamentals, Crawling and indexing, Ranking and search appearance, Monitoring and debugging en Site-specific guides, met hun submenu's, zijn geïnventariseerd. Een inventarisatie is geen claim dat iedere specialistische handleiding volledig is gelezen of op deze website van toepassing is.
+Geraadpleegde officiële kernbronnen:
+https://developers.google.com/search/docs/essentials
+https://developers.google.com/search/docs/essentials/technical
+https://developers.google.com/search/docs/essentials/spam-policies
+https://developers.google.com/search/docs/fundamentals/seo-starter-guide
+https://developers.google.com/search/docs/fundamentals/creating-helpful-content
+https://developers.google.com/search/docs/fundamentals/how-search-works
+https://developers.google.com/search/docs/fundamentals/get-started
+https://developers.google.com/search/docs/fundamentals/get-started-developers
+https://developers.google.com/search/docs/fundamentals/ai-optimization-guide
+https://developers.google.com/search/docs/fundamentals/third-party-seo
+https://developers.google.com/search/docs/crawling-indexing/url-structure
+https://developers.google.com/search/docs/crawling-indexing/consolidate-duplicate-urls
+https://developers.google.com/search/docs/appearance/structured-data/sd-policies
+https://developers.google.com/search/docs/appearance/page-experience
+https://developers.google.com/search/docs/appearance/core-web-vitals
+https://developers.google.com/search/docs/monitor-debug/search-console-start
+
+Uitgevoerd
+1. Onzichtbare FAQ-opmaak verwijderd uit homepage, Social Ads, Website en Content creatie in NL/EN/ES. De vragen waren niet leesbaar op die pagina's. De bestaande zichtbare FAQ's van SEO/GEO/Google Ads blijven behouden; geen rich-resultgarantie.
+2. De GEO- en Google Ads-aanvraagformulieren gebruiken nu de bestaande, expliciete e-mailconceptroute. Geen POST naar /api/scan op GitHub Pages; er verschijnt geen onjuiste ontvangstbevestiging. Automatische serververwerking is eerder uitgesteld en niet alsnog toegevoegd. Getest met fictieve gegevens, zonder een e-mail te versturen.
+3. Homepage verduidelijkt doelgroep, persoonlijk aanspreekpunt, dienstverlening en werkgebied. Bestaande hoofdregel en beeldtaal behouden.
+4. SEO-pagina verbindt de aanpak rechtstreeks met de echte technische praktijkbeschrijving van de eigen website. Fictieve werkbladregels blijven expliciet als fictief aangeduid; geen SEO-klantcase verzonnen.
+5. Technische handleiding geactualiseerd met huidige werkelijke animatiebestanden: MP4 76.126 bytes en poster 5.828 bytes. Bestandsgrootte is geen bewijs van rankingwinst of betere Core Web Vitals. Jimmy is zichtbaar inhoudelijk aanspreekpunt.
+6. GEO-uitleg gecorrigeerd: voor Google zijn generatieve zoekfuncties onderdeel van SEO, zonder verplicht speciaal schema of AI-tekstbestand. Andere platformen afzonderlijk beoordelen. Officiële bron toegevoegd. Interne uitleg over de bouw van de pagina vervangen door bruikbare klantinformatie.
+7. Social Ads presenteert advertentievoorbeelden inhoudelijk en verduidelijkt de herkomst/beperkingen van de kostenbesparing in een klantreview.
+8. Intern campagnebeheerscherm uitgesloten van indexering, met een eigen canonical. Geen wijziging aan de beveiliging of API-autorisatie.
+9. Nieuwe publicatiecontrole toegevoegd aan de bestaande GitHub Pages-publicatiestroom. Deze controleert de daadwerkelijk gepubliceerde HTML op zichtbare FAQ-inhoud, lokale links en ankers, mediabestanden, onbruikbare serverformulieracties, sitemap/canonical/noindex en wederkerige taalverwijzingen.
+10. Alle nieuwe dienstteksten vertaald naar Engels en Spaans. Sitemapdatums alleen aangepast voor pagina's met werkelijke inhoudelijke wijzigingen.
+
+Behouden eerdere keuzes
+Website, content-creatie, privacy en algemene voorwaarden in NL/EN/ES blijven noindex en buiten de sitemap. Oude verwijderde WordPress-pagina's blijven verwijderd. Geen nieuwe plaatsnaamduplicaten of zoekwoordvulling toegevoegd. llms.txt wordt niet als Google-rankingvoorwaarde gepresenteerd. De live website gebruikt GitHub Pages; een oude Sites-projectverwijzing is niet als publicatiedoel gebruikt.
+
+Toepasselijkheid van de volledige linkerbalk
+- Search Essentials: toegang, indexeerbare HTML, correcte status en spambeleid zijn de basis.
+- SEO fundamentals: eigen inhoud, duidelijke afzender, onderhoud, AI-claims en bronvermelding zijn relevant. Externe SEO-tools leveren geen interne Google-rankingscore.
+- Crawling and indexing: links, URL-structuur, sitemaps, robots, canonicals, mobiel, JavaScript, metadata en juiste omleidingen zijn relevant. AMP is niet gebruikt en niet verplicht. Verwijderings- en migratiehandleidingen zijn van toepassing wanneer zo'n wijziging nodig is. Crawlerverificatie en crawlbeperking zijn beheeronderwerpen, geen verplichte SEO-trucs.
+- Ranking/search appearance: titels, snippets, favicon, sitenaam, relevante afbeeldingen/video, pagina-ervaring en passende structured data zijn relevant. Featured snippets en sitelinks worden door Google gekozen. Reviews system gaat over inhoudelijke reviewpublicaties, niet over het eenvoudig toevoegen van klantquotes. Discover, preferred sources, search profiles, regionale resultaatblokken, vertaalfuncties, Web Stories en Early Adopters Program zijn specifieke mogelijkheden, geen algemene voorwaarden.
+- Structured-data feature guides: alleen passende types gebruiken. Producten, vacatures, recepten, opleidingen, datasets, evenementen, software, boekacties, vakantieverhuur en overige gespecialiseerde rich results niet als algemene verplichting toepassen op dit marketingbureau. Geen nepgegevens toevoegen om voor die functies in aanmerking te komen.
+- Monitoring/debugging: Search Console voor werkelijke indexering en prestaties; Trends en zoekoperatoren zijn hulpmiddelen. Een site:-zoekopdracht is geen volledig indexeringsrapport. Beveiliging en spam in gebruikersinhoud controleren waar relevant.
+- Site-specific guides: meertaligheid is relevant voor NL/EN/ES. De webshop-, filter/paginatie- en expliciete-inhoudhandleidingen zijn geen vereisten voor de huidige dienstensite. Ze worden relevant als zulke functies worden toegevoegd.
+
+Lokale verificatie
+Volledige productiebuild met vooraf gegenereerde routes geslaagd.
+15 bestaande render- en analysetests geslaagd.
+Publicatievalidator geslaagd: metadata, afbeeldingsafmetingen, sitemapdatums, uitsluitingen, taalvarianten, interne inkomende links, hoofdinhoud en bedrijfsopmaak.
+Nieuwe controle: 42 HTML-pagina's, 27 indexeerbare sitemap-URL's, 965 interne links, 371 mediaverwijzingen en 207 zichtbare FAQ-vragen geslaagd. Aantallen zijn controles op de publicatie, geen telling van unieke links of rankingfactoren.
+Nieuwe homepage en SEO-pagina visueel bekeken; GEO-e-mailconcept functioneel getest zonder te verzenden.
+
+Nog afzonderlijk te verifiëren
+- Live publicatie en statuscodes na de deployment.
+- Search Console: indexering van /seo/, gekozen canonical, eventuele handmatige acties, beveiliging en sitemapstatus.
+- Core Web Vitals: overzicht van Search Console heeft geen gegevens voor mobiel of desktop. PageSpeed API gaf HTTP 429 wegens uitgeput quota; geen nieuwe snelheidsscore vastgesteld.
+- Echte publiceerbare SEO-klantresultaten en relevante externe vermeldingen vragen eigen bewijs; daarvoor is de gebruiker om input gevraagd.
+- Het effect op vertoningen, klikken en ontvangen aanvragen is pas na verwerking en voldoende meettijd te beoordelen. Geen nieuwe automatische monitor aangemaakt.
+
+Search Console-controle vóór publicatie, 28 oktober 2026
+Geopend in Chrome met de bestaande property slimmerdangisteren.nl.
+- Overzicht: 27 geïndexeerde en 26 niet-geïndexeerde pagina's. Niet-geïndexeerd betekent niet automatisch fout; bewuste uitsluitingen en verwijderde pagina's blijven bestaan.
+- /seo/: URL is geïndexeerd door Google. Laatste crawl 27 oktober 2026 om 18:43:27, Googlebot smartphone. Crawlen toegestaan: ja. Ophalen: geslaagd. Indexeren toegestaan: ja. Aangegeven canonical https://slimmerdangisteren.nl/seo/; door Google gekozen canonical is de gecontroleerde URL. Sitemap wordt herkend.
+- Handmatige acties: Geen problemen gedetecteerd.
+- De afzonderlijke TypeScript-controle bleef zonder resultaat hangen en is afgebroken; niet als geslaagde controle gerapporteerd. De productiebuild, publicatiecontroles en 15 tests zijn wel geslaagd.

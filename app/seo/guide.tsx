@@ -20,7 +20,7 @@ export function SeoGuide({ title, intro, path, children, locale = "nl" }: { loca
       <section className="section focus-seo-depth"><div className="focus-seo-depth-heading">
         <nav className="seo-breadcrumbs" aria-label="Broodkruimel"><a href="/">Home</a><span aria-hidden="true"> / </span><a href="/seo/">SEO</a><span aria-hidden="true"> / </span><span aria-current="page">{title}</span></nav>
         <p className="eyebrow">SEO in de praktijk</p><h1>{title}</h1><p>{intro}</p>
-        <p>Uitgegeven door <a href="/seo/#seo-uitbesteden">Slimmer dan Gisteren</a> · <time dateTime={modified}>{dateLabel}</time></p>
+        <p><span>Inhoudelijk aanspreekpunt:</span>{" "}<a href="/seo/#seo-uitbesteden">Jimmy Buitenhuis</a>{" · "}<span>Bijgewerkt op</span>{" "}<time dateTime={modified}>{dateLabel}</time></p>
         <p><a href="/seo/">Bekijk onze SEO-diensten en werkwijze</a></p>
       </div></section>
       <nav className="section focus-seo-jumps" aria-label="In deze handleiding">
