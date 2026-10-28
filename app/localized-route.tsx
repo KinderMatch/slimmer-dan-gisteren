@@ -7,7 +7,7 @@ import { localizedPublicPaths, pathForLanguage, type RouteLocale } from "./i18n"
 import { JsonLd } from "./json-ld";
 import { FocusServicePage } from "./focus-service-page";
 import { translateCopy } from "./localize-service-tree";
-import Home, { metadata as homeMetadata } from "./page";
+import Home, { metadata as homeMetadata, homeTitle } from "./page";
 import PrivacyPage, { metadata as privacyMetadata } from "./privacy/page";
 import SocialAdsPage, { metadata as socialMetadata } from "./social-ads/page";
 import { absoluteUrl, breadcrumbJsonLd, faqJsonLd, serviceJsonLd, siteName } from "./seo";
@@ -89,7 +89,7 @@ export function localizedMetadata(locale: RouteLocale, path: LocalizedPagePath):
   const [titleKey, descriptionKey] = localizedMetadataByPath[path];
   const service = path === "seo" ? seoPage : path === "geo" ? geoPage : path === "google-ads" ? googleAdsPage : null;
   const source = service?.metadata ?? ({ "": homeMetadata, "social-ads": socialMetadata, "content-creatie": contentMetadata, website: websiteMetadata, privacy: privacyMetadata, "algemene-voorwaarden": termsMetadata } as Record<string, Metadata>)[path];
-  const title = source ? translateCopy(source.title as string, locale) : meta[titleKey];
+  const title = source ? translateCopy(path === "" ? homeTitle : source.title as string, locale) : meta[titleKey];
   const description = source ? translateCopy(source.description as string, locale) : meta[descriptionKey];
 
   return {

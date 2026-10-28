@@ -2,33 +2,14 @@ import assert from "node:assert/strict";
 import { readFile, stat } from "node:fs/promises";
 import test from "node:test";
 
+// GitHub Pages serves the prerendered files, without a Cloudflare runtime.
 async function render(path = "/") {
-  const workerUrl = new URL("../dist/server/index.js", import.meta.url);
-  workerUrl.searchParams.set("test", `${process.pid}-${Date.now()}`);
-  const { default: worker } = await import(workerUrl.href);
-
-  return worker.fetch(
-    new Request(`http://localhost${path}`, {
-      headers: { accept: "text/html" },
-    }),
-    {
-      ASSETS: {
-        fetch: async () => new Response("Not found", { status: 404 }),
-      },
-    },
-    {
-      waitUntil() {},
-      passThroughOnException() {},
-    },
-  );
+  const relativePath = path.replace(/^\//, "");
+  return readFile(new URL(`../dist/server/prerendered-routes/${relativePath}index.html`, import.meta.url), "utf8");
 }
 
-test("server-renders the homepage with crawlable SEO content", async () => {
-  const response = await render();
-  assert.equal(response.status, 200);
-  assert.match(response.headers.get("content-type") ?? "", /^text\/html\b/i);
-
-  const html = await response.text();
+test("prerenders the homepage with crawlable SEO content", async () => {
+  const html = await render();
   assert.match(html, /<html lang="nl">/i);
   assert.match(html, /<title>SEO, GEO, Google Ads en Social Ads \| Slimmer dan Gisteren<\/title>/i);
   assert.match(html, /<link rel="canonical" href="https:\/\/slimmerdangisteren\.nl\/"/i);
@@ -41,8 +22,7 @@ test("server-renders the homepage with crawlable SEO content", async () => {
 });
 
 test("keeps first render visible and light for Lighthouse", async () => {
-  const response = await render();
-  const html = await response.text();
+  const html = await render();
 
   assert.doesNotMatch(html, /opacity:0;transform:translateY\(34px\)/);
   assert.doesNotMatch(html, /framer-motion|motion-dom|motion-utils/);
@@ -61,12 +41,9 @@ test("keeps first render visible and light for Lighthouse", async () => {
   assert.match(html, /Google Ads/);
 });
 
-test("server-renders commercial pages with crawlable SEO directives", async () => {
+test("prerenders commercial pages with crawlable SEO directives", async () => {
   for (const path of ["/seo/", "/google-ads/"]) {
-    const response = await render(path);
-    assert.equal(response.status, 200);
-
-    const html = await response.text();
+    const html = await render(path);
     assert.match(html, /<!DOCTYPE html><html lang="nl">/i);
     assert.match(html, /<meta charSet="utf-8"\/>/i);
     assert.match(html, /<meta name="description" content="[^"]+"/i);
@@ -92,8 +69,7 @@ test("server-renders commercial pages with crawlable SEO directives", async () =
 
 test("server-rendered local images include explicit dimensions on priority pages", async () => {
   for (const path of ["/", "/seo/", "/google-ads/"]) {
-    const response = await render(path);
-    const html = await response.text();
+    const html = await render(path);
     const imageTags = html.match(/<img\b[^>]*>/gi) ?? [];
     const localImages = imageTags.filter((tag) => /src="\/assets\//i.test(tag));
 
@@ -122,7 +98,7 @@ test("GEO animation stays small enough for PageSpeed", async () => {
 });
 
 test("SEO enquiry uses an explicit email draft on static hosting and section links resolve", async () => {
-  const html = await (await render("/seo/")).text();
+  const html = await render("/seo/");
   assert.doesNotMatch(html, /action="mailto:/);
   assert.match(html, /<button type="submit" disabled="">Zet mijn aanvraagmail klaar/);
   assert.doesNotMatch(html, /action="\/api\/scan"/);
@@ -132,13 +108,13 @@ test("SEO enquiry uses an explicit email draft on static hosting and section lin
   for (const [, id] of html.matchAll(/href="#([^"]+)"/g)) {
     assert.ok(html.includes(`id="${id}"`), `Missing section target: ${id}`);
   }
-  const adsHtml = await (await render("/google-ads/")).text();
+  const adsHtml = await render("/google-ads/");
   assert.doesNotMatch(adsHtml, /action="\/api\/scan"/);
   assert.match(adsHtml, /Je verstuurt deze daarna vanuit je eigen e-mailprogramma/);
 });
 
 test("SEO animation keeps the initial page light without removing its content", async () => {
-  const html = await (await render("/seo/")).text();
+  const html = await render("/seo/");
   assert.match(html, /poster="\/assets\/seo-search-poster.webp"/);
   assert.doesNotMatch(html, /<img[^>]+seo-google-search/);
   assert.ok((await stat('public/assets/seo-search.mp4')).size < 100000);
@@ -146,7 +122,7 @@ test("SEO animation keeps the initial page light without removing its content", 
 });
 
 test("SEO FAQ groups preserve every structured question in accessible native disclosures", async () => {
-  const html = await (await render("/seo/")).text();
+  const html = await render("/seo/");
   const scripts = [...html.matchAll(/<script type="application\/ld\+json">(.*?)<\/script>/gs)].map(m => JSON.parse(m[1]));
   const entities = scripts.flatMap(item => Array.isArray(item) ? item : [item]);
   const faq = entities.find(item => item["@type"] === "FAQPage");

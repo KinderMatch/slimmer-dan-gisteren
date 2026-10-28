@@ -88,8 +88,8 @@ actions tied to the current ChatGPT user. Leave public content anonymous.
 ## Useful Commands
 
 - `npm run dev`: start local development
-- `npm run build`: verify the vinext build output
-- `npm test`: build the starter and verify its rendered loading skeleton
+- `npm run build`: build and prerender the website with Vite and vinext
+- `npm test`: build the site and verify prerendered content, consent and dependency compatibility
 - `npm run db:generate`: generate Drizzle migrations after schema changes
 
 ## Content Engine Campaigns
@@ -120,3 +120,18 @@ The Worker also exposes a `scheduled` handler that processes due queued mails wh
 
 - [vinext Documentation](https://github.com/cloudflare/vinext)
 - [Drizzle D1 Guide](https://orm.drizzle.team/docs/get-started/d1-new)
+
+## Build dependency security patches
+
+The package overrides are scoped to two transitive dependencies: Satori uses
+`fflate` 0.7.5, and the legacy schema loader uses `esbuild` 0.25.12. These replace
+versions affected by GHSA-px8p-9vwx-vf98 and GHSA-67mh-4wv8-2f99. Remove the
+overrides once the parent packages include patched versions themselves.
+`tests/build-dependencies.test.mjs` checks TypeScript execution and ZIP content
+compatibility. Schema generation was also checked against copied migration
+snapshots in a temporary directory, without database access or schema changes.
+
+Prerendering is configured in `vite.config.ts`; the removed `--prerender-all`
+build flag must not be reintroduced. GitHub Pages publishes static output.
+The HTML tests inspect the prerendered files, while the publication validator
+checks the prepared Pages artifact. They do not require a Cloudflare runtime.

@@ -7,7 +7,7 @@ const root = process.argv[2] ?? 'dist/github-pages';
 // translated pages and states that appear after interaction remain styled.
 const results = await new PurgeCSS().purge({
   content: [`${root}/**/*.html`, 'app/**/*.tsx', 'app/**/*.ts'],
-  css: [`${root}/assets/*.css`],
+  css: [`${root}/assets/*.css`, `${root}/_next/static/css/*.css`],
   safelist: { standard: ['active', 'open', 'error', 'success', 'submitting'], greedy: [/^language-/, /^focus-form-/, /^seo-/, /^is-/, /^has-/] },
   keyframes: false,
   fontFace: false,

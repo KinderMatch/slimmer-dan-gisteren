@@ -32,7 +32,7 @@ jobs:
         run: npm ci
 
       - name: Build static site
-        run: npm run build -- --prerender-all
+        run: npm run build
 
       - name: Prepare Pages artifact
         run: bash scripts/prepare-github-pages.sh
@@ -42,6 +42,9 @@ jobs:
 
       - name: Validate visible structured content and published links
         run: node scripts/audit-search-central.mjs
+
+      - name: Test published content, consent and build dependency compatibility
+        run: node --test tests/*.test.mjs
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3

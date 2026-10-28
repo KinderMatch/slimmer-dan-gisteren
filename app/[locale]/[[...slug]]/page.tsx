@@ -19,7 +19,7 @@ export function generateStaticParams() {
   return supportedLocales.flatMap((locale) =>
     localizedPublicPaths.map((path) => ({
       locale,
-      slug: path ? path.split("/") : undefined,
+      slug: path ? path.split("/") : [],
     })),
   );
 }

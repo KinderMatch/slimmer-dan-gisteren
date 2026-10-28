@@ -6,8 +6,10 @@ import { languageAlternates } from "./i18n";
 import { PremiumHome } from "./premium-home";
 import { absoluteUrl, breadcrumbJsonLd, defaultOgImage, primaryServicePages, siteName } from "./seo";
 
+export const homeTitle = "SEO, GEO, Google Ads en Social Ads";
+
 export const metadata: Metadata = {
-  title: "SEO, GEO, Google Ads en Social Ads",
+  title: { absolute: `${homeTitle} | ${siteName}` },
   description:
     "Marketingbureau voor SEO, GEO, Google Ads en Social Ads. Werk direct met Jimmy aan betere vindbaarheid, sterkere campagnes en meer aanvragen.",
   alternates: languageAlternates("/"),
