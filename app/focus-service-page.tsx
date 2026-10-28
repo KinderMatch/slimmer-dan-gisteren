@@ -203,7 +203,7 @@ function ScanFormPanel({ data, id, microcopy }: { data: GrowthPageData; id: stri
       </div>
       <ScanForm delivery="email" fields={data.form.fields} formId={id} pageTitle={data.form.title} pageSlug={data.slug} submitLabel={data.form.submit} />
       <a className="button ghost" href={calendlyUrl}>Plan liever direct een kennismaking</a>
-      {data.slug === "/seo/" ? <div className="seo-contact-next"><h3>Wat gebeurt er daarna?</h3><ol><li>Je verstuurt je aanvraagmail of boekt een gesprek.</li><li>We bespreken je website, doelgroep en wat je met SEO wilt bereiken.</li><li>Als vervolgwerk past, ontvang je eerst een voorstel met werkzaamheden en kosten.</li></ol><p>Liever bellen? <a href="tel:+31610175027">06 10175027</a> (ma–vr 09.00–18.00).</p></div> : null}
+      {data.slug === "/seo/" ? <div className="seo-contact-next"><h3>Wat gebeurt er daarna?</h3><ol><li>Je verstuurt je aanvraagmail of boekt een gesprek.</li><li>We bespreken je website, doelgroep en wat je met SEO wilt bereiken.</li><li>Als vervolgwerk past, ontvang je eerst een voorstel met werkzaamheden en kosten.</li></ol><p>Liever bellen? <a href="tel:+31610175027">06 10175027</a> (ma–do 09.00–18.00, vr 09.00–16.00).</p></div> : null}
     </div>
   );
 }
@@ -243,7 +243,7 @@ export function FocusServicePage({ data, locale = "nl" }: { data: GrowthPageData
           <div className="focus-cta-microcopy" aria-label="Wat je mag verwachten">
             {microcopy.map((item) => <span key={item}>{item}</span>)}
           </div>
-          {data.slug === "/seo/" ? <p className="seo-hero-contact">Liever bellen? <a href="tel:+31610175027">06 10175027</a> · ma–vr 09.00–18.00</p> : null}
+          {data.slug === "/seo/" ? <p className="seo-hero-contact">Liever bellen? <a href="tel:+31610175027">06 10175027</a> · ma–do 09.00–18.00, vr 09.00–16.00</p> : null}
           {compactPage ? (
             <div className="focus-seo-hero-proof" aria-label={`${data.eyebrow} scan onderdelen`}>
               {proofLabels.map((label) => <span key={label}>{label}</span>)}
