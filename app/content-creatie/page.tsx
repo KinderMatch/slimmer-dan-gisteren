@@ -83,8 +83,17 @@ export default function ContentCreatiePage({ initialLanguage = "nl" }: { initial
           cta={t("Plan een strategiesessie", "Plan a strategy session", "Planifica una sesión estratégica")}
           tone="branding"
         />
+          <nav className="service-page-index" aria-label={initialLanguage === "nl" ? "Op deze pagina" : initialLanguage === "en" ? "On this page" : "En esta página"}>
+            <a href="#intro"><Text value={t("Visie", "Vision", "Visión")} /></a>
+            <a href="#branding"><Text value={t("Branding", "Branding", "Marca")} /></a>
+            <a href="#content"><Text value={t("Content", "Content", "Contenido")} /></a>
+            <a href="#reiscontent"><Text value={t("Reiscontent", "Travel content", "Contenido de viajes")} /></a>
+            <a href="#artiesten"><Text value={t("Artiesten", "Artists", "Artistas")} /></a>
+            <a href="#bruiloften"><Text value={t("Bruiloften", "Weddings", "Bodas")} /></a>
+          </nav>
 
-        <section className="section brand-intro premium-editorial-section">
+
+        <section id="intro" className="section brand-intro premium-editorial-section">
           <div>
             <p className="eyebrow"><Text value={t("Content creatie", "Content creation", "Creación de contenido")} /></p>
             <h2><EmphasisText value={t("[[Merkwaarde]] bouwen waar klanten kijken.", "Build [[brand value]] where customers are watching.", "Construye [[valor de marca]] donde miran tus clientes.")} /></h2>
@@ -105,11 +114,11 @@ export default function ContentCreatiePage({ initialLanguage = "nl" }: { initial
           </p>
         </section>
 
-        <section className="section branding-studio-section premium-first-panel">
+        <section id="branding" className="section branding-studio-section premium-first-panel">
           <BrandingStudio />
         </section>
 
-        <section className="section content-section premium-case-section">
+        <section id="content" className="section content-section premium-case-section">
           <div className="section-heading">
             <p className="eyebrow"><Text value={t("Contentkalender", "Content calendar", "Calendario de contenido")} /></p>
             <h2><EmphasisText value={t("Social posts die campagnes [[visueel]] doortrekken.", "Social posts that [[visually]] extend campaigns.", "Posts sociales que prolongan [[visualmente]] las campañas.")} /></h2>
@@ -124,15 +133,15 @@ export default function ContentCreatiePage({ initialLanguage = "nl" }: { initial
           <ContentGallery />
         </section>
 
-        <section className="section travel-content-section">
+        <section id="reiscontent" className="section travel-content-section">
           <TravelContentShowcase />
         </section>
 
-        <section className="section artist-content-section">
+        <section id="artiesten" className="section artist-content-section">
           <ArtistContentShowcase />
         </section>
 
-        <section className="section wedding-content-section">
+        <section id="bruiloften" className="section wedding-content-section">
           <WeddingContentShowcase />
         </section>
         </div>

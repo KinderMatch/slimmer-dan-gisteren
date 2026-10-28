@@ -79,8 +79,16 @@ export default function SocialAdsPage({ initialLanguage = "nl" }: { initialLangu
             cta={t("Plan een strategiesessie", "Plan a strategy session", "Planifica una sesión estratégica")}
             tone="ads"
           />
+          <nav className="service-page-index" aria-label={initialLanguage === "nl" ? "Op deze pagina" : initialLanguage === "en" ? "On this page" : "En esta página"}>
+            <a href="#creatie"><Text value={t("Advertentiecreatie", "Ad creative", "Creatividad")} /></a>
+            <a href="#beheer"><Text value={t("Campagnebeheer", "Campaign management", "Gestión")} /></a>
+            <a href="#aanpak"><Text value={t("Aanpak", "Approach", "Enfoque")} /></a>
+            <a href="#meting"><Text value={t("Meting", "Measurement", "Medición")} /></a>
+            <a href="#reviews"><Text value={t("Reviews", "Reviews", "Reseñas")} /></a>
+          </nav>
 
-          <section className="section ads-video-section premium-first-panel">
+
+          <section id="creatie" className="section ads-video-section premium-first-panel">
             <div className="section-heading">
               <p className="eyebrow"><Text value={t("Zelfstandigen Bouw", "Zelfstandigen Bouw", "Zelfstandigen Bouw")} /></p>
               <h2><EmphasisText value={t("Advertentiecreatie die direct bij de [[campagne]] hoort.", "Ad creative that belongs directly to the [[campaign]].", "Creatividad publicitaria conectada directamente a la [[campaña]].")} /></h2>
@@ -95,11 +103,11 @@ export default function SocialAdsPage({ initialLanguage = "nl" }: { initialLangu
             <VideoShowcase compact excludeSrcs={["https://videos.files.wordpress.com/SiM1cMuS/zelfstandigen-bouw_commercial_rbv_hondenhok_final-1x1_social.mp4"]} />
           </section>
 
-          <section className="section ads-studio-section">
+          <section id="beheer" className="section ads-studio-section">
             <AdsPerformanceLab />
           </section>
 
-          <section className="section narrow premium-editorial-section">
+          <section id="aanpak" className="section narrow premium-editorial-section">
             <p className="eyebrow"><Text value={t("Aanpak", "Approach", "Enfoque")} /></p>
             <h2><EmphasisText value={t("Van klikken naar [[inzicht]]. Van inzicht naar betere campagnes.", "From clicks to [[insight]]. From insight to better campaigns.", "De clics a [[insights]]. De insights a mejores campañas.")} /></h2>
             <p>
@@ -111,11 +119,11 @@ export default function SocialAdsPage({ initialLanguage = "nl" }: { initialLangu
             </p>
           </section>
 
-          <section className="section ads-section">
+          <section id="meting" className="section ads-section">
             <GoogleAdsOverview />
           </section>
 
-          <section className="section soft premium-reviews-section">
+          <section id="reviews" className="section soft premium-reviews-section">
             <div className="section-heading">
               <p className="eyebrow"><Text value={t("Reviews", "Reviews", "Reseñas")} /></p>
               <h2><EmphasisText value={t("Wat klanten zeggen over [[slimmer adverteren]].", "What clients say about [[smarter advertising]].", "Lo que dicen los clientes sobre [[anunciar mejor]].")} /></h2>

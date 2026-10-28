@@ -78,12 +78,19 @@ export default function WebsitePage({ initialLanguage = "nl" }: { initialLanguag
           cta={t("Plan een strategiesessie", "Plan a strategy session", "Planifica una sesión estratégica")}
           tone="website"
         />
+          <nav className="service-page-index" aria-label={initialLanguage === "nl" ? "Op deze pagina" : initialLanguage === "en" ? "On this page" : "En esta página"}>
+            <a href="#beheer"><Text value={t("Websitebeheer", "Website management", "Gestión web")} /></a>
+            <a href="#aanpak"><Text value={t("Werkwijze", "Process", "Método")} /></a>
+            <a href="#projecten"><Text value={t("Projecten", "Projects", "Proyectos")} /></a>
+            <a href="#voordelen"><Text value={t("Voordelen", "Benefits", "Ventajas")} /></a>
+          </nav>
 
-        <section className="section website-management-section premium-first-panel">
+
+        <section id="beheer" className="section website-management-section premium-first-panel">
           <WebsiteManagementShowcase />
         </section>
 
-        <section className="section soft premium-editorial-section">
+        <section id="aanpak" className="section soft premium-editorial-section">
           <div className="section-heading">
             <p className="eyebrow"><Text value={t("Werkwijze", "Process", "Método")} /></p>
             <h2><EmphasisText value={t("Websitebeheer met [[duidelijke rolverdeling]].", "Website management with [[clear responsibilities]].", "Gestión web con [[responsabilidades claras]].")} /></h2>
@@ -91,7 +98,7 @@ export default function WebsitePage({ initialLanguage = "nl" }: { initialLanguag
           <WebsiteWorkflow />
         </section>
 
-        <section className="section premium-case-section">
+        <section id="projecten" className="section premium-case-section">
           <div className="section-heading">
             <p className="eyebrow"><Text value={t("Live cases", "Live cases", "Casos en vivo")} /></p>
             <h2><EmphasisText value={t("Websites horen [[zichtbaar]] te zijn. Niet verstopt in tekst.", "Websites should be [[visible]]. Not hidden in text.", "Las webs deben [[verse]]. No esconderse en texto.")} /></h2>
@@ -106,7 +113,7 @@ export default function WebsitePage({ initialLanguage = "nl" }: { initialLanguag
           <WebsiteCaseWall />
         </section>
 
-        <section className="section website-benefits-section premium-benefits-section">
+        <section id="voordelen" className="section website-benefits-section premium-benefits-section">
           <div className="advantage-grid">
             <article>
               <h3><Text value={t("Snel contact & directe oplossingen", "Fast contact & direct solutions", "Contacto rápido y soluciones directas")} /></h3>

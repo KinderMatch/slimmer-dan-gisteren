@@ -999,7 +999,7 @@ function PageHeroVisual({ tone }: { tone: "default" | "website" | "ads" | "brand
   if (tone === "ads") {
     return (
       <div className="page-hero-visual ads-visual" aria-hidden="true">
-        <video autoPlay loop muted playsInline preload="none">
+        <video autoPlay loop muted playsInline preload="none" poster={videoThumbnailFor(videos[0].src)}>
           <source src={videoPreviewSrc(videos[0].src)} type="video/mp4" />
         </video>
         <div>

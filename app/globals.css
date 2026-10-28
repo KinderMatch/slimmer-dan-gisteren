@@ -11295,3 +11295,47 @@ h3 {
 .site-experience .premium-hero h1 > span:not(.text-accent) { display:block; margin-top:.18em; }
 .service-design .focus-premium-hero { align-items:start; }
 .service-design .focus-premium-proof { border-radius:24px; }
+
+/* Bespoke portfolio pages share the same readable service experience. */
+.site-experience .service-premium:not(.focus-premium-page) .page-hero {
+ min-height:auto; padding:160px max(24px,calc((100vw - 1112px)/2)) 64px;
+ background:radial-gradient(ellipse at 90% 30%,#17617a 0,transparent 53%),#082b3d;
+}
+.site-experience .service-premium:not(.focus-premium-page) .hero-copy { max-width:900px; }
+.site-experience .service-premium:not(.focus-premium-page) .hero-copy h1 { font-size:clamp(2.6rem,4.7vw,4.6rem); line-height:1.06; letter-spacing:-.04em; max-width:22ch; }
+.site-experience .service-premium:not(.focus-premium-page) .hero-copy > p:not(.eyebrow) { max-width:65ch; font-size:1.05rem; line-height:1.75; color:#dcebef; }
+.site-experience .service-premium:not(.focus-premium-page) .hero-contact-actions .button.primary { background:#beeede; color:#123443; border-color:#beeede; }
+.site-experience .service-page-index { display:flex; flex-wrap:wrap; gap:10px; padding:24px max(24px,calc((100vw - 1112px)/2)); background:#edf6f2; }
+.site-experience .service-page-index a { display:inline-flex; align-items:center; min-height:44px; padding:10px 16px; border:1px solid #b5cdc2; border-radius:12px; color:#123443; background:white; font-weight:600; text-decoration:none; }
+.site-experience .service-page-index a:hover { background:#beeede; }
+.site-experience .service-premium:not(.focus-premium-page) > .section { padding-block:clamp(48px,6vw,80px); }
+.site-experience .service-premium:not(.focus-premium-page) .premium-editorial-section { min-height:0; }
+.site-experience .service-premium-ads .ads-performance-lab { gap:40px; align-items:start; grid-template-columns:minmax(0,1fr) minmax(0,1fr); }
+.site-experience .service-premium-ads .performance-lab-copy { position:static; }
+.site-experience .service-premium-ads .performance-lab-copy h2 { font-size:clamp(1.9rem,3.2vw,3rem); line-height:1.16; }
+.site-experience .service-premium-ads .performance-dashboard { min-height:0; border:1px solid #52717e; border-radius:24px; padding:28px; }
+.site-experience .service-premium-ads .video-showcase.compact { gap:20px; background:transparent; }
+.site-experience .service-premium-ads :is(.video-feature,.video-mini,.ads-board,.ads-flow article,.review-feature,.review-list blockquote) { border-radius:20px; overflow:hidden; }
+.site-experience .service-premium-ads .video-feature { position:static; }
+.site-experience .service-premium-ads .review-feature { min-height:0; }
+.site-experience .service-premium-ads .ads-flow { gap:16px; }
+.site-experience .service-premium-ads .ads-flow article { border:1px solid #52717e; padding:24px; }
+.site-experience .service-premium-ads .ads-flow p { line-height:1.75; }
+@media(max-width:800px) {
+ .site-experience .service-premium:not(.focus-premium-page) .page-hero { padding:165px 20px 40px; }
+ .site-experience .service-premium:not(.focus-premium-page) .hero-copy h1 { font-size:clamp(2.1rem,8vw,3.4rem); overflow-wrap:break-word; }
+ .site-experience .service-page-index { padding:20px; gap:8px; }
+ .site-experience .service-premium-ads :is(.ads-performance-lab,.video-showcase.compact,.ads-overview,.reviews-showcase) { grid-template-columns:1fr; }
+ .site-experience .service-premium-ads .performance-dashboard { padding:20px; }
+}
+.site-experience .service-premium:not(.focus-premium-page) .page-hero-visual { min-height:0; height:460px; border-radius:24px; overflow:hidden; border:1px solid #52717e; }
+.site-experience .service-premium:not(.focus-premium-page) .contact-microcopy { color:#dcebef; }
+@media(max-width:800px) { .site-experience .service-premium:not(.focus-premium-page) .page-hero-visual { height:340px; } }
+.site-experience .service-premium-ads .performance-score { grid-template-columns:repeat(2,minmax(0,1fr)); }
+.site-experience .service-premium-ads .performance-score > div { min-width:0; padding:18px; }
+.site-experience .service-premium-ads .performance-score strong { font-size:clamp(1.6rem,2.5vw,2.25rem); line-height:1.2; overflow-wrap:anywhere; }
+.site-experience .service-premium-ads .performance-funnel { grid-template-columns:repeat(5,minmax(0,1fr)); }
+.site-experience .service-premium-ads .performance-funnel > div { min-width:0; padding:12px; overflow-wrap:anywhere; }
+@media(max-width:600px) { .site-experience .service-premium-ads .performance-funnel { grid-template-columns:1fr; } }
+.site-experience .service-premium-ads .performance-funnel { grid-template-columns:repeat(auto-fit,minmax(100px,1fr)); }
+@media(max-width:1000px) { .site-experience .service-premium-ads .ads-performance-lab { grid-template-columns:1fr; } }
