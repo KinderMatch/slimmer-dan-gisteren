@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     description: seoPage.metadata.description,
     url: absoluteUrl(seoPage.slug),
     siteName,
-    images: [{ url: absoluteUrl("/assets/optimized/content-zb.jpg"), alt: "SEO dashboard Slimmer dan Gisteren" }],
+    images: [{ url: absoluteUrl("/assets/optimized/content-zb.jpg"), alt: "Voorbeelden van socialmedia-content voor Zelfstandigen Bouw" }],
     locale: "nl_NL",
     type: "website",
   },
