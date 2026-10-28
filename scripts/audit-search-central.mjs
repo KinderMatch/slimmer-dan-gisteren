@@ -41,6 +41,7 @@ assert.equal(new Set(locations).size, locations.length, "Duplicate sitemap URLs"
 let faqQuestions = 0;
 let checkedLinks = 0;
 let checkedAssets = 0;
+let checkedLanguageLinks = 0;
 
 for (const [route, page] of pages) {
   // Native disclosures are valid visible content; JavaScript payloads are not evidence of visibility.
@@ -85,6 +86,19 @@ for (const location of locations) {
   assert.equal(url.origin, origin);
   const page = pages.get(url.pathname);
   assert.ok(page, `Sitemap page missing: ${location}`);
+  const languageToggle = page.html.match(/<div\b[^>]*class="language-toggle"[^>]*>([\s\S]*?)<\/div>/i)?.[1];
+  assert.ok(languageToggle, `${location}: missing language selector`);
+  const languageLinks = [...languageToggle.matchAll(/<a\b[^>]*>/gi)].map(match => match[0]);
+  assert.equal(languageLinks.length, 3, `${location}: language selector must contain crawlable links`);
+  const basePath = url.pathname.replace(/^\/(en|es)(?=\/|$)/, "") || "/";
+  for (const lang of ["nl", "en", "es"]) {
+    const link = languageLinks.find(tag => attribute(tag, "hrefLang") === lang);
+    const expected = lang === "nl" ? basePath : basePath === "/" ? `/${lang}/` : `/${lang}${basePath}`;
+    assert.equal(attribute(link ?? "", "href"), expected, `${location}: wrong language link for ${lang}`);
+    checkedLanguageLinks++;
+  }
+  assert.equal(languageLinks.filter(tag => attribute(tag, "aria-current") === "page").length, 1, `${location}: selected language must be identified once`);
+
   assert.doesNotMatch(page.html, /<meta\b[^>]*name="(?:robots|googlebot)"[^>]*content="[^"]*noindex/i, `${location}: noindex in sitemap`);
   const canonical = [...page.html.matchAll(/<link\b[^>]*>/gi)].find(match => attribute(match[0], "rel") === "canonical");
   assert.equal(attribute(canonical?.[0] ?? "", "href"), location, `${location}: conflicting canonical`);
@@ -101,6 +115,6 @@ for (const location of locations) {
 const admin = pages.get("/campaign-engine/");
 assert.match(admin?.html ?? "", /<meta name="robots" content="[^"]*noindex/);
 assert.ok(!locations.some(location => new URL(location).pathname === "/campaign-engine/"));
-const report = { pages: pages.size, indexableSitemapUrls: locations.length, checkedLinks, checkedAssets, visibleFaqQuestions: faqQuestions, result: "passed" };
+const report = { pages: pages.size, indexableSitemapUrls: locations.length, checkedLinks, checkedAssets, checkedLanguageLinks, visibleFaqQuestions: faqQuestions, result: "passed" };
 if (process.argv[3]) await writeFile(process.argv[3], `${JSON.stringify(report, null, 2)}\n`);
 console.log("PASS Search Central publication checks:", JSON.stringify(report));

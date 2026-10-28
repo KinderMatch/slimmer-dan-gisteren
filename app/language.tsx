@@ -1,6 +1,7 @@
 "use client";
 
 import { createContext, Fragment, type ReactNode, useContext, useEffect, useMemo, useState } from "react";
+import { usePathname } from "next/navigation";
 import { pathForLanguage } from "./i18n";
 
 export type Language = "nl" | "en" | "es";
@@ -96,7 +97,8 @@ export function EmphasisText({ value }: { value: LocalizedString | string }) {
 }
 
 export function LanguageToggle() {
-  const { language, setLanguage } = useLanguage();
+  const { language } = useLanguage();
+  const pathname = usePathname() || "/";
   const label = {
     en: "Language",
     es: "Idioma",
@@ -106,14 +108,15 @@ export function LanguageToggle() {
   return (
     <div className="language-toggle" aria-label={label[language]}>
       {(["nl", "en", "es"] as const).map((option) => (
-        <button
-          aria-pressed={language === option}
+        <a
+          aria-current={language === option ? "page" : undefined}
+          href={pathForLanguage(pathname, option)}
+          hrefLang={option}
+          lang={option}
           key={option}
-          onClick={() => setLanguage(option)}
-          type="button"
         >
           {option.toUpperCase()}
-        </button>
+        </a>
       ))}
     </div>
   );
