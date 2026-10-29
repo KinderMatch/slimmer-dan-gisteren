@@ -145,3 +145,11 @@ full films and audio; do not substitute short previews for the lightbox source.
 Web exports use H.264 video, AAC audio and MP4 fast-start metadata.
 `tests/video-assets.test.mjs` verifies container structure, startup metadata,
 full durations, hosting size limits and the absence of WordPress video links.
+
+## Critical image previews
+
+`node scripts/optimize-critical-media.mjs` reproduces the compressed homepage
+hero variants and 640px AI-video posters. It preserves the original media and
+updates hashed preview paths. The general image generator uses the same hero
+compression settings. After regenerating previews, rebuild and run the Pages
+validator to check all published references.

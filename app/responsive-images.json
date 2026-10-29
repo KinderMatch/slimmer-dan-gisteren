@@ -41,19 +41,19 @@
     "height": 899,
     "variants": [
       {
-        "src": "/assets/responsive/airfoto-480-b20b64964602.webp",
+        "src": "/assets/responsive/airfoto-480-9919bba756ed.webp",
         "width": 480,
-        "bytes": 26418
+        "bytes": 16094
       },
       {
-        "src": "/assets/responsive/airfoto-960-88de6661e4fd.webp",
+        "src": "/assets/responsive/airfoto-960-792ff2b406bd.webp",
         "width": 960,
-        "bytes": 91298
+        "bytes": 54524
       },
       {
-        "src": "/assets/responsive/airfoto-1600-6d8b6af82093.webp",
+        "src": "/assets/responsive/airfoto-1600-7e95993a3529.webp",
         "width": 1600,
-        "bytes": 199408
+        "bytes": 118526
       }
     ]
   },

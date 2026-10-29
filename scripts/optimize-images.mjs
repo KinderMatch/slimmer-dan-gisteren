@@ -15,7 +15,8 @@ for (const src of sources) {
   const widths = animated ? [320, metadata.width] : [...new Set([...(src.endsWith('/logo.png') ? [64, 128, 256] : [480, 960]), Math.min(metadata.width, 1600)])].filter(w => w <= metadata.width).sort((a,b) => a-b);
   const variants = [];
   for (const width of widths) {
-    const output = await sharp(input, { animated }).resize({ width, withoutEnlargement: true }).webp({ quality: animated ? 60 : 82, effort: 5 }).toBuffer();
+    const hero = src === '/assets/optimized/airfoto.jpg';
+    const output = await sharp(input, { animated }).resize({ width, withoutEnlargement: true }).webp({ quality: hero ? 64 : animated ? 60 : 82, effort: hero ? 6 : 5 }).toBuffer();
     const hash = createHash('sha256').update(output).digest('hex').slice(0, 12);
     const name = `${src.split('/').pop().replace(/\.[^.]+$/, '')}-${width}-${hash}.webp`;
     await writeFile(`public/assets/responsive/${name}`, output);

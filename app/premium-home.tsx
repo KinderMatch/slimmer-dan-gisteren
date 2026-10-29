@@ -168,11 +168,12 @@ function ServiceVisual({ service }: { service: (typeof services)[number] }) {
 }
 
 function HeroVisual() {
+  const { language } = useLanguage();
   return (
     <div className="premium-hero-visual">
       <ResponsiveImage
         src="/assets/optimized/airfoto.jpg"
-        alt="Cinematische dronefoto van een project van Slimmer dan Gisteren"
+        alt={language === "en" ? "Country house with a garden arranged for a wedding ceremony" : language === "es" ? "Casa de campo con jardín preparado para una ceremonia de boda" : "Landhuis met tuin ingericht voor een huwelijksceremonie"}
         width={1600}
         height={899}
         fetchPriority="high"
