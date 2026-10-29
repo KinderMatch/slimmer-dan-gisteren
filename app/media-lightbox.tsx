@@ -1,6 +1,7 @@
 "use client";
 
 import { type ReactNode, useEffect, useRef, useState } from "react";
+import { createPortal } from "react-dom";
 
 import { dimensionsFor } from "./image-dimensions";
 import { type LocalizedString, resolveText, useLanguage } from "./language";
@@ -73,8 +74,8 @@ export function MediaLightbox({ alt, children, className, fullSrc, label, src, t
         {children}
       </button>
 
-      {isOpen ? (
-        <div aria-modal="true" className="media-lightbox" onClick={() => setIsOpen(false)} role="dialog">
+      {isOpen ? createPortal(
+        <div aria-label={translatedTitle} aria-modal="true" className="media-lightbox" onClick={() => setIsOpen(false)} role="dialog">
           <button
             aria-label={language === "en" ? "Close media" : language === "es" ? "Cerrar media" : "Sluit media"}
             className="lightbox-close"
@@ -96,7 +97,8 @@ export function MediaLightbox({ alt, children, className, fullSrc, label, src, t
               <strong>{translatedTitle}</strong>
             </figcaption>
           </figure>
-        </div>
+        </div>,
+        document.body,
       ) : null}
     </>
   );
