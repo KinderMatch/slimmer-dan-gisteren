@@ -34,7 +34,7 @@ function visualAsset(data: GrowthPageData) {
     return { kind: "image", src: "/assets/google-ads.gif", label: "Google Ads-campagnes en performance" };
   }
 
-  return { kind: "video", src: "https://videos.files.wordpress.com/SiM1cMuS/zelfstandigen-bouw_commercial_rbv_hondenhok_final-1x1_social.mp4#t=0.001", label: "Campagnecreatie en performance" };
+  return { kind: "video", src: "/assets/campaigns/zb-hondenhok.mp4#t=0.001", label: "Campagnecreatie en performance" };
 }
 
 function scanDeliverables(data: GrowthPageData) {

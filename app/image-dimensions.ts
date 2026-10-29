@@ -4,6 +4,7 @@ export type ImageDimensions = {
 };
 
 export const imageDimensionsBySrc: Record<string, ImageDimensions> = {
+  "/assets/video-thumbnails/daelenbroek.mp4.jpg": { width: 1280, height: 720 },
   "/assets/generated/datacenter-320.gif": { width: 320, height: 169 },
   "/assets/google-ads.gif": { width: 400, height: 266 },
   "/assets/jimmy-buitenhuis.png": { width: 320, height: 320 },

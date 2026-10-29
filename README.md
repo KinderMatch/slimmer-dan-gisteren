@@ -135,3 +135,13 @@ Prerendering is configured in `vite.config.ts`; the removed `--prerender-all`
 build flag must not be reintroduced. GitHub Pages publishes static output.
 The HTML tests inspect the prerendered files, while the publication validator
 checks the prepared Pages artifact. They do not require a Cloudflare runtime.
+
+## Owned website videos
+
+Campaign films are stored in `public/assets/campaigns/`. The complete wedding
+film is `public/assets/wedding/full/nordin-kyra-full.mp4`. Website playback must
+use these owned files instead of the retired WordPress video URLs. Keep the
+full films and audio; do not substitute short previews for the lightbox source.
+Web exports use H.264 video, AAC audio and MP4 fast-start metadata.
+`tests/video-assets.test.mjs` verifies container structure, startup metadata,
+full durations, hosting size limits and the absence of WordPress video links.

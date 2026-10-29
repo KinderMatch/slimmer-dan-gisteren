@@ -18,7 +18,7 @@ const videoCases = [
       "A social-first video where the problem is immediately visible and the viewer is quickly pulled into the message.",
       "Un video pensado para redes donde el problema se ve de inmediato y el espectador entra rápido en el mensaje.",
     ),
-    src: "https://videos.files.wordpress.com/SiM1cMuS/zelfstandigen-bouw_commercial_rbv_hondenhok_final-1x1_social.mp4",
+    src: "/assets/campaigns/zb-hondenhok.mp4",
   },
   {
     title: "Zelfstandigen Bouw - schilder",
@@ -28,7 +28,7 @@ const videoCases = [
       "A recognizable situation, compact story arc and a clear translation to the target audience of independent construction professionals.",
       "Una situación reconocible, una narrativa compacta y una traducción clara al público de profesionales independientes de la construcción.",
     ),
-    src: "https://videos.files.wordpress.com/kQCILAhM/zelfstandigen-bouw_commercial_rbv_schilder_final_1x1_social.mp4",
+    src: "/assets/campaigns/zb-schilder.mp4",
   },
   {
     title: "Zelfstandigen Bouw - auto",
@@ -38,7 +38,7 @@ const videoCases = [
       "An accessible campaign video built around everyday recognition, making it suitable for reach and repetition.",
       "Un video de campaña accesible basado en reconocimiento cotidiano, ideal para alcance y repetición.",
     ),
-    src: "https://videos.files.wordpress.com/2MO1QuZC/zelfstandigen-bouw_commercial_rbv_auto_final_1x1_social.mp4",
+    src: "/assets/campaigns/zb-auto.mp4",
   },
   {
     title: "The Gym Republic",
@@ -48,7 +48,7 @@ const videoCases = [
       "Dynamic content with pace and energy, created to make the brand atmosphere instantly felt in the feed.",
       "Contenido dinámico con ritmo y energía, creado para transmitir al instante la atmósfera de la marca en el feed.",
     ),
-    src: "https://videos.files.wordpress.com/JEXpAg8v/the-gym-republic-v1.mp4",
+    src: "/assets/campaigns/gym-republic.mp4",
   },
   {
     title: "Massaclaim",
@@ -58,7 +58,7 @@ const videoCases = [
       "A clear social video where a specific service is briefly explained and directly linked to an action.",
       "Un video social claro donde se explica brevemente un servicio concreto y se conecta directamente con una acción.",
     ),
-    src: "https://videos.files.wordpress.com/AJxtK3QH/massaclaim-airbnb-servicekostenterug.mp4",
+    src: "/assets/campaigns/massaclaim-airbnb.mp4",
   },
   {
     title: "Daelenbroek Makelaardij",
@@ -68,7 +68,7 @@ const videoCases = [
       "A compact video case that combines recognition and local relevance for an audience that wants to quickly understand why it matters.",
       "Un caso de video compacto que combina reconocimiento y relevancia local para un público que quiere entender rápido por qué importa.",
     ),
-    src: "https://videos.files.wordpress.com/0Bey1EBn/daelenbroek-3-ja-makelaardij.mp4",
+    src: "/assets/campaigns/daelenbroek.mp4",
   },
 ];
 

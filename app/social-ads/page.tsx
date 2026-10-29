@@ -88,7 +88,7 @@ export default function SocialAdsPage({ initialLanguage = "nl" }: { initialLangu
                 )} />
               </p>
             </div>
-            <VideoShowcase compact excludeSrcs={["https://videos.files.wordpress.com/SiM1cMuS/zelfstandigen-bouw_commercial_rbv_hondenhok_final-1x1_social.mp4"]} />
+            <VideoShowcase compact excludeSrcs={["/assets/campaigns/zb-hondenhok.mp4"]} />
           </section>
 
           <section id="beheer" className="section ads-studio-section">

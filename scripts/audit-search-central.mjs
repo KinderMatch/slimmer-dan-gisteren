@@ -71,7 +71,11 @@ for (const [route, page] of pages) {
     for (const name of ["src", "poster"]) {
       const asset = attribute(match[0], name);
       if (!asset.startsWith("/assets/")) continue;
-      assert.ok(await stat(join(root, asset)).then(value => value.isFile()).catch(() => false), `${route}: missing asset ${asset}`);
+      // A media fragment such as #t=0.001 selects a playback time, not a filename.
+      const assetPath = decodeURIComponent(new URL(asset, origin).pathname);
+      const assetFile = resolve(root, `.${assetPath}`);
+      assert.ok(assetFile.startsWith(`${root}/`), `${route}: unexpected asset path ${asset}`);
+      assert.ok(await stat(assetFile).then(value => value.isFile()).catch(() => false), `${route}: missing asset ${asset}`);
       checkedAssets++;
     }
   }

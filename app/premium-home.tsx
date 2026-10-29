@@ -94,7 +94,7 @@ const archive = [
   { kind: "video", src: "/assets/wedding/airfoto.jpg", fullSrc: "/assets/travel/full/whitsundays-full.m4v", label: "Whitsundays" },
   { kind: "image", src: "/assets/dave-dekker/photos/event-12.jpg", label: "Event photography" },
   { kind: "image", src: "/assets/dave-dekker/photos/event-11.jpg", label: "Event photography" },
-  { kind: "video", src: "/assets/wedding/airfoto.jpg", fullSrc: "https://videos.files.wordpress.com/E5ahlDJ7/trouwerij-nordin-kyra-v3-h264.mp4", label: "Wedding film" },
+  { kind: "video", src: "/assets/wedding/airfoto.jpg", fullSrc: "/assets/wedding/full/nordin-kyra-full.mp4", label: "Wedding film" },
   { kind: "image", src: "/assets/dave-dekker/photos/event-02.jpg", label: "Audience moment" },
   { kind: "video", src: "/assets/dave-dekker/photos/event-15.jpg", fullSrc: "/assets/dave-dekker/full/dave-1-full.mov", label: "Artiest video" },
   { kind: "image", src: "/assets/dave-dekker/photos/event-14.jpg", label: "Live registratie" },

@@ -13,13 +13,14 @@ const videoThumbnailBySrc: Record<string, string> = {
   "/assets/travel/siargao-preview.mov": "/assets/video-thumbnails/siargao-preview.mov.jpg",
   "/assets/travel/whitsundays-preview.mov": "/assets/video-thumbnails/whitsundays-preview.mov.jpg",
   "/assets/websites/orchard-finance-preview.mp4": "/assets/video-thumbnails/orchard-finance-preview.mp4.jpg",
+  "/assets/wedding/full/nordin-kyra-full.mp4": "/assets/video-thumbnails/nordin-kyra-preview.mov.jpg",
   "/assets/wedding/nordin-kyra-preview.mov": "/assets/video-thumbnails/nordin-kyra-preview.mov.jpg",
-  "https://videos.files.wordpress.com/0Bey1EBn/daelenbroek-3-ja-makelaardij.mp4": "/assets/optimized/content-airbnb.jpg",
-  "https://videos.files.wordpress.com/2MO1QuZC/zelfstandigen-bouw_commercial_rbv_auto_final_1x1_social.mp4": "/assets/video-thumbnails/zb-auto.mp4.jpg",
-  "https://videos.files.wordpress.com/AJxtK3QH/massaclaim-airbnb-servicekostenterug.mp4": "/assets/video-thumbnails/massaclaim-airbnb.mp4.jpg",
-  "https://videos.files.wordpress.com/JEXpAg8v/the-gym-republic-v1.mp4": "/assets/video-thumbnails/gym-republic.mp4.jpg",
-  "https://videos.files.wordpress.com/SiM1cMuS/zelfstandigen-bouw_commercial_rbv_hondenhok_final-1x1_social.mp4": "/assets/video-thumbnails/zb-hondenhok.mp4.jpg",
-  "https://videos.files.wordpress.com/kQCILAhM/zelfstandigen-bouw_commercial_rbv_schilder_final_1x1_social.mp4": "/assets/video-thumbnails/zb-schilder.mp4.jpg",
+  "/assets/campaigns/daelenbroek.mp4": "/assets/video-thumbnails/daelenbroek.mp4.jpg",
+  "/assets/campaigns/zb-auto.mp4": "/assets/video-thumbnails/zb-auto.mp4.jpg",
+  "/assets/campaigns/massaclaim-airbnb.mp4": "/assets/video-thumbnails/massaclaim-airbnb.mp4.jpg",
+  "/assets/campaigns/gym-republic.mp4": "/assets/video-thumbnails/gym-republic.mp4.jpg",
+  "/assets/campaigns/zb-hondenhok.mp4": "/assets/video-thumbnails/zb-hondenhok.mp4.jpg",
+  "/assets/campaigns/zb-schilder.mp4": "/assets/video-thumbnails/zb-schilder.mp4.jpg",
 };
 
 export function cleanVideoSrc(src: string | undefined) {
