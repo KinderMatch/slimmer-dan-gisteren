@@ -1,3 +1,4 @@
+import { videoThumbnailFor } from "./video-thumbnails";
 import { SeoCosts } from "./seo-costs";
 import { localizeServiceTree } from "./localize-service-tree";
 import type { Language } from "./language";
@@ -34,7 +35,7 @@ function visualAsset(data: GrowthPageData) {
     return { kind: "image", src: "/assets/google-ads.gif", label: "Google Ads-campagnes en performance" };
   }
 
-  return { kind: "video", src: "/assets/campaigns/zb-hondenhok.mp4#t=0.001", label: "Campagnecreatie en performance" };
+  return { kind: "video", src: "/assets/campaigns/zb-hondenhok.mp4", label: "Campagnecreatie en performance" };
 }
 
 function scanDeliverables(data: GrowthPageData) {
@@ -255,7 +256,7 @@ export function FocusServicePage({ data, locale = "nl" }: { data: GrowthPageData
             {data.slug === "/seo/" ? (
               <SeoAnimation />
             ) : (
-              <video muted playsInline preload="none" autoPlay loop>
+              <video muted playsInline preload="none" autoPlay loop poster={videoThumbnailFor(media.src)}>
                 <source src={media.src} type="video/mp4" />
               </video>
             )}
@@ -273,7 +274,7 @@ export function FocusServicePage({ data, locale = "nl" }: { data: GrowthPageData
               {media.kind === "image" ? (
                 <ResponsiveImage src={media.src} alt={media.label} loading="eager" width={dimensionsFor(media.src)?.width} height={dimensionsFor(media.src)?.height} />
               ) : (
-                <video muted playsInline preload="none" autoPlay loop>
+                <video muted playsInline preload="none" autoPlay loop poster={videoThumbnailFor(media.src)}>
                   <source src={media.src} type="video/mp4" />
                 </video>
               )}

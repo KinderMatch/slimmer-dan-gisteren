@@ -264,11 +264,7 @@ const proofItems = [
   { value: "3", label: t("kanalen: website, ads en social", "channels: website, ads and social", "canales: web, anuncios y social") },
 ];
 
-function videoPreviewSrc(src: string) {
-  return `${src}#t=0.001`;
-}
-
-export const homeHeroVideoSrc = videoPreviewSrc(videos[3].src);
+export const homeHeroVideoSrc = videos[3].src;
 
 export function SiteShell({
   children,
@@ -405,7 +401,7 @@ export function HomeWorkGrid() {
         >
           {item.type === "video" ? (
             <video autoPlay loop muted playsInline preload="none">
-              <source src={videoPreviewSrc(item.src)} type="video/mp4" />
+              <source src={item.src} type="video/mp4" />
             </video>
           ) : (
             <ResponsiveImage
@@ -478,7 +474,7 @@ export function KitchenPanels() {
         </div>
         <div className="content-strip">
           <video autoPlay loop muted playsInline preload="none">
-            <source src={videoPreviewSrc(videos[4].src)} type="video/mp4" />
+            <source src={videos[4].src} type="video/mp4" />
           </video>
           <ResponsiveImage src="/assets/optimized/content-nxchange.jpg" alt="" loading="lazy" width={dimensionsFor("/assets/optimized/content-nxchange.jpg")?.width} height={dimensionsFor("/assets/optimized/content-nxchange.jpg")?.height} />
         </div>
@@ -1000,7 +996,7 @@ function PageHeroVisual({ tone }: { tone: "default" | "website" | "ads" | "brand
     return (
       <div className="page-hero-visual ads-visual" aria-hidden="true">
         <video autoPlay loop muted playsInline preload="none" poster={videoThumbnailFor(videos[0].src)}>
-          <source src={videoPreviewSrc(videos[0].src)} type="video/mp4" />
+          <source src={videos[0].src} type="video/mp4" />
         </video>
         <div>
           <span>CPA</span>
@@ -1137,7 +1133,7 @@ function WebsitePreview({ site, title }: { site: (typeof websites)[number]; titl
       <a className="website-preview-fallback" href={site.url} target="_blank" rel="noreferrer" aria-label={`${site.title} openen`}>
         {site.previewVideo ? (
           <video autoPlay muted loop playsInline preload="none" aria-hidden="true">
-            <source src={videoPreviewSrc(site.previewVideo)} type="video/mp4" />
+            <source src={site.previewVideo} type="video/mp4" />
           </video>
         ) : null}
         <span><Text value={t("Live website", "Live website", "Web en vivo")} /></span>
@@ -1329,7 +1325,7 @@ export function VideoGrid({ limit }: { limit?: number }) {
       {(limit ? videos.slice(0, limit) : videos).map((video) => (
         <article className="video-card" key={video.src}>
           <video controls preload="none" playsInline poster={videoThumbnailFor(video.src)}>
-            <source src={videoPreviewSrc(video.src)} type="video/mp4" />
+            <source src={video.src} type="video/mp4" />
           </video>
           <h3>{video.title}</h3>
         </article>

@@ -72,10 +72,6 @@ const videoCases = [
   },
 ];
 
-function videoPreviewSrc(src: string) {
-  return `${src}#t=0.001`;
-}
-
 export function VideoShowcase({ compact = false, excludeSrcs = [] }: { compact?: boolean; excludeSrcs?: string[] }) {
   const [selectedIndex, setSelectedIndex] = useState(0);
   const [playAfterSelect, setPlayAfterSelect] = useState(false);
@@ -104,7 +100,7 @@ export function VideoShowcase({ compact = false, excludeSrcs = [] }: { compact?:
       <article className="video-feature">
         <div className="video-frame">
           <video ref={featuredVideoRef} controls preload="metadata" playsInline poster={videoThumbnailFor(featured.src)} key={featured.src}>
-            <source src={videoPreviewSrc(featured.src)} type="video/mp4" />
+            <source src={featured.src} type="video/mp4" />
           </video>
         </div>
         <div className="video-caption">

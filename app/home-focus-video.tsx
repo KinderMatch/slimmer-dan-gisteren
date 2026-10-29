@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 
 import { useLanguage } from "./language";
+import { videoThumbnailFor } from "./video-thumbnails";
 
 const focusVideos = [
   {
@@ -30,10 +31,6 @@ const focusVideos = [
     src: "/assets/campaigns/daelenbroek.mp4",
   },
 ];
-
-function videoPreviewSrc(src: string) {
-  return `${src}#t=0.001`;
-}
 
 export function HomeFocusVideo() {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -67,10 +64,11 @@ export function HomeFocusVideo() {
         onEnded={showNextVideo}
         onError={showNextVideo}
         playsInline
+        poster={videoThumbnailFor(activeVideo.src)}
         preload="metadata"
         ref={videoRef}
       >
-        <source src={videoPreviewSrc(activeVideo.src)} type="video/mp4" />
+        <source src={activeVideo.src} type="video/mp4" />
       </video>
       <div className="focus-video-meta" aria-live="polite">
         <span>{String(activeIndex + 1).padStart(2, "0")} / {focusVideos.length}</span>
