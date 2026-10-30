@@ -6373,6 +6373,15 @@ h3 {
   cursor: zoom-in;
 }
 
+/* Clipped scroll-timeline layers can stop painting already loaded gallery images. */
+.premium-home .premium-archive-item {
+  animation: none;
+  clip-path: none;
+  opacity: 1;
+  transform: none;
+  will-change: auto;
+}
+
 .premium-archive-item img,
 .premium-archive-item video {
   display: block;
