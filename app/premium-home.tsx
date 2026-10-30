@@ -24,7 +24,7 @@ const services = [
       "Become visible in AI answers from ChatGPT, Gemini, Perplexity and Google AI Overviews.",
       "Ser visible en respuestas de IA de ChatGPT, Gemini, Perplexity y Google AI Overviews.",
     ),
-    media: "/assets/generated/datacenter-320.gif",
+    media: "/assets/generated/geo-globe-poster.webp",
     type: "image",
   },
   {
@@ -130,12 +130,12 @@ function Media({ item, className = "" }: { item: { kind?: string; src: string; l
 
 function ServiceVisual({ service }: { service: (typeof services)[number] }) {
   const animations: Record<string, [string, string]> = {
-    "/geo/": ["/assets/generated/datacenter-320.mp4", "/assets/generated/datacenter-poster.webp"],
+    "/geo/": ["/assets/generated/geo-globe.mp4", "/assets/generated/geo-globe-poster.webp"],
     "/seo/": ["/assets/seo-search.mp4", "/assets/seo-search-poster.webp"],
     "/google-ads/": ["/assets/google-ads-preview.mp4", "/assets/google-ads-poster.webp"],
   };
   const animation = animations[service.href];
-  if (animation) return <div className="premium-image-visual"><ServiceAnimation src={animation[0]} poster={animation[1]} /></div>;
+  if (animation) return <div className={`premium-image-visual${service.href === "/geo/" ? " premium-geo-visual" : ""}`}><ServiceAnimation src={animation[0]} poster={animation[1]} /></div>;
   if (service.type === "image") {
     return (
       <div className="premium-image-visual">

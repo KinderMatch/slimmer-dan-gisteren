@@ -6021,6 +6021,12 @@ h3 {
   background: #ffffff;
 }
 
+.premium-geo-visual,
+.premium-geo-visual video {
+  padding: 0;
+  background: #0b0824;
+}
+
 .premium-website-visual {
   display: grid;
   grid-template-rows: auto 1fr;
