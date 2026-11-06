@@ -117,6 +117,7 @@ print_sitemap_alternates() {
   printf '%s\n' 'User-agent: *'
   printf '%s\n' 'Allow: /'
   printf '%s\n' 'Disallow: /api/'
+  printf '%s\n' 'Disallow: /dashboard/'
   printf 'Sitemap: %s/sitemap.xml\n' "$base_url"
 } > "$publish_dir/robots.txt"
 
@@ -137,5 +138,7 @@ cat > "$publish_dir/advertenties/index.html" <<'HTML'
 </html>
 HTML
 
+cp -R public/dashboard "$publish_dir/"
+node scripts/validate-dashboard-security.mjs "$publish_dir/dashboard"
 node scripts/trim-published-css.mjs "$publish_dir"
 printf '%s\n' "$publish_dir"
