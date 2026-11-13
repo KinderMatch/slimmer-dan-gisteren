@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { CaseCard } from "./case-card";
 import { KlantwinstForm } from "./request-form";
 import { ResponsiveImage } from "../responsive-image";
 import { videoThumbnailFor } from "../video-thumbnails";
@@ -81,8 +82,8 @@ export default function KlantwinstPage() {
           <p>Herken je jouw situatie? Bekijk hoe we advertenties, een website of een formulier inzetten. Open een case voor de aanpak en de context bij de resultaten.</p>
         </div>
         <div className={styles.proofGrid}>
-          <details className={styles.proofCard} id="zelfstandigen-bouw" name="klantcases">
-            <summary>
+          <CaseCard id="zelfstandigen-bouw" name="Zelfstandigen Bouw" preview={<>
+
               <span className={styles.proofImage}><ResponsiveImage src="/assets/optimized/social-ads-schilder.jpg" alt="Schilder met verfroller uit de campagne voor Zelfstandigen Bouw" width={800} height={707} sizes="(max-width: 740px) 88vw, 42vw" loading="lazy" /></span>
               <span className={styles.proofName}>Zelfstandigen Bouw</span>
               <span className={styles.proofType}>Belangenorganisatie voor zelfstandigen in de bouw</span>
@@ -90,8 +91,9 @@ export default function KlantwinstPage() {
               <span className={styles.proofMetric}>30–50</span>
               <span className={styles.proofLabel}>aanvragen per maand · eerder 8–15</span>
               <span className={styles.proofMethod}>Social-advertenties + landingspagina</span>
-              <span className={styles.proofToggle}><span className={styles.proofShow}>Bekijk de aanpak</span><span className={styles.proofHide}>Sluit de aanpak</span><span aria-hidden="true">+</span></span>
-            </summary>
+              <span className={styles.proofToggle}><span className={styles.proofShow}>Bekijk de aanpak</span><span aria-hidden="true">↗</span></span>
+            </>}>
+
             <div className={styles.proofBody}>
 
         <div className={styles.proofStory}>
@@ -121,9 +123,9 @@ export default function KlantwinstPage() {
         <p className={styles.caseFootnote}>De exacte meetperiodes en advertentiebudgetten van deze campagnes zijn niet vermeld.</p>
 
             </div>
-          </details>
-          <details className={styles.proofCard} id="limisan" name="klantcases">
-            <summary>
+          </CaseCard>
+          <CaseCard id="limisan" name="Limisan Pro" preview={<>
+
               <span className={`${styles.proofImage} ${styles.proofScreenshot}`}><img src="/assets/cases/limisan-website.jpg" alt="Screenshot van de huidige website van Limisan Pro" width="1280" height="800" loading="lazy" /></span>
               <span className={styles.proofName}>Limisan Pro</span>
               <span className={styles.proofType}>Health en e-commerce · pleister- en tapeverwijderaars</span>
@@ -131,8 +133,9 @@ export default function KlantwinstPage() {
               <span className={styles.proofMetric}>259</span>
               <span className={styles.proofLabel}>afgeronde webshopbestellingen in zes maanden</span>
               <span className={styles.proofMethod}>Webshop + Google Ads + Google Merchant</span>
-              <span className={styles.proofToggle}><span className={styles.proofShow}>Bekijk de aanpak</span><span className={styles.proofHide}>Sluit de aanpak</span><span aria-hidden="true">+</span></span>
-            </summary>
+              <span className={styles.proofToggle}><span className={styles.proofShow}>Bekijk de aanpak</span><span aria-hidden="true">↗</span></span>
+            </>}>
+
             <div className={styles.proofBody}>
 
         <div className={styles.limisanLayout}>
@@ -157,9 +160,9 @@ export default function KlantwinstPage() {
         <p className={styles.caseFootnote}>Afgeronde bestellingen, geteld op betaaldatum. Het gaat om webshopbestellingen uit alle kanalen samen; ze zijn niet uitsluitend aan advertenties toegeschreven.</p>
 
             </div>
-          </details>
-          <details className={styles.proofCard} id="kozijnrubbers" name="klantcases">
-            <summary>
+          </CaseCard>
+          <CaseCard id="kozijnrubbers" name="Kozijnrubbers.nl" preview={<>
+
               <span className={`${styles.proofImage} ${styles.proofScreenshot}`}><img src="/assets/cases/kozijnrubbers-website.jpg" alt="Screenshot van de huidige website van Kozijnrubbers.nl" width="1280" height="800" loading="lazy" /></span>
               <span className={styles.proofName}>Kozijnrubbers.nl</span>
               <span className={styles.proofType}>E-commerce · tochtprofielen voor ramen en deuren</span>
@@ -167,8 +170,9 @@ export default function KlantwinstPage() {
               <span className={styles.proofMetric}>+31,8%</span>
               <span className={styles.proofLabel}>Shopping-klikken bij vrijwel gelijke advertentiekosten</span>
               <span className={styles.proofMethod}>Search + Shopping · oktober 2026 versus 2025</span>
-              <span className={styles.proofToggle}><span className={styles.proofShow}>Bekijk de aanpak</span><span className={styles.proofHide}>Sluit de aanpak</span><span aria-hidden="true">+</span></span>
-            </summary>
+              <span className={styles.proofToggle}><span className={styles.proofShow}>Bekijk de aanpak</span><span aria-hidden="true">↗</span></span>
+            </>}>
+
             <div className={styles.proofBody}>
 
         <div className={styles.sectionHeading}>
@@ -197,9 +201,9 @@ export default function KlantwinstPage() {
         </details>
 
             </div>
-          </details>
-          <details className={styles.proofCard} id="cyb-training" name="klantcases">
-            <summary>
+          </CaseCard>
+          <CaseCard id="cyb-training" name="CYB Training" preview={<>
+
               <span className={`${styles.proofImage} ${styles.proofScreenshot}`}><img src="/assets/cases/cyb-training-website.jpg" alt="Screenshot van de huidige website van CYB Training" width="1280" height="800" loading="lazy" /></span>
               <span className={styles.proofName}>CYB Training</span>
               <span className={styles.proofType}>Health · studio voor EMS-training en cryotherapie</span>
@@ -207,8 +211,9 @@ export default function KlantwinstPage() {
               <span className={styles.proofMetric}>≈49</span>
               <span className={styles.proofLabel}>leads per maand gemiddeld</span>
               <span className={styles.proofMethod}>Social-advertenties + formulier in het platform</span>
-              <span className={styles.proofToggle}><span className={styles.proofShow}>Bekijk de aanpak</span><span className={styles.proofHide}>Sluit de aanpak</span><span aria-hidden="true">+</span></span>
-            </summary>
+              <span className={styles.proofToggle}><span className={styles.proofShow}>Bekijk de aanpak</span><span aria-hidden="true">↗</span></span>
+            </>}>
+
             <div className={styles.proofBody}>
 
         <div className={styles.limisanLayout}>
@@ -233,7 +238,7 @@ export default function KlantwinstPage() {
         <p className={styles.caseFootnote}>Het beeld toont de huidige website, niet de website tijdens de campagne. Gemiddelde op basis van twee besproken maandtotalen, afgerond naar circa 49 leads per maand. Dit zijn aanvragen, geen aantallen gevoerde intakes of nieuwe klanten. Andere campagnes zijn niet meegerekend.</p>
 
             </div>
-          </details>
+          </CaseCard>
         </div>
         <div className={styles.caseAction}><h3>Wat past bij jouw bedrijf?</h3><p>Laat je advertenties en de route naar een aanvraag beoordelen in de gratis Klantwinst-check.</p><Action /></div>
       </section>
