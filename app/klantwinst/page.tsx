@@ -120,7 +120,6 @@ export default function KlantwinstPage() {
             <figcaption>Zelfstandigen Bouw · {video.name}</figcaption>
           </figure>)}</div>
         </details>
-        <p className={styles.caseFootnote}>De exacte meetperiodes en advertentiebudgetten van deze campagnes zijn niet vermeld.</p>
 
             </div>
           </CaseCard>
@@ -157,7 +156,6 @@ export default function KlantwinstPage() {
           <div><span>02</span><h3>Search en Shopping</h3><p>Zoekadvertenties en productadvertenties voor het nieuwe verkoopkanaal.</p></div>
           <div><span>03</span><h3>Ook organisch zichtbaar</h3><p>Productvermeldingen via Google Merchant naast de betaalde campagnes.</p></div>
         </div>
-        <p className={styles.caseFootnote}>Afgeronde bestellingen, geteld op betaaldatum. Het gaat om webshopbestellingen uit alle kanalen samen; ze zijn niet uitsluitend aan advertenties toegeschreven.</p>
 
             </div>
           </CaseCard>
@@ -235,7 +233,6 @@ export default function KlantwinstPage() {
           <div><span>02</span><h3>Formulier in het platform</h3><p>Contactgegevens achterlaten zonder een externe landingspagina te bezoeken.</p></div>
           <div><span>03</span><h3>Persoonlijke opvolging</h3><p>Contact opnemen met geïnteresseerden en bespreken of een intake past.</p></div>
         </div>
-        <p className={styles.caseFootnote}>Het beeld toont de huidige website, niet de website tijdens de campagne. Gemiddelde op basis van twee besproken maandtotalen, afgerond naar circa 49 leads per maand. Dit zijn aanvragen, geen aantallen gevoerde intakes of nieuwe klanten. Andere campagnes zijn niet meegerekend.</p>
 
             </div>
           </CaseCard>
