@@ -87,3 +87,9 @@
 .dialogFooter>p{width:100%;font-weight:700;font-size:1.15rem}
 .backToCases{border:0;background:none;color:var(--kw-muted);font:inherit;font-size:.9rem;text-decoration:underline;text-underline-offset:4px;cursor:pointer;min-height:44px;padding:8px}
 @media(max-width:740px){.proofGrid{grid-template-columns:1fr;gap:16px}.proofTrigger{padding:22px;min-height:0}.proofMetric{font-size:2.8rem}.proofToggle{margin-top:14px}.proofImage{height:120px;margin:-22px -22px 20px}.caseDialog{width:calc(100vw - 16px);max-height:calc(100dvh - 16px);border-radius:12px}.dialogHeader{padding:16px;gap:12px}.dialogHeader h2{font-size:1.2rem}.dialogHeader>div>p{font-size:.58rem!important}.dialogClose{padding:8px;gap:7px}.dialogContent{padding:22px 18px}.proofBody h3{font-size:1.4rem}.proofBody .limisanLayout,.proofBody .limisanSteps{grid-template-columns:1fr;gap:22px}.proofBody .limisanResult{padding:20px;text-align:left}.proofBody .limisanResult>strong{font-size:3.2rem}.proofBody .kozijnResults{grid-template-columns:1fr}.proofBody .caseComparison strong{font-size:2rem}.proofBody .caseComparison{gap:12px}.dialogFooter .cta{width:100%}.dialogFooter{gap:10px}.backToCases{width:100%}}
+
+/* Keep multiline actions legible and evidence cards aligned across screen sizes. */
+.cta{text-align:center}.cta>span{flex-shrink:0}
+@media(min-width:741px){.proofType{min-height:2.8em}.proofQuestion{min-height:2.8em}}
+@media(max-width:380px){.hero{padding-top:28px}.hero h1{font-size:2.4rem;line-height:1.08}.lead{font-size:1rem!important}.hero .cta{padding:14px 16px}}
+@media(min-width:741px) and (max-width:900px){.contact{grid-template-columns:1fr;gap:32px}.contactCopy{max-width:650px}.contactCopy .person{margin-top:24px}.form{padding:28px}}
