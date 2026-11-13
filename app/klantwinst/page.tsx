@@ -46,7 +46,7 @@ export default function KlantwinstPage() {
       <section className={styles.hero} aria-labelledby="hero-title">
         <div className={styles.heroCopy}>
           <p className={styles.eyebrow}>GRATIS KLANTWINST-CHECK</p>
-          <h1 id="hero-title">Klikken, klikken, <span>niet kopen.</span></h1>
+          <h1 id="hero-title">Ontdek waar je <span>geschikte aanvragen</span> laat liggen.</h1>
           <p className={styles.lead}>Laat je advertenties, website en kwalificatie van aanvragen samen beoordelen. In een gratis gesprek van maximaal twintig minuten bespreken wij de knelpunten en welke verbeteringen prioriteit hebben.</p>
           <Action />
           <p className={styles.micro}>Gratis en vrijblijvend · Gesprek van maximaal 20 minuten</p>
@@ -65,7 +65,7 @@ export default function KlantwinstPage() {
 
       <section className={styles.problem} aria-labelledby="problem-title">
         <p className={styles.eyebrow}>HERKENBAAR?</p>
-        <h2 id="problem-title">Ontdek waar je geschikte aanvragen laat liggen.</h2>
+        <h2 id="problem-title">Klikken, klikken,<br />niet kopen.</h2>
         <div><p>Je advertenties trekken aandacht, maar er komen weinig aanvragen binnen. Of er komen aanvragen, maar die passen niet bij je dienst, werkgebied of doelgroep.</p><p>De oorzaak kan in je advertentie zitten, maar ook in wat daarna gebeurt. Daarom beoordelen wij de boodschap, de website en de kwalificatie samen.</p></div>
       </section>
 
