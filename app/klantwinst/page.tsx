@@ -50,7 +50,7 @@ export default function KlantwinstPage() {
           <p className={styles.lead}>Laat je advertenties, website en kwalificatie van aanvragen samen beoordelen. In een gratis gesprek van maximaal twintig minuten bespreken wij de knelpunten en welke verbeteringen prioriteit hebben.</p>
           <Action />
           <p className={styles.micro}>Gratis en vrijblijvend · Gesprek van maximaal 20 minuten</p>
-          <p className={styles.audience}>Voor zakelijke dienstverleners of bedrijven in health, finance of e-commerce.</p>
+          <p className={styles.audience}>Voor zelfstandigen, zakelijke dienstverleners, of bedrijven die producten online verkopen.</p>
         </div>
         <div className={styles.journey} aria-label="Wat wij bespreken tijdens de gratis Klantwinst-check">
           <div className={styles.journeyTop}><span>DIT BESPREKEN WIJ MET JE</span><span aria-hidden="true">↗</span></div>
