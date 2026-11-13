@@ -12,16 +12,16 @@ const caseVideos = [
   { name: "Hondenhok", src: "/assets/campaigns/zb-hondenhok.mp4" },
 ];
 const checks = [
-  { n: "01", title: "Spreekt je advertentie de juiste mensen aan?", body: "We bekijken je aanbod, tekst, beeld en oproep tot actie. Begrijpt je gewenste klant wat je aanbiedt en waarom dat relevant is?" },
-  { n: "02", title: "Wordt interesse ook een aanvraag?", body: "We beoordelen je website, landingspagina of formulier. Waar raakt iemand de weg kwijt en wat is nodig om contact opnemen makkelijker te maken?" },
-  { n: "03", title: "Herken je welke aanvragen bij je passen?", body: "We kijken welke informatie je uitvraagt en hoe je aanvragen beoordeelt. Zo bespreken we hoe je passende klanten beter kunt onderscheiden." },
+  { n: "01", title: "Spreekt je advertentie de juiste mensen aan?", body: "Wij bekijken je aanbod, tekst, beeld en oproep tot actie. Begrijpt je gewenste klant wat je aanbiedt en waarom dat relevant is?" },
+  { n: "02", title: "Wordt interesse ook een aanvraag?", body: "Wij beoordelen je website, landingspagina of formulier. Waar raakt iemand de weg kwijt en wat is nodig om contact opnemen makkelijker te maken?" },
+  { n: "03", title: "Herken je welke aanvragen bij je passen?", body: "Wij kijken welke informatie je uitvraagt en hoe je aanvragen beoordeelt. Zo bespreken wij hoe je passende klanten beter kunt onderscheiden." },
 ];
 const faqs = [
-  ["Is de Klantwinst-check echt gratis?", "Ja. De analyse en het gesprek van maximaal twintig minuten zijn gratis. Je hoeft geen betaalgegevens in te vullen en gaat geen betaalde samenwerking aan. Wil je later hulp bij de uitvoering, dan bespreken we dat afzonderlijk."],
-  ["Wat als ik nog geen advertenties of landingspagina heb?", "Je hoeft die niet eerst te maken. We bespreken je aanbod en doel en beoordelen wat al aanwezig is. Ontbrekende onderdelen nemen we mee in ons advies. Zonder bestaande campagnegegevens doen we geen uitspraken over campagneprestaties. De check bestaat uit analyse en advies; eventuele uitvoering bespreken we pas daarna."],
-  ["Moet ik nu toegang tot mijn advertentieaccount geven?", "Nee. Voor de aanvraag hebben we alleen je contactgegevens, website, aanbod en doel nodig. Als accounttoegang nodig is voor de analyse, regelen we dat daarna via de toegangsfuncties van het platform. Deel nooit je wachtwoord."],
-  ["Wat krijg ik tijdens het gesprek?", "We bespreken de aansluiting tussen je advertentie, de route naar een aanvraag en de manier waarop je aanvragen kwalificeert. Je hoort welke knelpunten we zien en wat volgens ons als eerste aandacht verdient. We benoemen ook wat we met de beschikbare informatie nog niet kunnen vaststellen."],
-  ["Wanneer hoor ik iets en hoeveel tijd kost het?", "Je krijgt uiterlijk binnen twee werkdagen na ontvangst een persoonlijke reactie; we streven naar één werkdag. We plannen samen het analysegesprek. Dat duurt maximaal twintig minuten. Als we vooraf aanvullende informatie nodig hebben, laten we dat weten."],
+  ["Is de Klantwinst-check echt gratis?", "Ja. De analyse en het gesprek van maximaal twintig minuten zijn gratis. Je hoeft geen betaalgegevens in te vullen en gaat geen betaalde samenwerking aan. Wil je later hulp bij de uitvoering, dan bespreken wij dat afzonderlijk."],
+  ["Wat als ik nog geen advertenties of landingspagina heb?", "Je hoeft die niet eerst te maken. Wij bespreken je aanbod en doel en beoordelen wat al aanwezig is. Ontbrekende onderdelen nemen wij mee in ons advies. Zonder bestaande campagnegegevens doen wij geen uitspraken over campagneprestaties. De check bestaat uit analyse en advies; eventuele uitvoering bespreken wij pas daarna."],
+  ["Moet ik nu toegang tot mijn advertentieaccount geven?", "Nee. Voor de aanvraag hebben wij alleen je contactgegevens, website, aanbod en doel nodig. Als accounttoegang nodig is voor de analyse, regelen wij dat daarna via de toegangsfuncties van het platform. Deel nooit je wachtwoord."],
+  ["Wat krijg ik tijdens het gesprek?", "Wij bespreken de aansluiting tussen je advertentie, de route naar een aanvraag en de manier waarop je aanvragen kwalificeert. Je hoort welke knelpunten wij zien en wat volgens ons als eerste aandacht verdient. Wij benoemen ook wat wij met de beschikbare informatie nog niet kunnen vaststellen."],
+  ["Wanneer hoor ik iets en hoeveel tijd kost het?", "Je krijgt uiterlijk binnen twee werkdagen na ontvangst een persoonlijke reactie; wij streven naar één werkdag. Wij plannen samen het analysegesprek. Dat duurt maximaal twintig minuten. Als wij vooraf aanvullende informatie nodig hebben, laten wij dat weten."],
 ];
 
 export const metadata: Metadata = {
@@ -46,14 +46,14 @@ export default function KlantwinstPage() {
       <section className={styles.hero} aria-labelledby="hero-title">
         <div className={styles.heroCopy}>
           <p className={styles.eyebrow}>GRATIS KLANTWINST-CHECK</p>
-          <h1 id="hero-title">Ontdek waar je <span>geschikte aanvragen</span> laat liggen.</h1>
-          <p className={styles.lead}>Laat je advertenties, website en kwalificatie van aanvragen samen beoordelen. In een gratis gesprek van maximaal twintig minuten bespreken we de knelpunten en welke verbeteringen prioriteit hebben.</p>
+          <h1 id="hero-title">Klikken, klikken, <span>niet kopen.</span></h1>
+          <p className={styles.lead}>Laat je advertenties, website en kwalificatie van aanvragen samen beoordelen. In een gratis gesprek van maximaal twintig minuten bespreken wij de knelpunten en welke verbeteringen prioriteit hebben.</p>
           <Action />
           <p className={styles.micro}>Gratis en vrijblijvend · Gesprek van maximaal 20 minuten</p>
           <p className={styles.audience}>Voor zakelijke dienstverleners of bedrijven in health, finance of e-commerce.</p>
         </div>
-        <div className={styles.journey} aria-label="Wat we bespreken tijdens de gratis Klantwinst-check">
-          <div className={styles.journeyTop}><span>DIT BESPREKEN WE MET JE</span><span aria-hidden="true">↗</span></div>
+        <div className={styles.journey} aria-label="Wat wij bespreken tijdens de gratis Klantwinst-check">
+          <div className={styles.journeyTop}><span>DIT BESPREKEN WIJ MET JE</span><span aria-hidden="true">↗</span></div>
           <ol>
             <li><span className={styles.stepIcon} aria-hidden="true">01</span><div><strong>Je advertentie</strong><p>Sluit je boodschap aan op de klant die je zoekt?</p></div></li>
             <li><span className={styles.stepIcon} aria-hidden="true">02</span><div><strong>De route naar contact</strong><p>Waar helpt je pagina of formulier, en waar haakt iemand af?</p></div></li>
@@ -65,21 +65,21 @@ export default function KlantwinstPage() {
 
       <section className={styles.problem} aria-labelledby="problem-title">
         <p className={styles.eyebrow}>HERKENBAAR?</p>
-        <h2 id="problem-title">Wel klikken.<br />Niet de klanten die je zoekt.</h2>
-        <div><p>Je advertenties trekken aandacht, maar er komen weinig aanvragen binnen. Of er komen aanvragen, maar die passen niet bij je dienst, werkgebied of doelgroep.</p><p>De oorzaak kan in je advertentie zitten, maar ook in wat daarna gebeurt. Daarom beoordelen we de boodschap, de website en de kwalificatie samen.</p></div>
+        <h2 id="problem-title">Ontdek waar je geschikte aanvragen laat liggen.</h2>
+        <div><p>Je advertenties trekken aandacht, maar er komen weinig aanvragen binnen. Of er komen aanvragen, maar die passen niet bij je dienst, werkgebied of doelgroep.</p><p>De oorzaak kan in je advertentie zitten, maar ook in wat daarna gebeurt. Daarom beoordelen wij de boodschap, de website en de kwalificatie samen.</p></div>
       </section>
 
       <section className={styles.section} id="aanpak" aria-labelledby="checks-title">
-        <div className={styles.sectionHeading}><p className={styles.eyebrow}>DE GRATIS KLANTWINST-CHECK</p><h2 id="checks-title">Drie vragen.<br />Een concrete verbeterrichting.</h2><p>Je krijgt een analysegesprek over jouw situatie. We bespreken wat opvalt, wat prioriteit heeft en wat we nog niet kunnen vaststellen.</p></div>
+        <div className={styles.sectionHeading}><p className={styles.eyebrow}>DE GRATIS KLANTWINST-CHECK</p><h2 id="checks-title">Drie vragen.<br />Een concrete verbeterrichting.</h2><p>Je krijgt een analysegesprek over jouw situatie. Wij bespreken wat opvalt, wat prioriteit heeft en wat wij nog niet kunnen vaststellen.</p></div>
         <div className={styles.checkGrid}>{checks.map(check => <article className={styles.check} key={check.n}><span className={styles.number}>{check.n}</span><h3>{check.title}</h3><p>{check.body}</p></article>)}</div>
-        <div className={styles.note}><span aria-hidden="true">↳</span><p><strong>Al aan het adverteren?</strong> Waar nodig vragen we na je aanvraag toegang tot je advertentieaccount. Zonder toegang beoordelen we je openbare website; we doen dan geen uitspraken over interne campagnegegevens.</p></div>
+        <div className={styles.note}><span aria-hidden="true">↳</span><p><strong>Al aan het adverteren?</strong> Waar nodig vragen wij na je aanvraag toegang tot je advertentieaccount. Zonder toegang beoordelen wij je openbare website; wij doen dan geen uitspraken over interne campagnegegevens.</p></div>
       </section>
 
       <section className={`${styles.section} ${styles.proofSection}`} id="praktijkvoorbeelden" aria-labelledby="proof-title">
         <div className={styles.sectionHeading}>
           <p className={styles.eyebrow}>IN DE PRAKTIJK</p>
           <h2 id="proof-title">Verschillende bedrijven.<br />Een aanpak die bij de situatie past.</h2>
-          <p>Herken je jouw situatie? Bekijk hoe we advertenties, een website of een formulier inzetten. Open een case voor de aanpak en de context bij de resultaten.</p>
+          <p>Herken je jouw situatie? Bekijk hoe wij advertenties, een website of een formulier inzetten. Open een case voor de aanpak en de context bij de resultaten.</p>
         </div>
         <div className={styles.proofGrid}>
           <CaseCard id="zelfstandigen-bouw" name="Zelfstandigen Bouw" preview={<>
@@ -100,7 +100,7 @@ export default function KlantwinstPage() {
           <div className={styles.caseCopy}>
             <p className={styles.eyebrow}>IN DE PRAKTIJK · ZELFSTANDIGEN BOUW</p>
             <h3 id="case-title">Van 8–15 naar 30–50 aanvragen per maand.</h3>
-            <p>Voor de campagne voor Rechtsbijstand maakten we een serie van drie video’s en fotocontent. Na een klik op de advertentie kwamen bezoekers op een aansluitende landingspagina, waar ze zich konden aanmelden voor Rechtsbijstand.</p>
+            <p>Voor de campagne voor Rechtsbijstand maakten wij een serie van drie video’s en fotocontent. Na een klik op de advertentie kwamen bezoekers op een aansluitende landingspagina, waar ze zich konden aanmelden voor Rechtsbijstand.</p>
             <p>Advertenties, beeld en landingspagina vertelden hetzelfde verhaal. De campagne was gericht op naamsbekendheid én directe aanvragen.</p>
             <div className={styles.caseComparison} aria-label="Aanvragen voor Rechtsbijstand per maand: eerder 8 tot 15, tijdens de campagne 30 tot 50">
               <div><span>Eerder</span><strong>8–15</strong><small>aanvragen per maand</small></div>
@@ -142,8 +142,8 @@ export default function KlantwinstPage() {
           <div>
             <p className={styles.eyebrow}>IN DE PRAKTIJK · LIMISAN PRO</p>
             <h3 id="limisan-title">Een extra verkoopkanaal naast een bestaand bedrijf.</h3>
-            <p>Limisan Pro verkocht voornamelijk via derde partijen aan de zakelijke markt. We bouwden een eigen webshop om ook rechtstreeks aan consumenten te kunnen verkopen.</p>
-            <p>Daarbij richtten we Google Ads-campagnes voor Search en Shopping in. Via Google Merchant maakten we de producten ook organisch vindbaar. Zo ontstond naast de bestaande verkoop via derden een eigen online verkoopkanaal.</p>
+            <p>Limisan Pro verkocht voornamelijk via derde partijen aan de zakelijke markt. Wij bouwden een eigen webshop om ook rechtstreeks aan consumenten te kunnen verkopen.</p>
+            <p>Daarbij richtten wij Google Ads-campagnes voor Search en Shopping in. Via Google Merchant maakten wij de producten ook organisch vindbaar. Zo ontstond naast de bestaande verkoop via derden een eigen online verkoopkanaal.</p>
           </div>
           <div className={styles.limisanResult}>
             <span>EIGEN WEBSHOP · ZES MAANDEN</span>
@@ -178,7 +178,7 @@ export default function KlantwinstPage() {
         <div className={styles.sectionHeading}>
           <p className={styles.eyebrow}>IN DE PRAKTIJK · KOZIJNRUBBERS.NL</p>
           <h3 id="kozijn-title">Meer verkeer uit Shopping.<br />Klant meldt hogere omzet.</h3>
-          <p>Voor Kozijnrubbers beheren we een doorlopende Search-campagne, een tijdelijke Search-campagne en een Shopping-campagne. In het dashboard volgen we de ontwikkeling per campagne.</p>
+          <p>Voor Kozijnrubbers beheren wij een doorlopende Search-campagne, een tijdelijke Search-campagne en een Shopping-campagne. In het dashboard volgen wij de ontwikkeling per campagne.</p>
         </div>
         <div className={styles.kozijnResults}>
           <div><span>Shopping · klikken</span><strong>+31,8%</strong><p>Meer klikken vanuit de Shopping-campagne.</p></div>
@@ -220,7 +220,7 @@ export default function KlantwinstPage() {
           <div>
             <p className={styles.eyebrow}>IN DE PRAKTIJK · CYB TRAINING</p>
             <h3 id="cyb-title">Aanvragen ontvangen zonder landingspagina.</h3>
-            <p>De bestaande website van CYB Training was verouderd en gaf geen representatief beeld van het bedrijf. Daarom stuurden we bezoekers vanuit de social-advertenties niet naar een landingspagina.</p>
+            <p>De bestaande website van CYB Training was verouderd en gaf geen representatief beeld van het bedrijf. Daarom stuurden wij bezoekers vanuit de social-advertenties niet naar een landingspagina.</p>
             <p>Geïnteresseerden lieten hun gegevens direct achter in een formulier binnen het advertentieplatform. CYB Training nam vervolgens persoonlijk contact op om de interesse te bespreken en een intake te plannen.</p>
           </div>
           <div className={styles.limisanResult}>
@@ -246,9 +246,9 @@ export default function KlantwinstPage() {
       <section className={styles.process} id="werkwijze" aria-labelledby="process-title">
         <div className={styles.sectionHeading}><p className={styles.eyebrow}>ZO WERKT HET</p><h2 id="process-title">Van aanvraag naar<br />een helder advies.</h2></div>
         <ol className={styles.processList}>
-          <li><span>01</span><div><h3>Vertel waar je op wilt focussen</h3><p>Deel je website, het product of de dienst en het doel. Meer hebben we voor de eerste stap niet nodig.</p></div></li>
-          <li><span>02</span><div><h3>We bereiden je analyse voor</h3><p>Je krijgt binnen twee werkdagen een persoonlijke reactie; we streven naar één werkdag. We plannen het gesprek en regelen eventuele aanvullende informatie.</p></div></li>
-          <li><span>03</span><div><h3>We bespreken de bevindingen</h3><p>In maximaal twintig minuten bespreken we de belangrijkste knelpunten en welke verbeteringen prioriteit hebben. Zo weet je waar je als eerste mee aan de slag kunt.</p></div></li>
+          <li><span>01</span><div><h3>Vertel waar je op wilt focussen</h3><p>Deel je website, het product of de dienst en het doel. Meer hebben wij voor de eerste stap niet nodig.</p></div></li>
+          <li><span>02</span><div><h3>Wij bereiden je analyse voor</h3><p>Je krijgt binnen twee werkdagen een persoonlijke reactie; wij streven naar één werkdag. Wij plannen het gesprek en regelen eventuele aanvullende informatie.</p></div></li>
+          <li><span>03</span><div><h3>Wij bespreken de bevindingen</h3><p>In maximaal twintig minuten bespreken wij de belangrijkste knelpunten en welke verbeteringen prioriteit hebben. Zo weet je waar je als eerste mee aan de slag kunt.</p></div></li>
         </ol>
       </section>
 
@@ -261,10 +261,10 @@ export default function KlantwinstPage() {
       <section className={styles.followup} id="kosten" aria-labelledby="followup-title">
         <p className={styles.eyebrow}>ALLEEN ALS JE DAARNA HULP WILT</p>
         <h2 id="followup-title">De check is gratis. Uitvoering is optioneel.</h2>
-        <p>De inzichten kun je zelf gebruiken. Wil je de uitvoering uit handen geven? Dan bespreken we dat na de analyse. Beheer kost €200 per maand, met €200 eenmalige inrichting, exclusief btw en advertentiebudget. Een betaalde samenwerking start pas na jouw akkoord.</p>
+        <p>De inzichten kun je zelf gebruiken. Wil je de uitvoering uit handen geven? Dan bespreken wij dat na de analyse. Beheer kost €200 per maand, met €200 eenmalige inrichting, exclusief btw en advertentiebudget. Een betaalde samenwerking start pas na jouw akkoord.</p>
         <details><summary>Wat houdt een eventueel vervolg in?<span aria-hidden="true">+</span></summary><div>
-          <p>Ontbrekende advertenties, een landingspagina, leadmagnet, formulieren en metingen maken en richten we in binnen de €200 eenmalige inrichting. Wat niet goed werkt, verbeteren we. Dit geldt voor één centraal aanbod en één advertentiekanaal.</p>
-          <p>Het beheer omvat wekelijkse optimalisatie, de afgesproken organische content, een dashboard en maandelijks overleg. Aantallen uitingen en publicaties leggen we vooraf vast.</p>
+          <p>Ontbrekende advertenties, een landingspagina, leadmagnet, formulieren en metingen maken en richten wij in binnen de €200 eenmalige inrichting. Wat niet goed werkt, verbeteren wij. Dit geldt voor één centraal aanbod en één advertentiekanaal.</p>
+          <p>Het beheer omvat wekelijkse optimalisatie, de afgesproken organische content, een dashboard en maandelijks overleg. Aantallen uitingen en publicaties leggen wij vooraf vast.</p>
           <p>Inrichting betaal je uiterlijk twee weken vóór de start. Het beheer start zodra de campagne live gaat en wordt maandelijks achteraf gefactureerd. Minimaal één maand afname; daarna maandelijks opzegbaar met één maand opzegtermijn. Drie maanden afnemen is ons advies, geen verplichting.</p>
           <p><strong>Advertentiebudget is niet inbegrepen.</strong> Dat betaal je rechtstreeks aan het advertentieplatform. Je hoeft voor de gratis check nog geen budget vast te leggen.</p>
         </div></details>
