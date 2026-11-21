@@ -112,3 +112,29 @@
 .bookingWidget iframe{display:block;width:100%;border:0}
 @media(max-width:740px){.formSuccess{padding:24px 0}.formSuccess>h3,.formSuccess>.draft,.formSuccess>.formPrivacy{margin-inline:22px}.bookingCopy{padding-inline:22px}}
 @media(max-width:365px){.contact:has(.formSuccess){padding-inline:0}.formSuccess{border-radius:0;border-inline:0}.bookingWidget{min-width:0}}
+
+/* Keep the saved application clear while making the scheduler the main task. */
+.form{scroll-margin-top:24px}
+.bookingSteps{display:flex;gap:24px;list-style:none;padding:0;margin:0 0 8px;font-size:.875rem;line-height:1.4}
+.bookingSteps li{display:flex;align-items:center;gap:8px;color:var(--kw-muted);min-width:0}
+.bookingSteps li>span:first-child{display:grid;place-items:center;flex:0 0 26px;height:26px;border:1px solid #bac9d5;border-radius:50%;font-weight:700}
+.bookingSteps [aria-current=step]{color:var(--kw-ink);font-weight:700}
+.bookingSteps [aria-current=step]>span:first-child{background:var(--kw-blue);border-color:var(--kw-blue);color:#fff}
+.bookingSteps [data-complete]{color:#236347}
+.bookingSteps [data-complete]>span:first-child{background:#e8f4ed;border-color:#b6d9c4}
+.bookingSrOnly{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
+.bookingNotice{margin-inline:28px;color:#236347;font-size:.9375rem;line-height:1.5;scroll-margin-top:24px}
+.bookingNotice:focus{outline:2px solid #236347;outline-offset:6px}
+.bookingNotice>span{font-weight:700;margin-right:5px}
+.bookingCopy .bookingSteps{margin-bottom:18px}
+.bookingCopy>p{margin-block:10px}
+.bookingWidget{height:760px;margin-block:8px 12px}
+.bookingWidget[data-loading=true]{height:100px!important;overflow:hidden;opacity:0;pointer-events:none}
+.bookingCopy .bookingLoading{display:flex;align-items:center;gap:10px;padding-block:12px;margin:0;color:var(--kw-ink)}
+.bookingSpinner{width:18px;height:18px;border:2px solid #d5e1ec;border-top-color:var(--kw-blue);border-radius:50%;flex-shrink:0;animation:bookingSpin .9s linear infinite}
+.bookingCopy .bookingFallback{font-size:.875rem}
+.bookingCopy .bookingReassurance{font-size:.9375rem}
+.bookingReference{display:block;margin-top:18px;overflow-wrap:anywhere}
+@keyframes bookingSpin{to{transform:rotate(360deg)}}
+@media(max-width:740px){.bookingSteps{gap:18px;font-size:.875rem}.bookingNotice{margin-inline:22px}.formSuccess{gap:18px}}
+@media(prefers-reduced-motion:reduce){.bookingSpinner{animation:none}}

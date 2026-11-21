@@ -4,13 +4,15 @@ import vm from 'node:vm';
 import { buildSync } from 'esbuild';
 const code=buildSync({entryPoints:['app/klantwinst/booking.ts'],bundle:true,platform:'node',format:'cjs',write:false}).outputFiles[0].text;
 const module={exports:{}};vm.runInNewContext(code,{module,exports:module.exports});
-const {isBookingConfirmation,klantwinstBookingUrl}=module.exports;
+const {isBookingConfirmation,isCalendlyMessage,klantwinstBookingUrl}=module.exports;
 test('booking confirmation requires the exact Calendly origin, event and embedded window',()=>{
  const frame={},event={origin:'https://calendly.com',source:frame,data:{event:'calendly.event_scheduled'}};
  assert.equal(klantwinstBookingUrl,'https://calendly.com/buitenhuisj004/bmc-sessie');
  assert.equal(isBookingConfirmation(event,frame),true);
  for(const change of [{origin:'https://calendly.com.evil.example'},{source:{}},{data:{event:'calendly.date_and_time_selected'}},{data:null}])assert.equal(isBookingConfirmation({...event,...change},frame),false);
  assert.equal(isBookingConfirmation(event,null),false);
+ assert.equal(isCalendlyMessage({...event,data:{event:'calendly.event_type_viewed'}},frame),true);
+ assert.equal(isCalendlyMessage({...event,origin:'https://evil.example',data:{event:'calendly.event_type_viewed'}},frame),false);
 });
 
 
@@ -29,10 +31,20 @@ test('publication keeps the dynamic scheduling layout and form status styles',as
     await fs.writeFile(join(root,'index.html'),await fs.readFile('dist/server/prerendered-routes/klantwinst/index.html','utf8'));
     execFileSync(process.execPath,['scripts/trim-published-css.mjs',root],{stdio:'pipe'});
     const published=await fs.readFile(join(root,'_next/static/css/fixture.css'),'utf8');
-    for(const state of ['formSuccess','booking','bookingCopy','bookingWidget','formError','fieldError']) {
+    for(const state of ['formSuccess','booking','bookingCopy','bookingWidget','formError','fieldError','bookingSteps','bookingLoading','bookingNotice']) {
       assert.ok(new RegExp('\\._'+state+'_[a-zA-Z0-9_]+').test(published),`Missing dynamic style: ${state}`);
     }
     assert.match(published,/:has\([^)]*formSuccess/);
     assert.match(published,/min-width:320px/);
   } finally { await fs.rm(root,{recursive:true,force:true}); }
+});
+
+
+test('the application anchor goes straight to the form and presents both steps',async()=>{
+ const {readFile}=await import('node:fs/promises');
+ const html=await readFile('dist/server/prerendered-routes/klantwinst/index.html','utf8');
+ assert.match(html,/<form[^>]*id="klantwinst-check"/);
+ assert.doesNotMatch(html,/<section[^>]*id="klantwinst-check"/);
+ assert.match(html,/Je aanvraag in twee stappen/);
+ assert.match(html,/Moment kiezen/);
 });

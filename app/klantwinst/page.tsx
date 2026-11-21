@@ -249,7 +249,7 @@ export default function KlantwinstPage() {
         </ol>
       </section>
 
-      <section className={styles.contact} id="klantwinst-check" aria-labelledby="contact-title">
+      <section className={styles.contact} aria-labelledby="contact-title">
         <div className={styles.contactCopy}><p className={styles.eyebrow}>JOUW VOLGENDE STAP</p><h2 id="contact-title">Vraag jouw gratis analyse aan.</h2><p>Deel je website, aanbod en doel. Jimmy bereidt de analyse voor en bespreekt met je waar je klantwerving beter kan.</p><ul><li>Een gesprek van maximaal 20 minuten.</li><li>Persoonlijke reactie binnen 2 werkdagen.</li><li>Geen verplichting tot betaald beheer.</li></ul><div className={styles.person}><img src="/assets/jimmy-buitenhuis.png" alt="Jimmy Buitenhuis" width="96" height="96" loading="lazy" /><div><strong>Jimmy Buitenhuis</strong><span>Slimmer dan Gisteren</span></div></div></div>
         <KlantwinstForm />
       </section>

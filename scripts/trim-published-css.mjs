@@ -8,7 +8,7 @@ const root = process.argv[2] ?? 'dist/github-pages';
 const results = await new PurgeCSS().purge({
   content: [`${root}/**/*.html`, 'app/**/*.tsx', 'app/**/*.ts'],
   css: [`${root}/assets/*.css`, `${root}/_next/static/css/*.css`],
-  safelist: { standard: ['active', 'open', 'error', 'success', 'submitting'], greedy: [/_(?:formSuccess|booking(?:Copy|Widget)?|formError|fieldError|draft)_/, /caseDialog|dialogHeader|dialogClose|dialogContent|dialogFooter|backToCases/, /^language-/, /^focus-form-/, /^seo-/, /^is-/, /^has-/] },
+  safelist: { standard: ['active', 'open', 'error', 'success', 'submitting'], greedy: [/_(?:formSuccess|booking[A-Za-z]*|formError|fieldError|draft)_/, /caseDialog|dialogHeader|dialogClose|dialogContent|dialogFooter|backToCases/, /^language-/, /^focus-form-/, /^seo-/, /^is-/, /^has-/] },
   keyframes: false,
   fontFace: false,
   variables: false,

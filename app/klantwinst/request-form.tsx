@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState, type FormEvent } from "react";
+import { BookingSteps } from "./booking-steps";
 import { BookingPanel } from "./booking-panel";
 import { trackEvent } from "../analytics";
 import { validateSubmission, type KlantwinstSubmission } from "./submission";
@@ -45,7 +46,10 @@ export function KlantwinstForm() {
       }
       setReference(result.reference); setContact({ name: check.value.name, email: check.value.email }); setState("success");
       trackEvent("generate_lead", { form_id: "klantwinst-check" });
-      requestAnimationFrame(() => status.current?.focus());
+      requestAnimationFrame(() => {
+        status.current?.focus({ preventScroll: true });
+        status.current?.scrollIntoView({ block: "start", behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth" });
+      });
     } catch (error) {
       setState("error");
       setMessage(error instanceof Error && !["TimeoutError", "TypeError", "AbortError"].includes(error.name) ? error.message : "Wij kunnen je aanvraag nu niet bevestigen. Probeer opnieuw; dezelfde aanvraag wordt niet dubbel verstuurd. Je kunt Jimmy ook rechtstreeks mailen.");
@@ -54,15 +58,14 @@ export function KlantwinstForm() {
   }
   const errorProps = (key: keyof KlantwinstSubmission) => ({ "aria-invalid": !!errors[key], "aria-describedby": errors[key] ? `kw-${key}-error` : undefined });
   const errorText = (key: keyof KlantwinstSubmission) => errors[key] && <small id={`kw-${key}-error`} className={styles.fieldError}>{errors[key]}</small>;
-  return <form className={`${styles.form} ${state === "success" ? styles.formSuccess : ""}`} onSubmit={submit} aria-labelledby="form-title" aria-busy={state === "sending"}>
-    <h3 id="form-title">{state === "success" ? "Plan je gratis analysegesprek" : "Vraag de gratis check aan"}</h3>
-    {state === "success" ? <><div className={styles.draft} role="status" tabIndex={-1} ref={status}>
-      <strong>Bedankt, je aanvraag is ontvangen.</strong>
-      <p>Je gegevens zijn opgeslagen. Kies hieronder direct een datum en tijd voor je analysegesprek.</p>
-      <p>Je ontvangt ook een bevestiging per e-mail. Niets ontvangen? Controleer je spammap. Je aanvraag is opgeslagen.</p>
-      <small>Referentie: {reference}</small>
-    </div><BookingPanel name={contact.name} email={contact.email} /></> : <>
-      <p>Deel je website, aanbod en doel. Na het versturen kun je direct een geschikt moment kiezen in Calendly. Jimmy bereidt je analyse voor.</p>
+  return <form id="klantwinst-check" className={`${styles.form} ${state === "success" ? styles.formSuccess : ""}`} onSubmit={submit} aria-labelledby={state === "success" ? "kw-booking-title" : "form-title"} aria-busy={state === "sending"}>
+    {state === "success" ? <>
+      <div className={styles.bookingNotice} role="status" tabIndex={-1} ref={status}><span aria-hidden="true">✓</span> Je aanvraag is ontvangen en opgeslagen.</div>
+      <BookingPanel name={contact.name} email={contact.email} reference={reference} />
+    </> : <>
+      <h3 id="form-title">Vraag de gratis check aan</h3>
+      <BookingSteps current={1} />
+      <p>Vertel kort waar je hulp bij wilt. Na je aanvraag kun je direct een moment kiezen voor je gesprek.</p>
       <label htmlFor="kw-name">Naam<input id="kw-name" name="name" autoComplete="name" required maxLength={150} {...errorProps("name")} />{errorText("name")}</label>
       <label htmlFor="kw-email">E-mailadres<input id="kw-email" name="email" type="email" autoComplete="email" required maxLength={254} {...errorProps("email")} /><small>Hierop ontvang je de bevestiging en onze persoonlijke reactie.</small>{errorText("email")}</label>
       <label htmlFor="kw-site">Website<input id="kw-site" name="website" inputMode="url" autoComplete="url" autoCapitalize="none" spellCheck={false} placeholder="jouwbedrijf.nl" required maxLength={300} {...errorProps("website")} />{errorText("website")}</label>
