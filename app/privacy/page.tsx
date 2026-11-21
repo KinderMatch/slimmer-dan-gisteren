@@ -38,6 +38,14 @@ const privacyHighlights = [
 
 const privacySections = [
   {
+    title: t("Klantwinst-check aanvragen", "Klantwinst-check applications", "Solicitudes Klantwinst-check"),
+    body: t(
+      "Bij een aanvraag verwerken wij je naam, e-mailadres, website, aanbod en doel om je aanvraag te behandelen en het analysegesprek te plannen. Twilio verwerkt en bewaart de formulierinzending en verstuurt de ontvangstbevestiging en onze melding. Deze verwerking vindt plaats in de Verenigde Staten. De formulieropslag vervalt na 180 dagen; eventuele vervolgcorrespondentie valt onder de overige bewaartermijnen. Voor spambeveiliging gebruiken wij tijdelijke tellers en een niet leesbare afleiding van je e-mailadres. Je wordt niet automatisch ingeschreven voor nieuwsbrieven of reclamemails.",
+      "When you apply, we process your name, email, website, offer and goal to handle your application and schedule the analysis call. Twilio stores the form submission and sends your receipt and our notification. Processing takes place in the United States. Form records expire after 180 days; subsequent correspondence is covered by the other retention periods. Spam protection uses temporary counters and a keyed hash of your email address. We do not automatically subscribe you to newsletters or marketing emails.",
+      "Al solicitar la revision, tratamos tu nombre, email, web, oferta y objetivo para gestionar la solicitud y concertar la llamada. Twilio guarda el formulario y envia la confirmacion y nuestra notificacion. El tratamiento se realiza en Estados Unidos. Los registros del formulario caducan a los 180 dias; la correspondencia posterior se rige por los demas plazos. La proteccion antispam utiliza contadores temporales y un hash con clave del email. No te suscribimos automaticamente a boletines ni publicidad.",
+    ),
+  },
+  {
     title: t("1. Verantwoordelijke", "1. Controller", "1. Responsable"),
     body: t(
       "Slimmer dan Gisteren is verantwoordelijk voor de verwerking van persoonsgegevens via deze website en in het contact met klanten, prospects en leveranciers. Voor vragen over privacy kan contact worden opgenomen via jimmy@slimmerdangisteren.nl.",
