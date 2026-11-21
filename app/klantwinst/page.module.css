@@ -129,7 +129,7 @@
 .bookingCopy .bookingSteps{margin-bottom:18px}
 .bookingCopy>p{margin-block:10px}
 .bookingWidget{height:760px;margin-block:8px 12px}
-.bookingWidget[data-loading=true]{height:100px!important;overflow:hidden;opacity:0;pointer-events:none}
+.bookingWidget[data-loading=true]{overflow:hidden;opacity:0;pointer-events:none}
 .bookingCopy .bookingLoading{display:flex;align-items:center;gap:10px;padding-block:12px;margin:0;color:var(--kw-ink)}
 .bookingSpinner{width:18px;height:18px;border:2px solid #d5e1ec;border-top-color:var(--kw-blue);border-radius:50%;flex-shrink:0;animation:bookingSpin .9s linear infinite}
 .bookingCopy .bookingFallback{font-size:.875rem}
@@ -138,3 +138,12 @@
 @keyframes bookingSpin{to{transform:rotate(360deg)}}
 @media(max-width:740px){.bookingSteps{gap:18px;font-size:.875rem}.bookingNotice{margin-inline:22px}.formSuccess{gap:18px}}
 @media(prefers-reduced-motion:reduce){.bookingSpinner{animation:none}}
+
+/* Preserve the booking viewport while the remote planner loads. */
+.formSuccess{overflow-anchor:none}
+.bookingWidget{overflow:hidden}
+.bookingWidget iframe{height:100%}
+
+.bookingCopy .bookingCta{display:inline-flex;align-items:center;justify-content:center;gap:16px;min-height:52px;padding:14px 24px;border-radius:8px;background:var(--kw-blue);color:#fff;text-decoration:none;font-weight:700}
+.bookingCopy .bookingCta:focus-visible{outline:3px solid var(--kw-navy);outline-offset:4px}
+@media(max-width:740px){.bookingCopy .bookingCta{width:100%}}

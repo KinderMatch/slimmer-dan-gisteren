@@ -1,7 +1,8 @@
 "use client";
 
-import { useEffect, useRef, useState, type FormEvent } from "react";
+import { useEffect, useLayoutEffect, useRef, useState, type FormEvent } from "react";
 import { BookingSteps } from "./booking-steps";
+import { prepareBookingTab } from "./booking";
 import { BookingPanel } from "./booking-panel";
 import { trackEvent } from "../analytics";
 import { validateSubmission, type KlantwinstSubmission } from "./submission";
@@ -18,6 +19,13 @@ export function KlantwinstForm() {
   const attempt = useRef({ id: "", data: "" });
   const status = useRef<HTMLDivElement>(null);
   useEffect(() => { startedAt.current = Date.now(); setState("idle"); }, []);
+  // Scroll after React has committed the shorter second step, before painting.
+  // Waiting for a frame lets scroll anchoring keep the visitor near the footer.
+  useLayoutEffect(() => {
+    if (state !== "success") return;
+    status.current?.focus({ preventScroll: true });
+    status.current?.scrollIntoView({ block: "start", behavior: "instant" });
+  }, [state]);
   async function submit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
     if (state === "sending" || state === "success") return;
@@ -33,6 +41,7 @@ export function KlantwinstForm() {
     setErrors({}); setMessage(""); setState("sending");
     const serialized = JSON.stringify(check.value);
     if (attempt.current.data !== serialized) attempt.current = { id: crypto.randomUUID(), data: serialized };
+    const bookingTab = prepareBookingTab(window);
     try {
       const res = await fetch(endpoint, {
         method: "POST", credentials: "omit", signal: AbortSignal.timeout(20000),
@@ -45,12 +54,10 @@ export function KlantwinstForm() {
         throw new Error(res.status === 429 ? "Er zijn te veel aanvragen kort achter elkaar verstuurd. Probeer het later opnieuw of mail Jimmy rechtstreeks." : "Wij kunnen je aanvraag nu niet bevestigen. Je gegevens blijven ingevuld. Probeer opnieuw of mail Jimmy rechtstreeks.");
       }
       setReference(result.reference); setContact({ name: check.value.name, email: check.value.email }); setState("success");
+      bookingTab.complete(check.value.name, check.value.email);
       trackEvent("generate_lead", { form_id: "klantwinst-check" });
-      requestAnimationFrame(() => {
-        status.current?.focus({ preventScroll: true });
-        status.current?.scrollIntoView({ block: "start", behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth" });
-      });
     } catch (error) {
+      bookingTab.close();
       setState("error");
       setMessage(error instanceof Error && !["TimeoutError", "TypeError", "AbortError"].includes(error.name) ? error.message : "Wij kunnen je aanvraag nu niet bevestigen. Probeer opnieuw; dezelfde aanvraag wordt niet dubbel verstuurd. Je kunt Jimmy ook rechtstreeks mailen.");
       requestAnimationFrame(() => status.current?.focus());
@@ -72,7 +79,7 @@ export function KlantwinstForm() {
       <label htmlFor="kw-offer">Welk product of welke dienst wil je laten beoordelen?<input id="kw-offer" name="offer" required maxLength={300} {...errorProps("offer")} /><small>Kies één aanbod waarop wij ons richten.</small>{errorText("offer")}</label>
       <label htmlFor="kw-goal">Wat wil je bereiken?<textarea id="kw-goal" name="goal" rows={3} required maxLength={1200} placeholder="Bijvoorbeeld: meer passende intakeafspraken." {...errorProps("goal")} />{errorText("goal")}</label>
       <div className={styles.honeypot} aria-hidden="true"><label htmlFor="kw-fax">Laat dit veld leeg<input id="kw-fax" name="companyFax" tabIndex={-1} autoComplete="off" /></label></div>
-      <p className={styles.formPrivacy}>Alle velden zijn verplicht. Deel geen klantgegevens, medische informatie of wachtwoorden. Wij gebruiken je gegevens om je aanvraag te behandelen. Na verzending openen wij Calendly om je afspraak te plannen; je naam en e-mailadres vullen wij daar alvast in. <a href="/privacy/">Lees de privacyverklaring</a>.</p>
+      <p className={styles.formPrivacy}>Alle velden zijn verplicht. Deel geen klantgegevens, medische informatie of wachtwoorden. Wij gebruiken je gegevens om je aanvraag te behandelen. Na verzending openen wij Calendly in een nieuw tabblad om je afspraak te plannen; je naam en e-mailadres vullen wij daar alvast in. <a href="/privacy/">Lees de privacyverklaring</a>.</p>
       <button className={styles.cta} type="submit" disabled={state === "loading" || state === "sending"}>{state === "sending" ? "Je aanvraag wordt verstuurd…" : "Vraag mijn gratis Klantwinst-check aan"}<span aria-hidden="true">↗</span></button>
       {state === "error" && <div className={styles.formError} role="alert" tabIndex={-1} ref={status}><strong>{message}</strong><p>Mail je website, aanbod en doel naar <a href="mailto:jimmy@slimmerdangisteren.nl">jimmy@slimmerdangisteren.nl</a>.</p></div>}
       <noscript><p>Dit formulier heeft JavaScript nodig. Mail je website, aanbod en doel naar <a href="mailto:jimmy@slimmerdangisteren.nl">jimmy@slimmerdangisteren.nl</a>.</p></noscript>
