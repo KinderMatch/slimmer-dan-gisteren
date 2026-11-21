@@ -11,7 +11,7 @@ Deployment:
 Bundle receiver.cjs with esbuild --bundle --platform=node --format=cjs.
 Upload the bundle as a PRIVATE asset. Current path: /klantwinst-receiver-v3.js.
 Use twilio-wrapper.js as the public /aanvragen Function (Node 22).
-Pass Twilio explicitly into createHandler. Pass the native Response to callback with a JSON string body. Returning getResponse() produces a JSON envelope without real HTTP CORS/status headers. The wrapper also supplies required Liquid default filters for the deployed v3 mail payload.
+Pass Twilio explicitly into createHandler. Pass the native Response to callback with a JSON string body. Returning getResponse() produces a JSON envelope without real HTTP CORS/status headers. The wrapper supplies required Liquid default filters and updates the v3 confirmation copy with the Calendly link. New source bundles already include that copy.
 Deploy All after saving both files. Never upload credentials or put them in this repository.
 Twilio injects account credentials only into the server-side context.
 
@@ -29,3 +29,5 @@ Maximum 100 applications/day globally, 20/hour globally, 2/address/day.
 Honeypot, elapsed-time validation, input length/type checks, exact CORS allowlist.
 These limits reduce abuse but do not replace a managed CAPTCHA/WAF for high-volume campaigns.
 Only confirmed storage triggers the consent-dependent generate_lead analytics event; no form values go to analytics.
+
+Scheduling: the successful application opens the existing Calendly event bmc-sessie. Availability and booking settings come directly from Calendly. The site prefills name/email after the disclosed form action. Calendly sends appointment details and reschedule/cancellation links. The browser only acknowledges a scheduling message from the actual Calendly iframe, once; no booking data is copied into Sync. Changing the event URL requires updating booking.ts and redeploying the email bundle.

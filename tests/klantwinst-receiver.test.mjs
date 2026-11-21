@@ -65,3 +65,19 @@ test('production wrapper passes a native Response with JSON string body and CORS
   const denied=await run({},{});assert.equal(denied.status,403);assert.equal(x.sends,0);
   const result=await run({ACCOUNT_SID:'fake',AUTH_TOKEN:'fake'},structuredClone(good));assert.equal(result.status,200);assert.equal(JSON.parse(result.body).ok,true);assert.equal(result.headers['Access-Control-Allow-Origin'],'https://slimmerdangisteren.nl');assert.equal(x.sends,2);
 });
+
+test('deployed legacy mail adapter adds the scheduling link while keeping personal content literal',async()=>{
+  const outer={exports:{}}, sent=[];
+  const legacy={from:{address:'jimmy@slimmerdangisteren.nl'},to:[{address:'jimmy@slimmerdangisteren.nl',variables:{mail_html:'<p>Hoi Ada &lt;test&gt;,</p><p>Ik bekijk je website, aanbod en doel. <strong>Binnen twee werkdagen ontvang je een persoonlijke reactie van mij</strong> om het analysegesprek te plannen. Ik streef ernaar binnen één werkdag te reageren.</p>',mail_text:'Hoi Ada,\nIk bekijk je website, aanbod en doel. Binnen twee werkdagen ontvang je een persoonlijke reactie van mij om het analysegesprek te plannen. Ik streef ernaar binnen één werkdag te reageren.'}}],content:{subject:'Je gratis Klantwinst-check is aangevraagd'}};
+  const base={createHandler:({fetch})=>async(_context,_event,callback)=>{
+    await fetch('https://comms.twilio.com/v1/Emails',{body:JSON.stringify(legacy)});
+    const response=new TwilioResponse();response.setStatusCode(200);response.setBody({ok:true});callback(null,response);
+  }};
+  vm.runInNewContext(fs.readFileSync('server/klantwinst/twilio-wrapper.js','utf8'),{exports:outer.exports,fetch:async(_url,options)=>{sent.push(JSON.parse(options.body));return {}},require:()=>base,Runtime:{getAssets:()=>({'/klantwinst-receiver-v3.js':{path:'private'}})},Twilio:{Response:TwilioResponse}});
+  await new Promise((resolve,reject)=>outer.exports.handler({},good,(error,result)=>error?reject(error):resolve(result)));
+  const vars=sent[0].to[0].variables;
+  assert.ok(vars.mail_html.includes('https://calendly.com/buitenhuisj004/bmc-sessie'));
+  assert.ok(vars.mail_text.includes('https://calendly.com/buitenhuisj004/bmc-sessie'));
+  assert.ok(vars.mail_html.includes('Ada &lt;test&gt;'));
+  assert.ok(!vars.mail_html.includes('om het analysegesprek te plannen'));
+});

@@ -2,10 +2,10 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import vm from 'node:vm';
-import ts from 'typescript';
+import { buildSync } from 'esbuild';
 
 const module = { exports: {} };
-vm.runInNewContext(ts.transpileModule(fs.readFileSync('app/klantwinst/submission.ts', 'utf8'), { compilerOptions: { module: ts.ModuleKind.CommonJS } }).outputText, { exports: module.exports, URL });
+vm.runInNewContext(buildSync({entryPoints:['app/klantwinst/submission.ts'],bundle:true,platform:'node',format:'cjs',write:false}).outputFiles[0].text, { module, exports: module.exports, URL });
 const { validateSubmission, buildKlantwinstEmails, twilioEmailPayload } = module.exports;
 const valid = { name: 'Ada de Vries', email: 'ADA@example.com', website: 'voorbeeld.nl', offer: 'Zakelijk advies', goal: 'Meer passende aanvragen.' };
 
@@ -24,8 +24,10 @@ test('notification escapes submitted markup; confirmation never repeats arbitrar
   assert.equal(notification.to, 'jimmy@slimmerdangisteren.nl');
   assert.equal(notification.replyTo, 'ada@example.com');
   assert.equal(confirmation.replyTo, 'jimmy@slimmerdangisteren.nl');
-  assert.match(confirmation.text, /Binnen twee werkdagen/);
+  assert.match(confirmation.text, /binnen twee werkdagen/i);
   assert.match(confirmation.text, /geen betaalde samenwerking/);
+  assert.ok(confirmation.html.includes('https://calendly.com/buitenhuisj004/bmc-sessie'));
+  assert.match(confirmation.text, /Al ingepland/);
 });
 
 test('Twilio payload uses fixed sender and treats submitted content as literal data', () => {

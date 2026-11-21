@@ -21,7 +21,7 @@ const faqs = [
   ["Wat als ik nog geen advertenties of landingspagina heb?", "Je hoeft die niet eerst te maken. Wij bespreken je aanbod en doel en beoordelen wat al aanwezig is. Ontbrekende onderdelen nemen wij mee in ons advies. Zonder bestaande campagnegegevens doen wij geen uitspraken over campagneprestaties. De check bestaat uit analyse en advies; eventuele uitvoering bespreken wij pas daarna."],
   ["Moet ik nu toegang tot mijn advertentieaccount geven?", "Nee. Voor de aanvraag hebben wij alleen je contactgegevens, website, aanbod en doel nodig. Als accounttoegang nodig is voor de analyse, regelen wij dat daarna via de toegangsfuncties van het platform. Deel nooit je wachtwoord."],
   ["Wat krijg ik tijdens het gesprek?", "Wij bespreken de aansluiting tussen je advertentie, de route naar een aanvraag en de manier waarop je aanvragen kwalificeert. Je hoort welke knelpunten wij zien en wat volgens ons als eerste aandacht verdient. Wij benoemen ook wat wij met de beschikbare informatie nog niet kunnen vaststellen."],
-  ["Wanneer hoor ik iets en hoeveel tijd kost het?", "Je krijgt uiterlijk binnen twee werkdagen na ontvangst een persoonlijke reactie; wij streven naar één werkdag. Wij plannen samen het analysegesprek. Dat duurt maximaal twintig minuten. Als wij vooraf aanvullende informatie nodig hebben, laten wij dat weten."],
+  ["Wanneer hoor ik iets en hoeveel tijd kost het?", "Je krijgt uiterlijk binnen twee werkdagen na ontvangst een persoonlijke reactie; wij streven naar één werkdag. Na je aanvraag kun je direct een geschikt moment kiezen in Calendly. Lukt dat niet, dan plannen wij het samen. Dat duurt maximaal twintig minuten. Als wij vooraf aanvullende informatie nodig hebben, laten wij dat weten."],
 ];
 
 export const metadata: Metadata = {
@@ -244,7 +244,7 @@ export default function KlantwinstPage() {
         <div className={styles.sectionHeading}><p className={styles.eyebrow}>ZO WERKT HET</p><h2 id="process-title">Van aanvraag naar<br />een helder advies.</h2></div>
         <ol className={styles.processList}>
           <li><span>01</span><div><h3>Vertel waar je op wilt focussen</h3><p>Deel je website, het product of de dienst en het doel. Meer hebben wij voor de eerste stap niet nodig.</p></div></li>
-          <li><span>02</span><div><h3>Wij bereiden je analyse voor</h3><p>Je krijgt binnen twee werkdagen een persoonlijke reactie; wij streven naar één werkdag. Wij plannen het gesprek en regelen eventuele aanvullende informatie.</p></div></li>
+          <li><span>02</span><div><h3>Wij bereiden je analyse voor</h3><p>Je krijgt binnen twee werkdagen een persoonlijke reactie; wij streven naar één werkdag. Na je aanvraag kun je direct een datum en tijd kiezen in Calendly. Wij regelen eventuele aanvullende informatie.</p></div></li>
           <li><span>03</span><div><h3>Wij bespreken de bevindingen</h3><p>In maximaal twintig minuten bespreken wij de belangrijkste knelpunten en welke verbeteringen prioriteit hebben. Zo weet je waar je als eerste mee aan de slag kunt.</p></div></li>
         </ol>
       </section>
