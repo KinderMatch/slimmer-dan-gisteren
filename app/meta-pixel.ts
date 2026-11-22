@@ -29,6 +29,9 @@ export function setMetaConsent(granted: boolean) {
     w.fbq("init", metaPixelId);
     const script = document.createElement("script");
     script.id = "sdg-meta-pixel"; script.async = true;
+    script.dataset.status = "loading";
+    script.onload = () => { script.dataset.status = "loaded"; };
+    script.onerror = () => { script.dataset.status = "blocked"; };
     script.src = "https://connect.facebook.net/en_US/fbevents.js";
     document.head.appendChild(script);
   }

@@ -6,7 +6,7 @@ import ts from 'typescript';
 const source=fs.readFileSync('app/meta-pixel.ts','utf8');
 function mount({host='slimmerdangisteren.nl',path='/klantwinst/',search=''}={}) {
  const scripts=[],exports={},window={};
- vm.runInNewContext(ts.transpileModule(source,{compilerOptions:{module:ts.ModuleKind.CommonJS}}).outputText,{exports,window,location:{hostname:host,pathname:path,search},document:{cookie:'',createElement(){return {};},head:{appendChild(s){scripts.push(s);}}}});
+ vm.runInNewContext(ts.transpileModule(source,{compilerOptions:{module:ts.ModuleKind.CommonJS}}).outputText,{exports,window,location:{hostname:host,pathname:path,search},document:{cookie:'',createElement(){return {dataset:{}};},head:{appendChild(s){scripts.push(s);}}}});
  return {scripts,api:exports,commands:()=>window.fbq?.queue||[]};
 }
 const ref='KW-12345678-1234-4123-8123-123456789abc';
