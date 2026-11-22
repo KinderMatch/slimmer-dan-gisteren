@@ -39,6 +39,7 @@ function mount({consent=null,path='/seo/',host='slimmerdangisteren.nl'}={}) {
   vm.runInNewContext(compile('app/analytics.tsx'), {exports:output,require(name){
     if(name==='react') return {useEffect(f){effects.push(f);},useState(value){return [value,()=>{}];}};
     if(name==='next/navigation') return {usePathname(){return path;}};
+    if(name==='./meta-pixel') return {marketingConsentKey:'sdg-marketing-consent-v1',setMetaConsent(){},metaWasInitialized(){return false;},clearMetaCookies(){}};
     if(name==='./analytics-policy') return {...p,measurementId:'G-TEST123'};
     if(name==='react/jsx-runtime') return {jsx(){},jsxs(){}};
     throw Error(name);

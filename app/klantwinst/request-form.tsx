@@ -5,6 +5,7 @@ import { BookingSteps } from "./booking-steps";
 import { prepareBookingTab } from "./booking";
 import { BookingPanel } from "./booking-panel";
 import { trackEvent } from "../analytics";
+import { trackSavedApplication } from "../meta-pixel";
 import { validateSubmission, type KlantwinstSubmission } from "./submission";
 import styles from "./page.module.css";
 
@@ -56,6 +57,7 @@ export function KlantwinstForm() {
       setReference(result.reference); setContact({ name: check.value.name, email: check.value.email }); setState("success");
       bookingTab.complete(check.value.name, check.value.email);
       trackEvent("generate_lead", { form_id: "klantwinst-check" });
+      trackSavedApplication(result.reference);
     } catch (error) {
       bookingTab.close();
       setState("error");

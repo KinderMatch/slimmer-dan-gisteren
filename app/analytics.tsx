@@ -4,14 +4,16 @@ import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 import { consentKey, destination, measurementId, publicPath, readConsent, safeLabel } from "./analytics-policy";
 
+import { marketingConsentKey, setMetaConsent, metaWasInitialized, clearMetaCookies } from "./meta-pixel";
+
 type AnalyticsWindow = Window & { dataLayer?: unknown[]; gtag?: (...args: unknown[]) => void; [key: `ga-disable-${string}`]: boolean };
 let allowed = false;
 let configured = false;
 let lastPage = "";
 const copy = {
-  nl: { title: "Cookies toestaan?", body: "We gebruiken Google Analytics voor bezoekers- en klikstatistieken. Jij kiest.", yes: "Ja", no: "Nee", settings: "Cookievoorkeuren", privacy: "Privacybeleid" },
-  en: { title: "Allow cookies?", body: "We use Google Analytics for visitor and click statistics. You choose.", yes: "Yes", no: "No", settings: "Cookie preferences", privacy: "Privacy policy" },
-  es: { title: "¿Permitir cookies?", body: "Usamos Google Analytics para estadísticas de visitas y clics. Tú decides.", yes: "Sí", no: "No", settings: "Preferencias de cookies", privacy: "Política de privacidad" },
+  nl: { title: "Cookies toestaan?", body: "Wij gebruiken Google Analytics voor bezoekers- en klikstatistieken. Met de Meta-pixel meten wij bezoeken en opgeslagen aanvragen voor onze Instagram- en Facebook-advertenties. Jij kiest wat je toestaat.", yes: "Alles toestaan", no: "Alles weigeren", save: "Keuzes opslaan", stats: "Statistieken — Google Analytics", marketing: "Advertentiemeting — Meta-pixel", settings: "Cookievoorkeuren", privacy: "Privacybeleid" },
+  en: { title: "Allow cookies?", body: "We use Google Analytics for visitor and click statistics, and Meta Pixel to measure visits and saved enquiries for our Instagram and Facebook ads. You choose what to allow.", yes: "Accept all", no: "Reject all", save: "Save choices", stats: "Statistics — Google Analytics", marketing: "Advertising measurement — Meta Pixel", settings: "Cookie preferences", privacy: "Privacy policy" },
+  es: { title: "¿Permitir cookies?", body: "Usamos Google Analytics para estadísticas de visitas y clics, y Meta Pixel para medir visitas y solicitudes guardadas de nuestros anuncios en Instagram y Facebook. Tú eliges.", yes: "Aceptar todo", no: "Rechazar todo", save: "Guardar preferencias", stats: "Estadísticas — Google Analytics", marketing: "Medición publicitaria — Meta Pixel", settings: "Preferencias de cookies", privacy: "Política de privacidad" },
 };
 
 function language(path: string) { return path.startsWith("/en/") ? "en" : path.startsWith("/es/") ? "es" : "nl"; }
@@ -65,18 +67,25 @@ export function Analytics() {
   const pathname = usePathname() || "/";
   const [ready, setReady] = useState(false);
   const [open, setOpen] = useState(false);
+  const [statistics, setStatistics] = useState(false);
+  const [marketing, setMarketing] = useState(false);
   const lang = language(pathname);
   const text = copy[lang];
   useEffect(() => {
     setReady(true);
     let choice: boolean | null = null;
-    try { choice = readConsent(localStorage.getItem(consentKey)); } catch { /* Default: no tracking. */ }
-    setOpen(choice === null);
+    let adChoice: boolean | null = null;
+    try { choice = readConsent(localStorage.getItem(consentKey)); adChoice = readConsent(localStorage.getItem(marketingConsentKey)); } catch { /* Default: no tracking. */ }
+    setStatistics(choice === true); setMarketing(adChoice === true);
+    setOpen(choice === null || adChoice === null);
+    setMetaConsent(adChoice === true);
     if (choice === true && publicPath(location.pathname)) activate();
     const storage = (event: StorageEvent) => {
-      if (event.key !== consentKey && event.key !== null) return;
-      if (readConsent(event.newValue) !== true) { disable(); if (configured) location.reload(); else setOpen(true); }
-      else activate();
+      if (![consentKey, marketingConsentKey, null].includes(event.key)) return;
+      // Clear active third-party listeners after a preference changes in another tab.
+      disable(); setMetaConsent(false); clearMetaCookies();
+      if (configured || metaWasInitialized()) location.reload();
+      else setOpen(true);
     };
     const click = (event: MouseEvent) => {
       const element = event.target instanceof Element ? event.target.closest<HTMLElement>("a,button,summary,[role=button],input[type=submit],input[type=button]") : null;
@@ -92,17 +101,24 @@ export function Analytics() {
     return () => { document.removeEventListener("click", click, true); window.removeEventListener("storage", storage); };
   }, []);
   useEffect(() => {
-    if (!publicPath(pathname)) { if (configured) { disable(); location.reload(); } return; }
+    if (!publicPath(pathname)) { if (configured || metaWasInitialized()) { disable(); setMetaConsent(false); clearMetaCookies(); location.reload(); } return; }
+    try { setMetaConsent(readConsent(localStorage.getItem(marketingConsentKey)) === true); } catch { setMetaConsent(false); }
     // Wait for the route's document title to be committed.
     const timer = setTimeout(pageView, 0);
     return () => clearTimeout(timer);
   }, [pathname]);
 
-  function choose(value: boolean) {
-    try { localStorage.setItem(consentKey, JSON.stringify({ allowed: value, at: Date.now() })); } catch { /* Consent is then session-only. */ }
-    setOpen(false);
-    if (value) activate();
-    else { disable(); if (configured) location.reload(); }
+  function choose(stats: boolean, ads: boolean) {
+    try {
+      localStorage.setItem(consentKey, JSON.stringify({ allowed: stats, at: Date.now() }));
+      localStorage.setItem(marketingConsentKey, JSON.stringify({ allowed: ads, at: Date.now() }));
+    } catch { /* Consent is then session-only. */ }
+    setStatistics(stats); setMarketing(ads); setOpen(false);
+    const reload = (!stats && configured) || (!ads && metaWasInitialized());
+    if (stats) activate(); else disable();
+    setMetaConsent(ads);
+    if (!ads) clearMetaCookies();
+    if (reload) location.reload();
   }
   // Do not display a consent banner until this website's GA4 stream is configured.
   if (!ready || !measurementId || !publicPath(pathname)) return null;
@@ -110,7 +126,11 @@ export function Analytics() {
     <button className="analytics-settings" type="button" onClick={() => setOpen(true)}>{text.settings}</button>
     {open && <section className="analytics-banner" aria-labelledby="analytics-consent-title" role="region">
       <h2 id="analytics-consent-title">{text.title}</h2><p>{text.body} <a href={`${lang === "nl" ? "" : `/${lang}`}/privacy/`}>{text.privacy}</a>.</p>
-      <div><button type="button" onClick={() => choose(false)}>{text.no}</button><button type="button" onClick={() => choose(true)}>{text.yes}</button></div>
+      <fieldset className="analytics-options"><legend>{text.settings}</legend>
+        <label><input type="checkbox" checked={statistics} onChange={event => setStatistics(event.target.checked)} />{text.stats}</label>
+        <label><input type="checkbox" checked={marketing} onChange={event => setMarketing(event.target.checked)} />{text.marketing}</label>
+      </fieldset>
+      <div><button type="button" onClick={() => choose(false, false)}>{text.no}</button><button type="button" onClick={() => choose(true, true)}>{text.yes}</button><button type="button" onClick={() => choose(statistics, marketing)}>{text.save}</button></div>
     </section>}
   </div>;
 }
