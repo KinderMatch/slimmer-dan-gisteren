@@ -24,7 +24,9 @@ export function setMetaConsent(granted: boolean) {
       w.fbq = pixel; w._fbq = pixel;
     }
     // Manual events only; no automatic button/form tracking or advanced matching.
-    w.fbq("consent", "revoke");
+    // The library is created only after explicit consent. Starting its queue
+    // revoked can leave init behind the vendor's consent lock.
+    w.fbq("consent", "grant");
     w.fbq("set", "autoConfig", false, metaPixelId);
     w.fbq("init", metaPixelId);
     const script = document.createElement("script");

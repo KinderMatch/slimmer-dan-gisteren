@@ -19,6 +19,7 @@ test('Meta never loads or queues leads before consent, on local/private routes o
 test('Meta initializes once with manual events and no advanced matching; saved lead is deduplicated',()=>{
  const r=mount();r.api.setMetaConsent(true);r.api.setMetaConsent(true);
  assert.equal(r.scripts.length,1);
+ assert.deepEqual(Array.from(r.commands()[0]),['consent','grant']);
  assert.equal(r.commands().filter(c=>c[2]==='PageView').length,1);
  assert.deepEqual(Array.from(r.commands().find(c=>c[0]==='init')),['init','2626092657841574']);
  assert.deepEqual(Array.from(r.commands().find(c=>c[0]==='set')),['set','autoConfig',false,'2626092657841574']);
