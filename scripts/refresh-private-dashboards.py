@@ -72,6 +72,30 @@ def status_bytes(sheet_id, token):
     return json.dumps(result["values"], sort_keys=True, separators=(",", ":"))
 
 
+def assert_only_approved_sources_visible(config, token):
+    """Inspect IDs only; never open or request the names of unrelated documents."""
+    expected = {item[key] for item in config.values() for key in ("archiveId", "sheetId")}
+    visible = set()
+    page = None
+    for _ in range(10):
+        params = {"pageSize": "100", "fields": "nextPageToken,incompleteSearch,files(id)",
+                  "q": "trashed = false", "spaces": "drive",
+                  "includeItemsFromAllDrives": "true", "supportsAllDrives": "true"}
+        if page:
+            params["pageToken"] = page
+        result = json.loads(google_get("https://www.googleapis.com/drive/v3/files?" +
+                                       urllib.parse.urlencode(params), token))
+        visible.update(item["id"] for item in result.get("files", []))
+        if result.get("incompleteSearch") or not visible.issubset(expected):
+            raise ValueError("Background identity has unexpected document access")
+        page = result.get("nextPageToken")
+        if not page:
+            if visible != expected:
+                raise ValueError("Background identity cannot see exactly the four approved sources")
+            return
+    raise ValueError("Background identity visibility could not be completely verified")
+
+
 def run_checked(args, cwd=None):
     # Source values and private updater output must never enter public Actions logs.
     result = subprocess.run(args, cwd=cwd, capture_output=True, timeout=1200)
@@ -133,6 +157,7 @@ def main():
     # The runner has no customer password and no decryptable private key.
     with tempfile.TemporaryDirectory(prefix="sdg-private-refresh-") as temporary:
         root = Path(temporary)
+        assert_only_approved_sources_visible(config, token)
         prepared = {slug: prepare(slug, config[slug], root, token, checkout) for slug in SLUGS}
         allowed = {"public/dashboard/" + slug + "/bundle.json" for slug in SLUGS}
         for attempt in range(3):
