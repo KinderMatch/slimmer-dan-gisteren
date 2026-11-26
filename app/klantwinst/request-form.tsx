@@ -6,6 +6,7 @@ import { prepareBookingTab } from "./booking";
 import { BookingPanel } from "./booking-panel";
 import { trackEvent } from "../analytics";
 import { trackSavedApplication } from "../meta-pixel";
+import { hookContext, requestContext } from "./attribution";
 import { validateSubmission, type KlantwinstSubmission } from "./submission";
 import styles from "./page.module.css";
 
@@ -56,8 +57,9 @@ export function KlantwinstForm() {
       }
       setReference(result.reference); setContact({ name: check.value.name, email: check.value.email }); setState("success");
       bookingTab.complete(check.value.name, check.value.email);
-      trackEvent("generate_lead", { form_id: "klantwinst-check" });
-      trackSavedApplication(result.reference);
+      const attribution = requestContext(hookContext(location.search, startedAt.current), Date.now());
+      trackEvent("generate_lead", { form_id: "klantwinst-check", ...attribution });
+      trackSavedApplication(result.reference, startedAt.current);
     } catch (error) {
       bookingTab.close();
       setState("error");

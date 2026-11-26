@@ -1,0 +1,11 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import { buildSync } from 'esbuild';
+import vm from 'node:vm';
+import {createRequire} from 'node:module';
+const compile = file => {const m={exports:{}}; vm.runInNewContext(buildSync({entryPoints:[file],bundle:true,platform:'node',format:'cjs',write:false}).outputFiles[0].text,{module:m,exports:m.exports,require:createRequire(import.meta.url),URLSearchParams,Intl,Date});return m.exports};
+const {hookContext,requestContext,dutchTimeParts}=compile('app/klantwinst/attribution.ts');
+const query=(h=1,r=h<=6?1:2)=>`?utm_source=instagram&utm_medium=paid_social&utm_campaign=klantwinst_hooktest_r${r}&utm_content=h${String(h).padStart(2,'0')}_m01_cta01`;
+test('all 12 real hooks map to the right round',()=>{for(let i=1;i<=12;i++){assert.equal(hookContext(query(i),Date.now()).kw_hook,'H'+String(i).padStart(2,'0'));assert.equal(hookContext(query(i),Date.now()).kw_round,i<=6?'1':'2')}});
+test('unknown, mismatched, duplicate and PII-like codes are not propagated',()=>{for(const q of ['',query(13),query(1,2),query(1).replace('instagram','facebook'),query(1)+'&utm_content=other',query(1).replace('h01_m01_cta01','jane@example.com')])assert.equal(hookContext(q,Date.now()),null);const context=hookContext(query(1)+'&email=secret@example.com&fbclid=private',Date.now());assert.ok(!JSON.stringify(context).includes('secret'));assert.ok(!JSON.stringify(context).includes('private'))});
+test('arrival and request are distinct and Amsterdam time is DST aware',()=>{const visit=Date.parse('2026-11-26T22:50:00Z'),request=Date.parse('2026-11-27T00:10:00Z');const x=requestContext(hookContext(query(1),visit),request);assert.equal(x.kw_visit_hour,'23');assert.equal(x.kw_request_hour,'01');assert.equal(x.kw_visit_day,'2026-11-26');assert.equal(x.kw_request_day,'2026-11-27');assert.equal(dutchTimeParts(Date.parse('2026-07-01T22:00:00Z')).day,'2026-07-02');assert.deepEqual(JSON.stringify(requestContext(null,request)),'{}')});

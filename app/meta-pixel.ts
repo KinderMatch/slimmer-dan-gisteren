@@ -1,3 +1,4 @@
+import { hookContext, requestContext } from "./klantwinst/attribution";
 // Public identifier of Slimmer dan Gisteren's own website dataset.
 export const metaPixelId = "2626092657841574";
 export const marketingConsentKey = "sdg-marketing-consent-v1";
@@ -41,12 +42,15 @@ export function setMetaConsent(granted: boolean) {
   if (!viewed) { viewed = true; w.fbq?.("trackSingle", metaPixelId, "PageView"); }
 }
 export function metaWasInitialized() { return initialized; }
-export function trackSavedApplication(reference: string) {
+export function trackSavedApplication(reference: string, visitedAt = Date.now()) {
   // The receiver's opaque reference deduplicates successful retries. Never
   // queue a conversion before consent or replay one after later acceptance.
   if (!permitted || !eligible() || !/^KW-[a-f0-9-]{36}$/i.test(reference) || sent.has(reference)) return;
   sent.add(reference);
-  (window as PixelWindow).fbq?.("trackSingle", metaPixelId, "Lead", { content_name: "Gratis Klantwinst-check" }, { eventID: reference });
+  const now = Date.now();
+  const visit = Number.isFinite(visitedAt) && visitedAt > 0 && visitedAt <= now ? visitedAt : now;
+  const attribution = requestContext(hookContext(location.search, visit), now);
+  (window as PixelWindow).fbq?.("trackSingle", metaPixelId, "Lead", { content_name: "Gratis Klantwinst-check", ...attribution }, { eventID: reference });
 }
 export function clearMetaCookies() {
   for (const cookie of document.cookie.split(";")) {
