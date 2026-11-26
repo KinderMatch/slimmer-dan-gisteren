@@ -64,3 +64,14 @@ jobs:
         with:
           timeout: 1800000
           reporting_interval: 15000
+
+  verify-dashboards:
+    runs-on: ubuntu-latest
+    needs: deploy
+    timeout-minutes: 10
+    steps:
+      - name: Checkout deployed source
+        uses: actions/checkout@v4
+
+      - name: Verify complete encrypted dashboards on own domain
+        run: python3 scripts/verify-dashboard-production.py
