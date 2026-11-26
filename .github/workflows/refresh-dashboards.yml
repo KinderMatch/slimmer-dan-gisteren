@@ -1,9 +1,10 @@
-name: Wekelijkse dashboardverversing
+name: Dagelijkse dashboardverversing
 
 on:
   workflow_dispatch:
   schedule:
-    - cron: '0 6,7 * * 1'
+    - cron: '0 6 * * *'
+    - cron: '0 7 * * *'
 
 permissions: {}
 
@@ -22,12 +23,18 @@ jobs:
       - id: clock
         env:
           EVENT_NAME: ${{ github.event_name }}
+          EVENT_SCHEDULE: ${{ github.event.schedule }}
         run: |
           python3 - <<'PY'
           import datetime, os
           from zoneinfo import ZoneInfo
           now = datetime.datetime.now(ZoneInfo('Europe/Amsterdam'))
-          run = os.environ['EVENT_NAME'] == 'workflow_dispatch' or (now.weekday() == 0 and now.hour == 8)
+          utc_hour = 8 - int(now.utcoffset().total_seconds() // 3600)
+          expected_schedule = f'0 {utc_hour} * * *'
+          run = os.environ['EVENT_NAME'] == 'workflow_dispatch' or (
+              os.environ['EVENT_NAME'] == 'schedule' and
+              os.environ.get('EVENT_SCHEDULE') == expected_schedule
+          )
           with open(os.environ['GITHUB_OUTPUT'], 'a') as output:
               output.write('run=' + str(run).lower() + '\n')
           PY
