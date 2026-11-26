@@ -5,6 +5,11 @@ on:
     branches:
       - main
   workflow_dispatch:
+  workflow_call:
+    inputs:
+      source_ref:
+        type: string
+        required: true
 
 permissions:
   contents: read
@@ -21,6 +26,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          ref: ${{ inputs.source_ref || github.sha }}
 
       - name: Setup Node
         uses: actions/setup-node@v4
@@ -72,6 +79,8 @@ jobs:
     steps:
       - name: Checkout deployed source
         uses: actions/checkout@v4
+        with:
+          ref: ${{ inputs.source_ref || github.sha }}
 
       - name: Verify complete encrypted dashboards on own domain
         run: python3 scripts/verify-dashboard-production.py
