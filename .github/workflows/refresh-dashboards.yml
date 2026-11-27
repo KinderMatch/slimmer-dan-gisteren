@@ -5,7 +5,6 @@ on:
   schedule:
     - cron: '0,17,37 6 * * *'
     - cron: '0,17,37 7 * * *'
-    - cron: '*/5 * * * *' # Temporary scheduled dispatch verification; remove after test.
 
 permissions: {}
 
@@ -42,7 +41,7 @@ jobs:
               with urllib.request.urlopen(request, timeout=10) as response:
                   return json.load(response)
 
-          def verified_today(schedule_only=False):
+          def verified_today():
               try:
                   runs = public_json('/actions/runs?status=completed&per_page=20')['workflow_runs']
                   for prior in runs:
@@ -51,8 +50,6 @@ jobs:
                       if prior.get('path') != '.github/workflows/refresh-dashboards.yml':
                           continue
                       if prior.get('conclusion') != 'success':
-                          continue
-                      if schedule_only and prior.get('event') != 'schedule':
                           continue
                       started = datetime.datetime.fromisoformat(prior['created_at'].replace('Z', '+00:00'))
                       if started.astimezone(now.tzinfo).date() != now.date():
@@ -66,11 +63,10 @@ jobs:
                   print('Prior full publication could not be confirmed; keep retry enabled.')
               return False
 
-          probe = schedule == '*/5 * * * *' and now.date().isoformat() == '2026-11-27' and now.hour < 12
           run = os.environ['EVENT_NAME'] == 'workflow_dispatch' or (
               os.environ['EVENT_NAME'] == 'schedule' and
-              (schedule == expected_schedule or probe) and
-              not verified_today(schedule_only=probe)
+              schedule == expected_schedule and
+              not verified_today()
           )
           with open(os.environ['GITHUB_OUTPUT'], 'a') as output:
               output.write('run=' + str(run).lower() + '\n')
