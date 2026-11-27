@@ -1,7 +1,17 @@
 name: Dagelijkse dashboardverversing
+run-name: Dagelijkse dashboardverversing · ${{ github.event_name == 'workflow_dispatch' && inputs.initiator || 'github-clock' }}
 
 on:
   workflow_dispatch:
+    inputs:
+      initiator:
+        description: 'Start source'
+        required: false
+        default: manual
+        type: choice
+        options:
+          - manual
+          - google-clock
   schedule:
     - cron: '0,17,37 6 * * *'
     - cron: '0,17,37 7 * * *'
