@@ -3,8 +3,9 @@ name: Dagelijkse dashboardverversing
 on:
   workflow_dispatch:
   schedule:
-    - cron: '0 6 * * *'
-    - cron: '0 7 * * *'
+    - cron: '0,17,37 6 * * *'
+    - cron: '0,17,37 7 * * *'
+    - cron: '*/5 * * * *' # Temporary 2026-11-27 scheduler test; remove after verification.
 
 permissions: {}
 
@@ -26,14 +27,50 @@ jobs:
           EVENT_SCHEDULE: ${{ github.event.schedule }}
         run: |
           python3 - <<'PY'
-          import datetime, os
+          import datetime, json, os, urllib.request
           from zoneinfo import ZoneInfo
           now = datetime.datetime.now(ZoneInfo('Europe/Amsterdam'))
           utc_hour = 8 - int(now.utcoffset().total_seconds() // 3600)
-          expected_schedule = f'0 {utc_hour} * * *'
+          expected_schedule = f'0,17,37 {utc_hour} * * *'
+          schedule = os.environ.get('EVENT_SCHEDULE', '')
+          repo = 'KinderMatch/slimmer-dan-gisteren'
+
+          def public_json(path):
+              request = urllib.request.Request(
+                  'https://api.github.com/repos/' + repo + path,
+                  headers={'Accept': 'application/vnd.github+json', 'User-Agent': 'SDG-dashboard-clock'})
+              with urllib.request.urlopen(request, timeout=10) as response:
+                  return json.load(response)
+
+          def verified_today(schedule_only=False):
+              try:
+                  runs = public_json('/actions/runs?status=completed&per_page=20')['workflow_runs']
+                  for prior in runs:
+                      if str(prior['id']) == os.environ.get('GITHUB_RUN_ID'):
+                          continue
+                      if prior.get('path') != '.github/workflows/refresh-dashboards.yml':
+                          continue
+                      if prior.get('conclusion') != 'success':
+                          continue
+                      if schedule_only and prior.get('event') != 'schedule':
+                          continue
+                      started = datetime.datetime.fromisoformat(prior['created_at'].replace('Z', '+00:00'))
+                      if started.astimezone(now.tzinfo).date() != now.date():
+                          continue
+                      jobs = public_json('/actions/runs/' + str(int(prior['id'])) + '/jobs')['jobs']
+                      source_ok = any(j['name'] == 'refresh' and j.get('conclusion') == 'success' for j in jobs)
+                      production_ok = any(j['name'].endswith('verify-dashboards') and j.get('conclusion') == 'success' for j in jobs)
+                      if source_ok and production_ok:
+                          return True
+              except (OSError, ValueError, KeyError, TypeError):
+                  print('Prior full publication could not be confirmed; keep retry enabled.')
+              return False
+
+          probe = schedule == '*/5 * * * *' and now.date().isoformat() == '2026-11-27' and now.hour < 12
           run = os.environ['EVENT_NAME'] == 'workflow_dispatch' or (
               os.environ['EVENT_NAME'] == 'schedule' and
-              os.environ.get('EVENT_SCHEDULE') == expected_schedule
+              (schedule == expected_schedule or probe) and
+              not verified_today(schedule_only=probe)
           )
           with open(os.environ['GITHUB_OUTPUT'], 'a') as output:
               output.write('run=' + str(run).lower() + '\n')
